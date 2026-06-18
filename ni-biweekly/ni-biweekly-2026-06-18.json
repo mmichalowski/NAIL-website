@@ -1,6 +1,6 @@
 {
   "issue": 1,
-  "generated_at": "2026-06-18T16:21:13.774849Z",
+  "generated_at": "2026-06-18T19:15:51.138650Z",
   "date_range": {
     "start": "Jun 04, 2026",
     "end": "Jun 18, 2026"
@@ -36,7 +36,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/89645",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42285047/",
-      "summary": "This retrospective study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at one academic medical center during 2022. Researchers found that a higher proportion of medication administration actions linked to greater odds of leaving, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher risk of turnover and inform retention efforts.",
+      "summary": "This study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at a large academic medical center during 2022. Researchers found that a higher share of medication administration actions linked to greater odds of leaving, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher turnover risk and inform retention efforts.",
       "flags": [],
       "topic": "EHR & Workflows",
       "topic_confidence": "high"
@@ -50,7 +50,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88016",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42275419/",
-      "summary": "This cross-sectional study surveyed 339 nursing faculty at eight universities in Fujian, China, to measure their digital literacy using an AI-enhanced teaching knowledge framework. Faculty scored at a medium overall level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores across multiple dimensions. The findings highlight a skills gap that nursing informatics educators may consider when designing faculty training programs.",
+      "summary": "This cross-sectional study surveyed 339 nursing faculty across eight universities in Fujian province, China, to measure their digital literacy using a framework built around AI-enhanced teaching knowledge. Researchers found overall digital literacy sat at a medium level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores across multiple dimensions. The findings point to a skills gap that nursing informatics educators and program leaders may want to consider when designing faculty development and training programs.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -64,7 +64,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.1136/bmjopen-2026-117632",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42259555/",
-      "summary": "This study protocol describes a three-arm randomized controlled trial testing the Auricular Point Acupressure Self-Management (APA-SM) program for chronic musculoskeletal pain in rural adults across Texas and South Carolina. The trial, enrolling 693 participants, compares remote training, in-person training, and an education control, using a smartphone app and electronic health records to measure pain outcomes and cost-effectiveness. Nurses and informatics researchers may find the digital health integration and implementation science framework relevant to rural pain management delivery.",
+      "summary": "This study describes a protocol for a three-arm randomized controlled trial testing a self-managed auricular point acupressure program—supported by a smartphone app and motivational messaging—for rural adults with chronic musculoskeletal pain in Texas and South Carolina. The trial has not yet reported results. The study matters for nursing informatics because it combines digital health tools, ecological momentary assessment, and electronic health record data to evaluate a patient-centered pain management approach in underserved communities.",
       "flags": [
         "in_progress"
       ],
@@ -80,7 +80,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/85283",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42258796/",
-      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency, while those with prior informatics training or frequent electronic health record exposure scored higher. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, and call for future multisite research to better support nursing informatics education under Saudi Vision 2030.",
+      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high digital self-efficacy, with higher competency scores linked to prior informatics training and frequent EHR use. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, calling for multisite and mixed-methods research to guide informatics education improvements.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -94,7 +94,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88567",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42247576/",
-      "summary": "This study developed and tested a system combining automatic speech recognition and large language models to convert nurses' spoken input into structured DART documentation within hospital information systems, evaluated in emergency and ward settings. The fine-tuned system cut speech recognition errors from 44.79% to 6.67%, achieved a strong DART classification F1-score of 0.82, and 75.8% of 120 nurses reported reduced workload. The findings suggest that voice-based documentation tools may help ease manual data entry burdens in clinical nursing workflows.",
+      "summary": "This study developed and tested a system combining speech recognition and large language models to turn nurses' spoken input into structured DART documentation within hospital information systems, using a speech dataset from emergency and ward settings. The fine-tuned system cut transcription error rates from 44.79% to 6.67%, achieved an F1-score of 0.82 for DART classification, and 75.8% of 120 nurses reported reduced workload. The findings suggest this approach can lower manual documentation burden and improve record completeness in clinical nursing workflows.",
       "flags": [],
       "topic": "NLP & Generative AI",
       "topic_confidence": "high"
@@ -108,7 +108,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.1093/eurjcn/zvag003",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41495965/",
-      "summary": "This multicentre study tested whether smartphone voice recordings could track clinical changes in patients hospitalized with acute heart failure, using machine learning models that reached up to 0.81 accuracy and 0.89 sensitivity. The models identified acoustic features linked to recovery, and recordings were consistent across different smartphone brands. The authors suggest this approach could support nurse-coordinated post-discharge monitoring and remote triage.",
+      "summary": "This multicentre study recruited patients hospitalised with acute heart failure and used smartphone voice recordings to train machine learning models that classified patients' clinical status from admission to discharge. The best model reached 81% accuracy and 89% sensitivity, and cross-device testing showed consistent results across common smartphone brands. The abstract suggests this approach could support nurse-coordinated post-discharge monitoring and remote triage as a low-burden, non-invasive tool.",
       "flags": [],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"

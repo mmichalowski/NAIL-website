@@ -1,14 +1,16 @@
 {
   "issue": 1,
-  "generated_at": "2026-06-18T19:15:51.138650Z",
+  "generated_at": "2026-06-18T19:43:50.664797Z",
   "date_range": {
     "start": "Jun 04, 2026",
     "end": "Jun 18, 2026"
   },
-  "paper_count": 6,
+  "paper_count": 23,
   "config": {
     "sources": [
-      "pubmed"
+      "pubmed",
+      "arxiv",
+      "medrxiv"
     ],
     "summary_style": "2-3_sentences",
     "topics": [
@@ -36,7 +38,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/89645",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42285047/",
-      "summary": "This study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at a large academic medical center during 2022. Researchers found that a higher share of medication administration actions linked to greater odds of leaving, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher turnover risk and inform retention efforts.",
+      "summary": "This study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at one academic medical center during 2022. Researchers found that a higher share of medication administration actions linked to greater odds of leaving, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher risk of turnover and inform retention efforts.",
       "flags": [],
       "topic": "EHR & Workflows",
       "topic_confidence": "high"
@@ -50,7 +52,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88016",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42275419/",
-      "summary": "This cross-sectional study surveyed 339 nursing faculty across eight universities in Fujian province, China, to measure their digital literacy using a framework built around AI-enhanced teaching knowledge. Researchers found overall digital literacy sat at a medium level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores across multiple dimensions. The findings point to a skills gap that nursing informatics educators and program leaders may want to consider when designing faculty development and training programs.",
+      "summary": "This cross-sectional study surveyed 339 nursing faculty at eight universities in Fujian province, China, to measure their digital literacy using a framework built around AI-enhanced teaching knowledge. Faculty scored at a medium overall level, with the highest scores in digital awareness and the lowest in technical knowledge and skills; older age predicted lower scores across multiple dimensions. The findings highlight a skills gap that nursing informatics educators may want to consider when designing faculty development programs.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -64,7 +66,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.1136/bmjopen-2026-117632",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42259555/",
-      "summary": "This study describes a protocol for a three-arm randomized controlled trial testing a self-managed auricular point acupressure program—supported by a smartphone app and motivational messaging—for rural adults with chronic musculoskeletal pain in Texas and South Carolina. The trial has not yet reported results. The study matters for nursing informatics because it combines digital health tools, ecological momentary assessment, and electronic health record data to evaluate a patient-centered pain management approach in underserved communities.",
+      "summary": "This protocol describes a three-arm randomized controlled trial testing a smartphone-supported, needleless auricular point acupressure self-management program for chronic musculoskeletal pain in rural adults across Texas and South Carolina (n=693). Because this is a study protocol, no results are yet available. The trial's use of digital health tools, ecological momentary assessment, and electronic health records makes it relevant to nursing informatics researchers tracking technology-supported pain self-management.",
       "flags": [
         "in_progress"
       ],
@@ -80,7 +82,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/85283",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42258796/",
-      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high digital self-efficacy, with higher competency scores linked to prior informatics training and frequent EHR use. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, calling for multisite and mixed-methods research to guide informatics education improvements.",
+      "summary": "This cross-sectional study measured informatics competency and digital self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency, while those with prior informatics training or frequent electronic health record use scored notably higher. The authors caution that single-site, self-report, and underpowered findings limit generalisability, and call for future multisite research to guide informatics education aligned with Saudi Vision 2030.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -94,7 +96,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88567",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42247576/",
-      "summary": "This study developed and tested a system combining speech recognition and large language models to turn nurses' spoken input into structured DART documentation within hospital information systems, using a speech dataset from emergency and ward settings. The fine-tuned system cut transcription error rates from 44.79% to 6.67%, achieved an F1-score of 0.82 for DART classification, and 75.8% of 120 nurses reported reduced workload. The findings suggest this approach can lower manual documentation burden and improve record completeness in clinical nursing workflows.",
+      "summary": "This study developed and tested a system combining speech recognition and large language models to turn nurses' spoken words into structured DART documentation within hospital information systems, using a code-switching speech corpus from emergency and ward settings. The fine-tuned system cut speech recognition errors from 44.79% to 6.67%, achieved an F1-score of 0.82 for DART classification, and 75.8% of participating nurses reported reduced workload. The abstract suggests this approach may help ease manual documentation burden and improve record completeness in clinical nursing workflows.",
       "flags": [],
       "topic": "NLP & Generative AI",
       "topic_confidence": "high"
@@ -108,9 +110,312 @@
       "pub_date": "Jun 2026",
       "doi": "10.1093/eurjcn/zvag003",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41495965/",
-      "summary": "This multicentre study recruited patients hospitalised with acute heart failure and used smartphone voice recordings to train machine learning models that classified patients' clinical status from admission to discharge. The best model reached 81% accuracy and 89% sensitivity, and cross-device testing showed consistent results across common smartphone brands. The abstract suggests this approach could support nurse-coordinated post-discharge monitoring and remote triage as a low-burden, non-invasive tool.",
+      "summary": "Researchers recorded the voices of patients hospitalized with acute heart failure across four centres, then trained machine learning models to track changes in clinical status from admission to discharge using smartphone recordings. The best model reached 81% accuracy and 89% sensitivity, and cross-device testing showed consistent results across common smartphone brands. The abstract suggests this low-burden, non-invasive approach could support nurse-coordinated remote monitoring and triage after patients leave hospital.",
       "flags": [],
       "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.17789v1",
+      "title": "Mind Companion: An Embodied Conversational Agent for Process-Based Psychotherapy",
+      "abstract": "Access to evidence-based psychotherapy remains limited worldwide, with long waitlists even in high-income regions. Recent advances in large language models (LLMs) offer potential for scalable mental health support when designed with clinical oversight and safety mechanisms. We present Mind Companion, an LLM-based embodied conversational agent integrating multi-layered psychological analysis with process-based therapy principles. The system performs real-time analysis of client statements across fact extraction, psychological flexibility process detection, emotion recognition, and safety monitoring. Analysis results are stored for supervising clinicians to inform therapeutic planning. Response generation incorporates retrieval-augmented generation from evidence-based therapeutic literature and context-aware prompting. Responses are delivered through an embodied avatar with synchronized speech synthesis and animation. We evaluated three LLM configurations (GPT-4.1-mini, GPT-5.2, Claude Sonnet 4.5) against therapist responses from real therapy sessions using automated LLM-judge assessment and expert evaluation with 11 professional psychotherapists. GPT-5.2 achieved higher ratings than human therapist responses across understanding, interpersonal effectiveness, collaboration, and therapeutic alignment in both evaluations, demonstrating the feasibility of LLM-based conversational agents as tools to complement clinical care.",
+      "authors": "Sofie Kamber, Lukas Diebold, Pascal Riachi, Stella Brogna, Andrew Gloster, Rafael Wampfler",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.17789v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.17789v1",
+      "source": "arXiv",
+      "summary": "Researchers built and tested Mind Companion, an AI chatbot using large language models to deliver process-based psychotherapy, addressing long waitlists for mental health care. In evaluations involving 11 professional psychotherapists, one model configuration (GPT-5.2) received higher ratings than human therapist responses on measures like understanding and collaboration. For nursing informatics, this study raises questions about how AI-generated therapeutic responses might be monitored and integrated into clinician-supervised care workflows.",
+      "flags": [
+        "population_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.17786v1",
+      "title": "Toward Accessible Psychotherapy Training Using AI-Driven Interactive Patient Avatars",
+      "abstract": "Training psychotherapists in evidence-based interventions such as Acceptance and Commitment Therapy (ACT) requires repeated practice with meaningful feedback, yet opportunities for safe, standardized training are limited by ethical, logistical, and resource constraints. We introduce a system designed to support ACT-oriented psychotherapy training through spoken dialogue with an embodied virtual patient. The system uses large language models to simulate patient behavior conditioned on profiles derived from real therapy sessions and configurable clinical scenarios, while a separate automated evaluator provides turn-by-turn feedback on therapist responses based on established ACT fidelity criteria. Rather than aiming to replace supervision, the system is intended to support deliberate practice by enabling experimentation, reflection, and immediate feedback in low-risk settings. Expert evaluation with practicing psychologists confirmed high realism in patient behavior and demonstrated that immediate turn-by-turn ACT feedback increased therapists' awareness of intervention choices and enabled effective experimentation with alternative responses. Quantitative evaluation across 49 therapy transcripts identified GPT-4o-mini as the optimal feedback model, achieving the lowest mean absolute error (MAE = 6.12) in replicating human supervisor ACT fidelity ratings with statistically significant agreement. This work demonstrates the potential of fidelity-aware simulated patients as a scalable complement to psychotherapy training.",
+      "authors": "Pascal Riachi, Sofie Kamber, Stella Brogna, Andrew Gloster, Rafael Wampfler",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.17786v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.17786v1",
+      "source": "arXiv",
+      "summary": "Researchers built an AI system that lets psychotherapy trainees practice Acceptance and Commitment Therapy (ACT) through spoken dialogue with a virtual patient, with turn-by-turn automated feedback. Expert psychologists rated the virtual patient as highly realistic, and the model GPT-4o-mini closely matched human supervisor ratings across 49 transcripts. While focused on psychotherapy training, this work shows how AI-driven simulation and automated fidelity feedback could support clinical skill-building in informatics-enabled training environments.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.15522v1",
+      "title": "NIMO: A Software Platform for Closed-Loop Materials Exploration with Diverse AI Algorithms",
+      "abstract": "Self-driving laboratories (SDLs), where artificial intelligence proposes subsequent experiments and robotic systems execute them, are rapidly becoming the vanguard of materials discovery. A critical bottleneck, however, lies in seamlessly bridging diverse AI algorithms tailored for specific exploration goals with the heterogeneous robotic hardware found across different laboratories. Here, we present NIMO, an open-source software platform designed to dissolve this barrier through three core paradigms: a modular AI-robot decoupling mediated via simple CSV file exchange, a discrete candidate-pool architecture that seamlessly absorbs domain knowledge, and a unified Python interface pre-loaded with twelve distinct AI algorithms. In this Perspective, we review the operational principles of each algorithm alongside six diverse SDL implementations driven by NIMO, covering electrolyte discovery, organic synthesis, thin-film exploration, fuel-cell process informatics, coffee-ring phase exploration, and legacy liquid-handling automation. One of these also demonstrates NIMO's seamless interoperability with the IvoryOS orchestration framework. To democratize autonomous science, we also introduce a no-code desktop application that enables intuitive, human-in-the-loop exploration for non-programmers. NIMO is freely available at https://github.com/NIMS-DA/nimo, offering a versatile, plug-and-play foundation to accelerate autonomous materials exploration across diverse experimental landscapes.",
+      "authors": "Ryo Tamura, Naruki Yoshikawa, Koji Tsuda, Shoichi Matsuda",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.15522v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.15522v1",
+      "source": "arXiv",
+      "summary": "This preprint describes NIMO, a software platform built to connect AI algorithms with robotic lab systems for automated materials discovery. The platform offers twelve AI algorithms, a simple file-based interface, and a no-code desktop app, demonstrated across six laboratory use cases. This work sits outside nursing or clinical informatics; its AI-robot integration concepts may have distant relevance to automated laboratory workflows, but the abstract states no connection to nursing practice or health settings.",
+      "flags": [
+        "population_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "Other / Unclassified",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.15419v1",
+      "title": "Let LLMs Judge Each Other: Multi-Agent Peer-Reviewed Reasoning for Medical Question Answering",
+      "abstract": "Objective: To enhance the accuracy, interpretability, and robustness of large language models (LLMs) in medical question answering (MedQA).   Method: We designed a multi-agent peer-reviewed reasoning method in which multiple LLM agents independently generate chain-of-thought reasoning with candidate answers, then act as peer reviewers to evaluate each other's reasoning for factual correctness and logical soundness. The highest-rated reasoning chain is selected to produce the final answer. Experiments were conducted with five state-of-the-art LLMs (Llama-3.1-8B, Qwen2.5-7B, Phi-4, DeepSeek-LLM-7B, GPT-oss-20B) on three benchmark datasets: HeadQA, MedQA-USMLE, and PubMedQA. Performance was compared against single-model chain-of-thought reasoning and chain-of-thought-based majority voting.   Results: Peer-reviewed reasoning consistently outperformed both baselines. The best model combination achieved an average accuracy of 0.820 across datasets, exceeding the strongest single model (0.777) and majority voting ensembles (up to 0.789). The method also scaled effectively with more participating models, while peer assessments reliably distinguished high- from low-quality reasoning chains.   Conclusion: The proposed multi-agent peer-reviewed reasoning method enables LLMs to act as both solvers and evaluators, yielding superior performance in MedQA. By emphasizing reasoning quality rather than answer agreement alone, this approach improves accuracy, interpretability, and robustness, offering a promising direction for trustworthy biomedical AI systems.",
+      "authors": "Zaifu Zhan, Shuang Zhou, Rui Zhang",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.15419v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.15419v1",
+      "source": "arXiv",
+      "summary": "Researchers tested a system where multiple AI language models check each other's reasoning to answer medical questions more accurately. The multi-agent approach reached an average accuracy of 0.820 across three benchmark datasets, outperforming both single-model and majority-vote methods. For nursing informatics, this suggests that having AI models evaluate each other's logic—rather than just tallying answers—may improve reliability in clinical decision-support tools, though this study used benchmarks, not real clinical settings.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.15026v1",
+      "title": "Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals",
+      "abstract": "Physiological stress and emotion recognition are important for health monitoring and affective computing. In this work, we present a comprehensive evaluation of deep learning models such as Long Short-Term Memory (LSTM), Temporal Convolutional Networks (TCN), and Transformer on the WESAD dataset for multimodal affect recognition using wrist and chest sensor signals. We perform ablation studies to assess the individual contributions of each modality by training models on wrist-only and chest-only inputs. In addition, we implement a late-fusion ensemble strategy that combines predictions from all three architectures trained on multimodal input. We also employ early fusion at the sensor level by concatenating wrist and chest signals before feeding them into each model. Our results show that Transformer models consistently achieve the highest accuracy in multimodal settings, while TCN models perform best in the wrist-only configuration. The ensemble method yields the highest overall accuracy (98.91 +/- 0.13%) and macro-F1 score (98.56 +/- 0.17%). These findings demonstrate the effectiveness of sensor fusion and ensemble-based fusion in developing robust systems for physiological emotion recognition.",
+      "authors": "Desta Haileselassie Hagos, Saurav Keshari Aryal, Patrick Ymele-Leki, Anietie Andy, Legand L. Burge",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.15026v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.15026v1",
+      "source": "arXiv",
+      "summary": "This study tested three deep learning models—LSTM, TCN, and Transformer—on a public dataset (WESAD) to recognize emotions and physiological stress from wrist and chest sensor signals. A late-fusion ensemble combining all three models reached 98.91% accuracy, the highest result reported. While the study focuses on technical model performance rather than clinical use, the findings may interest nursing informatics researchers exploring wearable-based monitoring systems.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.13082v1",
+      "title": "sebis at CRF Filling 2026: A Two-Stage Local LLM Pipeline for Medical CRF Filling",
+      "abstract": "The extraction of structured clinical information from unstructured EHR notes is a persistent bottleneck in healthcare informatics. While large language models (LLMs) offer high performance, their deployment in clinical settings is hindered by privacy risks, inference costs, and the tendency to hallucinate beyond textual evidence. We address these challenges for the CL4Health 2026 Case Report Form (CRF) filling task by proposing a fully local, domain-adapted pipeline using the MedGemma-27B model. Our two-stage architecture, which separates binary presence classification from value extraction, enforces strict adherence to textual evidence and ensures deterministic outputs for negated, uncertain, or unknown states. By leveraging item-specific, few-shot in-context learning without external API calls or fine-tuning, our approach achieves a macro-F1 score of 0.55 on the official English test track. This result secures second place among all locally-hosted, open-source submissions. Our work demonstrates that privacy-preserving, on-premise LLM pipelines can achieve near-competitive performance with proprietary frontier models, providing a practical, data-sovereign framework for clinical NLP.",
+      "authors": "Katharina Sommer, Tristan Till, Florian Matthes",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.13082v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.13082v1",
+      "source": "arXiv",
+      "summary": "Researchers tested a local, privacy-preserving pipeline using the MedGemma-27B language model to pull structured data from unstructured clinical notes for a Case Report Form filling task. The two-stage system—separating detection from value extraction—reached a macro-F1 score of 0.55, placing second among locally-hosted open-source submissions. For nursing informatics, this suggests that on-site language model pipelines may reduce privacy risks while still extracting usable clinical data from EHR notes.",
+      "flags": [
+        "not_peer_reviewed",
+        "population_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.14788v1",
+      "title": "Unifying Acoustic Features and Text with Multimodal LLMs for Neurodegenerative Screening",
+      "abstract": "Voice-based screening offers a scalable and non-invasive way to assess neurodegenerative diseases such as Alzheimer's disease (AD) and Parkinson's disease (PD), but their staging remains challenging due to the difficulty of integrating heterogeneous data. This paper presents NeurMLLM, an efficient multimodal generative framework for neurodegenerative disease staging. NeurMLLM first encodes the spectrograms and Mel-frequency cepstral coefficients of audio data with vision transformers and projects their representations into the embedding space of a large language model (LLM), where they are concatenated with transcript and demographic instruction tokens as a single unified sequence. The LLM is then instruction-tuned via Low-Rank Adaptation using task prompts to autoregressively predict a constrained label token, enabling a generative classification. By evaluating on the Bridge2AI-Voice dataset for fine-grained staging of AD and PD, we observe that NeurMLLM achieves strong performance, consistently outperforming classical machine learning methods and existing LLM-based approaches. The results show the high potential of multimodal LLMs in neurodegenerative disease staging, improving staging accuracy and supporting accessible deployment.",
+      "authors": "Qingfeng Zhang, Yuanxiong Guo, Yanmin Gong",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.14788v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.14788v1",
+      "source": "arXiv",
+      "summary": "Researchers developed NeurMLLM, a multimodal AI framework that combines voice audio features, transcripts, and demographic data to stage Alzheimer's and Parkinson's diseases, tested on the Bridge2AI-Voice dataset. The system outperformed classical machine learning and existing large language model approaches on fine-grained disease staging. For nursing informatics, this points to potential for voice-based, accessible screening tools, though the study reports only technical performance and does not address clinical or real-world deployment.",
+      "flags": [
+        "not_peer_reviewed",
+        "population_unclear"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.12699v1",
+      "title": "LLM-Powered Personalized Glycemic Assessment in Type 2 Diabetes with Wearable Sensor Data",
+      "abstract": "Type 2 Diabetes (T2D) poses an increasing global health threat, demanding effective glycemic assessment to support personalized and improved diabetes care. Wearable sensors such as continuous glucose monitors (CGM) and fitness trackers offer many valuable insights for glycemic assessment. However, effectively analyzing these data requires integration with essential individual-level context. Existing methods are often based on traditional machine learning (ML) and rely primarily on historical blood glucose measurements and overlook personalized information, which limits their performance across diverse diabetes populations. Recent advances in large language models (LLMs) have demonstrated their ability to integrate diverse data modalities while modeling sequential dependencies, motivating the exploration of their potential for personalized glycemic assessment.   In this paper, we propose GlyLLM, an LLM-powered framework for modeling CGM-based glycemic dynamics through the integration of wearable sensor data and structured metadata. GlyLLM can leverage the extensive prior knowledge of pre-trained LLMs and achieve sensor-text semantic abstraction at decision time. Experiments on two related tasks on the AI-READI dataset demonstrate that our model outperforms traditional ML methods by an average of 13.66\\% in Root Mean Squared Error (RMSE) for glucose forecasting and 13.08\\% in Area Under the Receiver Operating Characteristic (AUROC) for diabetes categorization. Additionally, our ablation study shows that diabetes surveys and biometric tests are more critical than other health information for glycemic assessment. Our work presents a promising step toward harnessing the power of LLMs to advance personalized glycemic assessment in T2D care.",
+      "authors": "Yifan Gao, Yanmin Gong, Yun Shi, Yuanxiong Guo",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.12699v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.12699v1",
+      "source": "arXiv",
+      "summary": "Researchers developed GlyLLM, a large language model framework that combines continuous glucose monitor data, fitness tracker data, and personal health information to forecast blood glucose levels and classify diabetes in people with Type 2 diabetes. On the AI-READI dataset, GlyLLM outperformed traditional machine learning methods by about 14% in glucose forecasting and 13% in diabetes classification accuracy. For nursing informatics, this work suggests that combining wearable sensor data with structured patient metadata may improve personalized glycemic monitoring tools.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.11336v1",
+      "title": "Towards a Joint Understanding of Remote Operation for Vehicles in Public Road Traffic",
+      "abstract": "Sustained driving automation systems are envisioned to be used as the foundation for driverless mobility services. However, both researchers and practitioners acknowledge that current driving automation systems are not yet able to handle all traffic situations that a human driver can handle. To bridge this gap and enable mobility services without an in-vehicle human driver or fallback, remote operation (or teleoperation) is increasingly discussed. Recently, first legal actions have been taken to enable some forms of remote operation on public roads. Remote operation encompasses a broad spectrum of methods to support a driving automation system, ranging from remote assistance, which includes providing information or releasing a maneuver, to remote driving, which includes driving the vehicle from a remote location. As such, safe implementation of remote operation in public road traffic challenges the collaboration of multiple academic disciplines (e.g. engineering, psychology, informatics, law, etc.) and stakeholders (e.g. remote operation service providers, remote operators, vehicle manufacturers, regulatory authorities, etc.). At the same time, the interdisciplinary discourse is often challenging due to differing expectations and language. To build a common ground, this article traces terminology back to the original differences in information processing both on human and vehicle side. This framework aims to help further discourse by directly specifying what is needed to engage a diverse audience including researchers and stakeholders of different backgrounds and interests. Recently discussed forms of teleoperation are integrated into this framework.",
+      "authors": "Elisabeth Shi, Maria-Magdalena Wolf, Nina Theobald, Bettina Abendroth, Eugen Wige, Johannes Springer",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.11336v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.11336v1",
+      "source": "arXiv",
+      "summary": "This paper examined the challenge of building shared understanding around remote vehicle operation — where a human controls or supports a driverless vehicle from a far-off location — across researchers, engineers, lawyers, and industry stakeholders. The authors developed a terminology framework grounded in how both humans and vehicles process information. This work does not address nursing or nursing informatics, and no connection to those fields is stated in the abstract.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "Other / Unclassified",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.09500v4",
+      "title": "Deterministic Integrity Gates for LLM-Assisted Clinical Manuscript Preparation: An Auditable Biomedical Informatics Architecture",
+      "abstract": "As autonomous research agents and AI co-scientist systems push large language models (LLMs) from drafting toward end-to-end manuscript production, the bottleneck shifts from generation to verification. Fluent LLM output can hide fabricated citations, numbers that drift from source tables, and unmet reporting-guideline items; existing tools generate without verifying, and self-critique inherits the blind spots that produce confident fabrication. We describe an architecture pairing generation with verification, resting on three principles: decompose the workflow into self-contained skills, gate every stage transition with halt-on-failure, and resolve each integrity question with the cheapest sufficient mechanism, a deterministic, re-executable check where one suffices and a prose-level probe only where interpretation is unavoidable. This determinism-where-possible split, organized as an integrity-gate taxonomy, is the core contribution. It is realized as MedSci Skills, an open-source toolkit of 43 skills with a 21-detector deterministic tier, evaluated on three public-dataset pipelines (STARD, PRISMA, STROBE) and a seeded-defect ablation. Across the three pipelines every content-hash manifest verified clean and the gates surfaced real defects; on 27 identical injected defects the deterministic gates detected all 27 with no false positives on the matched clean fixtures, whereas a single-prompt LLM reviewer detected 11, its misses in code, bibliography, and style defects the prose hides. Determinism-where-possible verification yields an auditable, re-executable trail that exposes the evidence a human needs to check an LLM-assisted manuscript: feasibility and reproducibility evidence, not a claim of human-competitive quality, which a separate blinded study addresses. MedSci Skills is MIT-licensed and archived (v3.8.0).",
+      "authors": "Yoojin Nam, Jinhoon Jeong, Namkug Kim",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.09500v4",
+      "pubmed_url": "https://arxiv.org/abs/2606.09500v4",
+      "source": "arXiv",
+      "summary": "This study developed an architecture to catch errors—such as fake citations and wrong numbers—in manuscripts written with AI assistance. The system used 43 tools, including 21 rule-based checks, and detected all 27 planted defects with no false alarms, while a single AI reviewer caught only 11. For nursing informatics, this work highlights that rule-based verification may catch errors that AI alone misses when producing research manuscripts.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.08973v1",
+      "title": "A systematic investigation of molecular encoding methods for drug property predictions across neural network and Transformer encoder-based model",
+      "abstract": "Fundamental investigations into how different molecular encoding methods affect molecular property prediction remain relatively limited. In this study, we extensively examined the optimal molecular encoding methods for molecular properties prediction using two prevalent structure designs: a classical neural network model (MLP) and a Transformer encoder-based model (MLP+TL). For molecular encoding methods, we investigated several types of fingerprints, including traditional topological fingerprints, substructure-based fingerprints, and string-based representations. These two models were trained on seven well-known molecular datasets to evaluate different input molecular encoding methods based on evaluation metrics. On several biologically relevant classification tasks, including toxicity, mutagenicity, and side-effect prediction, our models consistently achieved average AUC values above 0.9. Rather than relying on external post-hoc explanation methods such as the local interpretable model-agnostic explanation (LIME) or the Deep SHapley Additive exPlanations (SHAP), we leveraged the model's intrinsic attention weights as an internal interpretability signal for identifying potentially important feature. The MLP+TL model using MACCS and PubChem as input can capture chemically interpretable groups that determined the major blood-brain barrier (BBB) permeability and mutagenicity in Salmonella typhimurium. In particular, a comparison between Morphine and Heroin highlighted the role of hydroxyl-related substructures in BBB permeability prediction, which was consistently reflected in the attention weights. Overall, our findings provide practical guidance for selecting effective molecular encoding methods and contribute to the development of interpretable molecular informatics approaches for drug discovery.",
+      "authors": "Sheng-Ya Chen, Shan-Ju Yeh",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.08973v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.08973v1",
+      "source": "arXiv",
+      "summary": "This study tested different ways to encode molecules as inputs for two neural network models predicting drug properties such as toxicity and blood-brain barrier permeability. Using seven molecular datasets, the models reached average AUC values above 0.9 on several classification tasks, and attention weights helped identify key chemical features driving predictions. For nursing informatics, this work may inform how AI tools for drug discovery communicate their reasoning, though findings come from a preprint with no clinical population studied.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.09910v1",
+      "title": "Proceedings of the 14th edition of the conference on Random Generation of Combinatorial Structures",
+      "abstract": "This volume contains the proceedings of GASCom 2026, held  on June 8-12 2026, in Malosco (Italy). This series of  conferences brings together researchers in combinatorics, algorithms, probabilities, and more generally mathematical computer science, around the theme of random and exhaustive generation of combinatorial structures, mostly considered from a theoretical point of view. In connection with this main theme,  contributions in enumerative or analytic combinatorics, and interactions with other areas of mathematics, computer science, physics or biology are wellcome. The topics cover both the methods for random or exhaustive generation, and original results on combinatorial or algorithmic problems, whose solution has been made possible by an approach involving random or exhaustive generation.  A (non exhaustive) list of topics of the conference is: random and exhaustive generation of combinatorial objects; tilings and polyominoes; bijective, enumerative, algebraic and analytic combinatorics; algorithmic aspects: analysis of algorithms, probabilistic algorithms; interactions: bio-informatics, combinatorics on words, number theory.",
+      "authors": "Srečko Brlek, Luca Ferrari",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.09910v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.09910v1",
+      "source": "arXiv",
+      "summary": "⚠️ This abstract cannot be summarised for the NI Weekly Digest. It describes a mathematics and computer science conference on combinatorics and algorithms, with no connection to nursing, health care, or nursing informatics. Summarising it under a nursing informatics framing would misrepresent the content. The editorial team should review how this item entered the pipeline.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "Other / Unclassified",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.06415v1",
+      "title": "PolyGraphPy: A unified Python framework for atomistic simulation and machine learning-driven polymer design",
+      "abstract": "Polymers are indispensable materials with applications ranging from electronics to medicine owing to their versatility, which can be tailored by adjusting their chemical composition and architecture. The design space for these compounds is vast and governed by factors such as monomer classes, copolymer configurations (e.g., linear, branched, random, and alternating), chain size, stoichiometry, and material properties (e.g., density, refractive index, solubility, and Poisson's ratio). Exploring this space requires efficient computational methodologies for polymer science. To address this challenge, we introduce PolyGraphPy, an open-source Python framework that integrates atomistic simulations with machine learning for accurate property prediction and property-guided polymer design. The framework automates Density Functional Tight Binding calculations to efficiently construct structured datasets for monomers, homopolymers, and alternating copolymers. For property prediction, PolyGraphPy employs Bayesian Graph Neural Networks (GNNs) with stochastic graph representations to predict target properties, such as static polarizability, while providing robust uncertainty quantification. Furthermore, the platform incorporates two complementary generative models for the de novo design of targeted molecules: a SELFIES-based Generative Pretrained Transformer (GPT) and a Genetic Algorithm (GA) based on BRICS graph fragmentation. Demonstrated on a dataset of acrylates, PolyGraphPy provides a highly customizable end-to-end pipeline that reduces computational costs and accelerates data-driven polymer informatics.",
+      "authors": "João G. C. S. Duarte, Shruti Venkatram, Morgan Cencer, Traian Dumitricǎ, Ketson R. M. dos Santos",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.06415v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.06415v1",
+      "source": "arXiv",
+      "summary": "This preprint introduces PolyGraphPy, an open-source Python tool that combines computer simulations and machine learning to predict and design polymer properties. Tested on acrylate compounds, the framework predicts properties such as static polarizability and generates new molecule designs while reducing computational costs. This work sits outside nursing informatics; no clear connection to nursing practice or health informatics research is stated in the abstract.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
+      ],
+      "topic": "Other / Unclassified",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.06253v1",
+      "title": "When the Scaffold Stays On: AI, Practice Style, and Screening in Elite Skill Formation",
+      "abstract": "Generative AI raises short-term productivity by completing tasks that learners would otherwise practice on their own. Whether this substitution erodes frontier skill, the skill behind top-tail non-AI-aided performance, is an open question of rising stakes. The sharper question is whether selection mechanisms can screen apart two coexisting types: substitute-users, who use AI in place of deliberate practice, and complement-users, who use it to accelerate skill development. In elite programming, the International Collegiate Programming Contest (ICPC) and the International Olympiad in Informatics (IOI) prohibit AI under proctoring and admit entrants through qualification rounds, whereas online Codeforces (CF) contests are unproctored and open to all. From CF histories we build an AI-prompt signature (more first-attempt acceptances, fewer attempts and retries) consistent with AI-assisted practice. Three patterns triangulate institutional screening. First, CF practice shifted toward this signature across cohorts over two AI rollouts. Second, in open CF contests a stronger signature predicts smaller rating gains for users with no ICPC/IOI affiliation, but not for those who qualified for the AI-prohibited contests. Third, inside the AI-prohibited ICPC environment, a shift toward AI-style practice predicts higher non-AI-aided scores for AI-era entrants. The same practice input carries opposite signs depending on whether the environment screens for it. The contrast points to two levers: how AI is integrated into training, since within the screened pool AI-style practice coincides with stronger non-AI-aided performance; and the design of AI-prohibited evaluation gates as a type-separating institution. Both extend beyond programming to credentialing systems (medical and legal boards, professional certification) that certify skill in a workforce increasingly shaped by AI.",
+      "authors": "Song Yao",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.06253v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.06253v1",
+      "source": "arXiv",
+      "summary": "This preprint studied how programmers use AI tools during practice, comparing those who qualified for AI-prohibited competitions with those who did not. It found that AI-style practice predicted weaker skill gains in unscreened settings but stronger performance in screened, AI-prohibited ones. The abstract suggests that how AI integrates into training—and whether evaluation gates screen for unaided skill—matters for credentialing systems like professional certification, which may interest nursing informatics researchers designing competency assessments.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "Other / Unclassified",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "arxiv:2606.06196v1",
+      "title": "A Machine Learning-Based Framework for Discovering Huntington's Disease Stages: Integrating Graph Representation Learning and clustering to Uncover Progression Dynamics in Longitudinal Enroll-HD Dataset",
+      "abstract": "Huntington's disease (HD) is a progressive brain disorder that gradually affects movement, cognitive function, and behavior. Identifying the stage of the disease accurately and consistently is important for understanding its course, grouping patients, personalized care, and discovering treatment. Existing clinical staging frameworks rely primarily on predefined clinical measurement thresholds and clinical expert decisions, yet these discrete cut-offs may obscure meaningful intra-stage variability and remain vulnerable to inter-rater differences, especially in motor and functional assessments. To address these limitations, we developed an unsupervised machine learning framework based on dynamic graph representation learning to capture temporal relationships within and across patients from longitudinal clinical measurements. Using the learned representations, we applied K-means++ clustering to identify well-separated groups. We then iteratively increased the number of clusters (k), using stability analysis to assess robustness and reveal additional meaningful clusters beyond the initial optimal solution. We applied the framework to 302 individuals from the Enroll-HD cohort (1,477 visits, 44 clinical variables per visit; 80% manifest participants), enabling data-driven discovery of HD stages reflecting natural clinical progression. Despite the limited cohort size, the proposed framework achieved robust clustering performance using a four-dimensional latent space, identifying four meaningful and statistically distinct disease stages through clustering stability analysis. Each stage corresponded to well-defined clinical measurement boundaries, with minimal overlap compared to previously established clinical staging methods.",
+      "authors": "Lubna M. Abu Zohair, Marta Vallejo, MD Azher Uddin, John R. Woodward, Hind Zantout",
+      "journal": "arXiv (preprint)",
+      "pub_date": "2026",
+      "doi": "http://arxiv.org/abs/2606.06196v1",
+      "pubmed_url": "https://arxiv.org/abs/2606.06196v1",
+      "source": "arXiv",
+      "summary": "Researchers applied an unsupervised machine learning framework to longitudinal clinical data from 302 people with Huntington's disease, aiming to identify disease stages in a data-driven way rather than relying on predefined clinical cut-offs. The framework identified four distinct disease stages with minimal overlap between groups. For nursing informatics, this approach suggests that graph-based learning tools applied to longitudinal patient data may help surface patient subgroups that standard staging methods could miss.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "medrxiv:10.1101/2025.11.06.25339651",
+      "title": "Coverage, Utilisation and Users of a Chat-Based Digital Primary Care Clinic in Publicly Funded Healthcare: A Registry-Based Observational Study in Finland",
+      "abstract": "BackgroundChat-based digital clinics are increasingly integrated into public primary care. This study evaluates a 24/7 chat-based digital clinic integrated into Harjun terveys, Paijat-Hame, Finland.\n\nMethodsData from 2,796,976 primary care encounters recorded between 2019 and 2025 were used to examine care patterns following the digital clinics introduction.\n\nResultsCoverage fell from 36.5% in 2019 to 32.1% in 2020, consistent with pandemic-related suppression, before stabilising between 40% and 43% from 2022 onwards (40.7% in 2025). Utilisation rose from 972 encounters per 1,000 residents in 2020 to 1,568 by 2025. Digital encounters grew from 19.6% of all primary care contacts in 2021 to 29.8% in 2025. Digital users were substantially younger (mean age 33.5 vs. 52.5 years; P<.001) and had lower unadjusted comorbidity prevalence (CCI [&ge;]1: 12.8% vs. 25.6%). Within each year (2023-2025), digital users had lower adjusted odds of comorbidity than traditional users (OR range 0.87-0.90; all P<.001). Common physician-level diagnoses included conjunctivitis, acute cystitis, and prescription renewals. Following a nurse consultation, 18.0% were escalated to a same-day physician consultation; excluding pre-scheduled visits, 16.8% had a subsequent contact within 14 days and 23.4% within 30 days.\n\nConclusionsOver the study period, primary care coverage and the digital share of encounters both rose alongside the introduction of the digital clinic. Most minor acute presentations were managed at nurse level without recorded follow-up: approximately 60% of pathways ended within the digital channel, the remainder going on to in-person, telephone, or other encounters.",
+      "authors": "Dahlberg, A.; Kaartinen, T.; Jukarainen, S.; Orre, P.",
+      "journal": "medRxiv (preprint)",
+      "pub_date": "2026",
+      "doi": "10.1101/2025.11.06.25339651",
+      "pubmed_url": "https://doi.org/10.1101/2025.11.06.25339651",
+      "source": "medRxiv",
+      "summary": "This Finnish registry study examined how a 24/7 chat-based digital clinic changed primary care use across nearly 2.8 million encounters from 2019 to 2025. Digital encounters grew from 19.6% to 29.8% of all contacts, with digital users being younger and having fewer recorded health conditions; nurses managed most cases without further follow-up, and 18% were escalated to a physician the same day. For nursing informatics, the data show the scale of nurse-led digital triage and its escalation patterns in a public system.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "medium"
+    },
+    {
+      "pmid": "medrxiv:10.64898/2026.06.02.26354766",
+      "title": "Adult-Learning Newborn Medicine Curriculum Improves Knowledge in a Low-Resource Neonatal Unit in Sierra Leone",
+      "abstract": "BackgroundSierra Leones neonatal mortality rate is among the highest in the world. Koidu Government Hospital opened a Special Care Baby Unit (SCBU) in 2020. To increase knowledge of the SCBU health care providers (HCPs), a neonatal curriculum was implemented to facilitate HCP education on management of neonatal conditions. The aim of this study was to understand the effect of the curriculum on knowledge acquisition and the perception of the teaching methodologies among participating HCPs.\n\nMethodsUS-based mentors facilitated a two-phase, flipped classroom, virtual neonatal medicine curriculum between October 2024 and April 2025, followed by one-week in-person education sessions with SCBU HCPs. With each phase, participants completed pre- and post-test educational assessments. At the end of the curriculum, they completed a subjective assessment to capture perceptions related to the quality of teaching methodologies integrated within the curriculum. Wilcoxon signed rank test was used to assess pre-versus post-test change. Descriptive statistics were used to analyse the subjective assessment.\n\nResultsThirty-eight participants completed the educational assessments, 30 (79%) took all four pre- and post-tests; 25/38 (65.8%) were female, 27 (71.1%) were nurses. Median correct answers for both phases increased from the pre-to post-test for individual learners [Phase 1, pre-test 14/27 (51.9%), post-test 23/27 (85.2%), p<0.001], [Phase 2, pre-test 14/25 (56.0%), post-test 23/25 (92.0%), p <0.001]. Thirty-one participants completed the subjective assessment, of whom 96.8% (30/31) rated the curriculum to be \"very effective.\" All 31 participants indicated that the in-person instruction was \"very helpful.\" Through open text responses, they offered valuable insight into challenges, strengths, and next steps.\n\nConclusionThis neonatal curriculum resulted in significantly increased knowledge and was well regarded. Adapting this curriculum or similar curricula show promise to improve the quality of care for small and/or sick neonates in low resource settings.",
+      "authors": "Mvula, M.; Amin, A.; Patil, M. S.; Valentine, G.; Mukarwego, B.; Wagner, S.; Dumbuya, I.; Lou, L.; Sanni, U.; Hansen, A.",
+      "journal": "medRxiv (preprint)",
+      "pub_date": "2026",
+      "doi": "10.64898/2026.06.02.26354766",
+      "pubmed_url": "https://doi.org/10.64898/2026.06.02.26354766",
+      "source": "medRxiv",
+      "summary": "Researchers tested a two-phase virtual and in-person neonatal medicine curriculum with 38 healthcare providers—mostly nurses—at a Special Care Baby Unit in Sierra Leone. Knowledge scores rose significantly in both phases (from roughly 52–56% to 85–92% correct, p<0.001), and nearly all participants rated the curriculum as very effective. Because nurses made up the majority of learners, findings suggest that structured virtual-plus-in-person education models may help build neonatal care capacity among nurses in low-resource settings.",
+      "flags": [
+        "not_peer_reviewed"
+      ],
+      "topic": "Workforce & Education",
       "topic_confidence": "high"
     }
   ]

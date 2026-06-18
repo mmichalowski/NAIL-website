@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NI Bi-Weekly Issue #1 — Jun 04, 2026 | NAIL Collaborative</title>
+<meta name="description" content="Nursing Informatics Bi-Weekly Issue #1 — 6 papers from PubMed, summarized by Claude Sonnet, overseen by the NAIL Collaborative.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%231D2B3A'/%3E%3Cpath d='M11 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M25 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5' stroke='%23E8C46A' stroke-width='2.4' stroke-linejoin='round' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+:root{--ink:#1D2B3A;--slate:#1D2B3A;--slate-deep:#111C26;--amber:#E8C46A;--amber-strong:#B08A1F;--amber-pale:#FDF5E0;--paper:#FAFAF7;--paper-dim:#F3F1EC;--card:#FFFFFF;--line:#E4E0D8;--line-soft:#EDEAE2;--mut:#5E6B76;--sky:#1A6CB0;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',-apple-system,sans-serif;--shadow-s:0 1px 2px rgba(17,28,38,.05),0 2px 8px rgba(17,28,38,.04);--shadow-m:0 2px 6px rgba(17,28,38,.07),0 12px 28px rgba(17,28,38,.1);--r-s:8px;--r-m:12px;--r-l:18px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}::selection{background:var(--amber-pale);color:var(--slate-deep);}
+.nav{position:sticky;top:0;z-index:200;background:rgba(250,250,247,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1140px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+.logo svg{width:36px;height:36px;flex-shrink:0;border-radius:8px;box-shadow:var(--shadow-s);}
+.logo-t b{display:block;font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.15;color:var(--slate-deep);}
+.logo-t span{display:block;font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-top:1px;}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;padding:6px 14px;border-radius:99px;border:1px solid var(--line);transition:color .18s,border-color .18s;}
+.nav-btn:hover{color:var(--slate-deep);border-color:var(--slate);}
+.hero{background:var(--slate);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.06' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.hero::after{content:'';position:absolute;width:600px;height:600px;right:-180px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(232,196,106,.14),transparent 65%);}
+.hero-in{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:64px 28px 0;}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--amber);font-size:11.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:18px;animation:rise .55s .05s cubic-bezier(.22,.8,.36,1) both;}
+.kicker::before{content:'';width:24px;height:2px;background:var(--amber);border-radius:2px;}
+.hero h1{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(28px,4.5vw,50px);line-height:1.1;letter-spacing:-.4px;max-width:680px;margin-bottom:16px;animation:rise .55s .1s cubic-bezier(.22,.8,.36,1) both;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{color:rgba(220,208,186,.7);font-size:16px;line-height:1.7;max-width:680px;margin-bottom:28px;animation:rise .55s .18s cubic-bezier(.22,.8,.36,1) both;}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;padding:11px 22px;border-radius:99px;cursor:pointer;border:none;transition:transform .2s;text-decoration:none;font-family:var(--sans);}
+.btn:hover{transform:translateY(-2px);}
+.btn-amber{background:var(--amber);color:var(--slate-deep);box-shadow:0 6px 18px rgba(232,196,106,.3);}
+.btn-ghost{background:transparent;color:rgba(220,208,186,.85);border:1px solid rgba(240,223,160,.25);}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;animation:rise .55s .26s cubic-bezier(.22,.8,.36,1) both;margin-bottom:44px;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero-meta{position:relative;z-index:2;border-top:1px solid rgba(240,223,160,.1);}
+.hero-meta-in{max-width:1140px;margin:0 auto;padding:18px 28px 24px;display:flex;gap:48px;flex-wrap:wrap;animation:rise .55s .34s cubic-bezier(.22,.8,.36,1) both;}
+.hm-item{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
+.hm-label{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(240,223,160,.38);}
+.hm-value{font-size:13.5px;color:rgba(220,208,186,.8);font-weight:500;}
+.page-body{max-width:1140px;margin:0 auto;padding:48px 28px 80px;display:grid;grid-template-columns:1fr 284px;gap:48px;align-items:start;}
+@media(max-width:860px){.page-body{grid-template-columns:1fr;}}
+.provenance{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 var(--r-m) var(--r-m) 0;padding:16px 20px;margin-bottom:28px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow-s);}
+.provenance i{font-size:17px;color:var(--amber-strong);flex-shrink:0;margin-top:1px;}
+.provenance p{font-size:13.5px;color:#44525D;line-height:1.65;}
+.provenance p strong{color:var(--slate-deep);}
+.issue-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.issue-hdr h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--slate-deep);letter-spacing:-.3px;}
+.issue-hdr h2 span{font-size:14px;font-weight:400;font-family:var(--sans);color:var(--mut);display:block;margin-top:2px;}
+.issue-count b{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--amber-strong);display:block;line-height:1;text-align:right;}
+.issue-count small{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);}
+.filters{display:inline-flex;gap:3px;margin-bottom:24px;flex-wrap:wrap;background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:4px;}
+.filters a{background:transparent;border:none;border-radius:99px;font-size:13px;font-weight:600;color:var(--mut);cursor:pointer;padding:6px 14px;transition:background .18s,color .18s;text-decoration:none;display:inline-block;}
+.filters a:hover{color:var(--slate-deep);}
+.filters a.active{background:var(--slate-deep);color:#fff;}
+.sec-h{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--slate-deep);letter-spacing:-.2px;margin:34px 0 14px;}
+.sec-h:first-of-type{margin-top:0;}
+.sec-h i{font-size:17px;color:var(--amber-strong);}
+.sec-h::after{content:'';flex:1;height:1px;background:var(--line);}
+.sec-h .cnt{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);font-family:var(--sans);background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:3px 10px;}
+.pli{padding:20px 0;border-bottom:1px solid var(--line);}
+.pli:first-of-type{border-top:1px solid var(--line);}
+.pli-body{flex:1;min-width:0;}
+.pli-topic{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px;}
+.pli-topic::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.t-cds{color:#1E8A6E;}.t-nlp{color:#7C5CC4;}.t-eth{color:#C76B33;}.t-ehr{color:#1A6CB0;}.t-edu{color:#B08A1F;}.t-oth{color:#5E6B76;}
+.pli h3{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.45;margin-bottom:5px;color:var(--slate-deep);letter-spacing:-.1px;}
+.pli h3 a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .18s,color .18s;}
+.pli h3 a:hover{color:var(--sky);border-color:var(--sky);}
+.pli .authors{font-size:13px;color:var(--mut);font-style:italic;margin-bottom:2px;}
+.pli .venue{font-size:13px;color:var(--mut);margin-bottom:10px;}
+.pli-summary{font-size:14px;color:#44525D;line-height:1.75;margin-bottom:12px;padding:14px 16px;background:var(--paper-dim);border-radius:var(--r-s);border:1px solid var(--line-soft);}
+.pmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.plink{font-size:12px;font-weight:600;color:var(--sky);text-decoration:none;display:inline-flex;align-items:center;gap:5px;background:var(--card);border:1px solid var(--line);padding:5px 12px;border-radius:99px;transition:border-color .18s,box-shadow .18s;}
+.plink:hover{border-color:var(--sky);box-shadow:var(--shadow-s);}
+.pmid{font-size:12px;color:var(--mut);background:var(--paper-dim);border:1px solid var(--line);padding:5px 12px;border-radius:99px;}
+.flag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#C76B33;background:#FEF3EB;border:1px solid #FADFC8;padding:3px 9px;border-radius:99px;margin-bottom:8px;}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:20px 22px;margin-bottom:16px;box-shadow:var(--shadow-s);}
+.sc-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line-soft);}
+.sr:last-child{border-bottom:none;}
+.sr-lbl{font-size:13.5px;color:var(--mut);}.sr-val{font-size:14px;font-weight:600;color:var(--slate-deep);}
+.tbr{display:flex;align-items:center;gap:9px;padding:4px 0;}
+.tbr-name{font-size:12.5px;color:var(--mut);min-width:110px;}
+.tbr-track{flex:1;height:4px;background:var(--paper-dim);border-radius:2px;overflow:hidden;}
+.tbr-fill{height:100%;background:var(--amber);border-radius:2px;}
+.tbr-n{font-size:12px;color:var(--mut);min-width:14px;text-align:right;}
+.arch-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line-soft);}
+.arch-row:last-child{border-bottom:none;}
+.arch-lnk{font-size:13.5px;font-weight:600;color:var(--sky);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .18s;}
+.arch-lnk:hover{gap:9px;}
+.arch-meta{font-size:12px;color:var(--mut);}
+.about-txt{font-size:13.5px;color:#44525D;line-height:1.7;margin-bottom:12px;}
+.gh-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--slate-deep);text-decoration:none;background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:7px 16px;transition:border-color .18s,box-shadow .18s;}
+.gh-btn:hover{border-color:var(--slate);box-shadow:var(--shadow-s);}
+.dark-sc{background:var(--slate-deep);border:1px solid rgba(240,223,160,.12);border-radius:var(--r-m);padding:20px 22px;position:relative;overflow:hidden;}
+.dark-sc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.05' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.dark-sc .sc-label{position:relative;color:rgba(240,223,160,.38);border-color:rgba(240,223,160,.12);}
+.dark-sc p{position:relative;font-size:13.5px;color:rgba(220,208,186,.65);line-height:1.7;margin-bottom:10px;}
+.dark-sc a{position:relative;color:var(--amber);font-weight:600;text-decoration:none;font-size:13.5px;display:inline-flex;align-items:center;gap:5px;transition:gap .18s;}
+.dark-sc a:hover{gap:9px;}
+footer{background:var(--slate-deep);padding:24px;text-align:center;}
+footer p{font-size:13px;color:rgba(220,208,186,.38);}
+footer a{color:rgba(220,208,186,.6);text-decoration:none;font-weight:600;}
+footer a:hover{color:var(--amber);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/ni-biweekly/">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#1D2B3A"/><path d="M11 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M25 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5" stroke="#E8C46A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/></svg>
+      <div class="logo-t"><b>NI Weekly</b><span>NAIL Collaborative</span></div>
+    </a>
+    <div class="nav-right">
+      <a class="nav-btn" href="/ni-biweekly/"><i class="ti ti-layout-list"></i> All Issues</a>
+      <a class="nav-btn" href="https://www.nailcollab.org/"><i class="ti ti-arrow-left"></i> nailcollab.org</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-in">
+    <div class="kicker">NI Bi-Weekly · Issue #1</div>
+    <h1>Nursing Informatics <em>Digest</em></h1>
+    <p class="hero-sub">Week of Jun 04, 2026 – Jun 18, 2026 · Retrieved from PubMed · Summarized by Claude Sonnet</p>
+    <div class="cta-row">
+      <a href="/ni-biweekly/" class="btn btn-amber"><i class="ti ti-layout-list"></i> All Issues</a>
+      <a href="#about" class="btn btn-ghost"><i class="ti ti-info-circle"></i> How it works</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-in">
+      <div class="hm-item"><span class="hm-label">Issue</span><span class="hm-value">#1</span></div>
+      <div class="hm-item"><span class="hm-label">Week</span><span class="hm-value">Jun 04, 2026 – Jun 18, 2026</span></div>
+      <div class="hm-item"><span class="hm-label">Papers</span><span class="hm-value">6</span></div>
+      <div class="hm-item"><span class="hm-label">Flagged</span><span class="hm-value">1</span></div>
+      <div class="hm-item"><span class="hm-label">Generated</span><span class="hm-value">Jun 18, 2026</span></div>
+    </div>
+  </div>
+</header>
+<div class="page-body">
+  <main>
+    <div class="issue-hdr">
+      <h2>Issue #1 <span>Week of Jun 04, 2026 – Jun 18, 2026</span></h2>
+      <div class="issue-count"><b>6</b><small>Papers</small></div>
+    </div>
+    <div class="provenance">
+      <i class="ti ti-shield-check" aria-hidden="true"></i>
+      <p><strong>How this digest is made:</strong> Papers retrieved weekly from PubMed using community-agreed search terms (voted at AINurse-26). Summaries generated by Claude Sonnet — constrained to report only what the abstract states. No speculation, no inference. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
+    </div>
+    <div class="filters"><a href="#" class="active">All (6)</a><a href="#">NLP & Generative AI (1)</a><a href="#">EHR & Workflows (1)</a><a href="#">Workforce & Education (2)</a><a href="#">Patient-Facing AI (1)</a><a href="#">AI Methods & Evaluation (1)</a></div>
+    
+    <div class="sec-h"><i class="ti ti-message-code" aria-hidden="true"></i>NLP & Generative AI<span class="cnt">1 paper</span></div>
+    
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-nlp">NLP & Generative AI</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42247576/" target="_blank">Voice-Based Structured Nursing Documentation Using Automatic Speech Recognition and Large Language Models: Development and Evaluation Study.</a></h3>
+        <div class="authors">Su MH, Wang WC, Hsu YM, Hou SY, Chuang SJ, Chang SS</div>
+        <div class="venue">JMIR nursing · Jun 2026</div>
+        <div class="pli-summary">Researchers in Taiwan developed and tested a system combining speech recognition and a large language model to convert nurses' spoken notes into structured DART documentation within hospital information systems. After fine-tuning, speech recognition errors dropped from 44.79% to 6.67%, DART classification reached an F1-score of 0.82, and voluntary monthly note use doubled; 75.8% of the 120 participating nurses reported reduced workload and better record completeness. The abstract suggests this approach may help ease manual documentation burden for clinical nurses.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42247576</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42247576/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.18653/v1/2024.eacl-demo.16" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h"><i class="ti ti-database" aria-hidden="true"></i>EHR & Workflows<span class="cnt">1 paper</span></div>
+    
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-ehr">EHR & Workflows</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42285047/" target="_blank">Association Between Electronic Health Record-Based Nursing Workload and Turnover: Retrospective Cohort Study.</a></h3>
+        <div class="authors">Xia L, Lew D, Tessmer L, Eiden E, Lou S, Kannampallil T</div>
+        <div class="venue">JMIR nursing · Jun 2026</div>
+        <div class="pli-summary">Researchers analyzed EHR audit logs from 432 inpatient nurses at one academic medical center to measure workload patterns and their link to turnover. Nurses with a higher share of medication administration actions were more likely to leave, while greater alert engagement and more years of experience were linked to lower turnover odds. The abstract suggests EHR activity patterns may help identify nurses at higher risk of leaving.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42285047</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42285047/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.1093/jamia/ocac173" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h"><i class="ti ti-school" aria-hidden="true"></i>Workforce & Education<span class="cnt">2 papers</span></div>
+    
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42275419/" target="_blank">Assessing Digital Literacy Among Nursing Faculty Under the Artificial Intelligence-Enhanced Technological Pedagogical Content Knowledge Framework: Cross-Sectional Survey Analysis.</a></h3>
+        <div class="authors">Zhao J, Hua X, Hu R, Chen C, Wu W, Zhang Y et al.</div>
+        <div class="venue">JMIR nursing · Jun 2026</div>
+        <div class="pli-summary">This cross-sectional study surveyed 339 nursing faculty across eight universities in Fujian, China, measuring digital literacy using an AI-enhanced framework. Overall scores were at a medium level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores. The findings suggest nursing faculty may need targeted training to strengthen practical digital skills, particularly among senior staff.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42275419</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42275419/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.1016/j.nepr.2021.103136" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42258796/" target="_blank">Informatics Competency and Technology Self-Efficacy Levels Among Undergraduate Nursing Students: Cross-Sectional Study.</a></h3>
+        <div class="authors">Alnomasy N, Alrashedi H, Alsayed S, Pangket P, Alsayed R</div>
+        <div class="venue">JMIR nursing · Jun 2026</div>
+        <div class="pli-summary">This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high digital self-efficacy, with higher informatics scores linked to prior informatics training and frequent electronic health record use. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, and they call for future multisite and mixed-methods research to better inform nursing informatics education.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42258796</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42258796/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.1016/j.profnurs.2023.11.007" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h"><i class="ti ti-device-mobile" aria-hidden="true"></i>Patient-Facing AI<span class="cnt">1 paper</span></div>
+    
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Patient-Facing AI</div>
+        <span class="flag"><i class="ti ti-flag"></i> Work in progress</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42259555/" target="_blank">Auricular Point Acupressure Self-Management (APA-SM) program for chronic musculoskeletal pain among rural populations: a protocol for a pragmatic, randomized controlled trial.</a></h3>
+        <div class="authors">Kawi J, Bolin J, Wu H, Min J, Bora R, Pace S et al.</div>
+        <div class="venue">BMJ open · Jun 2026</div>
+        <div class="pli-summary">This study protocol describes a three-arm randomized controlled trial testing a smartphone-supported, needleless ear acupressure self-management program (APA-SM) for chronic musculoskeletal pain in rural adults across Texas and South Carolina. Because this is a protocol paper, no results are yet available. The trial's use of digital health tools, electronic health records, and implementation science methods makes it relevant to nursing informatics researchers interested in technology-supported pain self-management in underserved communities.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42259555</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/42259555/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.1001/jamanetworkopen.2025.31348" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h"><i class="ti ti-cpu" aria-hidden="true"></i>AI Methods & Evaluation<span class="cnt">1 paper</span></div>
+    
+    <div class="pli">
+      <div class="pli-body">
+        <div class="pli-topic t-oth">AI Methods & Evaluation</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/41495965/" target="_blank">The voice of decompensation: an explainable machine learning approach to assessing heart failure severity.</a></h3>
+        <div class="authors">Yang Y, Zhao B, Ying D, Han P, Wang Y, Liu K et al.</div>
+        <div class="venue">European journal of cardiovascular nursing · Jun 2026</div>
+        <div class="pli-summary">Researchers recruited patients hospitalised with acute heart failure across four centres to develop and test a smartphone-based voice monitoring system. XGBoost models trained on acoustic features from speech recordings achieved up to 0.81 accuracy and 0.89 sensitivity in distinguishing clinical status changes during hospitalisation, and recordings performed consistently across different smartphone brands. The abstract suggests this tool could support nurse-coordinated post-discharge monitoring and remote triage as a low-burden, non-invasive approach.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 41495965</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41495965/" class="plink" target="_blank"><i class="ti ti-external-link"></i> PubMed</a>
+          <a href="https://doi.org/10.1093/eurjcn/zvag003" class="plink" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+  <aside>
+    <div class="sc">
+      <div class="sc-label">This Issue</div>
+      <div class="sr"><span class="sr-lbl">Issue</span><span class="sr-val">#1</span></div>
+      <div class="sr"><span class="sr-lbl">Papers</span><span class="sr-val">6</span></div>
+      <div class="sr"><span class="sr-lbl">Flagged</span><span class="sr-val">1</span></div>
+      <div class="sr"><span class="sr-lbl">Generated</span><span class="sr-val">Jun 18, 2026</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-label">By Topic</div>
+      <div class="tbr"><span class="tbr-name">NLP & Gen AI</span><div class="tbr-track"><div class="tbr-fill" style="width:50%"></div></div><span class="tbr-n">1</span></div><div class="tbr"><span class="tbr-name">EHR & Workflows</span><div class="tbr-track"><div class="tbr-fill" style="width:50%"></div></div><span class="tbr-n">1</span></div><div class="tbr"><span class="tbr-name">Workforce & Edu.</span><div class="tbr-track"><div class="tbr-fill" style="width:100%"></div></div><span class="tbr-n">2</span></div><div class="tbr"><span class="tbr-name">Patient-Facing AI</span><div class="tbr-track"><div class="tbr-fill" style="width:50%"></div></div><span class="tbr-n">1</span></div><div class="tbr"><span class="tbr-name">AI Methods & Evaluation</span><div class="tbr-track"><div class="tbr-fill" style="width:50%"></div></div><span class="tbr-n">1</span></div>
+    </div>
+    <div class="sc" id="about">
+      <div class="sc-label">About NI Weekly</div>
+      <p class="about-txt">Born at <strong>AINurse-26</strong> (Ottawa, July 2026) — participants voted on sources, topics, and summary constraints. Runs every other Monday via GitHub Actions.</p>
+      <a href="https://github.com/mmichalowski/ni-biweekly" class="gh-btn" target="_blank"><i class="ti ti-brand-github"></i> View on GitHub</a>
+    </div>
+    <div class="dark-sc">
+      <div class="sc-label">Suggest a Topic</div>
+      <p>Help shape NI Bi-Weekly — propose search terms, flag missed papers, or suggest governance changes.</p>
+      <a href="mailto:ainurse@nailcollab.org">ainurse@nailcollab.org <i class="ti ti-arrow-right" style="font-size:12px;"></i></a>
+    </div>
+  </aside>
+</div>
+<footer><p>NI Bi-Weekly · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · <a href="https://github.com/mmichalowski/ni-biweekly">GitHub</a> · Born at AINurse-26, Ottawa 2026</p></footer>
+</body>
+</html>

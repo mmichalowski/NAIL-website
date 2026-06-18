@@ -26,10 +26,10 @@
 .kicker::before{content:'';width:24px;height:2px;background:var(--amber);border-radius:2px;}
 .hero h1{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(26px,4vw,46px);line-height:1.1;letter-spacing:-.4px;margin-bottom:12px;}
 .hero h1 em{font-style:italic;color:var(--amber);}
-.hero-sub{color:rgba(220,208,186,.7);font-size:16px;line-height:1.7;max-width:680px;margin-bottom:28px;animation:rise .55s .18s cubic-bezier(.22,.8,.36,1) both;}
+.hero-sub{color:rgba(220,208,186,.65);font-size:15.5px;line-height:1.7;max-width:680px;}
 .hero-stats{position:relative;z-index:2;border-top:1px solid rgba(240,223,160,.1);}
-.hero-stats-in{max-width:1140px;margin:0 auto;padding:16px 28px 22px;display:flex;gap:28px;flex-wrap:wrap;}
-.hs{display:flex;flex-direction:column;gap:2px;}
+.hero-stats-in{max-width:1140px;margin:0 auto;padding:16px 28px 22px;display:flex;gap:48px;flex-wrap:wrap;}
+.hs{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
 .hs-label{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(240,223,160,.35);}
 .hs-value{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;line-height:1;}
 .wrap{max-width:1140px;margin:0 auto;padding:52px 28px 80px;}
@@ -81,7 +81,7 @@
 .btn-amber:hover{transform:translateY(-2px);}
 .btn-ghost-sm{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:10px 20px;border-radius:99px;background:transparent;color:rgba(220,208,186,.8);border:1px solid rgba(240,223,160,.2);text-decoration:none;transition:border-color .2s;font-family:var(--sans);}
 .btn-ghost-sm:hover{border-color:rgba(240,223,160,.55);}
-@media(max-width:680px){.current-card{grid-template-columns:1fr;}.cc-stats{flex-direction:row;align-items:flex-start;}.cc-stat{text-align:left;}.about-strip{grid-template-columns:1fr;gap:20px;padding:28px 24px;}}
+@media(max-width:700px){.current-card{grid-template-columns:1fr;}.cc-stats{flex-direction:row;align-items:flex-start;}.cc-stat{text-align:left;}.about-strip{grid-template-columns:1fr;gap:20px;padding:28px 24px;}}
 footer{background:var(--slate-deep);padding:24px;text-align:center;}
 footer p{font-size:13px;color:rgba(220,208,186,.38);}
 footer a{color:rgba(220,208,186,.6);text-decoration:none;font-weight:600;}
@@ -93,7 +93,7 @@ footer a:hover{color:var(--amber);}
   <div class="nav-in">
     <a class="logo" href="/ni-biweekly/">
       <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#1D2B3A"/><path d="M11 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M25 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5" stroke="#E8C46A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/></svg>
-      <div class="logo-t"><b>NI Weekly</b><span>NAIL Collaborative</span></div>
+      <div class="logo-t"><b>NI Bi-Weekly</b><span>NAIL Collaborative</span></div>
     </a>
     <a class="nav-back" href="https://www.nailcollab.org/"><i class="ti ti-arrow-left"></i> nailcollab.org</a>
   </div>
@@ -102,14 +102,14 @@ footer a:hover{color:var(--amber);}
   <div class="hero-in">
     <div class="kicker">NAIL Collaborative · Community Digest</div>
     <h1>Nursing Informatics <em>Digest</em></h1>
-    <p class="hero-sub">A community-curated AI-assisted digest of nursing informatics research — retrieved from PubMed every other Monday, summarized by Claude Sonnet, overseen by the NAIL editorial board.</p>
+    <p class="hero-sub">A community-curated AI-assisted digest of nursing informatics research — retrieved bi-weekly from PubMed, summarized by Claude Sonnet, overseen by the NAIL editorial board.</p>
   </div>
   <div class="hero-stats">
     <div class="hero-stats-in">
       <div class="hs"><span class="hs-label">Issues published</span><span class="hs-value">1</span></div>
       <div class="hs"><span class="hs-label">Papers curated</span><span class="hs-value">6</span></div>
       <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Source</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">PubMed</span></div>
-      <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Cadence</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">Every other Monday</span></div>
+      <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Cadence</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">Bi-weekly · Mondays</span></div>
     </div>
   </div>
 </header>
@@ -133,14 +133,14 @@ footer a:hover{color:var(--amber);}
   <div class="about-strip">
     <div>
       <h3>Built live at AINurse-26</h3>
-      <p>NI Weekly was created in front of workshop participants who voted on the sources, topics, and summary constraints — making trustworthy AI design a community act. The workflow is open source and runs every other Monday.</p>
+      <p>NI Bi-Weekly was created in front of workshop participants who voted on the sources, topics, and summary constraints — making trustworthy AI design a community act. The workflow is open source and runs every other Monday.</p>
     </div>
     <div class="about-strip-btns">
-      <a href="https://github.com/mmichalowski/ni-biweekly" class="btn-amber" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+      <a href="https://github.com/mmichalowski/nail-website" class="btn-amber" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
       <a href="mailto:ainurse@nailcollab.org" class="btn-ghost-sm"><i class="ti ti-mail"></i> Suggest a topic</a>
     </div>
   </div>
 </div>
-<footer><p>NI Bi-Weekly · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · <a href="https://github.com/mmichalowski/ni-biweekly">GitHub</a> · Born at AINurse-26, Ottawa 2026</p></footer>
+<footer><p>NI Bi-Weekly · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · <a href="https://github.com/mmichalowski/nail-website">GitHub</a> · Born at AINurse-26, Ottawa 2026</p></footer>
 </body>
 </html>

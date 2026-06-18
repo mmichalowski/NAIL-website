@@ -1,11 +1,31 @@
 {
   "issue": 1,
-  "generated_at": "2026-06-18T11:57:08.855926Z",
+  "generated_at": "2026-06-18T16:21:13.774849Z",
   "date_range": {
     "start": "Jun 04, 2026",
     "end": "Jun 18, 2026"
   },
   "paper_count": 6,
+  "config": {
+    "sources": [
+      "pubmed"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NI Bi-Weekly config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' (CINAHL requires EBSCO credentials — see script)",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
   "papers": [
     {
       "pmid": "42285047",
@@ -14,9 +34,9 @@
       "authors": "Xia L, Lew D, Tessmer L, Eiden E, Lou S, Kannampallil T",
       "journal": "JMIR nursing",
       "pub_date": "Jun 2026",
-      "doi": "10.1093/jamia/ocac173",
+      "doi": "10.2196/89645",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42285047/",
-      "summary": "Researchers analyzed EHR audit logs from 432 inpatient nurses at one academic medical center to measure workload patterns and their link to turnover. Nurses with a higher share of medication administration actions were more likely to leave, while greater alert engagement and more years of experience were linked to lower turnover odds. The abstract suggests EHR activity patterns may help identify nurses at higher risk of leaving.",
+      "summary": "This retrospective study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at one academic medical center during 2022. Researchers found that a higher proportion of medication administration actions linked to greater odds of leaving, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher risk of turnover and inform retention efforts.",
       "flags": [],
       "topic": "EHR & Workflows",
       "topic_confidence": "high"
@@ -28,9 +48,9 @@
       "authors": "Zhao J, Hua X, Hu R, Chen C, Wu W, Zhang Y et al.",
       "journal": "JMIR nursing",
       "pub_date": "Jun 2026",
-      "doi": "10.1016/j.nepr.2021.103136",
+      "doi": "10.2196/88016",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42275419/",
-      "summary": "This cross-sectional study surveyed 339 nursing faculty across eight universities in Fujian, China, measuring digital literacy using an AI-enhanced framework. Overall scores were at a medium level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores. The findings suggest nursing faculty may need targeted training to strengthen practical digital skills, particularly among senior staff.",
+      "summary": "This cross-sectional study surveyed 339 nursing faculty at eight universities in Fujian, China, to measure their digital literacy using an AI-enhanced teaching knowledge framework. Faculty scored at a medium overall level, with digital awareness scoring highest and technical knowledge and skills scoring lowest; older age consistently predicted lower scores across multiple dimensions. The findings highlight a skills gap that nursing informatics educators may consider when designing faculty training programs.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -42,9 +62,9 @@
       "authors": "Kawi J, Bolin J, Wu H, Min J, Bora R, Pace S et al.",
       "journal": "BMJ open",
       "pub_date": "Jun 2026",
-      "doi": "10.1001/jamanetworkopen.2025.31348",
+      "doi": "10.1136/bmjopen-2026-117632",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42259555/",
-      "summary": "This study protocol describes a three-arm randomized controlled trial testing a smartphone-supported, needleless ear acupressure self-management program (APA-SM) for chronic musculoskeletal pain in rural adults across Texas and South Carolina. Because this is a protocol paper, no results are yet available. The trial's use of digital health tools, electronic health records, and implementation science methods makes it relevant to nursing informatics researchers interested in technology-supported pain self-management in underserved communities.",
+      "summary": "This study protocol describes a three-arm randomized controlled trial testing the Auricular Point Acupressure Self-Management (APA-SM) program for chronic musculoskeletal pain in rural adults across Texas and South Carolina. The trial, enrolling 693 participants, compares remote training, in-person training, and an education control, using a smartphone app and electronic health records to measure pain outcomes and cost-effectiveness. Nurses and informatics researchers may find the digital health integration and implementation science framework relevant to rural pain management delivery.",
       "flags": [
         "in_progress"
       ],
@@ -58,9 +78,9 @@
       "authors": "Alnomasy N, Alrashedi H, Alsayed S, Pangket P, Alsayed R",
       "journal": "JMIR nursing",
       "pub_date": "Jun 2026",
-      "doi": "10.1016/j.profnurs.2023.11.007",
+      "doi": "10.2196/85283",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42258796/",
-      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high digital self-efficacy, with higher informatics scores linked to prior informatics training and frequent electronic health record use. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, and they call for future multisite and mixed-methods research to better inform nursing informatics education.",
+      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency, while those with prior informatics training or frequent electronic health record exposure scored higher. The authors caution that single-site, self-reported, and underpowered findings limit generalisability, and call for future multisite research to better support nursing informatics education under Saudi Vision 2030.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -72,9 +92,9 @@
       "authors": "Su MH, Wang WC, Hsu YM, Hou SY, Chuang SJ, Chang SS",
       "journal": "JMIR nursing",
       "pub_date": "Jun 2026",
-      "doi": "10.18653/v1/2024.eacl-demo.16",
+      "doi": "10.2196/88567",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42247576/",
-      "summary": "Researchers in Taiwan developed and tested a system combining speech recognition and a large language model to convert nurses' spoken notes into structured DART documentation within hospital information systems. After fine-tuning, speech recognition errors dropped from 44.79% to 6.67%, DART classification reached an F1-score of 0.82, and voluntary monthly note use doubled; 75.8% of the 120 participating nurses reported reduced workload and better record completeness. The abstract suggests this approach may help ease manual documentation burden for clinical nurses.",
+      "summary": "This study developed and tested a system combining automatic speech recognition and large language models to convert nurses' spoken input into structured DART documentation within hospital information systems, evaluated in emergency and ward settings. The fine-tuned system cut speech recognition errors from 44.79% to 6.67%, achieved a strong DART classification F1-score of 0.82, and 75.8% of 120 nurses reported reduced workload. The findings suggest that voice-based documentation tools may help ease manual data entry burdens in clinical nursing workflows.",
       "flags": [],
       "topic": "NLP & Generative AI",
       "topic_confidence": "high"
@@ -88,7 +108,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.1093/eurjcn/zvag003",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41495965/",
-      "summary": "Researchers recruited patients hospitalised with acute heart failure across four centres to develop and test a smartphone-based voice monitoring system. XGBoost models trained on acoustic features from speech recordings achieved up to 0.81 accuracy and 0.89 sensitivity in distinguishing clinical status changes during hospitalisation, and recordings performed consistently across different smartphone brands. The abstract suggests this tool could support nurse-coordinated post-discharge monitoring and remote triage as a low-burden, non-invasive approach.",
+      "summary": "This multicentre study tested whether smartphone voice recordings could track clinical changes in patients hospitalized with acute heart failure, using machine learning models that reached up to 0.81 accuracy and 0.89 sensitivity. The models identified acoustic features linked to recovery, and recordings were consistent across different smartphone brands. The authors suggest this approach could support nurse-coordinated post-discharge monitoring and remote triage.",
       "flags": [],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"

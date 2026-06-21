@@ -1,6 +1,6 @@
 {
   "issue": 1,
-  "generated_at": "2026-06-21T13:13:32.231955Z",
+  "generated_at": "2026-06-21T13:21:17.206078Z",
   "date_range": {
     "start": "Jun 07, 2026",
     "end": "Jun 21, 2026"
@@ -38,7 +38,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/89645",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42285047/",
-      "summary": "This study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at a large academic medical center during 2022. Researchers found that nurses with a higher share of medication administration actions were more likely to leave, while greater alert engagement and more years of experience linked to lower turnover odds. The abstract suggests EHR activity patterns may help identify nurses at higher risk of leaving, which could inform retention efforts.",
+      "summary": "This retrospective study examined whether EHR audit log data could predict nurse turnover among 432 inpatient nurses at a large academic medical center during 2022. Researchers found that a higher share of medication administration actions linked to greater turnover odds, while more alert engagement and more years of experience linked to lower odds. The abstract suggests EHR use patterns may help identify nurses at higher risk of leaving, which could inform workforce retention efforts.",
       "flags": [],
       "topic": "EHR & Workflows",
       "topic_confidence": "high"
@@ -52,7 +52,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88016",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42275419/",
-      "summary": "This cross-sectional survey measured digital literacy among 339 nursing faculty at eight universities in Fujian province, China, using a framework built around AI-enhanced teaching knowledge. Faculty scored at a medium overall level, with digital awareness rated highest and technical knowledge and skills rated lowest; older age negatively predicted multiple dimensions, while more teaching years positively predicted digital application ability. The findings highlight a skills gap in nursing education that the study's authors say warrants targeted training, especially for senior faculty.",
+      "summary": "This cross-sectional study surveyed 339 nursing faculty at eight universities in Fujian province, China, to measure their digital literacy using an AI-enhanced teaching knowledge framework. Faculty scored at a medium overall level, with digital awareness highest and technical knowledge and skills lowest; older age predicted lower scores across most dimensions. The findings highlight a skills gap that nursing informatics educators may want to consider when designing faculty development programmes.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -66,12 +66,12 @@
       "pub_date": "Jun 2026",
       "doi": "10.1136/bmjopen-2026-117632",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42259555/",
-      "summary": "This protocol describes a three-arm randomized controlled trial testing a smartphone-supported, self-managed ear acupressure program (APA-SM) for chronic musculoskeletal pain in 693 rural adults across Texas and South Carolina. Because this is a study protocol, no results are yet available. The trial's use of digital health tools, electronic health records, and implementation science methods makes it relevant to nursing informatics researchers studying technology-supported pain self-management in underserved communities.",
+      "summary": "This study protocol describes a three-arm randomized controlled trial testing a smartphone-supported auricular point acupressure self-management program for chronic musculoskeletal pain in rural adults across Texas and South Carolina. Because this is a protocol, no results are yet available. The trial is relevant to nursing informatics as it integrates a smartphone app, ecological momentary assessment, and electronic health record data to support pain self-management and measure implementation outcomes.",
       "flags": [
         "in_progress"
       ],
       "topic": "Patient-Facing AI",
-      "topic_confidence": "high"
+      "topic_confidence": "medium"
     },
     {
       "pmid": "42258796",
@@ -82,7 +82,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/85283",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42258796/",
-      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high technology self-efficacy, with higher competency scores linked to prior informatics training and frequent electronic health record use. The authors caution that the single-site, self-reported, and underpowered findings should guide future multisite research rather than draw firm conclusions.",
+      "summary": "This cross-sectional study measured informatics competency and digital technology self-efficacy among 243 undergraduate nursing students at the University of Hail, Saudi Arabia. Students reported moderate informatics competency and moderate-to-high digital self-efficacy, with higher competency scores linked to prior informatics training and frequent electronic health record use. The authors caution that single-site, self-report, and underpowered findings limit generalisability, and they call for future multisite and mixed-methods research.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -96,7 +96,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.1093/eurjcn/zvag003",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41495965/",
-      "summary": "This multicentre study recorded voice samples from patients hospitalised with acute heart failure, using both professional devices and common smartphones, to train machine learning models that classify clinical status from admission to discharge. The best model reached 81% accuracy and 89% sensitivity, with smartphone recordings showing high consistency across brands. The authors suggest this low-burden, non-invasive approach could support nurse-coordinated remote monitoring after patients leave hospital.",
+      "summary": "Researchers recorded voice samples from patients hospitalized with acute heart failure across four centres, then trained machine learning models to classify clinical status from admission to discharge using acoustic features captured on common smartphones. The best model reached 81% accuracy and 89% sensitivity, and cross-device testing showed consistent results across smartphone brands. The abstract suggests this approach could support nurse-coordinated post-discharge monitoring and remote triage as a low-burden, non-invasive tool.",
       "flags": [],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"
@@ -111,7 +111,7 @@
       "doi": "http://arxiv.org/abs/2606.19852v1",
       "pubmed_url": "https://arxiv.org/abs/2606.19852v1",
       "source": "arXiv",
-      "summary": "This study tested whether open-source large language models (LLMs), without any task-specific training, could pull key cancer data fields from lung surgery pathology reports. The best zero-shot model scored a Micro-F1 of 0.893, somewhat below the supervised baseline (0.960), but still accurately captured complex data like cancer stage. For nursing informatics, this points to a lower-cost way to automate data extraction for cancer registries, though the gap with supervised methods remains.",
+      "summary": "This study tested whether open-source large language models (LLMs) could pull key cancer data fields from lung surgery pathology reports without any task-specific training. The best zero-shot LLM scored a Micro-F1 of 0.893, somewhat below the supervised baseline (0.960), but successfully extracted complex information like tumor stage. For nursing informatics, this suggests that zero-shot LLMs may reduce the manual effort needed to populate cancer registries from narrative clinical reports.",
       "flags": [
         "not_peer_reviewed"
       ],
@@ -128,9 +128,8 @@
       "doi": "http://arxiv.org/abs/2606.17789v1",
       "pubmed_url": "https://arxiv.org/abs/2606.17789v1",
       "source": "arXiv",
-      "summary": "This study developed and tested Mind Companion, an AI chatbot designed to deliver psychotherapy support when human therapists are unavailable. Using real therapy session transcripts, 11 professional psychotherapists rated one AI model (GPT-5.2) higher than human therapist responses on understanding, collaboration, and therapeutic alignment. For nursing informatics, the system's built-in safety monitoring and clinician-oversight features represent design elements worth tracking as AI mental health tools move toward clinical settings.",
+      "summary": "Researchers built and tested an AI chatbot called Mind Companion, designed to provide psychotherapy support when human therapists are unavailable. In tests comparing AI responses to real therapist responses, expert psychotherapists rated one AI configuration (GPT-5.2) higher than human therapists on understanding, collaboration, and therapeutic alignment. For nursing informatics, this raises questions about how AI tools that store client data for clinician review might fit into care workflows and oversight processes.",
       "flags": [
-        "population_unclear",
         "not_peer_reviewed"
       ],
       "topic": "Patient-Facing AI",
@@ -146,7 +145,7 @@
       "doi": "http://arxiv.org/abs/2606.17786v1",
       "pubmed_url": "https://arxiv.org/abs/2606.17786v1",
       "source": "arXiv",
-      "summary": "Researchers built an AI system that lets psychotherapy trainees practice Acceptance and Commitment Therapy (ACT) with a virtual patient, receiving turn-by-turn feedback on their responses. Testing across 49 therapy transcripts found that GPT-4o-mini best matched human supervisor ratings of ACT fidelity. While focused on psychotherapy training, this work shows how AI-driven simulation and automated feedback tools could support clinical skill-building in ways relevant to nursing informatics research.",
+      "summary": "Researchers built an AI system that lets psychotherapy trainees practice Acceptance and Commitment Therapy (ACT) by speaking with a virtual patient, with turn-by-turn automated feedback on their responses. Testing across 49 therapy transcripts found that GPT-4o-mini best matched human supervisor ratings of therapist fidelity. While focused on psychotherapy training, this work may interest nursing informatics researchers exploring AI-driven simulation tools for clinical skill development and feedback.",
       "flags": [
         "not_peer_reviewed"
       ],
@@ -163,7 +162,7 @@
       "doi": "http://arxiv.org/abs/2606.15522v1",
       "pubmed_url": "https://arxiv.org/abs/2606.15522v1",
       "source": "arXiv",
-      "summary": "This preprint describes NIMO, a software platform designed to connect AI algorithms with robotic lab systems for automated materials research. The platform offers twelve AI algorithms, a no-code desktop app, and demonstrated use across six laboratory settings including electrolyte and organic synthesis research. This work does not address nursing practice or nursing informatics; no meaningful relevance to this community can be drawn from the abstract.",
+      "summary": "This preprint describes NIMO, a software platform built to connect AI algorithms with robotic lab systems for automated materials discovery. The platform includes twelve AI algorithms, a no-code desktop app, and was tested across six laboratory use cases. This work is outside nursing informatics; the abstract describes no nursing, clinical, or health informatics content, so no relevance to nursing practice or nursing informatics research can be reported.",
       "flags": [
         "population_unclear",
         "not_peer_reviewed"
@@ -181,7 +180,7 @@
       "doi": "http://arxiv.org/abs/2606.15419v1",
       "pubmed_url": "https://arxiv.org/abs/2606.15419v1",
       "source": "arXiv",
-      "summary": "This study tested a method where multiple AI language models answer medical questions independently, then review each other's reasoning before selecting the best answer. The approach outperformed single-model and voting-based methods, reaching an average accuracy of 0.820 across three medical question datasets. For nursing informatics researchers, this suggests that multi-agent AI designs that evaluate reasoning quality—not just answer agreement—may support more reliable clinical decision-support tools.",
+      "summary": "Researchers tested a multi-agent system where multiple AI language models independently answered medical questions and then scored each other's reasoning before selecting the best answer. Across three benchmark datasets, this peer-review approach reached an average accuracy of 0.820, outperforming both single-model and majority-vote methods. For nursing informatics, this points to a potential way to improve how AI tools handle clinical knowledge questions, though the study used benchmark datasets rather than real clinical workflows.",
       "flags": [
         "population_unclear",
         "setting_unclear",
@@ -200,7 +199,7 @@
       "doi": "http://arxiv.org/abs/2606.15026v1",
       "pubmed_url": "https://arxiv.org/abs/2606.15026v1",
       "source": "arXiv",
-      "summary": "This study tested deep learning models—LSTM, TCN, and Transformer—on a public dataset (WESAD) to recognize emotions from wrist and chest sensor signals. The ensemble method combining all three models reached 98.91% accuracy, with Transformer models performing best when using both sensor locations together. Findings suggest that combining multiple sensor types and model architectures may improve the accuracy of physiological stress and emotion monitoring systems.",
+      "summary": "Researchers tested deep learning models to recognize physiological stress and emotions using wrist and chest sensor data from the WESAD dataset. An ensemble method combining three model types reached 98.91% accuracy, and combining data from both sensor locations outperformed single-sensor setups. This work may inform nursing informatics research into wearable monitoring tools, though the abstract does not describe clinical populations or real-world care settings.",
       "flags": [
         "population_unclear",
         "setting_unclear",
@@ -219,10 +218,11 @@
       "doi": "http://arxiv.org/abs/2606.13082v1",
       "pubmed_url": "https://arxiv.org/abs/2606.13082v1",
       "source": "arXiv",
-      "summary": "Researchers built and tested a two-stage pipeline using a locally run AI model (MedGemma-27B) to pull structured information from unstructured clinical notes without sending data to external servers. The system reached a macro-F1 score of 0.55, placing second among open-source, locally hosted entries in a 2026 shared task. For nursing informatics, this suggests that privacy-protecting, on-site language model pipelines may be a practical option for automating clinical form completion.",
+      "summary": "This study tested a two-stage pipeline using a locally run AI model (MedGemma-27B) to pull structured data from unstructured clinical notes without sending data to outside servers. The system achieved a macro-F1 score of 0.55, placing second among local, open-source submissions in the CL4Health 2026 shared task. The abstract suggests this approach could support privacy-preserving clinical data extraction, though it does not address nursing-specific workflows or settings.",
       "flags": [
-        "not_peer_reviewed",
-        "population_unclear"
+        "population_unclear",
+        "setting_unclear",
+        "not_peer_reviewed"
       ],
       "topic": "NLP & Generative AI",
       "topic_confidence": "high"
@@ -237,7 +237,7 @@
       "doi": "http://arxiv.org/abs/2606.14788v1",
       "pubmed_url": "https://arxiv.org/abs/2606.14788v1",
       "source": "arXiv",
-      "summary": "Researchers developed NeurMLLM, a multimodal AI framework that combines voice audio features, transcripts, and demographic data to stage Alzheimer's and Parkinson's diseases. Tested on the Bridge2AI-Voice dataset, the system outperformed classical machine learning and existing large language model approaches for fine-grained disease staging. For nursing informatics, this highlights growing interest in voice-based, accessible screening tools, though this is a preprint and has not yet undergone peer review.",
+      "summary": "Researchers developed NeurMLLM, an AI framework that combines voice recordings, transcripts, and demographic data to stage Alzheimer's and Parkinson's diseases. Tested on the Bridge2AI-Voice dataset, it outperformed classical machine learning and existing language model approaches at fine-grained disease staging. For nursing informatics, this points to potential for voice-based, non-invasive screening tools, though the study is a preprint and clinical applicability remains untested.",
       "flags": [
         "not_peer_reviewed",
         "population_unclear"
@@ -255,7 +255,7 @@
       "doi": "http://arxiv.org/abs/2606.12699v1",
       "pubmed_url": "https://arxiv.org/abs/2606.12699v1",
       "source": "arXiv",
-      "summary": "Researchers developed GlyLLM, a large language model framework that combines continuous glucose monitor data, wearable sensor readings, and personal health information to forecast blood glucose levels and classify diabetes in people with Type 2 diabetes. Using the AI-READI dataset, GlyLLM outperformed traditional machine learning methods by about 14% on glucose forecasting and 13% on diabetes categorization. For nursing informatics, this signals growing potential for AI tools that personalize glycemic monitoring by drawing on richer patient data.",
+      "summary": "Researchers built GlyLLM, a large language model framework that combines continuous glucose monitor data, fitness tracker data, and personal health information to forecast blood glucose levels and classify diabetes in people with Type 2 diabetes. Using the AI-READI dataset, GlyLLM outperformed traditional machine learning methods by about 14% on glucose forecasting and 13% on diabetes categorization. For nursing informatics, this work illustrates how combining wearable sensor data with structured patient context may improve personalized glycemic monitoring tools.",
       "flags": [
         "not_peer_reviewed"
       ],
@@ -272,10 +272,10 @@
       "doi": "http://arxiv.org/abs/2606.11336v1",
       "pubmed_url": "https://arxiv.org/abs/2606.11336v1",
       "source": "arXiv",
-      "summary": "This preprint examined the challenge of building shared understanding around remote operation of automated vehicles in public road traffic, involving multiple disciplines and stakeholders with differing language and expectations. The authors proposed a terminology framework grounded in how humans and vehicles process information, aiming to support clearer communication across researchers, engineers, regulators, and others. This work does not address nursing or nursing informatics, so its relevance to nursing practice or nursing informatics research is not apparent from the abstract.",
+      "summary": "This paper examined the terminology and concepts used across different fields in remote vehicle operation, where a human controls a vehicle from a distant location instead of sitting inside it. The authors built a shared framework tracing terms back to how humans and vehicles each process information, aiming to help researchers and industry stakeholders communicate more clearly. This work does not directly address nursing informatics, and no connection to nursing practice or health informatics is stated in the abstract.",
       "flags": [
-        "population_unclear",
-        "not_peer_reviewed"
+        "not_peer_reviewed",
+        "in_progress"
       ],
       "topic": "Other / Unclassified",
       "topic_confidence": "high"
@@ -290,7 +290,7 @@
       "doi": "http://arxiv.org/abs/2606.09500v4",
       "pubmed_url": "https://arxiv.org/abs/2606.09500v4",
       "source": "arXiv",
-      "summary": "This study examined whether deterministic (rule-based) checks could catch errors in AI-generated clinical manuscripts better than asking an AI to review its own work. The system detected all 27 injected defects with no false positives, while a single AI reviewer caught only 11. For nursing informatics, this suggests that pairing AI writing tools with structured, rule-based verification may produce a more auditable trail for checking AI-assisted research documents.",
+      "summary": "This preprint describes MedSci Skills, a software toolkit designed to catch errors in AI-assisted scientific manuscripts, such as fake citations and misreported numbers. The system's 21 deterministic checks detected all 27 planted defects with no false alarms, while a single-prompt AI reviewer caught only 11. For nursing informatics, this work highlights that AI writing tools need built-in verification steps to produce auditable, trustworthy research outputs.",
       "flags": [
         "not_peer_reviewed"
       ],
@@ -307,11 +307,11 @@
       "doi": "http://arxiv.org/abs/2606.08973v1",
       "pubmed_url": "https://arxiv.org/abs/2606.08973v1",
       "source": "arXiv",
-      "summary": "Researchers tested different ways to encode molecular structures as inputs for two neural network models predicting drug properties such as toxicity and blood-brain barrier permeability. Models using certain fingerprint types (MACCS and PubChem) achieved average AUC values above 0.9 and highlighted chemically meaningful molecular features through built-in attention weights. For nursing informatics, this work offers guidance on building more interpretable drug-property prediction tools, though the study focuses on chemistry rather than clinical or nursing workflows.",
+      "summary": "Researchers tested different ways to encode molecular structures as inputs for two neural network models predicting drug properties such as toxicity and blood-brain barrier permeability across seven datasets. The models reached average AUC scores above 0.9 on several classification tasks, and built-in attention weights helped identify chemical features linked to key predictions. This work may inform how informatics teams select encoding methods when building or evaluating drug-property prediction tools.",
       "flags": [
+        "not_peer_reviewed",
         "population_unclear",
-        "setting_unclear",
-        "not_peer_reviewed"
+        "setting_unclear"
       ],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"

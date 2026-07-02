@@ -1,5 +1,8 @@
 name: "NAIL Digest: AI-Driven Nursing Informatics"
 
+permissions:
+  contents: write
+
 on:
   schedule:
     # Trigger every Monday; workflow skips if < 13 days since last issue

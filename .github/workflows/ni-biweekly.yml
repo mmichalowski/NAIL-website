@@ -1,4 +1,4 @@
-name: NAIL Digest: AI-Driven Nursing Informatics
+name: "NAIL Digest: AI-Driven Nursing Informatics"
 
 on:
   schedule:
@@ -29,27 +29,15 @@ jobs:
       - name: Check if bi-weekly interval has passed
         id: interval
         run: |
-          DAYS_SINCE=$(python3 - <<'EOF'
-import os, json, glob
-from datetime import datetime, timezone
-files = sorted(glob.glob("ni-biweekly/ni-biweekly-*.json"), reverse=True)
-if not files:
-    print(99)
-else:
-    with open(files[0]) as f:
-        data = json.load(f)
-    last = datetime.fromisoformat(data["generated_at"].replace("Z", "+00:00"))
-    print((datetime.now(timezone.utc) - last).days)
-EOF
-)
+          DAYS_SINCE=$(python3 -c "import json,glob; from datetime import datetime,timezone; files=sorted(glob.glob('ni-biweekly/ni-biweekly-*.json'),reverse=True); print(99 if not files else (datetime.now(timezone.utc)-datetime.fromisoformat(json.load(open(files[0]))['generated_at'].replace('Z','+00:00'))).days)")
           echo "days_since=$DAYS_SINCE" >> $GITHUB_OUTPUT
           echo "Days since last issue: $DAYS_SINCE"
           if [ "$DAYS_SINCE" -lt 13 ]; then
             echo "should_run=false" >> $GITHUB_OUTPUT
-            echo "Skipping — only $DAYS_SINCE days since last issue (need 13+)"
+            echo "Skipping - only $DAYS_SINCE days since last issue (need 13+)"
           else
             echo "should_run=true" >> $GITHUB_OUTPUT
-            echo "Running — $DAYS_SINCE days since last issue"
+            echo "Running - $DAYS_SINCE days since last issue"
           fi
 
       - name: Determine issue number

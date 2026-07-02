@@ -1,0 +1,21 @@
+{
+  "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+
+  "sources": ["pubmed", "arxiv", "medrxiv", "cinahl"],
+  "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+
+  "summary_style": "2-3_sentences",
+  "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+
+  "topics": [
+    "Clinical Decision Support",
+    "NLP & Generative AI",
+    "AI Ethics & Governance",
+    "EHR & Workflows",
+    "Workforce & Education",
+    "Patient-Facing AI",
+    "AI Methods & Evaluation", 
+    "Other / Unclassified"
+  ],
+  "_topics_note": "Remove any topic to exclude it."
+}

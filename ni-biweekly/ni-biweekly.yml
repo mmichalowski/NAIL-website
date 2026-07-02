@@ -1,0 +1,87 @@
+name: NAIL Digest: AI-Driven Nursing Informatics
+
+on:
+  schedule:
+    # Trigger every Monday; workflow skips if < 13 days since last issue
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Lookback window (days)"
+        default: "14"
+
+jobs:
+  generate-digest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python3 -m pip install anthropic requests
+
+      - name: Check if bi-weekly interval has passed
+        id: interval
+        run: |
+          DAYS_SINCE=$(python3 - <<'EOF'
+import os, json, glob
+from datetime import datetime, timezone
+files = sorted(glob.glob("ni-biweekly/ni-biweekly-*.json"), reverse=True)
+if not files:
+    print(99)
+else:
+    with open(files[0]) as f:
+        data = json.load(f)
+    last = datetime.fromisoformat(data["generated_at"].replace("Z", "+00:00"))
+    print((datetime.now(timezone.utc) - last).days)
+EOF
+)
+          echo "days_since=$DAYS_SINCE" >> $GITHUB_OUTPUT
+          echo "Days since last issue: $DAYS_SINCE"
+          if [ "$DAYS_SINCE" -lt 13 ]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "Skipping — only $DAYS_SINCE days since last issue (need 13+)"
+          else
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "Running — $DAYS_SINCE days since last issue"
+          fi
+
+      - name: Determine issue number
+        if: steps.interval.outputs.should_run == 'true'
+        id: issue
+        run: |
+          COUNT=$(ls ni-biweekly/ni-biweekly-*.json 2>/dev/null | wc -l | tr -d ' ')
+          NEXT=$((COUNT + 1))
+          echo "number=$NEXT" >> $GITHUB_OUTPUT
+          echo "Next issue: #$NEXT"
+
+      - name: Run NAIL Digest
+        if: steps.interval.outputs.should_run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EBSCO_CUST_ID:     ${{ secrets.EBSCO_CUST_ID }}
+          EBSCO_GROUP_ID:    ${{ secrets.EBSCO_GROUP_ID }}
+          EBSCO_PROFILE_ID:  ${{ secrets.EBSCO_PROFILE_ID }}
+          EBSCO_PROFILE_PWD: ${{ secrets.EBSCO_PROFILE_PWD }}
+        run: |
+          cd ni-biweekly
+          python3 ../ni_biweekly.py \
+            --config config.json \
+            --days ${{ github.event.inputs.days || '14' }} \
+            --issue ${{ steps.issue.outputs.number }} \
+            --output both
+
+      - name: Commit and push
+        if: steps.interval.outputs.should_run == 'true'
+        run: |
+          git config user.name "NAIL Digest Bot"
+          git config user.email "ainurse@nailcollab.org"
+          git add ni-biweekly/
+          git diff --cached --quiet || git commit -m "NAIL Digest: Issue #${{ steps.issue.outputs.number }} — $(date +%Y-%m-%d)"
+          git push

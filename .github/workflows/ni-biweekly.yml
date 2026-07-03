@@ -12,6 +12,10 @@ on:
       days:
         description: "Lookback window (days)"
         default: "14"
+      force:
+        description: "Force run even if <13 days since last issue"
+        type: boolean
+        default: false
 
 jobs:
   generate-digest:
@@ -35,7 +39,10 @@ jobs:
           DAYS_SINCE=$(python3 -c "import json,glob; from datetime import datetime,timezone; files=sorted(glob.glob('ni-biweekly/ni-biweekly-*.json'),reverse=True); print(99 if not files else (datetime.now(timezone.utc)-datetime.fromisoformat(json.load(open(files[0]))['generated_at'].replace('Z','+00:00'))).days)")
           echo "days_since=$DAYS_SINCE" >> $GITHUB_OUTPUT
           echo "Days since last issue: $DAYS_SINCE"
-          if [ "$DAYS_SINCE" -lt 13 ]; then
+          if [ "${{ github.event.inputs.force }}" == "true" ]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "Forced run - bypassing the $DAYS_SINCE-day interval check"
+          elif [ "$DAYS_SINCE" -lt 13 ]; then
             echo "should_run=false" >> $GITHUB_OUTPUT
             echo "Skipping - only $DAYS_SINCE days since last issue (need 13+)"
           else

@@ -125,7 +125,7 @@ These rules are applied in code after the API call, before publication:
 | Word count | Summary must be 20–75 words | Regenerate with stricter length instruction |
 | JSON validity | Response must parse as valid JSON | Retry once; if fails again, skip paper and log error |
 | Banned words | Summary must not contain banned superlatives | Regenerate with explicit word list in prompt |
-| Flag threshold | If ≥ 3 flags, paper is demoted to "flagged section" | Move to flagged papers section in digest |
+| Flag threshold | If ≥ 1 flag, paper is moved to "Flagged Papers" section | Move to flagged papers section in digest |
 | Preprint flag | `not_peer_reviewed` flag triggers visual warning | Display ⚑ badge on paper card |
 | Low confidence | Topic classification confidence = "low" → topic = "Other" | Do not guess; classify as Other |
 

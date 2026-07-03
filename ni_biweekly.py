@@ -454,13 +454,10 @@ def fetch_medrxiv(days_back: int = 14, max_results: int = 20) -> list[dict]:
 EIT_SEARCH_URL = "http://eit.ebscohost.com/Services/SearchService.asmx/Search"
 
 CINAHL_QUERY = (
-    '"nursing informatics" OR '
-    '(nursing AND "artificial intelligence") OR '
-    '(nursing AND "machine learning") OR '
-    '(nursing AND "natural language processing") OR '
-    '(nursing AND "large language model") OR '
-    '(nursing AND "clinical decision support") OR '
-    '(nursing AND "electronic health record" AND (AI OR "artificial intelligence" OR algorithm OR predictive))'
+    '(nursing OR "nursing informatics") AND '
+    '("artificial intelligence" OR "machine learning" OR "natural language processing" OR '
+    '"large language model" OR "clinical decision support" OR "generative AI" OR '
+    'algorithm OR predictive)'
 )
 
 
@@ -510,7 +507,9 @@ def fetch_cinahl(days_back: int = 14, max_results: int = 20) -> list[dict]:
         # abstract, request a generous raw pool from EBSCO to have enough to
         # filter down from.
         CINAHL_MAX_PAPERS = 25
-        numrec = min(max(CINAHL_MAX_PAPERS * 4, 100), 200)
+        numrec = 200  # EBSCO EIT's documented max — maximize the raw candidate pool
+                       # so the 25-paper cap is filled from the best matches, not
+                       # whatever happens to be scanned first
 
         # Build the date range using EBSCO's DT field code (yyyymmdd-yyyymmdd, no
         # parens around the date term itself, combined with AND).
@@ -994,7 +993,7 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
     by_topic: dict[str, list] = {t: [] for t in TOPIC_BUCKETS}
     flagged = []
     for p in papers:
-        if len(p.get("flags", [])) >= 3:
+        if len(p.get("flags", [])) >= 1:
             flagged.append(p)
         else:
             by_topic[p["topic"]].append(p)
@@ -1056,20 +1055,39 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
 
     flagged_section = ""
     if flagged:
-        cards = "".join(paper_card(p) for p in flagged)
-        flagged_section = f"""
-    <div class="sec-h" data-topic="flagged"><i class="ti ti-flag" aria-hidden="true"></i>Flagged Papers<span class="cnt">{len(flagged)}</span></div>
+        flagged_by_topic: dict[str, list] = {t: [] for t in TOPIC_BUCKETS}
+        for p in flagged:
+            flagged_by_topic[p["topic"]].append(p)
+
+        flagged_subsections = ""
+        for topic in TOPIC_BUCKETS:
+            plist = flagged_by_topic[topic]
+            if not plist:
+                continue
+            _, icon = TOPIC_STYLE.get(topic, ("t-oth", "ti-dots"))
+            cards = "".join(paper_card(p) for p in plist)
+            flagged_subsections += f"""
+    <div class="sec-h sec-h-sub" data-topic="flagged"><i class="ti {icon}" aria-hidden="true"></i>{topic}<span class="cnt">{len(plist)} paper{"s" if len(plist)!=1 else ""}</span></div>
     {cards}"""
 
-    # filter pills
-    filter_counts = [(t, len(by_topic[t])) for t in TOPIC_BUCKETS if by_topic[t]]
+        flagged_section = f"""
+    <div class="sec-h" data-topic="flagged"><i class="ti ti-flag" aria-hidden="true"></i>Flagged Papers<span class="cnt">{len(flagged)}</span></div>
+    {flagged_subsections}"""
+
+    # filter pills — count ALL papers per topic (flagged + unflagged), not just
+    # by_topic[t], since flagged papers are pulled out of by_topic into the
+    # separate `flagged` list and would otherwise be undercounted here.
+    topic_totals: dict[str, int] = {t: 0 for t in TOPIC_BUCKETS}
+    for p in papers:
+        topic_totals[p["topic"]] = topic_totals.get(p["topic"], 0) + 1
+    filter_counts = [(t, topic_totals[t]) for t in TOPIC_BUCKETS if topic_totals[t]]
     total = len(papers)
     flag_count = sum(1 for p in papers if p.get("flags"))
     filter_pills = f'<a href="#" class="active" data-filter="all">All ({total})</a>'
     for t, n in filter_counts:
         filter_pills += f'<a href="#" data-filter="{t}">{t} ({n})</a>'
     if flag_count:
-        filter_pills += f'<a href="#" data-filter="flagged" style="color:#B91C1C;"><i class="ti ti-flag" style="font-size:11px;"></i> Flagged ({flag_count})</a>'
+        filter_pills += f'<a href="#" data-filter="flagged" class="flag-pill"><i class="ti ti-flag" style="font-size:11px;"></i> Flagged ({flag_count})</a>'
 
     generated_at = datetime.now(timezone.utc).strftime("%b %d, %Y")
     date_slug = datetime.now().strftime("%Y-%m-%d")
@@ -1079,11 +1097,11 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
     _cfg = config if config else DEFAULT_CONFIG
     config_overlay_html = build_config_overlay(_cfg)
 
-    # sidebar topic bars
-    max_n = max((len(by_topic[t]) for t in TOPIC_BUCKETS if by_topic[t]), default=1)
+    # sidebar topic bars — use topic_totals (flagged + unflagged) for accuracy
+    max_n = max((topic_totals[t] for t in TOPIC_BUCKETS if topic_totals[t]), default=1)
     topic_bars = ""
     for t in TOPIC_BUCKETS:
-        n = len(by_topic[t])
+        n = topic_totals[t]
         if not n:
             continue
         pct = round(n / max_n * 100)
@@ -1145,10 +1163,13 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
 .issue-count small{{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);}}
 .filters{{display:inline-flex;gap:3px;margin-bottom:24px;flex-wrap:wrap;background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:4px;}}
 .filters a{{background:transparent;border:none;border-radius:99px;font-size:13px;font-weight:600;color:var(--mut);cursor:pointer;padding:6px 14px;transition:background .18s,color .18s;text-decoration:none;display:inline-block;}}
+.filters a.flag-pill{{color:#B91C1C;}}
 .filters a.active-flagged{{background:#B91C1C;color:#fff;}}
 .filters a:hover{{color:var(--slate-deep);}}
 .filters a.active{{background:var(--slate-deep);color:#fff;}}
 .sec-h{{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--slate-deep);letter-spacing:-.2px;margin:34px 0 14px;}}
+.sec-h-sub{{font-size:15px;margin:22px 0 10px;padding-left:14px;color:var(--mut);}}
+.sec-h-sub i{{font-size:14px;}}
 .sec-h:first-of-type{{margin-top:0;}}
 .sec-h i{{font-size:17px;color:var(--amber-strong);}}
 .sec-h::after{{content:'';flex:1;height:1px;background:var(--line);}}
@@ -1294,8 +1315,13 @@ footer a:hover{{color:var(--amber);}}
       document.querySelectorAll('.sec-h').forEach(function(hdr){{
         if(filter==='all'){{hdr.style.display='';return;}}
         if(filter==='flagged'){{
+          var isSub=hdr.classList.contains('sec-h-sub');
           var sib=hdr.nextElementSibling,visible=false;
-          while(sib&&!sib.classList.contains('sec-h')){{
+          while(sib){{
+            if(sib.classList.contains('sec-h')){{
+              if(isSub)break;                          // sub-header stops at the very next header
+              if(!sib.classList.contains('sec-h-sub'))break; // top-level header skips over sub-headers, stops at next TOP-LEVEL header
+            }}
             if(sib.classList.contains('pli')&&sib.style.display!=='none')visible=true;
             sib=sib.nextElementSibling;
           }}
@@ -1473,7 +1499,7 @@ footer a:hover{{color:var(--amber);}}
   <div class="hero-in">
     <div class="kicker">NAIL Collaborative · Community Digest</div>
     <h1>NAIL Digest: <em>AI-Driven Nursing Informatics</em></h1>
-    <p class="hero-sub">A community-curated AI-assisted digest of nursing informatics research — retrieved bi-weekly from PubMed, summarized by Claude Sonnet, overseen by the NAIL editorial board.</p>
+    <p class="hero-sub">A community-curated AI-assisted digest of nursing informatics research — retrieved bi-weekly from PubMed, arXiv, medRxiv, and CINAHL, summarized by Claude Sonnet, overseen by the NAIL editorial board.</p>
   </div>
   <div class="hero-stats">
     <div class="hero-stats-in">

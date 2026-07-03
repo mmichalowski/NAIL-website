@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAIL Digest — All Issues | NAIL Collaborative</title>
+<meta name="description" content="Browse all issues of NAIL Digest: AI-Driven Nursing Informatics — a community-curated AI-assisted digest from the NAIL Collaborative.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%231D2B3A'/%3E%3Cpath d='M11 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M25 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5' stroke='%23E8C46A' stroke-width='2.4' stroke-linejoin='round' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+:root{--ink:#1D2B3A;--slate:#1D2B3A;--slate-deep:#111C26;--amber:#E8C46A;--amber-strong:#B08A1F;--amber-pale:#FDF5E0;--paper:#FAFAF7;--paper-dim:#F3F1EC;--card:#FFFFFF;--line:#E4E0D8;--line-soft:#EDEAE2;--mut:#5E6B76;--sky:#1A6CB0;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',-apple-system,sans-serif;--shadow-s:0 1px 2px rgba(17,28,38,.05),0 2px 8px rgba(17,28,38,.04);--shadow-m:0 2px 6px rgba(17,28,38,.07),0 12px 28px rgba(17,28,38,.1);--r-s:8px;--r-m:12px;--r-l:18px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}::selection{background:var(--amber-pale);color:var(--slate-deep);}
+.nav{position:sticky;top:0;z-index:200;background:rgba(250,250,247,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1140px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+.logo svg{width:36px;height:36px;flex-shrink:0;border-radius:8px;box-shadow:var(--shadow-s);}
+.logo-t b{display:block;font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.15;color:var(--slate-deep);}
+.logo-t span{display:block;font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-top:1px;}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;padding:6px 14px;border-radius:99px;border:1px solid var(--line);transition:color .18s,border-color .18s;}
+.nav-back:hover{color:var(--slate-deep);border-color:var(--slate);}
+.hero{background:var(--slate);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.06' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.hero::after{content:'';position:absolute;width:600px;height:600px;right:-180px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(232,196,106,.14),transparent 65%);}
+.hero-in{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:64px 28px 48px;}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--amber);font-size:11.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:18px;}
+.kicker::before{content:'';width:24px;height:2px;background:var(--amber);border-radius:2px;}
+.hero h1{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(26px,4vw,46px);line-height:1.1;letter-spacing:-.4px;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{color:rgba(220,208,186,.65);font-size:15.5px;line-height:1.7;max-width:680px;}
+.hero-stats{position:relative;z-index:2;border-top:1px solid rgba(240,223,160,.1);}
+.hero-stats-in{max-width:1140px;margin:0 auto;padding:16px 28px 22px;display:flex;gap:48px;flex-wrap:wrap;}
+.hs{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
+.hs-label{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(240,223,160,.35);}
+.hs-value{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;line-height:1;}
+.wrap{max-width:1140px;margin:0 auto;padding:52px 28px 80px;}
+.current-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--amber-strong);background:var(--amber-pale);border:1px solid #F0DFA0;padding:5px 14px;border-radius:99px;margin-bottom:18px;}
+.current-label::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--amber-strong);animation:blink 1.8s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+.current-card{background:var(--slate-deep);border:1px solid rgba(240,223,160,.15);border-radius:var(--r-l);padding:32px 36px;margin-bottom:52px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;}
+.current-card::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.05' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.current-card::after{content:'';position:absolute;width:400px;height:400px;right:-150px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(232,196,106,.12),transparent 65%);}
+.cc-body{position:relative;z-index:1;}
+.cc-issue-num{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(240,223,160,.45);margin-bottom:8px;}
+.cc-title{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);font-weight:500;color:#fff;line-height:1.2;margin-bottom:8px;letter-spacing:-.2px;}
+.cc-date{font-size:14px;color:rgba(220,208,186,.6);margin-bottom:18px;}
+.cc-topics{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+.cc-topic{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 11px;border-radius:99px;border:1px solid rgba(255,255,255,.12);color:rgba(220,208,186,.7);}
+.cc-cta{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:12px 24px;border-radius:99px;background:var(--amber);color:var(--slate-deep);text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(232,196,106,.3);}
+.cc-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,196,106,.4);}
+.cc-stats{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;align-items:flex-end;}
+.cc-stat{text-align:right;}
+.cc-stat b{font-family:var(--serif);font-size:36px;font-weight:500;color:var(--amber);display:block;line-height:1;}
+.cc-stat span{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(240,223,160,.38);}
+.sec-hdr{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.sec-hdr h2{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--slate-deep);letter-spacing:-.2px;}
+.sec-hdr::after{content:'';flex:1;height:1px;background:var(--line);}
+.back-issues-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.back-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:22px 24px;text-decoration:none;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-s);transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden;}
+.back-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent);opacity:0;transition:opacity .22s;}
+.back-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);border-color:#D4CFC5;}
+.back-card:hover::before{opacity:1;}
+.bc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+.bc-issue{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--amber-strong);}
+.bc-date{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--slate-deep);line-height:1.3;}
+.bc-week{font-size:13px;color:var(--mut);}
+.bc-topics{display:flex;gap:6px;flex-wrap:wrap;}
+.bc-dot{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--mut);}
+.bc-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.t-cds{color:#1E8A6E;}.t-nlp{color:#7C5CC4;}.t-eth{color:#C76B33;}.t-ehr{color:#1A6CB0;}.t-edu{color:#B08A1F;}.t-oth{color:#5E6B76;}
+.bc-arrow{font-size:13px;font-weight:600;color:var(--sky);display:flex;align-items:center;gap:5px;transition:gap .18s;margin-top:auto;}
+.back-card:hover .bc-arrow{gap:9px;}
+.empty-state{text-align:center;padding:48px 24px;border:1.5px dashed var(--line);border-radius:var(--r-m);}
+.empty-state i{font-size:32px;color:var(--line);display:block;margin-bottom:12px;}
+.empty-state p{font-size:14px;color:var(--mut);}
+.about-strip{background:var(--slate-deep);border-radius:var(--r-l);padding:36px 40px;margin-top:52px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;position:relative;overflow:hidden;}
+.about-strip::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.05' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.about-strip h3{position:relative;font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;margin-bottom:6px;letter-spacing:-.2px;}
+.about-strip p{position:relative;font-size:14px;color:rgba(220,208,186,.62);line-height:1.7;}
+.about-strip-btns{position:relative;display:flex;gap:10px;flex-wrap:wrap;}
+.btn-amber{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:10px 20px;border-radius:99px;background:var(--amber);color:var(--slate-deep);text-decoration:none;transition:transform .2s;border:none;font-family:var(--sans);}
+.btn-amber:hover{transform:translateY(-2px);}
+.btn-ghost-sm{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:10px 20px;border-radius:99px;background:transparent;color:rgba(220,208,186,.8);border:1px solid rgba(240,223,160,.2);text-decoration:none;transition:border-color .2s;font-family:var(--sans);}
+.btn-ghost-sm:hover{border-color:rgba(240,223,160,.55);}
+@media(max-width:700px){.current-card{grid-template-columns:1fr;}.cc-stats{flex-direction:row;align-items:flex-start;}.cc-stat{text-align:left;}.about-strip{grid-template-columns:1fr;gap:20px;padding:28px 24px;}}
+footer{background:var(--slate-deep);padding:24px;text-align:center;}
+footer p{font-size:13px;color:rgba(220,208,186,.38);}
+footer a{color:rgba(220,208,186,.6);text-decoration:none;font-weight:600;}
+footer a:hover{color:var(--amber);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/ni-biweekly/">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#1D2B3A"/><path d="M11 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M25 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5" stroke="#E8C46A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/></svg>
+      <div class="logo-t"><b>NAIL Digest</b><span>NAIL Collaborative</span></div>
+    </a>
+    <a class="nav-back" href="https://www.nailcollab.org/"><i class="ti ti-arrow-left"></i> nailcollab.org</a>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-in">
+    <div class="kicker">NAIL Collaborative · Community Digest</div>
+    <h1>NAIL Digest: <em>AI-Driven Nursing Informatics</em></h1>
+    <p class="hero-sub">A community-curated AI-assisted digest of nursing informatics research — retrieved bi-weekly from PubMed, summarized by Claude Sonnet, overseen by the NAIL editorial board.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stats-in">
+      <div class="hs"><span class="hs-label">Issues published</span><span class="hs-value">1</span></div>
+      <div class="hs"><span class="hs-label">Papers curated</span><span class="hs-value">34</span></div>
+      <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Source</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">PubMed</span></div>
+      <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Cadence</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">Bi-weekly · Mondays</span></div>
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="current-label"><i class="ti ti-circle-check" aria-hidden="true"></i> Current Issue</div>
+  <div class="current-card">
+    <div class="cc-body">
+      <div class="cc-issue-num">Issue #1</div>
+      <div class="cc-title">Week of Jun 19, 2026 – Jul 03, 2026</div>
+      <div class="cc-date">Published 2026-07-03 · Generated by Claude Sonnet</div>
+      <div class="cc-topics"><span class="cc-topic">Workforce (26)</span><span class="cc-topic">AI Methods & Evaluation (3)</span><span class="cc-topic">Clin. Decision (2)</span><span class="cc-topic">NLP & Gen AI (2)</span><span class="cc-topic">EHR (1)</span></div>
+      <a href="ni-biweekly-2026-07-03.html" class="cc-cta">Read Issue #1 <i class="ti ti-arrow-right"></i></a>
+    </div>
+    <div class="cc-stats">
+      <div class="cc-stat"><b>34</b><span>Papers</span></div>
+      <div class="cc-stat"><b>19</b><span>Flagged</span></div>
+    </div>
+  </div>
+  <div class="sec-hdr"><h2>Back Issues</h2></div>
+  <div class="back-issues-grid"><div class="empty-state"><i class="ti ti-books" aria-hidden="true"></i><p>Back issues will appear here as more digests are published.<br>New issues every other Monday.</p></div></div>
+  <div class="about-strip">
+    <div>
+      <h3>Built live at AINurse-26</h3>
+      <p>NAIL Digest was created in front of workshop participants who voted on the sources, topics, and summary constraints — making trustworthy AI design a community act. The workflow is open source and runs every other Monday.</p>
+    </div>
+    <div class="about-strip-btns">
+      <a href="mailto:ainurse@nailcollab.org" class="btn-amber"><i class="ti ti-mail"></i> Suggest a topic</a>
+    </div>
+  </div>
+</div>
+<footer><p>NAIL Digest · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · Born at AINurse-26, Ottawa 2026</p></footer>
+</body>
+</html>

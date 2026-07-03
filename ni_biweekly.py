@@ -727,7 +727,8 @@ def classify_paper(client: anthropic.Anthropic, paper: dict, dry_run: bool = Fal
         if candidate in active_topics and confidence == "high":
             return candidate, confidence
         return "Other / Unclassified", "low"
-    except Exception:
+    except Exception as e:
+        print(f"  CLASSIFY ERROR for '{paper.get('title','')[:50]}': {type(e).__name__}: {e}")
         return "Other / Unclassified", "low"
     finally:
         time.sleep(0.2)
@@ -777,7 +778,8 @@ def generate_summary(client: anthropic.Anthropic, paper: dict, dry_run: bool = F
                     continue
 
             break
-        except (json.JSONDecodeError, IndexError, KeyError):
+        except Exception as e:
+            print(f"  SUMMARY ERROR for '{paper.get('title','')[:50]}' (attempt {attempt+1}): {type(e).__name__}: {e}")
             if attempt == 1:
                 summary = "[ERROR: could not generate summary]"
                 flags = ["generation_error"]

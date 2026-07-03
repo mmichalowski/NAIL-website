@@ -104,7 +104,8 @@ PUBMED_SEARCH_TERMS = """(
          "algorithm"[Title/Abstract] OR "predictive"[Title/Abstract]))
 )
 AND "humans"[MeSH Terms]
-AND "journal article"[pt]"""
+AND "journal article"[pt]
+AND english[la]"""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -518,24 +519,7 @@ def fetch_cinahl(days_back: int = 14, max_results: int = 20) -> list[dict]:
         date_range = f"{start_dt.strftime('%Y%m%d')}-{end_dt.strftime('%Y%m%d')}"
         scoped_query = f"({CINAHL_QUERY}) AND DT {date_range}"
 
-        print(f"  CINAHL: querying with profile={full_profile}, db={db}, format={fmt}, "
-              f"numrec={numrec} (raw pool), cap={CINAHL_MAX_PAPERS} (with abstract), date range={date_range}")
-
-        # Safe credential diagnostics — never print the full value, but show
-        # length + first/last 2 chars so mismatches (wrong secret, stray
-        # whitespace, wrong length) are catchable without exposing secrets.
-        def _preview(val: str) -> str:
-            if not val:
-                return "<EMPTY>"
-            if len(val) <= 4:
-                return f"<len={len(val)}, too short to preview safely>"
-            return f"<len={len(val)}, '{val[:2]}...{val[-2:]}'>"
-
-        print(f"  CINAHL credential check — "
-              f"cust_id: {_preview(cust_id)}  "
-              f"group_id: {_preview(group_id)}  "
-              f"profile_id: {_preview(profile_id)}  "
-              f"profile_pwd: {_preview(profile_pwd)}")
+        print(f"  CINAHL: searching db={db}, date range={date_range}")
 
         resp = req.get(EIT_SEARCH_URL, params={
             "prof":   full_profile,
@@ -728,32 +712,38 @@ def classify_paper(client: anthropic.Anthropic, paper: dict, dry_run: bool = Fal
     if dry_run or not paper["abstract"]:
         return "Other / Unclassified", "low"
 
-    try:
-        classify_prompt = build_classify_prompt(paper, active_topics)
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=80,   # padded for Sonnet 5's new tokenizer (~30% more tokens/text)
-            thinking={"type": "disabled"},  # simple structured task — no reasoning needed;
-                                             # also avoids ThinkingBlock appearing at content[0]
-            messages=[{"role": "user", "content": classify_prompt}],
-        )
-        text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
-        if text_block is None:
-            raise ValueError(f"No text block in response (got: {[getattr(b,'type','?') for b in resp.content]})")
-        raw = text_block.text.strip()
-        raw = re.sub(r"^```json\s*", "", raw)
-        raw = re.sub(r"\s*```$", "", raw)
-        parsed = json.loads(raw)
-        candidate  = parsed.get("topic", "")
-        confidence = parsed.get("confidence", "low")
-        if candidate in active_topics and confidence == "high":
-            return candidate, confidence
-        return "Other / Unclassified", "low"
-    except Exception as e:
-        print(f"  CLASSIFY ERROR for '{paper.get('title','')[:50]}': {type(e).__name__}: {e}")
-        return "Other / Unclassified", "low"
-    finally:
-        time.sleep(0.2)
+    classify_prompt = build_classify_prompt(paper, active_topics)
+
+    for attempt in range(2):
+        try:
+            resp = client.messages.create(
+                model=MODEL,
+                max_tokens=80,   # padded for Sonnet 5's new tokenizer (~30% more tokens/text)
+                thinking={"type": "disabled"},  # simple structured task — no reasoning needed;
+                                                 # also avoids ThinkingBlock appearing at content[0]
+                messages=[{"role": "user", "content": classify_prompt}],
+            )
+            text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+            if text_block is None:
+                raise ValueError(f"No text block in response (got: {[getattr(b,'type','?') for b in resp.content]})")
+            raw = text_block.text.strip()
+            raw = re.sub(r"^```json\s*", "", raw)
+            raw = re.sub(r"\s*```$", "", raw)
+            parsed = json.loads(raw)
+            candidate  = parsed.get("topic", "")
+            confidence = parsed.get("confidence", "low")
+            if candidate in active_topics and confidence == "high":
+                return candidate, confidence
+            return "Other / Unclassified", "low"
+        except Exception as e:
+            is_transient = "overloaded" in str(e).lower() or "529" in str(e) or "rate_limit" in str(e).lower()
+            print(f"  CLASSIFY ERROR for '{paper.get('title','')[:50]}' (attempt {attempt+1}): {type(e).__name__}: {e}")
+            if attempt == 0 and is_transient:
+                time.sleep(2)  # brief backoff before retrying a transient error
+                continue
+            return "Other / Unclassified", "low"
+        finally:
+            time.sleep(0.2)
 
 
 def generate_summary(client: anthropic.Anthropic, paper: dict, dry_run: bool = False,
@@ -947,6 +937,7 @@ def build_config_overlay(cfg: dict) -> str:
       <div class="cfg-topic-pills">{topic_pills}</div>
       {excl_html}
       <p class="cfg-filter-note">Papers are classified before summarising. Any paper that doesn't clearly match one of these topics is left out of the issue entirely — not summarised, not shown as "Other."</p>
+      <p class="cfg-filter-note">Results are also restricted to English-language papers. Title and abstract are each checked independently; either being predominantly non-English excludes the paper from this issue, regardless of topic relevance.</p>
     </div>
     <div class="cfg-footer">
       Votes are version-controlled in <code>config.json</code> alongside this digest.
@@ -979,6 +970,7 @@ def build_config_overlay(cfg: dict) -> str:
 .cfg-excl-label{{font-size:11px;font-weight:700;color:var(--mut,#5E6B76);text-transform:uppercase;letter-spacing:1px;}}
 .cfg-excl-pill{{font-size:12px;color:var(--mut,#5E6B76);background:var(--paper-dim,#F3F1EC);padding:3px 10px;border-radius:99px;text-decoration:line-through;opacity:.6;}}
 .cfg-filter-note{{font-size:12px;color:var(--mut,#5E6B76);line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line,#E4E0D8);}}
+.cfg-filter-note + .cfg-filter-note{{margin-top:6px;padding-top:0;border-top:none;}}
 .cfg-footer{{margin-top:22px;padding-top:16px;border-top:1px solid var(--line,#E4E0D8);font-size:12.5px;color:var(--mut,#5E6B76);line-height:1.6;}}
 .cfg-footer code{{font-size:11.5px;background:var(--paper-dim,#F3F1EC);padding:1px 6px;border-radius:4px;}}
 </style>
@@ -1254,7 +1246,7 @@ footer a:hover{{color:var(--amber);}}
     </div>
     <div class="provenance" id="how-it-works">
       <i class="ti ti-shield-check" aria-hidden="true"></i>
-      <p><strong>How this digest is made:</strong> Papers retrieved bi-weekly from PubMed using community-agreed search terms (voted at AINurse-26). Summaries generated by Claude Sonnet — constrained to report only what the abstract states. No speculation, no inference. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
+      <p><strong>How this digest is made:</strong> Papers retrieved bi-weekly from the community-configured sources (PubMed, arXiv, medRxiv, and/or CINAHL — see Digest Settings for this issue's exact sources) using search terms agreed at AINurse-26. Results are restricted to English-language papers; both title and abstract are checked independently, and either being predominantly non-English excludes the paper. Papers are then classified against the community's chosen topics — anything that doesn't clearly match is left out of the issue rather than shown as "Other." Summaries are generated by Claude Sonnet, constrained to report only what the abstract states, with no speculation or inference. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
     </div>
     <div class="filters">{filter_pills}</div>
     {topic_sections}
@@ -1524,6 +1516,34 @@ footer a:hover{{color:var(--amber);}}
 </html>"""
 
 
+def is_english_enough(text: str, threshold: float = 0.15) -> bool:
+    """Lightweight, dependency-free English-language check.
+
+    Flags text as non-English if more than `threshold` of its alphabetic-ish
+    characters fall outside the basic Latin script (catches CJK, Cyrillic,
+    Arabic, Hangul, Devanagari, etc.). This is a safety net applied uniformly
+    across all sources — PubMed and CINAHL both have their own language
+    limiters applied at query time, but this catches anything that slips
+    through (e.g. an English title with a non-English abstract, or a source
+    without a reliable language filter).
+    """
+    if not text:
+        return True  # nothing to judge, don't false-positive drop it
+    non_latin = 0
+    counted = 0
+    for ch in text:
+        if ch.isalpha():
+            counted += 1
+            # Basic Latin + Latin-1 Supplement + Latin Extended-A/B cover
+            # English and most European-language accented characters.
+            cp = ord(ch)
+            if not (0x0041 <= cp <= 0x024F or cp < 0x0080):
+                non_latin += 1
+    if counted == 0:
+        return True
+    return (non_latin / counted) <= threshold
+
+
 def main():
     parser = argparse.ArgumentParser(description="NAIL Digest — Nursing Informatics Digest")
     parser.add_argument("--days",     type=int, default=14,     help="Lookback window in days (default: 14)")
@@ -1584,6 +1604,23 @@ def main():
     # ── Step 1: Fetch from all configured sources ──────────────────────────
     all_papers = []
     seen_titles = set()
+    non_english_skipped = 0
+
+    def _add_if_english_and_new(p: dict) -> None:
+        nonlocal non_english_skipped
+        if p["title"] in seen_titles:
+            return
+        # Check title and abstract INDEPENDENTLY, not pooled — pooling lets a
+        # non-English title slip through when paired with a long English
+        # structured abstract (common for internationally-indexed nursing
+        # journals), since the abstract's volume dilutes the title's signal.
+        title_ok    = is_english_enough(p["title"])
+        abstract_ok = is_english_enough(p.get("abstract", ""))
+        if not (title_ok and abstract_ok):
+            non_english_skipped += 1
+            return
+        all_papers.append(p)
+        seen_titles.add(p["title"])
 
     if "pubmed" in sources:
         print("► Step 1a: Searching PubMed...")
@@ -1592,30 +1629,25 @@ def main():
             print("► Step 1b: Fetching PubMed abstracts...")
             pub_papers = fetch_abstracts(pmids)
             for p in pub_papers:
-                if p["title"] not in seen_titles:
-                    all_papers.append(p)
-                    seen_titles.add(p["title"])
+                _add_if_english_and_new(p)
 
     if "arxiv" in sources:
         print("► Step 1c: Searching arXiv...")
         for p in fetch_arxiv(args.days, args.max):
-            if p["title"] not in seen_titles:
-                all_papers.append(p)
-                seen_titles.add(p["title"])
+            _add_if_english_and_new(p)
 
     if "medrxiv" in sources:
         print("► Step 1d: Searching medRxiv...")
         for p in fetch_medrxiv(args.days, args.max):
-            if p["title"] not in seen_titles:
-                all_papers.append(p)
-                seen_titles.add(p["title"])
+            _add_if_english_and_new(p)
 
     if "cinahl" in sources:
         print("► Step 1e: Searching CINAHL...")
         for p in fetch_cinahl(args.days, args.max):
-            if p["title"] not in seen_titles:
-                all_papers.append(p)
-                seen_titles.add(p["title"])
+            _add_if_english_and_new(p)
+
+    if non_english_skipped:
+        print(f"  Language filter: skipped {non_english_skipped} non-English paper(s)")
 
     if not all_papers:
         print("  No papers found across all sources. Exiting.")

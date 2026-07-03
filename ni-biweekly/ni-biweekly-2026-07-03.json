@@ -1,11 +1,11 @@
 {
-  "issue": 1,
-  "generated_at": "2026-07-03T08:20:11.319631Z",
+  "issue": 2,
+  "generated_at": "2026-07-03T08:42:18.772833Z",
   "date_range": {
-    "start": "Jun 19, 2026",
+    "start": "Jun 28, 2026",
     "end": "Jul 03, 2026"
   },
-  "paper_count": 34,
+  "paper_count": 42,
   "config": {
     "sources": [
       "pubmed",
@@ -39,9 +39,10 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.jen.2026.01.013",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42386267/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This paper discusses how AI-powered triage and decision-support tools could help emergency nurses during mass casualty incidents, where traditional systems like JumpSTART can fail under cognitive overload. The authors describe real-world examples, such as tele-triage in rural areas and postearthquake injury prediction, while noting risks like data bias, low transparency, and over-reliance on automation. This matters for nursing informatics because it highlights the need for nurse-led design, override options, and training to keep AI tools safe and trustworthy in disaster care.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "not_peer_reviewed"
       ],
       "topic": "Clinical Decision Support",
       "topic_confidence": "high"
@@ -55,21 +56,7 @@
       "pub_date": "Jun 2026",
       "doi": "10.2196/88440",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42378141/",
-      "summary": "This pilot study tested a GenAI-based chatbot simulator that trains nurses and nursing assistants in psychiatric units to create suicide safety plans. Twenty participants rated the tool as highly acceptable and moderately-to-highly realistic, and their willingness to manage patients with suicidal ideation increased after the session. This suggests conversational agents may offer a feasible training tool, though the authors call for larger controlled trials before drawing conclusions about training effectiveness or patient outcomes.",
-      "flags": [],
-      "topic": "Workforce & Education",
-      "topic_confidence": "high"
-    },
-    {
-      "pmid": "42361129",
-      "title": "Knowledge, attitudes, and practices toward artificial intelligence among health sciences students: A cross-sectional study in Palestine.",
-      "abstract": "Artificial intelligence (AI) is increasingly integrated into healthcare education and clinical practice. Understanding health sciences students' knowledge, attitudes, and practices (KAP) toward AI is important for informing curriculum development, particularly in resource-limited educational settings. To assess knowledge, attitudes, and practices toward artificial intelligence among health sciences students at a Palestinian university. A cross-sectional study was conducted during the 2024-2025 academic year among 666 undergraduate students from nursing, medicine and health sciences, and dentistry programs. Data were collected using a structured questionnaire assessing AI knowledge (7 items), attitudes (10 items), and practices (7 items). Descriptive statistics were calculated. Independent-samples t-tests and one-way analysis of variance (ANOVA) were used to examine group differences. Effect sizes were reported using Cohen's d and eta squared (η²). Statistical significance was set at p < 0.05. The overall AI knowledge accuracy rate was 42.9% (mean 3.00 ± 1.61), indicating limited foundational understanding, particularly regarding machine learning and deep learning concepts. Attitudes toward AI were generally positive (mean 3.60 ± 0.44), with high endorsement of ethical awareness. AI practice levels were moderate (mean 3.32 ± 0.70), with frequent use for assignments and research activities. Formal AI training was associated with higher knowledge scores (t(664)=7.45, p < 0.001, d = 0.69) and slightly more positive attitudes (t(664)=2.59, p = 0.010, d = 0.23), but not with practice frequency (p = 0.807). Differences across colleges and academic years demonstrated small effect sizes (η² ≤ 0.03). Health sciences students demonstrated positive attitudes and regular academic use of AI tools despite limited foundational knowledge. These findings suggest the potential benefit of structured AI literacy integration within health sciences curricula.",
-      "authors": "Alqaissi N, Qtait M, Awwad K, Mesk Z, Farajalla F, Ziad Y et al.",
-      "journal": "PloS one",
-      "pub_date": "2026",
-      "doi": "10.1371/journal.pone.0352785",
-      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42361129/",
-      "summary": "This cross-sectional study surveyed 666 undergraduate nursing, medicine, and dentistry students at a Palestinian university about their AI knowledge, attitudes, and practices. Students showed limited AI knowledge (42.9% accuracy) but positive attitudes and moderate use of AI tools for schoolwork; formal training improved knowledge and attitudes but not usage frequency. This suggests health sciences curricula, including nursing programs, may benefit from structured AI literacy training.",
+      "summary": "This pilot study tested a GenAI-based chatbot simulator to train 20 nurses and nursing assistants at a French psychiatric hospital in creating suicide safety plans. Participants rated the tool highly for acceptability, usefulness, and realism, and their willingness to manage patients with suicidal ideation increased after training. This suggests GenAI simulators may offer a feasible, scalable way to build clinical skills, though larger controlled trials are needed to confirm training and patient outcome effects.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -83,53 +70,9 @@
       "pub_date": "Jul 2026",
       "doi": "10.1002/nop2.70649",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42351383/",
-      "summary": "This scoping review examined 41 studies (2015–2024) on how electronic health records affect nurses and nursing care in low- and middle-income countries. EHRs improved documentation and data access, but studies also reported data quality problems, workflow disruption, technostress, depersonalized care, and uneven research output across regions, especially Sub-Saharan Africa. The authors call for more theory-based, nurse-led research to guide context-sensitive digital health policy and practice.",
+      "summary": "This scoping review examined 41 studies (2015–2024) on how electronic health records affect nurses and nursing care in low- and middle-income countries. EHRs improved documentation and data access, but studies also reported data quality issues, workflow disruption, technostress, and depersonalized care, with uneven research output across regions. The authors call for nurse-led research, especially in Sub-Saharan Africa, to guide context-sensitive practice, education, and policy.",
       "flags": [],
       "topic": "EHR & Workflows",
-      "topic_confidence": "high"
-    },
-    {
-      "pmid": "42349996",
-      "title": "Using AI to identify in-hospital falls: a comparative analysis with incident reports and manual chart review.",
-      "abstract": "Falls remain a problem in hospitalised patients, especially in older adults. In-hospital falls occasionally lead to injuries. Currently, the rate of falls in hospitals is monitored using incident reports, which often leads to underreporting. Recently, natural language processing (NLP) models gained interest. In this study, an NLP model (AI algorithm) to detect falls in nursing records was evaluated. In this retrospective study conducted in a large teaching hospital in the Netherlands, hospitalised patients aged 18 years and older were included. Data were collected from free text in nursing records; all data were manually checked for fall incidents. For comparative analysis, the AI algorithm and incident reports were used. A descriptive comparison of the three different methods is provided by using absolute counts. For analysis, descriptive statistics and an area under the curve (AUC) were calculated. For time efficiency a comparative analysis was performed. 76 fallers and 1547 non-fallers with a total of 30 615 nursing records were included. Using manual chart review, a total of 124 falls were identified. The AI algorithm showed good sensitivity (79.8%), good specificity (98.3%), excellent negative predictive value (NPV, 99.9%) and moderate positive predictive value (PPV, 16.4%). Incident reports had a sensitivity of 37.0% and a specificity of 99.9%, with a good PPV and NPV (97.9% and 99.7%, respectively). The AI algorithm had good discriminatory ability with an AUC of 0.891; incident reports had a moderate discriminatory ability with an AUC of 0.685. Utilising the algorithm, only 604 nursing records needed to be manually reviewed to identify 79.2% of all fall incidents, a higher detection rate than that achieved through incident reports (36.8% of all fall incidents). The semi-automated workflow using the AI algorithm requires significantly less time compared with incident reports, with a 92.6% reduction in time. The AI algorithm has a good discriminatory ability to timely detect in-hospital falls. Using this technique, more falls are identified than by using incident reports, while the administrative burden of nursing personnel is reduced. Moreover, it will enable more effective, near real-time preventive measurements.",
-      "authors": "Leurs WL, Groeneveld M, Haan B, Lammers LA, Bouwman AR, van der Linden CM",
-      "journal": "BMJ open quality",
-      "pub_date": "Jun 2026",
-      "doi": "10.1136/bmjoq-2025-003786",
-      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42349996/",
-      "summary": "This retrospective study at a large Dutch teaching hospital tested an AI algorithm to detect in-hospital falls in nursing records, comparing it with incident reports and manual chart review among 1,623 patients. The AI algorithm detected more falls than incident reports (79.2% vs 36.8%) and cut review time by 92.6%. This suggests AI-assisted review could help nurses catch more falls with less administrative burden, supporting more timely prevention efforts.",
-      "flags": [],
-      "topic": "NLP & Generative AI",
-      "topic_confidence": "high"
-    },
-    {
-      "pmid": "42340867",
-      "title": "The Associations of Emotional Intelligence, AI Self-Efficacy, and AI Literacy Among Nursing Undergraduates Under the NUR.S.E.S. Framework: Network Analysis.",
-      "abstract": "With the rapid development of generative artificial intelligence (AI) and its deep integration into nursing education, nursing students' AI literacy (AS) has become a critical competency for their professional development. However, the patterns of associations among emotional intelligence (EI), AI self-efficacy (AILS), and AS in relation to comprehensive AS remain unclear. Based on the NUR.S.E.S. framework and using network analysis methods, this study systematically mapped the complex relational network among EI, AILS, and AS among undergraduate nursing students. It identified nodes with high centrality and bridging strength within this network, offering preliminary insights that may inform future educational interventions. A cross-sectional survey design was used, with 982 undergraduate nursing students from a university conveniently sampled in September 2025 as research participants. Assessments were conducted using the EI Scale, the AILS Scale, and the AS Scale. Using R (version 4.5.1; R Core Team), we constructed a Gaussian graph model, calculated centrality metrics such as node and bridge strength, and assessed network stability using the bootstrap method. Network analysis showed that emotion regulation (strength centrality=1.355) and evaluative ability (strength centrality=1.323) showed the highest strength centrality, indicating their prominent positions within the network. Emotional perception (bridge strength=0.427) and comfort with AI (bridge strength=0.242) are the most critical bridge nodes, appearing to connect EI with AI technology systems. Simultaneously, the network architecture suggests that AILS may play a bridging role, effectively linking EI (particularly emotional perception as a bridging factor) with higher levels of AS. Cultivating AS among undergraduate nursing students is a system that deeply integrates emotional, cognitive, and technical confidence. EI was closely associated with AS, and AILS appeared to occupy a bridging position in the network. Educational interventions might consider enhancing emotional perception and comfort with AI, pending validation through longitudinal or experimental designs.",
-      "authors": "Fan X, Sun J, Zhang L, Wang J, Dong B, Gao X et al.",
-      "journal": "JMIR nursing",
-      "pub_date": "Jun 2026",
-      "doi": "10.2196/90253",
-      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42340867/",
-      "summary": "[ERROR: could not generate summary]",
-      "flags": [
-        "generation_error"
-      ],
-      "topic": "Workforce & Education",
-      "topic_confidence": "high"
-    },
-    {
-      "pmid": "42330315",
-      "title": "Digital Leadership Scale for Clinical Nurses: Development and Validation of an Instrument.",
-      "abstract": "The rapid advancement of digital technologies, combined with the evolving complexity of health care environments, has introduced a new paradigm in nursing practice. Clinical nurses are now required not only to deliver safe and effective patient care but also to demonstrate competencies in digital literacy and innovation. Among these emerging competencies, digital leadership has become a critical attribute-enabling nurses to lead digital transformation, ensure patient safety, enhance care quality, and support system-level change within health care organizations. Despite its increasing relevance, there is a notable absence of validated measurement tools tailored to assess digital leadership in clinical practice. This study aimed to develop and psychometrically validate a Digital Leadership Scale for Clinical Nurses (DLS-CN) to systematically evaluate the digital leadership capabilities of nurses working in clinical settings. The scale development process followed a rigorous multistep procedure. Initial items were derived from previous qualitative research involving a literature review and in-depth interviews, complemented by an additional literature review conducted in this study. The content validity of 38 preliminary items was evaluated by 9 experts over 2 rounds. A pilot test was conducted with 30 nurses, followed by cognitive interviews with 5 nurses to refine item clarity and relevance. The final set of items was administered to 446 clinical nurses across various health care institutions. Data were randomly split for exploratory factor analysis and confirmatory factor analysis. Additional analyses were conducted to evaluate item discrimination, convergent validity, and internal consistency using IBM SPSS 25.0 and AMOS 23.0. The finalized DLS-CN consists of 29 items grouped under four domains: (1) ability to use digital technology, (2) digital safety management, (3) digital collaboration mindset, and (4) organizational influence. These 4 factors explained 56.9% of the total variance. The scale showed strong internal consistency (Cronbach α=0.95). Convergent validity was demonstrated through strong positive correlations with the Nursing Informatics Competency Scale (Pearson correlation coefficient r=0.82; P<.001) and the Self-Leadership Scale (Pearson correlation coefficient r=0.83; P<.001). The DLS-CN is a valid and reliable instrument for measuring digital leadership among clinical nurses. It offers a practical tool for educators, administrators, and researchers to assess and enhance digital leadership capabilities-ultimately supporting the digital transformation of health care systems.",
-      "authors": "Lee JH, Jung SY",
-      "journal": "JMIR nursing",
-      "pub_date": "Jun 2026",
-      "doi": "10.2196/82101",
-      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42330315/",
-      "summary": "Researchers developed and tested the Digital Leadership Scale for Clinical Nurses (DLS-CN) using data from 446 clinical nurses across various health care institutions. The final 29-item scale covers four areas—digital technology use, digital safety management, digital collaboration, and organizational influence—and showed strong reliability and validity. This gives educators, administrators, and researchers a validated tool to assess and support nurses' digital leadership skills.",
-      "flags": [],
-      "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
     {
@@ -141,8 +84,24 @@
       "pub_date": "2026",
       "doi": "10.1016/j.profnurs.2026.04.015",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42276655/",
-      "summary": "This study examined 42 undergraduate nursing students using AI-generated immersive virtual reality (IVR) simulations for medication administration and IV insertion skills, measured across three checkpoints. Scores for critical thinking, clinical decision-making, and skill proficiency improved across checkpoints, and students reported high satisfaction with the IVR experience. This suggests AI-generated IVR simulation may help expand clinical training opportunities as healthcare staffing and faculty constraints limit traditional clinical placements.",
+      "summary": "This study tested AI-generated immersive virtual reality (IVR) simulations with 42 undergraduate nursing students practicing medication administration and IV insertion. Scores for critical thinking, clinical decision-making, and skill proficiency improved across three checkpoints, and students reported high satisfaction with the IVR experience. This suggests AI-generated IVR simulation could help expand clinical training when clinical site access is limited.",
       "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42276648",
+      "title": "The ethical integration of generative artificial intelligence in Doctor of Nursing Practice project planning: A formative approach.",
+      "abstract": "Variability in student and faculty experiences with quality improvement and system change at an Upper Midwestern university led to inconsistent planning of doctor of nursing practice (DNP) projects. The purpose of the pilot for the DNP project practicum formative learning activities was to support the DNP project planning process by incorporating the ethical use of generative artificial intelligence (GenAI). The faculty developed two formative assignments, underpinned by self-directed learning theory and Byrne's (2025)Five Rights of Teaching and Learning with Artificial Intelligence, for a DNP asynchronous project practicum. The assignments required students to use generative artificial intelligence (GenAI) to create DNP project goals, SMART (specific, measurable, achievable, relevant, and time-bound) objectives, tasks, a timeline table, and a measurement and evaluation plan table. Using GenAI to guide DNP project planning generated ideas and improved efficiency. Students acknowledged GenAI's imperfections and the ethical risks of overreliance. Faculty noted GenAI offers utility while engaging students with their project planning. The rapid evolution of GenAI requires regular faculty review and updates to guided prompts. The focused formative learning activities with GenAI facilitated students' self-directed learning and enabled them to develop GenAI literacy by leveraging technology and analyzing its limitations.",
+      "authors": "Christian J, Ziefle K, Gao G, Barroso R",
+      "journal": "Journal of professional nursing : official journal of the American Association of Colleges of Nursing",
+      "pub_date": "2026",
+      "doi": "10.1016/j.profnurs.2026.04.001",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42276648/",
+      "summary": "Faculty at an Upper Midwestern university piloted two formative assignments for DNP students, using generative AI to help plan project goals, SMART objectives, timelines, and evaluation plans. Students used GenAI to generate ideas and work more efficiently, while noting its flaws and risks of overreliance; faculty saw value but stressed the need for regular prompt updates. This approach supported self-directed learning and built students' GenAI literacy.",
+      "flags": [
+        "population_unclear"
+      ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -155,11 +114,26 @@
       "pub_date": "2026",
       "doi": "10.1016/j.profnurs.2026.04.005",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42276635/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This article shares insights from three nursing scholars who took part in the 2024 Macy Foundation Conference on AI in medical education, alongside 50+ interdisciplinary participants. The authors recommend that nurse leaders and educators build AI competencies into curricula, support interdisciplinary research, and advocate for policy action. This matters because it calls on nursing to help shape ethical, equitable AI use in clinical practice.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
       "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42261749",
+      "title": "From Triage to Intensive Care: A Qualitative Study of Nurses' Experiences with AI-Enabled Decision Support.",
+      "abstract": "Artificial intelligence (AI)-enabled decision support systems are increasingly used in emergency departments and intensive care units to support triage, prediction of deterioration, sepsis recognition and escalation decisions. Although these tools may enhance patient safety, they also introduce new challenges for nurses who remain professionally accountable for clinical judgement in high-acuity settings. To explore emergency and critical care nurses' experiences of using AI-enabled decision support systems, with a focus on clinical judgement, escalation decisions, professional responsibility and ethical considerations across the emergency department-to-intensive care unit continuum. A qualitative study informed by Husserl's descriptive phenomenology was conducted across three emergency departments and three intensive care units in three public hospitals in northern Saudi Arabia. Semi-structured interviews were conducted with 16 nurses who had direct experience using AI-enabled decision support systems. Data were analysed using Braun and Clarke's reflexive thematic analysis. Reporting followed the Standards for Reporting Qualitative Research. Three themes were identified. 'Judgment under algorithmic pressure' reflected nurses' efforts to interpret AI alerts alongside bedside assessment, clinical uncertainty and concerns about over-reliance. 'Navigating escalation and responsibility' highlighted heightened accountability during patient deterioration and transfer from the emergency department to intensive care. 'Professional identity and ethical framing' captured nurses' concerns about role changes, moral agency and ethical discomfort when AI recommendations conflicted with patient-centred judgement. Emergency and critical care Nurses experienced AI-enabled decision support as both helpful and burdensome. Rather than reducing responsibility, AI intensified interpretive work, accountability and ethical tension. Human-centred governance, AI literacy and clear accountability frameworks are needed to support safe AI integration in acute care. Nurses require organisational support, ethical guidance and AI-focused education to critically engage with decision support systems while preserving professional judgement and moral agency.",
+      "authors": "Alanazi MA",
+      "journal": "Nursing in critical care",
+      "pub_date": "Jul 2026",
+      "doi": "10.1111/nicc.70537",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42261749/",
+      "summary": "This qualitative study interviewed 16 emergency and intensive care nurses in three Saudi Arabian public hospitals about using AI-enabled decision support systems for triage, deterioration prediction, and sepsis recognition. Nurses described AI as both helpful and burdensome, saying it increased interpretive work, accountability, and ethical tension rather than reducing responsibility. The findings suggest nursing informatics efforts need human-centered governance, AI literacy training, and clear accountability frameworks to support safe AI use while preserving nurses' clinical judgment.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
       "topic_confidence": "high"
     },
     {
@@ -171,9 +145,10 @@
       "pub_date": "Jul 2026",
       "doi": "10.1111/nin.70118",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42252748/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This discursive paper examines how artificial intelligence challenges traditional ways of knowing in nurse education, using Carper's patterns of knowing as a framework. The author argues AI reshapes the nurse educator role rather than just adding to it, proposing four new dimensions: epistemic mediator, relational anchor, ethical navigator, and emancipatory facilitator. This matters for rethinking curriculum design and professional identity as AI becomes part of nursing education.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -187,7 +162,7 @@
       "pub_date": "2026",
       "doi": "10.1097/01.NEP.0000000000001547",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42192255/",
-      "summary": "This cross-sectional survey of 1,867 nursing students at seven junior colleges in China examined how educational climate and AI literacy relate to student learning agency in generative AI-supported learning. Both factors showed positive links to learning agency, and AI literacy partially explained the connection between educational climate and learning agency. These findings suggest nursing education programs may benefit from combining supportive learning environments with AI literacy training to prepare students for AI-integrated practice.",
+      "summary": "This cross-sectional survey of 1,867 nursing students from seven junior colleges in China examined how AI literacy connects educational climate to student learning agency in generative AI-supported learning. Both educational climate and AI literacy were positively linked to learning agency, and AI literacy partially explained the relationship between climate and agency. This suggests that combining supportive learning environments with AI literacy training may help prepare nursing students for AI-integrated education and practice.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -201,10 +176,8 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002181",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42130271/",
-      "summary": "[ERROR: could not generate summary]",
-      "flags": [
-        "generation_error"
-      ],
+      "summary": "This scoping review looked at 54 studies on how tertiary nursing educators view, prepare for, and use generative AI in teaching and assessment. It found four themes: GenAI's usefulness for academic tasks, gaps in educator training, mixed attitudes, and calls for ethical guidance and discipline-specific strategies. This matters because it highlights the need for institutional support and further research before nursing programs adopt GenAI tools widely.",
+      "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -217,9 +190,10 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002175",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42130247/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This systematic review and meta-analysis of 11 studies examined AI literacy levels among nursing students. Researchers found a pooled moderate AI literacy score (4.80), with lower scores among first-year students and those lacking prior AI training. The findings suggest nursing educators may want to consider targeted, tiered AI training approaches based on student experience level.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -233,9 +207,9 @@
       "pub_date": "Jul 2026",
       "doi": "10.1111/nup.70090",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42070277/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This conceptual paper examines how AI shapes nursing education in developing countries, where infrastructure gaps and epistemic inequality already affect training. Using postphenomenology and a decolonial lens, the author argues AI mediates how students perceive patients, interpret clinical knowledge, and develop ethical judgment, not just what they learn. The paper calls for context-sensitive, reflexive approaches to AI integration in global nursing education.",
       "flags": [
-        "generation_error"
+        "population_unclear"
       ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -249,11 +223,44 @@
       "pub_date": "Jul 2026",
       "doi": "10.1053/j.jvca.2026.03.051",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42049546/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This systematic review examined 14 studies reporting 31 machine learning models built to predict outcomes, like mortality and complications, in critically ill patients receiving ECMO. Random forest and gradient boosting were the most common models, and half showed good to excellent predictive performance, but nearly all had high risk of bias and few were externally validated. These findings suggest ML tools show promise for ECMO decision support, but methodological gaps limit their readiness for clinical use.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
       "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42047653",
+      "title": "Assessment of Large Language Models for Tracheostomy Care in Pediatrics: ChatGPT vs Claude.",
+      "abstract": "This study aimed to evaluate the accuracy, completeness, clarity, and relevance of responses provided by two freely available large language models (LLMs)-ChatGPT-4.o and Claude 4.0 Sonnet-to caregiver-focused questions about pediatric tracheostomy. Seventeen clinically relevant questions were submitted to each LLM, and responses were evaluated by nine pediatric otolaryngologists across four domains using a 5-point Likert scale. ChatGPT-4.o showed significantly higher accuracy (Mean = 4.49, p = .029), while Claude 4.0 Sonnet achieved better completeness scores (Mean = 4.25, p = .022). No significant difference was found in clarity or clinical relevance. ChatGPT-4.o responses were more readable (FRES = 63.78, FKGL = 6.41) compared to Claude (FRES = 36.93, FKGL = 10.44). Preliminary findings suggest that both LLMs may offer supplementary educational value for tracheostomy caregivers, but their role in urgent situations was not evaluated. Use should remain under clinical oversight, and further research is needed.",
+      "authors": "Celik B, Kocak O, Ozturk A",
+      "journal": "Journal of pediatric health care : official publication of National Association of Pediatric Nurse Associates & Practitioners",
+      "pub_date": "2026",
+      "doi": "10.1016/j.pedhc.2025.11.017",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42047653/",
+      "summary": "Nine pediatric otolaryngologists rated ChatGPT-4.o and Claude 4.0 Sonnet answers to 17 caregiver questions about pediatric tracheostomy care. ChatGPT-4.o scored higher on accuracy and readability, while Claude scored higher on completeness; clarity and relevance were similar. Both tools may offer supplementary caregiver education, but they were not tested for urgent situations, and the authors say clinical oversight and further research remain necessary.",
+      "flags": [
+        "setting_unclear"
+      ],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42043776",
+      "title": "A Pilot Study Exploring the Use of Generative Artificial Intelligence in Nursing Education.",
+      "abstract": "In this pilot study, which utilized a pretest/posttest design, baccalaureate nursing students used artificial intelligence to generate a case scenario and nursing care plan and analyzed the content for accuracy, bias, and holistic nursing practices. The authors found that students had statistically significant improvements in their perceived ability to identify accurate nursing content, bias, and holistic nursing concepts. This article provides recommendations for nurse educators to improve students' ability to analyze artificial intelligence-generated content.",
+      "authors": "Campbell J, Borchardt A, Heppner M, Miehe J",
+      "journal": "Nursing education perspectives",
+      "pub_date": "2026",
+      "doi": "10.1097/01.NEP.0000000000001537",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42043776/",
+      "summary": "This pilot study asked baccalaureate nursing students to use AI to create a case scenario and care plan, then analyze it for accuracy, bias, and holistic nursing content. Using a pretest/posttest design, the authors found statistically significant improvements in students' perceived ability to spot accurate content, bias, and holistic care concepts. The findings offer nurse educators early ideas for teaching students to critically evaluate AI-generated content.",
+      "flags": [
+        "abstract_incomplete"
+      ],
+      "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
     {
@@ -265,11 +272,26 @@
       "pub_date": "2026",
       "doi": "10.1097/01.NEP.0000000000001532",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42036787/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This study examined nursing informatics competency gaps in BSN graduates, based on views from nurse educators and health care employers using surveys and focus groups. Graduates showed strong skills in data privacy, patient engagement, and evidence-based practice, but weaker skills in system evaluation, database management, and workflow integration. These findings suggest nursing programs may need to update informatics education to better prepare students for clinical practice.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
       "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41980858",
+      "title": "Predicting Nosocomial Infections in Hematologic Patients: A Machine Learning Model Based on Dynamic Body Temperature Trajectories.",
+      "abstract": "To identify body temperature dynamic patterns and develop a machine learning model for the early detection of nosocomial infections. A retrospective and observational study of patients hospitalised in the haematology department of the Chinese People's Liberation Army General Hospital between January 2014 and December 2023. A latent class trajectory model was used to discover patterns in patients' body temperatures over time. Machine learning models were then built to predict nosocomial infections and evaluated using standard metrics (AUROC, sensitivity, specificity). SHAP (SHapley Additive exPlanations) values were used to interpret the final model. Among 6989 patients, we identified four distinct body temperature trajectories. Bloodstream infections were most common in patients exhibiting either a slow rise followed by a gradual decrease or a rapid rise followed by a quick decrease in body temperature. The XGBoost model showed excellent predictive performance (AUROC = 0.801), with balanced sensitivity (0.718) and specificity (0.701). The top five predictors of nosocomial infections were elevated procalcitonin, neutropenia, prolonged central venous catheter use and two specific temperature trajectories: 'stable and relatively high' and 'a rapid rise followed by a quick decrease'. The XGBoost model effectively predicted nosocomial infections. Dynamic body temperature trajectories provided early, objective warning signs of infection. This predictive tool empowered nursing staff to proactively monitor nosocomial infection, allowing for timely, data-driven interventions in vulnerable hematologic patients. The developed machine learning predictive tool can help clinical medical staff identify nosocomial infections as early as possible, facilitate personalised rehabilitation and health management plans, aligning with the philosophy of patient-centred precision nursing. Further, the four body temperature trajectory patterns identified provide nurses with objective, dynamic indicators for recognising potential infection subphenotypes, supporting a shift from experience-driven reactive care towards data-driven proactive nursing. Previous studies suggested that body temperature could indicate the severity and prognosis of infections, but the pattern was unknown. In this study, we found that body temperature trajectories could signal infection subphenotypes, such as bloodstream infections being most common in patients with a slow rise followed by a gradual decrease in body temperature or with a rapid rise followed by a quick decrease. By integrating body temperature trajectories with key clinical biomarkers, the developed prediction model enables early and accurate identification of nosocomial infections in hematologic patients. The application of this tool may significantly shorten the time window between infection onset and intervention, potentially reducing infection-related complications, mortality and healthcare costs, thereby improving overall care quality and patient outcomes. The study adhered to the relevant EQUATOR reporting guidelines, the TRIPOD Checklist for Prediction Model Development and Validation. The research team included nursing staff and clinicians responsible for infection surveillance and control in the hospital, who contributed real-world insights into the definition of predictors, interpretation of temperature trajectories, clinical implications of the prediction model and preparation of the manuscript. Their expertise helped ensure that the study addressed relevant clinical questions and that the findings are interpretable and actionable in practice.",
+      "authors": "Wang Z, Du M, Liu Y, Li M",
+      "journal": "Journal of clinical nursing",
+      "pub_date": "Jul 2026",
+      "doi": "10.1111/jocn.70307",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41980858/",
+      "summary": "Researchers studied nearly 7,000 hematology patients in a Chinese hospital (2014–2023) to find body temperature patterns linked to nosocomial infections. They identified four temperature trajectories and built an XGBoost model (AUROC 0.801) using temperature patterns plus biomarkers like procalcitonin to predict infections. This tool could help nurses spot infection risk earlier, supporting proactive, data-driven monitoring in vulnerable patients.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
       "topic_confidence": "high"
     },
     {
@@ -281,9 +303,9 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.ijmedinf.2026.106426",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41946121/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "Researchers used a computer simulation of a general surgery operating room to compare four scheduling approaches: rule-based baseline, predict-then-optimize, genetic algorithm, and reinforcement learning (RL). RL cut delays and overtime nearly in half, raised utilization, and reduced same-day cancellations more than other methods. This suggests AI scheduling tools may improve OR workflow, but the authors say results need local testing before real-world use.",
       "flags": [
-        "generation_error"
+        "setting_unclear"
       ],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"
@@ -297,7 +319,7 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002159",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41914807/",
-      "summary": "This study compared 55 nursing students who used generative AI (GAI) learning simulations versus traditional teaching methods to build knowledge of social determinants of health (SDOH), measured by pre- and post-test scores. Students in the GAI group showed nearly double the improvement compared to the traditional group, a difference the authors describe as practically important. This suggests GAI tools may offer a low-cost way to strengthen SDOH teaching in nursing education.",
+      "summary": "This study compared 55 nursing students who used generative AI (GAI) simulations versus traditional teaching tools to learn about social determinants of health (SDOH), measuring changes in knowledge and competence before and after instruction. Students in the GAI group showed nearly double the improvement compared to the traditional group, a difference that was statistically significant and practically meaningful. This suggests GAI tools may offer a low-cost way to strengthen SDOH education in nursing programs.",
       "flags": [
         "setting_unclear"
       ],
@@ -313,9 +335,9 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002155",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41894617/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "Researchers developed and validated the NP-Clin-CPR, a rubric that combines Dreyfus novice-to-expert stages with entrustable professional activity levels to track nurse practitioner competency growth. Eight NP experts reviewed 40 behavioral descriptors, and after two rounds, all descriptors met content validity thresholds for relevance and clarity. This tool gives NP programs a structured, workplace-based way to monitor competency progression and assess readiness for practice.",
       "flags": [
-        "generation_error"
+        "setting_unclear"
       ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -329,10 +351,8 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107078",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41855758/",
-      "summary": "[ERROR: could not generate summary]",
-      "flags": [
-        "generation_error"
-      ],
+      "summary": "This study surveyed 521 nursing students in Türkiye to examine how attitudes toward AI relate to perceived future job prospects and career stress. Positive AI attitudes linked to higher perceived employability, while negative attitudes linked to lower employability and higher career stress; employability partly explained the connection between negative AI attitudes and career stress. This suggests nursing curricula could build confidence and adaptability skills to help students see AI as a career resource rather than a threat.",
+      "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -345,7 +365,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107076",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41849848/",
-      "summary": "This commentary examines debates about generative AI (GenAI) use in undergraduate nursing education and its effects on critical thinking and clinical judgement. The author argues GenAI can strengthen, not weaken, these skills if used thoughtfully, though it raises tension between nursing's humanistic reasoning and AI's computational logic. This matters because nursing curricula may need intentional redesign and faculty training to build AI literacy while preserving ethical, relational care.",
+      "summary": "This commentary examines the debate over generative AI (GenAI) use in undergraduate nursing education, focusing on its effects on critical thinking and clinical judgement. The author argues GenAI can support, rather than replace, human judgement if students learn to interpret its outputs within ethical and contextual dimensions of care. This matters because it calls for deliberate curriculum design and AI literacy training to help nursing students use GenAI responsibly.",
       "flags": [
         "population_unclear",
         "setting_unclear"
@@ -362,10 +382,8 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002147",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41804972/",
-      "summary": "[ERROR: could not generate summary]",
-      "flags": [
-        "generation_error"
-      ],
+      "summary": "This qualitative systematic review synthesized 34 studies on nursing students' and educators' experiences with AI-based educational tools. The authors identified 5 domains, showing AI can support deep learning, clinical reasoning, confidence, and ethical reflection, while raising concerns about ethics, data security, and faculty readiness. These findings can help guide nursing informatics discussions on responsible, human-centered AI integration in nursing education.",
+      "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -378,7 +396,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1111/jocn.70267",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41792055/",
-      "summary": "Researchers compared ChatGPT, Gemini, and DeepSeek on generating nursing care plans for ten clinical scenarios across five nursing specialties, using standardized NANDA-I, NIC, and NOC taxonomies. All three tools produced moderate-to-high quality plans, with DeepSeek showing slightly better accuracy and completeness, and surgical scenarios performing best. However, all outputs were incomplete and written at a college reading level, suggesting these tools can only serve as preliminary drafts needing expert review before clinical use.",
+      "summary": "Researchers tested ChatGPT, Gemini, and DeepSeek on ten expert-validated scenarios across five nursing specialties, checking if they could generate care plans using standard nursing taxonomies. All three tools produced moderate-to-high quality plans, with DeepSeek slightly more accurate and complete; surgical scenarios scored best, but all outputs were incomplete and written at a college reading level. This suggests AI tools can support care plan drafts but need expert review before clinical use.",
       "flags": [],
       "topic": "NLP & Generative AI",
       "topic_confidence": "high"
@@ -392,9 +410,9 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107056",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41785655/",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This scoping review examined 9 studies on intelligent tutoring systems (ITS) in nursing education, drawn from 881 records. The authors found the evidence is limited and inconsistent, with most ITS designs incomplete and lacking user-needs evaluation, theoretical grounding, or empirical testing. This matters because it highlights significant gaps nursing informatics researchers must address before ITS can be reliably integrated into nursing curricula.",
       "flags": [
-        "generation_error"
+        "population_unclear"
       ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -408,10 +426,8 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107049",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41785652/",
-      "summary": "[ERROR: could not generate summary]",
-      "flags": [
-        "generation_error"
-      ],
+      "summary": "This mixed-methods study surveyed 761 nursing and midwifery students from three universities and held focus groups with 45 participants to explore their views on AI and robots in care. Students showed high AI readiness and strong person-centred care skills, and this humanistic competence strengthened their willingness to use robots. Students accepted these technologies most when they supported, rather than replaced, human connection, suggesting nursing education should combine digital, ethical, and relational training.",
+      "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -424,7 +440,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107055",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41780204/",
-      "summary": "This qualitative study interviewed 16 nursing students and 8 faculty at a Saudi college of nursing about how they use generative AI while staying professional in coursework and assessment. Participants described disclosing AI use, verifying its outputs, and applying practical guardrails, though rules varied by course and language learners felt more at risk. The study offers a model—disclose, verify, revise under human authorship—that could guide clearer, fairer AI policies in nursing education.",
+      "summary": "This qualitative study interviewed 16 nursing students and 8 faculty at a Saudi college of nursing about how they use generative AI in coursework, simulation, and assessment. Researchers found four themes, including transparent disclosure, inconsistent course policies, practical guardrails, and identity shifts, leading to a model of disclose-verify-revise under human authorship. This suggests digital professionalism with AI can be taught through clear, proportionate expectations that support integrity and equity.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -438,7 +454,7 @@
       "pub_date": "2026",
       "doi": "10.1097/NNE.0000000000002141",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41778844/",
-      "summary": "This study examined 71 graduate nursing students across 5 courses who completed an AI literacy module based on the AI-ABCs framework, including readings, an online course, and a reflective assessment. Thematic analysis found students gained understanding of AI concepts, recognized AI's limitations and ethical concerns, saw its role in health care, and wanted more hands-on practice. These findings support building structured, staged AI competency training into nursing curricula.",
+      "summary": "Researchers studied 71 graduate nursing students across 5 courses who completed an AI literacy module based on the AI-ABCs framework, including readings, an online course, and reflection. Students showed growing understanding of AI concepts, awareness of limitations and ethical concerns, recognition of AI's role in health care, and a desire for hands-on practice. This suggests structured AI education could support staged competency building in nursing curricula.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -452,7 +468,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107050",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41747322/",
-      "summary": "This phenomenological study interviewed 13 nurse educators in the Philippines about their experiences using AI in classroom and clinical teaching. Six themes emerged, including changing pedagogy, evolving educator identity, ethical concerns, and the need for institutional support. Educators saw AI as a powerful but ethically sensitive tool, highlighting the need for clear policies, faculty training, and value-aligned integration in nursing education.",
+      "summary": "This descriptive phenomenological study explored how 13 nurse educators across Philippine nursing schools experienced integrating AI into classroom and clinical teaching. Using interviews and Colaizzi's method, researchers identified six themes, including AI adoption, pedagogy transformation, evolving educator identity, ethical stewardship, and human-technology partnership. Educators saw AI as helpful for engagement and personalized learning but stressed the need for institutional readiness, faculty training, and clear ethical guidelines to guide responsible use.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -466,7 +482,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107053",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41740305/",
-      "summary": "This qualitative study interviewed 19 nursing graduates about their experiences using generative AI (GenAI) to help write case study theses. Researchers found three main themes: reasons for using AI (like weak writing skills or lack of supervision), mixed effects on performance (better efficiency but accuracy concerns), and hidden costs (reduced independent thinking, ethical issues, and self-deception). The findings can help nursing schools create GenAI usage guidelines and support systems for students.",
+      "summary": "This qualitative study interviewed 19 nursing graduates about their experiences using generative AI (GenAI) to write case study theses. Thematic analysis found three main themes: reasons for using AI, mixed effects on writing (better efficiency but accuracy concerns), and hidden costs like reduced independent thinking and ethical issues. The findings can help nursing schools create GenAI usage guidelines and better support students.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -480,7 +496,7 @@
       "pub_date": "Jul 2026",
       "doi": "10.1016/j.nedt.2026.107033",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41719711/",
-      "summary": "This cross-sectional study surveyed 320 nursing students in Türkiye to explore how their attitudes toward AI relate to AI-related anxiety. Negative attitudes correlated with higher anxiety across measures, while positive attitudes and AI interest linked to lower anxiety; anxiety levels also varied by gender and rural versus urban residence. The findings suggest nursing curricula may benefit from structured AI education to build familiarity and reduce anxiety, though the study does not test whether such education would change outcomes.",
+      "summary": "This cross-sectional study surveyed 320 nursing students at a Türkiye university (April–June 2025) to examine links between AI attitudes and AI-related anxiety. Negative attitudes correlated with higher anxiety, while AI interest linked to more positive attitudes and lower anxiety; anxiety also varied by gender and rural versus urban residence. The authors suggest structured AI education in nursing curricula could help build familiarity and reduce anxiety.",
       "flags": [],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
@@ -494,22 +510,11 @@
       "pub_date": "Jul 2026",
       "doi": "10.1111/jan.70386",
       "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41249883/",
-      "summary": "This mixed-methods systematic review combined 28 studies to explore nursing students' perceptions and attitudes toward using artificial intelligence in nursing education. Using the Technology Acceptance Model, researchers found students were generally willing to use AI, but still had concerns about its ease of use and practical usefulness. This synthesis helps nursing educators and informatics researchers understand student attitudes when designing or introducing AI tools in nursing curricula.",
-      "flags": [],
-      "topic": "Workforce & Education",
-      "topic_confidence": "high"
-    },
-    {
-      "pmid": "41153072",
-      "title": "Co-Designing and Evaluating a Digital Competencies Toolkit for Nursing Students.",
-      "abstract": "To offer a student-focused critical evaluation of the content and use of a digital competencies discipline-specific toolkit that was co-designed with students, offering ideas for training and development across several digital skills areas, such as digital creation, research, communication, innovation, and wellbeing. A cross-sectional empirical study. The toolkit was evaluated based on clarity, level of comprehension, accessibility, perceived relevance, and future implementation through a survey, which collected quantitative and qualitative data from 339 undergraduate nursing students in a single school and university in Scotland. Original research data were collected in June 2023. Students evaluated the toolkit positively for its clarity, comprehensive nature, and practical resources, but suggested improvements for neurodivergent learners. Most students recommended implementing the toolkit early in their course and emphasised its benefits in continuous use. The toolkit was found to be relevant for practice placements and career development. Despite study workload concerns, students were positive about upskilling, highlighting the utility of the toolkit. Digital literacy is essential as healthcare increasingly relies on digital tools, behaviours and processes. This study employed co-design strategies, supporting students to act as co-producers, change agents, and partners in learning. The study highlights the need for continuous education in digital skills with suggestions for incorporating advanced skills for future practice, such as data analytics and artificial intelligence, and discusses the value of digital skills development in higher education to enhance student learning and future practice. The research offers insights of international relevance into the development of a digital competencies toolkit that proposes nursing-specific educational digital skills interventions. The work fosters inclusivity, continuous digital skills improvement, and professional readiness. The work followed the Equator Standards for Quality Improvement Reporting Excellence in Education. No patient or public contribution.",
-      "authors": "Martzoukou K, Luders ES, Henriques MP, Kamaruzaman KN",
-      "journal": "Journal of advanced nursing",
-      "pub_date": "Jul 2026",
-      "doi": "10.1111/jan.70329",
-      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41153072/",
-      "summary": "Researchers surveyed 339 undergraduate nursing students at a Scottish university about a digital competencies toolkit co-designed with students, covering skills like digital creation, research, communication, and wellbeing. Students rated the toolkit as clear and practical, recommended using it early and throughout their course, and suggested improvements for neurodivergent learners. This suggests co-designed digital skills tools may support nursing education, with room for future work on advanced skills like data analytics and AI.",
-      "flags": [],
+      "summary": "This mixed-methods systematic review pulled together 28 studies to examine nursing students' views on using artificial intelligence in their education. Using the Technology Acceptance Model, researchers grouped findings into themes on ease of use, usefulness, and willingness to use AI. Students showed active interest in AI but noted ongoing concerns about how easy and practical it is to use.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
       "topic": "Workforce & Education",
       "topic_confidence": "high"
     },
@@ -523,28 +528,153 @@
       "doi": "http://arxiv.org/abs/2606.29725v1",
       "pubmed_url": "https://arxiv.org/abs/2606.29725v1",
       "source": "arXiv",
-      "summary": "[ERROR: could not generate summary]",
+      "summary": "This paper introduces a new dispatch problem for nursing care taxis, which must handle constraints like wheelchair use, user compatibility, and pick-up/drop-off times. The authors combined integer linear programming with a Transformer-based machine learning model, then tested it on real-world facility data. The method reduced operating time by up to 8% for smaller problem sizes while keeping constraint violations low, offering a possible tool for planning patient transport logistics.",
       "flags": [
-        "generation_error"
+        "not_peer_reviewed",
+        "population_unclear"
       ],
       "topic": "AI Methods & Evaluation",
       "topic_confidence": "high"
     },
     {
-      "pmid": "medrxiv:10.64898/2026.06.16.26355814",
-      "title": "EpiLink: a simulation-based compatibility model for genomic transmission clustering in infectious disease surveillance",
-      "abstract": "Identifying recently linked infections from pathogen genome sequences is central to infectious disease surveillance, yet many clustering approaches rely on fixed genetic distance thresholds whose relationship to transmission is often unclear. This limitation is especially important in rapidly growing outbreaks and superspreading events, where many cases may be sampled close together in time and share little genetic variation, making true transmission links difficult to distinguish from other closely related infections. Supervised models can improve discrimination, but they require labelled transmission data that are rarely available during outbreak response.\n\nWe developed EpiLink, a threshold-free method that estimates whether two cases are compatible with recent transmission. Here, compatibility means how well the observed genetic distance and sampling-time difference between two cases fit what would be expected if they were linked by defined recent transmission scenarios. EpiLink simulates plausible recent transmission histories while accounting for uncertainty in infection timing, testing delay, and mutation accumulation, then assigns higher scores to pairs whose observed differences are typical of those simulations.\n\nEpiLink was evaluated using both synthetic and empirical SARS-CoV-2 outbreak data from the 2020 Boston epidemic. Two EpiLink variants were compared to a logistic regression model trained on labelled transmission data. One EpiLink variant assumed deterministic mutation accumulation, with genetic differences proportional to elapsed evolutionary time; the other accounted for stochasticity by sampling mutation counts from a Poisson distribution. The logistic regression model performed better at distinguishing linked from unlinked pairs, but EpiLink achieved comparable clustering accuracy. In the Boston data, EpiLink recovered clusters enriched for documented conference and skilled nursing facility outbreaks. EpiLink thus provides an interpretable, simulation-based approach for identifying recent transmission clusters when fixed thresholds are difficult to justify and labelled transmission data are unavailable.\n\nAuthor summaryGrouping infectious disease cases into transmission clusters is a routine part of outbreak surveillance, but many methods rely on fixed genetic distance cut-offs that can be hard to interpret, especially when transmission is rapid and pathogen diversity is low. We developed EpiLink, which instead asks how consistent the observed genetic and sampling-time differences between two cases are with recent transmission. EpiLink simulates plausible transmission histories and scores each pair according to how typical its observed differences are within the simulated distributions. In simulated SARS-CoV-2 outbreaks, EpiLink nearly matched the clustering accuracy of a supervised model trained on labelled transmission pairs, without requiring labelled data. We found a practical trade-off: deterministic configurations performed best when model assumptions were well met, while configurations incorporating uncertainty were more robust when assumptions were misspecified. Applied to SARS-CoV-2 data from the 2020 Boston epidemic, EpiLink recovered clusters enriched for known outbreaks at a conference and skilled nursing facility. EpiLink offers a practical and interpretable approach for transmission clustering when labelled data are unavailable.",
-      "authors": "Arthur, D.; Banks, C. J.; Kao, R. R.",
-      "journal": "medRxiv (preprint)",
+      "pmid": "cinahl:0",
+      "title": "Evaluating Artificial Intelligence–Generated Nursing Care Plans: A Scenario‐Based Comparative Study of Accuracy, Completeness, Quality, and Readability.",
+      "abstract": "Aim: This study aimed to evaluate the ability of three generative artificial intelligence tools (ChatGPT, Gemini and DeepSeek) to generate clinically accurate, comprehensive, and readable nursing care plans aligned with standardised nursing taxonomies (North American Nursing Diagnosis Association International, Nursing Interventions Classification, and Nursing Outcomes Classification). The study further explored variations in tool performance across different nursing specialties. Design: A descriptive comparative design was used. Methods: Ten expert‐validated clinical scenarios representing five nursing specialties (Fundamentals of Nursing, Medical, Surgical, Paediatric and Psychiatric Nursing) were presented to the three artificial intelligence tools. Each tool responded to four standardised prompts based on the latest North American Nursing Diagnosis Association International, Nursing Interventions Classification and Nursing Outcomes Classification taxonomies. Outputs were assessed for quality, accuracy, completeness and readability by expert evaluators using validated scales. Results: All tools produced nursing care plans of moderate‐to‐high quality. DeepSeek demonstrated slightly higher accuracy and completeness compared with Gemini and ChatGPT. Surgical nursing scenarios yielded the highest performance, likely reflecting the more protocolised and pathway‐driven nature of perioperative care. However, all outputs were incomplete and written at a college‐level readability, limiting accessibility for clinical use. Conclusion: Generative artificial intelligence tools can support the production of structured nursing care plans requiring expert review and adaptation, particularly in less standardised clinical domains, but their limitations in completeness and readability indicate they should be regarded only as preliminary drafts requiring expert review and adaptation. Impact: The study examined whether generative artificial intelligence can reliably assist in creating nursing care plans. All tools performed moderately well, with DeepSeek showing slight advantages, but outputs were incomplete and difficult to read. Findings are relevant to clinical nurses, educators, healthcare managers and policymakers worldwide who are exploring artificial intelligence in nursing workflows. Reporting Method: This study adhered to the Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) guidelines. Patient or Public Contribution: This study did not include patient or public involvement in its design, conduct or reporting. Contribution to the Global Clinical Community: Provides the first comparative evaluation of generative artificial intelligence tools for nursing care plans aligned with international taxonomies.Identifies both efficiencies and critical limitations of artificial intelligence‐generated plans, emphasising the need for expert oversight.Informs global nursing practice, education, and policy on safe integration of artificial intelligence into care planning.",
+      "authors": "Yilmaz Akyaz, Dilek\n                Esim, Deniz\n                Cakir, Gokce Naz\n                Basut, Elif Aylin\n                Tufekci, Seyma\n                Konyar, Mukaddes\n                Yaman, Ozge\n                Mor, Emre\n                Musaoglu, Sukran\n                Karaman, Oguzhan\n                Baygul Eden, Arzu\n                Graduate School of Health Sciences, Koç University, Istanbul, Turkey",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Jul2",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194235387&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This study tested ChatGPT, Gemini, and DeepSeek on writing nursing care plans for ten clinical scenarios across five nursing specialties, using standard taxonomies (NANDA-I, NIC, NOC). All three tools produced moderate-to-high quality plans, with DeepSeek slightly more accurate and complete, and surgical scenarios performing best. However, all outputs were incomplete and written at a college reading level, so experts must review and adapt AI-generated care plans before clinical use.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:2",
+      "title": "Nursing Students' Perceptions and Attitudes on the Application of Artificial Intelligence in Nursing Education: A Mixed‐Methods Systematic Review.",
+      "abstract": "Background: The utilisation of artificial intelligence in the context of nursing education has become increasingly extensive. However, various studies show differing perspectives and attitudes among nursing students, and the findings have not been systematically synthesised. Aim: To systematically review the perceptions and attitudes of nursing students on the application of artificial intelligence in nursing education. Design: Mixed‐methods systematic review. Method: A comprehensive literature search was conducted across 10 databases, including PubMed, Cochrane, Embase, Web of Science, CINAHL, Scopus, China Science and Technology Journal Database, SinoMed, China National Knowledge Internet, and WanFang database, the inclusive years of articles searched were from 1969 to 2025. Two researchers independently screened the literature and extracted the data. The mixed methods assessment tool was used to evaluate the risk of bias in the included literature. The relevant data were extracted and synthesised according to the Joanna Briggs Institute's convergence synthesis method, ensuring the comprehensive integration of qualitative and quantitative results. These results were then integrated into the Technology Acceptance Model. Results: A total of 28 articles were included, including 13 qualitative studies, 13 quantitative studies, and 2 mixed‐method studies. According to the Technology Acceptance Model, the perceptions and attitudes of nursing students on the nursing education's adoption of artificial intelligence were integrated into 10 categories of three comprehensive themes: (i) Nursing students' perceptions and attitudes of the ease of use of artificial intelligence in nursing education, including 3 categories; (ii) nursing students' perceptions and attitudes on the usefulness of artificial intelligence in nursing education, including 4 categories; (iii) nursing students' behavioural intention, including 3 categories. Conclusions: Overall, our study demonstrated that nursing students had an active willingness to utilise artificial intelligence. However, they acknowledged that certain issues persist regarding the ease and practicality of artificial intelligence in nursing education. Patient or Public Contribution: No patients or members of the public were directly involved in this systematic review, as the study synthesised existing literature.",
+      "authors": "Li, Yuhang\n                Chen, Shi\n                Dong, Xiaohui\n                Lu, Xianying\n                Chen, Xinyu\n                Bai, Dingxi\n                Luo, Wen\n                Cao, Ting\n                Song, Zihao\n                Hou, Chaoming\n                Gao, Jing\n                College of Nursing, Chengdu University of Traditional Chinese Medicine, Chengdu, China",
+      "journal": "Journal of Advanced Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Jul2",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194581152&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This mixed-methods systematic review pulled together 28 studies to examine nursing students' views on using artificial intelligence in their education. Using the Technology Acceptance Model, researchers organized findings into three themes: ease of use, usefulness, and behavioral intention. Students showed active willingness to use AI, but they also noted ongoing concerns about how easy and practical it is to use in nursing education.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:6",
+      "title": "Co‐Designing and Evaluating a Digital Competencies Toolkit for Nursing Students.",
+      "abstract": "Aim: To offer a student‐focused critical evaluation of the content and use of a digital competencies discipline‐specific toolkit that was co‐designed with students, offering ideas for training and development across several digital skills areas, such as digital creation, research, communication, innovation, and wellbeing. Design: A cross‐sectional empirical study. Methods: The toolkit was evaluated based on clarity, level of comprehension, accessibility, perceived relevance, and future implementation through a survey, which collected quantitative and qualitative data from 339 undergraduate nursing students in a single school and university in Scotland. Original research data were collected in June 2023. Results: Students evaluated the toolkit positively for its clarity, comprehensive nature, and practical resources, but suggested improvements for neurodivergent learners. Most students recommended implementing the toolkit early in their course and emphasised its benefits in continuous use. The toolkit was found to be relevant for practice placements and career development. Despite study workload concerns, students were positive about upskilling, highlighting the utility of the toolkit. Conclusion: Digital literacy is essential as healthcare increasingly relies on digital tools, behaviours and processes. This study employed co‐design strategies, supporting students to act as co‐producers, change agents, and partners in learning. Implications for the Profession and/or Patient Care: The study highlights the need for continuous education in digital skills with suggestions for incorporating advanced skills for future practice, such as data analytics and artificial intelligence, and discusses the value of digital skills development in higher education to enhance student learning and future practice. Impact: The research offers insights of international relevance into the development of a digital competencies toolkit that proposes nursing‐specific educational digital skills interventions. The work fosters inclusivity, continuous digital skills improvement, and professional readiness. Reporting Method: The work followed the Equator Standards for Quality Improvement Reporting Excellence in Education. Patient or Public Contribution: No patient or public contribution.",
+      "authors": "Martzoukou, Konstantina\n                Luders, Errol Sadullah\n                Henriques, Moisés Piedade\n                Kamaruzaman, Khairun Nisah\n                School of Law and Social Sciences, Robert Gordon University, Aberdeen, UK",
+      "journal": "Journal of Advanced Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Jul2",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194581122&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "Researchers at a Scottish university surveyed 339 undergraduate nursing students to evaluate a co-designed digital competencies toolkit covering skills like digital creation, communication, and wellbeing. Students rated it as clear and practically useful, recommended early and ongoing use, and suggested improvements for neurodivergent learners. The findings support using co-design approaches to build digital literacy in nursing education and highlight future needs like data analytics and AI training.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:12",
+      "title": "腹膜透析病人肌少症风险预测模型的构建 及验证.",
+      "abstract": "Objective: To develop and validate a high - precision, interpretable sarcopenia risk prediction model for peritoneal dialysis patients. Methods: A retrospective study included 441 peritoneal dialysis patients from two tertiary hospitals in Anhui province from January 2023 to June 2025 as the training set, and 198 patients as the external validation set. Core predictors were screened using univariate analysis, Logistic regression, and LASSO regression. Eight machine learning algorithms were used to build models. Internal validation employed Bootstrap sampling, and external validation used an independent dataset. The optimal model was interpreted using the Shapley additive explanations(SHAP). Results: Six core predictors were identified: sex, dialysis vintage, and diabetes, prealbumin、 interleukin - 6、25 - hydroxyvitamin D. The support vector machine(SVM) model showed the best performance, with an area under the receiver operating characteristic curve(AUC) of 0.958 in the internal test set and 0.968 in the external validation set. Accuracy, sensitivity, and specificity all exceeded 0.9.SHAP analysis revealed the contribution of each predictor and their nonlinear relationships. Conclusions: The developed machine learning model demonstrates high accuracy, generalizability, and interpretability. It can provide intelligent decision support for early identification and precise intervention of sarcopenia in peritoneal dialysis patients, showing potential for clinical translation.",
+      "authors": "李锦\n                朱文莉\n                张培\n                范哲\n                安徽医科大学第一附属医院（肾脏内科）, 安徽 230022",
+      "journal": "Chinese Nursing Research",
       "pub_date": "2026",
-      "doi": "10.64898/2026.06.16.26355814",
-      "pubmed_url": "https://doi.org/10.64898/2026.06.16.26355814",
-      "source": "medRxiv",
-      "summary": "[ERROR: could not generate summary]",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194933649&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "Researchers built a machine learning model to predict sarcopenia risk in 639 peritoneal dialysis patients across two hospitals in Anhui province, China. Using six predictors (sex, dialysis vintage, diabetes, prealbumin, interleukin-6, and vitamin D), the support vector machine model achieved strong accuracy in both internal and external testing, with SHAP analysis explaining each predictor's contribution. This tool could support nurses in identifying at-risk patients early for targeted intervention.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:13",
+      "title": "Artificial intelligence in interprofessional education and collaborative practice: towards a research agenda.",
+      "abstract": "The article focuses on the challenges and research needs posed by the integration of artificial intelligence (AI) into interprofessional education and collaborative practice (IPECP) in healthcare. It highlights that current AI research often overlooks the complex dynamics of interprofessional teams, particularly issues of epistemic authority—how knowledge from different professions is valued and integrated—and the impact of AI on professional roles and identities. The article calls for a dedicated research agenda to examine how AI affects team communication, role boundaries, and collaborative decision-making, emphasizing that AI should be studied not merely as a tool but as a factor embedded within social and professional structures. It advocates for interdisciplinary collaboration to develop theoretical frameworks and educational strategies that prepare healthcare professionals for AI-mediated interprofessional practice.",
+      "authors": "Xyrichis, Andreas\n                King's College, London, UK",
+      "journal": "Journal of Interprofessional Care",
+      "pub_date": "Jul/",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194842544&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This article examines how artificial intelligence intersects with interprofessional education and collaborative practice, noting that current research often ignores team dynamics like epistemic authority and shifting professional roles. The author calls for a dedicated research agenda to study AI's effects on team communication, role boundaries, and decision-making, treating AI as embedded in social structures rather than just a tool. This matters for nursing informatics because it highlights gaps in preparing nurses for AI-mediated teamwork.",
       "flags": [
-        "generation_error"
+        "population_unclear",
+        "setting_unclear"
       ],
-      "topic": "AI Methods & Evaluation",
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:14",
+      "title": "Toward Human‐Centred Technology Integration in Healthcare: Lessons From an AI‐Powered Nursing Pilot...Spoon D, De Vroed A, Greup S, et al. Integrating Artificial Intelligence in Nursing Practice With Decubitus Risk Prediction Alerts: A Pilot Process Evaluation. Journal of Clinical Nursing. 2026; 20.",
+      "abstract": "This article evaluates the integration of the DRAAI artificial intelligence (AI) model for pressure ulcer (PU) risk prediction into nursing practice, highlighting challenges in implementation. Key issues include balancing AI assistance with nursing professional autonomy to avoid automation bias, the need for enhanced algorithmic transparency to build trust through explainable AI features, and the importance of validating the model across diverse clinical settings to ensure generalizability. The authors emphasize that successful AI adoption in nursing requires deliberate design fostering human-AI collaboration, ongoing trust-building, and rigorous external validation before broader deployment.",
+      "authors": "Li, Min\n                School of Marxism, Southeast University, Nanjing, People's Republic of China",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Jul2",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194235381&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This commentary reviews a pilot evaluation of the DRAAI AI model, which predicts pressure ulcer risk in nursing practice. The authors identify challenges including automation bias, the need for explainable AI to build nurse trust, and the need to validate the model in different clinical settings. This matters because it shows successful AI adoption in nursing requires human-AI collaboration, ongoing trust-building, and external validation before wider use.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:18",
+      "title": "Nurse Educators' Conceptions of How They Facilitate Critical Thinking in Bachelor Nursing Students: A Phenomenographic Study.",
+      "abstract": "Aim: To describe the variation in nurse educators' conceptions of how they facilitate critical thinking in bachelor nursing students. Design: Qualitative study with a phenomenographic approach. Methods: Data was collected through twenty‐six semi‐structured interviews with nurse educators conducted in Sweden between March and June 2024. Results: The result of this study can be understood as five descriptive categories: Creating a safe and trustful relationship with the students, Encouraging a dialogue with the students, Using space as a tool, Using artefacts as a tool, and Using oneself as a tool. Conclusion: The conclusion is that the facilitation of critical thinking needs to be based on a safe and trustful relationship between educators and students. Without this relationship, it is not possible to establish the central dialogue, where the educator can facilitate critical thinking through asking counterquestions and provoking the students. Implication for the Profession: To become critical thinkers, the students need to put their knowledge and assumptions in a new light and question them. Here, the educator has a vital role in being the guide and facilitator. Impact: The result indicated that it is vital for the educators to build a safe relationship with the students. The relationship is a precondition for the facilitative dialogue where the educators can ask reflective and provoking questions to stimulate critical thinking. Future nurses need to be prepared with critical thinking to enable evidence‐based clinical decisions both during clinical practice as well as when being registered nurses. Reporting Method: SRQR guidelines. Patient and Public Involvement: This study did not include patient or public involvement in its design, conduct, or reporting.",
+      "authors": "Westerdahl, Frida\n                Wennick, Anne\n                Borglin, Gunilla\n                Carlson, Elisabeth\n                Department of Care Science, Faculty of Health and Society, Malmö University, Malmö, Sweden",
+      "journal": "Journal of Advanced Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Jul2",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194581120&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This Swedish study explored how nurse educators think about facilitating critical thinking in bachelor nursing students, using interviews with 26 educators. The researchers found five approaches, including building safe relationships, encouraging dialogue, and using space, artefacts, and themselves as tools. This matters because a trusting relationship appears to be the foundation that allows educators to ask challenging questions that help students develop critical thinking for evidence-based practice.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:20",
+      "title": "Awareness of the Metaverse and Its Relationship With Future Time Perspective Among Nursing Students.",
+      "abstract": "The metaverse is increasingly recognized as an innovative digital environment with potential applications in nursing education and healthcare training. Nursing students' awareness of metaverse technologies and their future time perspective may influence their preparedness to adopt emerging digital learning approaches. This study aimed to assess nursing students' awareness of the metaverse and examine its relationship with future time perspective. A descriptive correlational study was conducted among 426 fourth‐year nursing students at the Faculty of Nursing, Beni‐Suef University, Egypt, during the 2023–2024 academic year. Data were collected using the Metaverse Awareness Scale and the Future Time Perspective Questionnaire. Results indicated that students demonstrated moderate awareness of metaverse applications, with community impact representing the highest awareness dimension. Most participants reported a positive future time perspective. A statistically significant positive correlation was found between metaverse awareness and future time perspective (p < 0.001), indicating that higher awareness was associated with stronger future‐oriented attitudes. The findings highlight the importance of enhancing digital awareness among nursing students to support readiness for technology‐integrated education and evolving healthcare environments. Incorporating structured digital learning experiences into nursing curricula may facilitate students' adaptation to future technology‐driven clinical practice.",
+      "authors": "Hussein, Noha Hussein Yassein\n                Hossny, Eman Kamel\n                Aly, Shimaa Elwardany\n                Ahmed, Asmaa Mohamed\n                Ali, Safaa Abdelazem Osman\n                Mohamed, Sanaa Hassan\n                Kaushik, Shashank\n                Nursing Administration Department,, Faculty of Nursing,, Capital University,, Helwan, Egypt, capital.edu",
+      "journal": "Nursing Forum",
+      "pub_date": "6/28",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194946137&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This descriptive correlational study surveyed 426 fourth-year nursing students at Beni-Suef University, Egypt, to measure their awareness of metaverse technology and their future time perspective. Students showed moderate awareness overall, with community impact rated highest, and a mostly positive future time perspective. Higher metaverse awareness was significantly linked to stronger future-oriented attitudes, suggesting nursing curricula may benefit from structured digital learning to prepare students for technology-integrated practice.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:23",
+      "title": "Global perspectives, confidence and attitudes of health students post implementation of an online interprofessional wound care learning intervention: an international exploratory analysis from five countries.",
+      "abstract": "This study explores the impact of an international, interprofessional online masterclass on wound care for health students from five countries. The aim was to evaluate students' knowledge, confidence, and attitudes toward interprofessional education (IPE) and collaborative care in wound management. A descriptive quantitative design was employed, utilizing pre- and post-masterclass surveys to assess participants' confidence in various aspects of wound care and their perceptions of teamwork in healthcare. Participants from nursing, medicine, and allied-health disciplines were included. The masterclass incorporated a case study, risk factors, and management strategies for wounds, delivered through an online platform with collaborative activities. Findings indicated improvements in students' confidence in wound assessment, management, and prevention in all wound types, dressings, and wound beds. Additionally, attitudes toward IPE showed positive shifts, with students valuing collaborative teamwork, role understanding, and person-centered care. Despite challenges, such as time-zone differences and limited exposure time, the study highlights the potential of IPE to enhance students' clinical practice and prepare them for multidisciplinary collaboration in wound care. These results suggest the possibility of incorporating IPE into healthcare curricula and emphasize the need for further research exploring long-term effect in wound care outcomes.",
+      "authors": "Theobald, Karen Ann\n                O'Donnell, Deirdre\n                Johnston, Sandra\n                Neil, Sharon\n                Shepherd, Andrea\n                Lokeesan, Vignesvararjah\n                Nguyen, Thi Phuong Lan\n                Ababneh, Anas\n                Linh Tran, Thuy Khanh\n                Parker, Christina\n                Faculty of Health, School of Nursing, Queensland University of Technology, Kelvin Grove, Queensland, Australia",
+      "journal": "Journal of Interprofessional Care",
+      "pub_date": "Jul/",
+      "doi": "",
+      "pubmed_url": "https://search.ebscohost.com/login.aspx?direct=true&db=cul&AN=194842537&site=ehost-live",
+      "source": "CINAHL",
+      "summary": "This study surveyed nursing, medicine, and allied-health students from five countries before and after an online interprofessional masterclass on wound care. Students reported greater confidence in wound assessment and management, plus more positive attitudes toward teamwork and person-centered care, despite time-zone and exposure-time challenges. This suggests online interprofessional education could be added to health curricula, though the study did not measure long-term effects on wound care outcomes.",
+      "flags": [],
+      "topic": "Workforce & Education",
       "topic_confidence": "high"
     }
   ]

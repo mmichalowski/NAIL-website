@@ -520,6 +520,23 @@ def fetch_cinahl(days_back: int = 14, max_results: int = 20) -> list[dict]:
 
         print(f"  CINAHL: querying with profile={full_profile}, db={db}, format={fmt}, "
               f"numrec={numrec} (raw pool), cap={CINAHL_MAX_PAPERS} (with abstract), date range={date_range}")
+
+        # Safe credential diagnostics — never print the full value, but show
+        # length + first/last 2 chars so mismatches (wrong secret, stray
+        # whitespace, wrong length) are catchable without exposing secrets.
+        def _preview(val: str) -> str:
+            if not val:
+                return "<EMPTY>"
+            if len(val) <= 4:
+                return f"<len={len(val)}, too short to preview safely>"
+            return f"<len={len(val)}, '{val[:2]}...{val[-2:]}'>"
+
+        print(f"  CINAHL credential check — "
+              f"cust_id: {_preview(cust_id)}  "
+              f"group_id: {_preview(group_id)}  "
+              f"profile_id: {_preview(profile_id)}  "
+              f"profile_pwd: {_preview(profile_pwd)}")
+
         resp = req.get(EIT_SEARCH_URL, params={
             "prof":   full_profile,
             "pwd":    profile_pwd,
@@ -716,9 +733,14 @@ def classify_paper(client: anthropic.Anthropic, paper: dict, dry_run: bool = Fal
         resp = client.messages.create(
             model=MODEL,
             max_tokens=80,   # padded for Sonnet 5's new tokenizer (~30% more tokens/text)
+            thinking={"type": "disabled"},  # simple structured task — no reasoning needed;
+                                             # also avoids ThinkingBlock appearing at content[0]
             messages=[{"role": "user", "content": classify_prompt}],
         )
-        raw = resp.content[0].text.strip()
+        text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+        if text_block is None:
+            raise ValueError(f"No text block in response (got: {[getattr(b,'type','?') for b in resp.content]})")
+        raw = text_block.text.strip()
         raw = re.sub(r"^```json\s*", "", raw)
         raw = re.sub(r"\s*```$", "", raw)
         parsed = json.loads(raw)
@@ -755,10 +777,15 @@ def generate_summary(client: anthropic.Anthropic, paper: dict, dry_run: bool = F
             resp = client.messages.create(
                 model=MODEL,
                 max_tokens=400,  # padded for Sonnet 5's new tokenizer (~30% more tokens/text)
+                thinking={"type": "disabled"},  # simple structured task — no reasoning needed;
+                                                 # also avoids ThinkingBlock appearing at content[0]
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": summary_prompt}],
             )
-            raw = resp.content[0].text.strip()
+            text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+            if text_block is None:
+                raise ValueError(f"No text block in response (got: {[getattr(b,'type','?') for b in resp.content]})")
+            raw = text_block.text.strip()
             raw = re.sub(r"^```json\s*", "", raw)
             raw = re.sub(r"\s*```$", "", raw)
             parsed = json.loads(raw)

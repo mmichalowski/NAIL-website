@@ -51,7 +51,7 @@ import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from urllib.request import urlopen, Request
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 from urllib.error import HTTPError
 
 try:
@@ -201,7 +201,7 @@ FLAGGING RULES — if any of the following apply, add the flag in the JSON:
 - The abstract does not state the study population → flag: "population_unclear"
 - The abstract does not state the setting or context → flag: "setting_unclear"
 - The abstract describes work in progress with no results yet → flag: "in_progress"
-- The paper is a preprint, review protocol, or letter → flag: "not_peer_reviewed"
+- The paper is an unreviewed preprint, OR is itself a pre-registered protocol for a future systematic review (a plan for a review, not a completed one), OR is a letter/correspondence piece → flag: "not_peer_reviewed". Do NOT apply this flag to a completed narrative, literature, or systematic review that has been published in a peer-reviewed journal — those went through the same peer review as original research and are not preprints or protocols.
 - The abstract is fewer than 50 words or appears incomplete → flag: "abstract_incomplete"
 
 OUTPUT FORMAT — return only valid JSON, nothing else:
@@ -370,14 +370,35 @@ def fetch_arxiv(days_back: int = 14, max_results: int = 20) -> list[dict]:
     from datetime import datetime, timedelta, timezone
     cutoff = (datetime.now(timezone.utc) - timedelta(days=days_back)).strftime("%Y%m%d")
     url = (
-        f"http://export.arxiv.org/api/query?search_query={ARXIV_NI_QUERY}"
+        f"https://export.arxiv.org/api/query?search_query={ARXIV_NI_QUERY}"
         f"&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
     )
     try:
         import requests as req
-        r = req.get(url, headers={"User-Agent": "NI-Biweekly/1.0 (ainurse@nailcollab.org)"}, timeout=30)
+
+        r = None
+        for attempt in range(3):
+            r = req.get(url, headers={"User-Agent": "NI-Biweekly/1.0 (ainurse@nailcollab.org)"}, timeout=60)
+            if r.status_code != 429:
+                break
+            # arXiv is rate-limiting us. Respect Retry-After if given, else
+            # back off with increasing delay — arXiv's own courtesy guideline
+            # is roughly one request per 3 seconds.
+            wait = int(r.headers.get("Retry-After", 0)) or (5 * (attempt + 1))
+            print(f"  arXiv rate-limited (429) — waiting {wait}s before retry {attempt+1}/3...")
+            time.sleep(wait)
+
+        if not r.ok:
+            print(f"  WARNING: arXiv HTTP {r.status_code} — {r.text[:300]}")
+            return []
         ns = {"atom": "http://www.w3.org/2005/Atom"}
-        root = ET.fromstring(r.text)
+        try:
+            root = ET.fromstring(r.text)
+        except ET.ParseError as e:
+            print(f"  WARNING: arXiv returned non-XML response: {e}")
+            print(f"  Response status: {r.status_code} · Content-Type: {r.headers.get('Content-Type')}")
+            print(f"  First 300 chars of response: {r.text[:300]!r}")
+            return []
         papers = []
         for entry in root.findall("atom:entry", ns):
             pub = entry.findtext("atom:published", "", ns)[:10].replace("-", "")
@@ -404,7 +425,7 @@ def fetch_arxiv(days_back: int = 14, max_results: int = 20) -> list[dict]:
         print(f"  arXiv returned {len(papers)} papers")
         return papers
     except Exception as e:
-        print(f"  WARNING: arXiv fetch failed: {e}")
+        print(f"  WARNING: arXiv fetch failed: {type(e).__name__}: {e}")
         return []
 
 
@@ -587,7 +608,20 @@ def fetch_cinahl(days_back: int = 14, max_results: int = 20) -> list[dict]:
             if not abstract:
                 continue  # skip records with no abstract — doesn't count toward the cap
 
-            link = plink or (f"https://doi.org/{doi}" if doi else "")
+            # DOI, when present, is the best link — works for any public
+            # reader, no login required. But CINAHL Ultimate's nursing-journal
+            # records essentially never carry a DOI in this API's metadata
+            # (confirmed empirically: 0 of 12 sampled records had one).
+            # EBSCO's own persistent link (plink) is NOT a usable fallback —
+            # it requires the READER's own institutional EBSCO session and
+            # always fails with an authentication error for public readers of
+            # the digest (confirmed in production — every plink hit this).
+            # Fall back to a Google Scholar search built from the title
+            # instead — no login needed, reliably surfaces the paper.
+            if doi:
+                link = f"https://doi.org/{doi}"
+            else:
+                link = "https://scholar.google.com/scholar?q=" + quote(title)
 
             papers.append({
                 "pmid":       f"cinahl:{an or len(papers)}",
@@ -659,7 +693,7 @@ FLAGGING RULES — if any of the following apply, add the flag in the JSON:
 - The abstract does not state the study population → flag: "population_unclear"
 - The abstract does not state the setting or context → flag: "setting_unclear"
 - The abstract describes work in progress with no results yet → flag: "in_progress"
-- The paper is described as a preprint, review protocol, or letter → flag: "not_peer_reviewed"
+- The paper is an unreviewed preprint, OR is itself a pre-registered protocol for a future systematic review (a plan for a review, not a completed one), OR is a letter/correspondence piece → flag: "not_peer_reviewed". Do NOT apply this flag to a completed narrative, literature, or systematic review that has been published in a peer-reviewed journal — those went through the same peer review as original research and are not preprints or protocols.
 - The abstract is fewer than 50 words or appears incomplete → flag: "abstract_incomplete"
 
 OUTPUT FORMAT — return only valid JSON, nothing else:
@@ -938,6 +972,18 @@ def build_config_overlay(cfg: dict) -> str:
       <p class="cfg-filter-note">Papers are classified before summarising. Any paper that doesn't clearly match one of these topics is left out of the issue entirely — not summarised, not shown as "Other."</p>
       <p class="cfg-filter-note">Results are also restricted to English-language papers. Title and abstract are each checked independently; either being predominantly non-English excludes the paper from this issue, regardless of topic relevance.</p>
     </div>
+    <div class="cfg-section">
+      <div class="cfg-section-label"><i class="ti ti-flag"></i> Why a paper gets flagged</div>
+      <div class="cfg-flag-list">
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Population unclear</span><span class="cfg-flag-desc">The abstract doesn't state who was studied.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Setting unclear</span><span class="cfg-flag-desc">The abstract doesn't state the setting or context of the study.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Work in progress</span><span class="cfg-flag-desc">The paper describes work that's still underway, with no results yet.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Not peer-reviewed</span><span class="cfg-flag-desc">The paper is an unreviewed preprint, a protocol for a future systematic review, or a letter/correspondence piece. Completed reviews published in a peer-reviewed journal are not included here.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Abstract incomplete</span><span class="cfg-flag-desc">The abstract is very short or appears cut off.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Summary error</span><span class="cfg-flag-desc">A technical issue prevented a summary from being generated — not a comment on the paper itself.</span></div>
+      </div>
+      <p class="cfg-filter-note">A paper can carry more than one flag. Flagged papers still appear in the issue, grouped under their topic within the Flagged Papers section.</p>
+    </div>
     <div class="cfg-footer">
       Votes are version-controlled in <code>config.json</code> alongside this digest.
       Propose changes via the NAIL Collaborative editorial board.
@@ -970,6 +1016,10 @@ def build_config_overlay(cfg: dict) -> str:
 .cfg-excl-pill{{font-size:12px;color:var(--mut,#5E6B76);background:var(--paper-dim,#F3F1EC);padding:3px 10px;border-radius:99px;text-decoration:line-through;opacity:.6;}}
 .cfg-filter-note{{font-size:12px;color:var(--mut,#5E6B76);line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line,#E4E0D8);}}
 .cfg-filter-note + .cfg-filter-note{{margin-top:6px;padding-top:0;border-top:none;}}
+.cfg-flag-list{{display:flex;flex-direction:column;gap:8px;}}
+.cfg-flag-row{{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}}
+.cfg-flag-badge{{flex-shrink:0;font-size:11px;font-weight:700;letter-spacing:.3px;color:#B91C1C;background:#FEE2E2;border:1px solid #FCA5A5;border-radius:99px;padding:2px 10px;white-space:nowrap;}}
+.cfg-flag-desc{{font-size:12.5px;color:var(--mut,#5E6B76);line-height:1.5;}}
 .cfg-footer{{margin-top:22px;padding-top:16px;border-top:1px solid var(--line,#E4E0D8);font-size:12.5px;color:var(--mut,#5E6B76);line-height:1.6;}}
 .cfg-footer code{{font-size:11.5px;background:var(--paper-dim,#F3F1EC);padding:1px 6px;border-radius:4px;}}
 </style>
@@ -1042,6 +1092,13 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
       </div>
     </div>"""
 
+    # topic_totals counts ALL papers per topic (flagged + unflagged) — computed
+    # here (before section rendering) so both the main sections and the
+    # flagged sub-sections can show counts consistent with the filter pills.
+    topic_totals: dict[str, int] = {t: 0 for t in TOPIC_BUCKETS}
+    for p in papers:
+        topic_totals[p["topic"]] = topic_totals.get(p["topic"], 0) + 1
+
     topic_sections = ""
     for topic in TOPIC_BUCKETS:
         plist = by_topic[topic]
@@ -1049,8 +1106,9 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
             continue
         _, icon = TOPIC_STYLE.get(topic, ("t-oth", "ti-dots"))
         cards = "".join(paper_card(p) for p in plist)
+        n_total = topic_totals[topic]
         topic_sections += f"""
-    <div class="sec-h" data-topic="{topic}"><i class="ti {icon}" aria-hidden="true"></i>{topic}<span class="cnt">{len(plist)} paper{"s" if len(plist)!=1 else ""}</span></div>
+    <div class="sec-h" data-topic="{topic}"><i class="ti {icon}" aria-hidden="true"></i>{topic}<span class="cnt">{n_total} paper{"s" if n_total!=1 else ""}</span></div>
     {cards}"""
 
     flagged_section = ""
@@ -1066,20 +1124,25 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
                 continue
             _, icon = TOPIC_STYLE.get(topic, ("t-oth", "ti-dots"))
             cards = "".join(paper_card(p) for p in plist)
+            n_flagged_here = len(plist)
+            # data-topic carries the REAL topic name (not "flagged") so that
+            # clicking a topic-specific filter pill can find and reveal this
+            # sub-header even when every paper in that topic happens to be
+            # flagged (i.e. no main section exists for it above).
+            # The count shown here is the FLAGGED-ONLY count for this topic —
+            # not the topic's grand total — since that's what's actually
+            # listed under this specific sub-header. A red "Flagged" marker
+            # distinguishes it from the neutral count pill used elsewhere.
             flagged_subsections += f"""
-    <div class="sec-h sec-h-sub" data-topic="flagged"><i class="ti {icon}" aria-hidden="true"></i>{topic}<span class="cnt">{len(plist)} paper{"s" if len(plist)!=1 else ""}</span></div>
+    <div class="sec-h sec-h-sub" data-topic="{topic}"><i class="ti {icon}" aria-hidden="true"></i>{topic}<span class="cnt cnt-flagged"><i class="ti ti-flag"></i> {n_flagged_here} Flagged</span></div>
     {cards}"""
 
         flagged_section = f"""
     <div class="sec-h" data-topic="flagged"><i class="ti ti-flag" aria-hidden="true"></i>Flagged Papers<span class="cnt">{len(flagged)}</span></div>
     {flagged_subsections}"""
 
-    # filter pills — count ALL papers per topic (flagged + unflagged), not just
-    # by_topic[t], since flagged papers are pulled out of by_topic into the
-    # separate `flagged` list and would otherwise be undercounted here.
-    topic_totals: dict[str, int] = {t: 0 for t in TOPIC_BUCKETS}
-    for p in papers:
-        topic_totals[p["topic"]] = topic_totals.get(p["topic"], 0) + 1
+    # filter pills — topic_totals already computed above (flagged + unflagged
+    # per topic), reused here for consistency with section heading counts.
     filter_counts = [(t, topic_totals[t]) for t in TOPIC_BUCKETS if topic_totals[t]]
     total = len(papers)
     flag_count = sum(1 for p in papers if p.get("flags"))
@@ -1174,6 +1237,8 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
 .sec-h i{{font-size:17px;color:var(--amber-strong);}}
 .sec-h::after{{content:'';flex:1;height:1px;background:var(--line);}}
 .sec-h .cnt{{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);font-family:var(--sans);background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:3px 10px;}}
+.sec-h .cnt-flagged{{display:inline-flex;align-items:center;gap:4px;color:#B91C1C;background:#FEE2E2;border-color:#FCA5A5;}}
+.sec-h .cnt-flagged i{{font-size:10px;}}
 .pli{{padding:20px 0;border-bottom:1px solid var(--line);}}
 .pli:first-of-type{{border-top:1px solid var(--line);}}
 .pli-body{{flex:1;min-width:0;}}
@@ -1254,7 +1319,7 @@ footer a:hover{{color:var(--amber);}}
       <div class="hm-item"><span class="hm-label">Issue</span><span class="hm-value">#{issue_num}</span></div>
       <div class="hm-item"><span class="hm-label">Week</span><span class="hm-value">{start_date} – {end_date}</span></div>
       <div class="hm-item"><span class="hm-label">Papers</span><span class="hm-value">{total}</span></div>
-      <div class="hm-item"><span class="hm-label">Flagged</span><span class="hm-value">{flag_count}</span></div>
+      <div class="hm-item"><span class="hm-label">Flagged</span><span class="hm-value" style="color:#F0A0A0;">{flag_count}</span></div>
       <div class="hm-item"><span class="hm-label">Generated</span><span class="hm-value">{generated_at}</span></div>
     </div>
   </div>
@@ -1364,6 +1429,11 @@ def render_index(all_issues: list[dict]) -> str:
                 cls = TOPIC_STYLE.get(t, "t-oth")
                 short = t.split("&")[0].strip()[:18]
                 tc_html += f'<span class="bc-dot {cls}">{short}</span>'
+        flag_n = iss.get("flag_count", 0)
+        flagged_badge = (
+            f'<span class="bc-flagged"><i class="ti ti-flag" style="font-size:10px;"></i> {flag_n} flagged</span>'
+            if flag_n else ""
+        )
         return f"""
       <a href="{iss["filename"]}" class="back-card">
         <div class="bc-head">
@@ -1373,6 +1443,7 @@ def render_index(all_issues: list[dict]) -> str:
         <div class="bc-date">{iss["start_date"]}</div>
         <div class="bc-week">through {iss["end_date"]}</div>
         <div class="bc-topics">{tc_html}</div>
+        {flagged_badge}
         <div class="bc-arrow">Read issue <i class="ti ti-arrow-right" style="font-size:12px;"></i></div>
       </a>"""
 
@@ -1461,6 +1532,7 @@ def render_index(all_issues: list[dict]) -> str:
 .bc-date{{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--slate-deep);line-height:1.3;}}
 .bc-week{{font-size:13px;color:var(--mut);}}
 .bc-topics{{display:flex;gap:6px;flex-wrap:wrap;}}
+.bc-flagged{{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;letter-spacing:.4px;color:#B91C1C;background:#FEE2E2;border:1px solid #FCA5A5;border-radius:99px;padding:2px 9px;width:fit-content;}}
 .bc-dot{{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--mut);}}
 .bc-dot::before{{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}}
 .t-cds{{color:#1E8A6E;}}.t-nlp{{color:#7C5CC4;}}.t-eth{{color:#C76B33;}}.t-ehr{{color:#1A6CB0;}}.t-edu{{color:#B08A1F;}}.t-oth{{color:#5E6B76;}}
@@ -1505,7 +1577,6 @@ footer a:hover{{color:var(--amber);}}
     <div class="hero-stats-in">
       <div class="hs"><span class="hs-label">Issues published</span><span class="hs-value">{num_issues}</span></div>
       <div class="hs"><span class="hs-label">Papers curated</span><span class="hs-value">{total_papers}</span></div>
-      <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Source</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">PubMed</span></div>
       <div class="hs"><span class="hs-label" style="font-family:var(--sans);">Cadence</span><span class="hs-value" style="font-size:16px;font-family:var(--sans);">Bi-weekly · Mondays</span></div>
     </div>
   </div>
@@ -1801,9 +1872,11 @@ def main():
                 with open(jf) as f:
                     data = json.load(f)
                 topic_counts = {}
+                sources_used = set()
                 for p in data.get("papers", []):
                     t = p.get("topic", "Other / Unclassified")
                     topic_counts[t] = topic_counts.get(t, 0) + 1
+                    sources_used.add(p.get("source", "PubMed"))
                 all_issues.append({
                     "issue_num":    data.get("issue", 1),
                     "filename":     jf.replace(".json", ".html"),
@@ -1813,6 +1886,7 @@ def main():
                     "paper_count":  data.get("paper_count", 0),
                     "flag_count":   sum(1 for p in data.get("papers", []) if p.get("flags")),
                     "topic_counts": topic_counts,
+                    "sources_used": sorted(sources_used),
                 })
             except Exception as e:
                 print(f"  WARNING: could not read {jf}: {e}")

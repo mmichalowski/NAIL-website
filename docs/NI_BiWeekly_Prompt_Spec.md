@@ -66,7 +66,7 @@ FLAGGING RULES — if any of the following apply, add a JSON flag block at the e
 - The abstract does not state the study population → flag: "population_unclear"
 - The abstract does not state the setting or context → flag: "setting_unclear"
 - The abstract describes work in progress with no results yet → flag: "in_progress"
-- The paper is described as a preprint, review protocol, or letter → flag: "not_peer_reviewed"
+- The paper is an unreviewed preprint, OR is itself a pre-registered protocol for a future systematic review (a plan for a review, not a completed one), OR is a letter/correspondence piece → flag: "not_peer_reviewed". A completed narrative, literature, or systematic review published in a peer-reviewed journal is NOT flagged — it went through the same peer review as original research.
 - The abstract is fewer than 50 words or appears incomplete → flag: "abstract_incomplete"
 
 OUTPUT FORMAT:

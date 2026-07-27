@@ -1,0 +1,182 @@
+{
+  "issue": 2,
+  "generated_at": "2026-07-27T09:53:17.744876Z",
+  "date_range": {
+    "start": "Jul 13, 2026",
+    "end": "Jul 27, 2026"
+  },
+  "paper_count": 10,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "papers": [
+    {
+      "pmid": "42497362",
+      "title": "Performance of Large Language Models for Oncology Nursing Decision Support: Cross-Sectional Study.",
+      "abstract": "Large language models (LLMs) are increasingly used in health care, with emerging applications in clinical decision support and nursing education. However, evidence on their performance in nursing contexts, particularly in oncology nursing, remains limited. Given the complexity and high-risk nature of oncology care, it is important to evaluate the performance and clinical relevance of LLM-generated responses in oncology nursing contexts. This study aimed to compare the performance of LLMs in oncology nursing decision support tasks using standardized examination questions and case-based clinical scenarios and explore LLMs' potential applicability and current limitations in oncology nursing practice. A total of 33 case-based questions derived from 10 oncology nursing clinical scenarios in a nationally used training manual, along with standardized examination-oriented questions from a commercially published preparation book for the Chinese Nursing (Intermediate) Qualification Examination, were used to evaluate the performance of 5 LLMs (DeepSeek, Qwen, Spark-Desk, WiseDiag, and ChatGPT). All models generated responses using a standardized prompt. Two oncology nurses with more than 5 years of clinical experience independently rated the case-based responses using 3 evaluation dimensions: correctness, clarity, and conciseness. Interrater reliability was assessed using the quadratic weighted Cohen κ, intraclass correlation coefficient, and Spearman rank correlation coefficient. Differences among models were analyzed using the Kruskal-Wallis test with the Dunn post hoc test. In addition, examination performance was evaluated based on total score, accuracy rate, and completion efficiency. Interrater reliability analyses indicated moderate agreement between evaluators. The median correctness, clarity, and conciseness scores were as follows: 11.50 (IQR 10.50-12.00) for DeepSeek, 11.00 (IQR 10.50-12.00) for Qwen, 10.50 (IQR 9.50-11.50) for Spark-Desk, 10.00 (IQR 9.50-11.50) for WiseDiag, and 10.00 (IQR 9.00-11.50) for ChatGPT. The Kruskal-Wallis test indicated statistically significant differences among models (H=11.416; P<.05), with post hoc analysis showing a significant difference only between DeepSeek and ChatGPT (P<.05). In examination-based tasks, all models achieved passing performance, with accuracy rates ranging from 77% (77/100) to 93% (93/100). In terms of response completion, DeepSeek and ChatGPT completed all tasks in a single interaction, whereas other models required multiple interactions due to output interruptions. LLMs showed relatively strong performance on structured knowledge and examination-based tasks but remained limited in complex oncology nursing scenarios requiring individualized assessment and dynamic clinical judgment. Their potential use may be most relevant to information retrieval, knowledge organization, and patient education. Because the correctness, clarity, and conciseness rubric showed only moderate interrater reliability, the case-based comparisons should be interpreted as preliminary signals rather than definitive evidence of between-model differences. LLM outputs should therefore be used as supportive information and interpreted alongside professional clinical judgment.",
+      "authors": "Zhou Q, Jia Y, Hu H, Huang D, Chen X, Xia Y et al.",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Jul 2026",
+      "doi": "10.2196/97802",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42497362/",
+      "summary": "Researchers tested five LLMs (DeepSeek, Qwen, Spark-Desk, WiseDiag, ChatGPT) on oncology nursing exam questions and case-based scenarios, with two experienced oncology nurses rating correctness, clarity, and conciseness. All models passed exam-style questions, but performance varied on case scenarios, with DeepSeek scoring higher than ChatGPT; interrater agreement was only moderate. This suggests LLMs may support information retrieval and patient education, but need professional judgment for complex, individualized clinical decisions.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42487193",
+      "title": "AI-Powered Voice Documentation: A Nurse-Led Pilot Program.",
+      "abstract": "Documentation burden consumes an average of 31% of a nurse's 12-hour shift. This challenge necessitates nurse-led innovations to streamline charting and reclaim valuable time at the bedside. This pilot program aimed to examine a nurse-led implementation of an artificial intelligence (AI)-powered voice documentation mobile application and evaluate outcomes related to documentation timeliness, application usage, patient experience, staff satisfaction, and incidental overtime. The six-month pilot was conducted on a 48-bed adult medical-surgical unit at a large academic medical center. It included 90 RNs and 33 certified nursing assistants. The mobile application enabled nursing staff to document directly into the electronic health record using voice commands. The project was guided by Kotter's eight-step change management model. Documentation timeliness improved across all targeted tasks. Patient experience improved across all six Press Ganey domains, with percentile increases ranging from 7 to 41 points. Staff satisfaction survey results showed a majority agreed that the technology helped reduce documentation time. Usage grew from 14,231 documentation entries in January 2025 to over 35,000 by June. Incidental overtime decreased from an average of 97 to 48.5 hours per month. This pilot demonstrated that nurse-led implementation of an AI-powered voice documentation application can improve charting efficiency, patient experience, and staff outcomes. When nurses contribute to each stage of technology design and implementation, innovation thrives.",
+      "authors": "Trias R, Coleman B, Bowers C, Mondejar S, Morales G, Hain P",
+      "journal": "The American journal of nursing",
+      "pub_date": "Aug 2026",
+      "doi": "10.1097/AJN.0000000000000349",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42487193/",
+      "summary": "This six-month pilot at an academic medical center tested a nurse-led, AI-powered voice documentation app on a 48-bed medical-surgical unit with 90 RNs and 33 nursing assistants. Documentation timeliness improved, app usage more than doubled, patient experience scores rose across all six Press Ganey domains, and monthly overtime hours nearly halved. The findings suggest involving nurses in technology design and rollout may support charting efficiency and staff and patient outcomes.",
+      "flags": [],
+      "topic": "EHR & Workflows",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42479870",
+      "title": "AI-Powered Simulation for Nursing Education: Mixed Methods Systematic Review.",
+      "abstract": "Traditional simulation-based nursing education is often constrained by high costs, resource intensity, and limited scalability. AI-powered simulations offer dynamic, scalable, and personalized alternatives. However, the empirical evidence regarding their pedagogical effectiveness and learner acceptance remains fragmented. This study aimed to systematically evaluate and synthesize evidence on the effectiveness and learner perceptions of AI-powered simulations in nursing education. Following PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines, we systematically searched 11 electronic databases (PubMed, CINAHL, Embase, Web of Science, Cochrane Library, Scopus, SinoMed, CNKI, Wanfang, VIP, and Google Scholar) for studies published between January 2014 and September 2025. Two independent reviewers performed study selection, data extraction, and quality appraisal using design-specific tools (risk of bias 2 tool [RoB 2; Cochrane Bias Methods Group] for randomized controlled trials [RCTs], Risk Of Bias in Nonrandomized Studies of Interventions [ROBINS-I; Cochrane Bias Methods Group] for nonrandomized studies, Mixed Methods Appraisal Tool [MMAT] for mixed methods, Joanna Briggs Institute [JBI] for qualitative, and Agency for Healthcare Research and Quality [AHRQ] for cross-sectional studies). Quantitative data were synthesized narratively, and qualitative findings were integrated using JBI meta-aggregation. A convergent segregated approach with joint display was used to generate meta-inferences. Nineteen studies involving 1253 participants (primarily prelicensure nursing students, with some interdisciplinary cohorts) were included. AI modalities comprised generative AI/large language models (n=7), AI-driven virtual patients/mannequins (n=5), AI-enhanced virtual/mixed reality (n=5), and chatbots (n=2). Three studies were RCTs, 4 were quasiexperimental with control groups, 3 were uncontrolled pre-post studies, 4 were mixed methods, 4 were qualitative, and one was a cross-sectional survey. Quantitative synthesis showed that evidence from RCTs and controlled quasiexperimental studies indicates significant improvements in cognitive knowledge and affective outcomes, including self-efficacy and communication confidence; however, effects on complex psychomotor skills were inconsistent, with one RCT finding AI-assisted simulation inferior to standardized patient simulation. Findings from uncontrolled designs are preliminary. Qualitative meta-aggregation revealed that learners valued safe, repeatable, nonjudgmental practice environments that reduced anxiety and bridged the theory-practice gap. Persistent challenges included technical frustrations, \"robotic\" interactions, lack of nonverbal cues, and system instability, collectively constituting an \"authenticity gap.\" AI-powered simulations show promise for developing foundational clinical reasoning and communication skills in nursing education, though the evidence base is limited by the predominance of uncontrolled designs, reliance on self-reported measures, and absence of longitudinal data on skill retention or clinical transfer. Due to current technological limitations in replicating physical and emotional authenticity, AI should be implemented as a complementary tool alongside traditional simulation methods and clinical placements, rather than as a replacement. Future research should prioritize longitudinal outcomes, standardized competency measures, RCTs with active comparators, and implementation strategies addressing technical barriers.",
+      "authors": "Jiang H, Wang Z, Shen W, Meng M, Yang D, Li X et al.",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Jul 2026",
+      "doi": "10.2196/95167",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42479870/",
+      "summary": "This systematic review examined 19 studies (1253 participants, mostly prelicensure nursing students) on AI-powered simulations, including virtual patients, chatbots, and AI-enhanced VR. Results showed gains in knowledge, self-efficacy, and communication confidence, but mixed results for complex psychomotor skills, plus a persistent 'authenticity gap' around technical issues and lack of nonverbal cues. Researchers suggest AI should complement, not replace, traditional simulation and clinical placements.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42463212",
+      "title": "Awareness, knowledge and attitudes towards artificial intelligence among nursing students: a systematic review protocol.",
+      "abstract": "Internationally, nursing students' awareness and familiarity with artificial intelligence (AI) remain a challenge as evidenced by the current literature. Interestingly, the Gulf Cooperation Council (GCC) region has earned a strong standing for driving national digital transformation; however, this ambition has not been translated into research. Despite growing interest in AI-driven healthcare, empirical studies examining nursing students' readiness in these countries to operate in healthcare environments remain limited, representing a critical gap in the literature. Our initial literature review found a high degree of heterogeneity among study designs, measurement tools and theoretical framing and highlighted an unequivocal need for a rigorous and systematic synthesis to uncover consistent patterns, methodological gaps and contextual factors that shape nursing students' engagement with AI.This protocol aims to provide a structured plan for combining the current evidence on nursing students' awareness, knowledge and attitudes regarding AI applications in nursing education. This protocol is prepared in accordance with the Preferred Reporting Items for Systematic Reviews and Meta-Analysis Protocols (PRISMA-P) 2015 guidelines, and it is registered with the international Prospective Register of Systematic Reviews (PROSPERO). A comprehensive and systematic search of the literature will be undertaken across four key electronic databases: PubMed, CINAHL, Scopus and Web of Science, using Boolean search strings constructed from Medical Subject Headings-controlled terms and free-text keywords encompassing six predefined thematic domains: AI applications in nursing education, student awareness, attitudes, technology acceptance, adoption, ethical considerations and regional context. All studies published in English between January 2020 and June 2026 including cross-sectional, cohort, quasiexperimental and qualitative studies will be included in this review. The primary outcome is nursing students' awareness of and attitudes toward AI; secondary outcomes include AI-related knowledge, behavioural intention and ethical concerns. A 41-item standardised form will be used for data extraction across all included studies, systematically capturing study characteristics, instruments, theoretical frameworks, barriers, facilitators and the outcomes of interest. To assess the studies' quality, we will use the Joanna Briggs Institute (JBI) Critical Appraisal Tools for quantitative and qualitative studies, ensuring a comprehensive and methodologically consistent appraisal process across all included studies. Narrative synthesis will be performed complemented by meta-analysis where applicable, organised by the construct domains and geographic regions. This protocol provides an in-depth, systematic review plan that will report the most thorough synthesis to date regarding nursing students' awareness, knowledge levels and perceptions of the utilisation of AI within nursing education. The review will identify validated instruments for cross-cultural adaptation, establish benchmarks and estimate prevalence of awareness, knowledge and attitude. We will describe the theoretical and contextual contrived factors associated with these constructs in nursing students. As this systematic review is based exclusively on published literature and does not involve the collection of primary data from human participants or animals, formal ethical approval is not required. Findings from this review will be disseminated through publication in a peer-reviewed journal and presented at relevant national and international nursing and healthcare conferences. The review is expected to generate evidence-based insights that will inform nursing curricula, guide institutional policy on AI integration and highlight the critical evidence gap in the GCC region, including Oman, thereby contributing to the advancement of AI-ready nursing education internationally. A key focus will be mapping geographic variation, with particular attention to the GCC region where empirical evidence remains sparse. CRD420261320108.",
+      "authors": "Al Ghazali MN, Riaz M",
+      "journal": "BMJ open",
+      "pub_date": "Jul 2026",
+      "doi": "10.1136/bmjopen-2026-121820",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42463212/",
+      "summary": "This protocol outlines a planned systematic review of studies on nursing students' awareness, knowledge, and attitudes toward AI in nursing education, with attention to the Gulf Cooperation Council region. It describes methods for searching, appraising, and synthesizing evidence but does not yet report findings. This work matters because it will map research gaps and identify consistent patterns to guide future nursing curricula and AI-related informatics research.",
+      "flags": [
+        "in_progress",
+        "not_peer_reviewed"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42461368",
+      "title": "Recent Advances in AI for Automated ICD Coding: A Systematic Literature Review.",
+      "abstract": "International Classification of Diseases (ICD) codes enable correct billing, insurance reimbursement, and healthcare analytics. However, manual coding is time-consuming, expensive, and error-prone, creating bottlenecks in clinical workflow and limiting scalability. Artificial intelligence (AI) has emerged as a promising solution for automated ICD code assignment from unstructured clinical text. This systematic review explores the current state of automated ICD coding research, examining models applied to diverse clinical documents including discharge summaries, electronic health records, nursing notes, and pathology reports. Following PRISMA guidelines, we searched six databases for studies published between 2019 and 2024, selecting 54 relevant studies from 4,280 initial citations. Our analysis reveals the use of diverse datasets, preprocessing techniques, and feature extraction methods, alongside a clear evolution from traditional machine learning to deep learning approaches, with substantial architectural diversity across convolutional, recurrent, transformer, and hybrid models. Performance varies considerably across dataset configurations, with models achieving higher accuracy on frequent code subsets compared to full label spaces. However, critical gaps persist: overreliance on single-language, single-institution datasets limits generalizability; difficulties in predicting rare codes remain unresolved; lack of model interpretability undermines clinical trust; and inconsistent evaluation protocols hinder meaningful comparison. To address these challenges, we propose a 5P evidence-grounded research agenda: Population Diversity, Performance Robustness, Prediction of Rare Codes, Provenance Transparency, and Practical Integration. These findings underscore AI's potential to transform ICD coding while highlighting the need for standardized benchmarks, rigorous external validation, multilingual datasets, and explainable architectures to enable equitable and effective deployment in real-world healthcare systems.",
+      "authors": "Khalid AR, Ali H, Fathima K, Sonia Carole K, Kim HC",
+      "journal": "Journal of medical systems",
+      "pub_date": "Jul 2026",
+      "doi": "10.1007/s10916-026-02429-7",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42461368/",
+      "summary": "This systematic review examined 54 studies (2019–2024) on AI models that automatically assign ICD codes from clinical texts like discharge summaries and nursing notes. Deep learning methods showed better results on frequent codes but struggled with rare codes, single-institution data, and limited interpretability. For nursing informatics, this highlights the need for diverse datasets, transparent models, and standardized testing before real-world use.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42460589",
+      "title": "Starting the Conversation: Implementation of Updated Initial Patient Assessment Documentation in the Electronic Medical Record.",
+      "abstract": "The Initial Patient Assessment (IPA) documentation within the selected healthcare organisation's electronic medical record (EMR) is a key component of nursing documentation and planning for patients' hospitalisations. Since its implementation in 2019, the EMR IPA documentation has not been re-assessed for usefulness or completeness. A project was developed to assess, re-design and implement an updated IPA using the Exploration, Preparation, Implementation, Sustainment (EPIS) framework. New IPA forms were co-designed with consumers and nurses to be more conversational and implemented across the organisation for neonatal admissions, paediatric admissions, adult admissions, and adult and paediatric day ward admissions. Improvement in completeness and usefulness was sustained, and this project filled a gap in the literature by providing a co-designed approach to nursing documentation within the EMR with end-users and consumers.",
+      "authors": "Jedwab R, Gogler J, Brook R, Foster J, Garduce JN, Pham A et al.",
+      "journal": "Studies in health technology and informatics",
+      "pub_date": "Jul 2026",
+      "doi": "10.3233/SHTI260961",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42460589/",
+      "summary": "A healthcare organisation reviewed and redesigned its Initial Patient Assessment documentation in the electronic medical record, using the EPIS framework and co-design with nurses and consumers. The updated forms, made more conversational, rolled out across neonatal, paediatric, and adult admission areas, and showed sustained improvements in completeness and usefulness. This offers nursing informatics an example of co-designed documentation redesign involving end-users.",
+      "flags": [],
+      "topic": "EHR & Workflows",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42460585",
+      "title": "A Preliminary Approach to Fall Risk Assessment in Aged Care Facilities Using Generative AI Technologies.",
+      "abstract": "Falls among elderly residents in residential aged care facilities (RACFs) are a critical public health concern, often resulting in severe injuries, reduced mobility, diminished quality of life, and increased healthcare costs. Traditional machine learning methods struggle to accurately identify fall risk factors within unstructured electronic health record (EHR) data due to the lack of labelled datasets. This study develops methods for extracting fall risk factors from unstructured EHRs in RACFs, leveraging large language models (LLMs) and the retrieval-augmented generation (RAG) technique. Utilising an established knowledge base from RAG documents, LLMs with tailored prompts were employed to extract fall risk factors from the collected 1,854 nursing notes in the EHR. Expert feedback was used to evaluate and refine the extracted factors. The paired t-test suggested that the RAG method significantly improved risk factor extraction, achieving a precision of 97.3%, a recall of 89.9%, and an F1 score of 93.3%. Integrating LLMs with literature-based RAG effectively extracts fall risk factors from unstructured EHRs in RACFs, addressing challenges associated with unlabelled datasets. This approach enhances the identification of risk factors, informing targeted fall prevention strategies.",
+      "authors": "Bai L, Deng C, Dam HK, Yin M, Yu P",
+      "journal": "Studies in health technology and informatics",
+      "pub_date": "Jul 2026",
+      "doi": "10.3233/SHTI260957",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42460585/",
+      "summary": "This study looked at 1,854 nursing notes from residential aged care facilities to find fall risk factors hidden in unstructured EHR text. Researchers combined large language models with retrieval-augmented generation, using expert feedback to refine results, and reached 97.3% precision, 89.9% recall, and a 93.3% F1 score. This suggests LLM-RAG methods can help extract fall risk information from EHRs without needing labelled datasets, supporting future fall prevention efforts.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41629753",
+      "title": "Artificial intelligence agent for delirium screening among patients in oncology and cardiac intensive care units: a proof-of-concept study.",
+      "abstract": "This study aims to develop and initially test an autonomous artificial intelligence (AI) agent to support nurse-led delirium screening and guideline-concordant prevention and management. We constructed a delirium-specific knowledge graph from publicly available clinical guidelines and implemented an autonomous AI agent that integrates retrieval-augmented generation with validated delirium assessment tools to simulate decision support in nursing workflows. In this proof-of-concept evaluation, the agent was benchmarked on 20 clinical patient cases to assess (i) tool selection accuracy, (ii) fidelity of clinical conclusions, and (iii) adherence to guideline-based delirium care recommendations. Human experts review rated coherence, relevance, and clinical interpretability of the outputs. The 20 cases were drawn from post-operative care (n = 6), cardiac intensive care unit care (n = 5), and cancer wards (n = 9), including 6 males (30%) and 14 females (70%), with a mean age of 56.5 years (SD 17.9; range 21-82). Two experienced registered nurses independently validated the agent's outputs, benchmarked them against guideline-based recommendations. The agent achieved 100% accuracy in selecting appropriate tools and 90% overall accuracy in generating conclusions and care recommendations, compared with 45% for other large language model baselines. Recommendations were presented in a structured, actionable format and aligned with guideline-based delirium care. This proof-of-concept study suggests that an autonomous AI agent can deliver clinically interpretable, guideline-aligned delirium decision support and may help reduce missed or delayed recognition while standardizing nursing actions. Given the high delirium burden in cardiovascular pathways (e.g. cardiac intensive care units and post-operative care), prospective validation in cardiovascular settings is warranted to evaluate clinical impact, safety, and workflow integration.",
+      "authors": "Zeng Y, Xie H, Gu F, Chen J, Zhang G, Jiang X et al.",
+      "journal": "European journal of cardiovascular nursing",
+      "pub_date": "Jul 2026",
+      "doi": "10.1093/eurjcn/zvag029",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41629753/",
+      "summary": "Researchers built an autonomous AI agent using a delirium-specific knowledge graph and guideline-based tools to support nurse-led delirium screening. Tested on 20 cases from oncology, post-operative, and cardiac ICU settings, the agent chose appropriate tools 100% of the time and gave accurate, guideline-aligned recommendations 90% of the time, outperforming other large language models (45%). This early-stage result suggests such tools could help standardize delirium recognition, though further testing in real cardiovascular care settings is needed.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:1",
+      "title": "Artificial Intelligence in Clinical Pharmacy: From Decision Support to Prescription Execution.",
+      "abstract": "Artificial intelligence (AI) is emerging and showing great potential in optimizing clinical pharmacy. This review aims to provide an overview of applications and advances of AI in clinical pharmacy. The findings illustrated that AI can assist in various stages from decision support to prescription execution supporting safer and more effective therapeutic practice. Machine learning and natural language processing are useful tools for tasks such as drug therapy recommendation, precision dosing, adverse drug event prediction and improving medication adherence. This study summarizes the latest progress in AI technologies within clinical medication from the view of both pharmacists and AI specialists. Future efforts should focus on addressing challenges like data quality issues to steadily advance AI‐driven clinical medication development.",
+      "authors": "Jiang, Wenshuo\n                Wang, Yuntian\n                Shi, Weizhong\n                Li, Cao\n                Li, Mingda\n                Tang, Yongqiang\n                Yue, Xiaolin\n                Zhao, Zhigang\n                Bardhan, Munmun\n                Department of Pharmacy,, Beijing Tiantan Hospital,, Capital Medical University,, Beijing 100070,, China, ccmu.edu.cn",
+      "journal": "Journal of Clinical Pharmacy & Therapeutics",
+      "pub_date": "7/20",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20Intelligence%20in%20Clinical%20Pharmacy%3A%20From%20Decision%20Support%20to%20Prescription%20Execution.",
+      "source": "CINAHL",
+      "summary": "This review looks at how artificial intelligence, including machine learning and natural language processing, is used in clinical pharmacy. It found these tools help with drug therapy recommendations, precision dosing, predicting adverse drug events, and improving medication adherence. This matters for nursing informatics because it shows AI's growing role across the medication process, while noting data quality challenges still need attention.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:3",
+      "title": "Nurse‐Led Identification of Financial Toxicity in Stroke Patients Using Machine Learning: Development and Validation of an Associational Prediction Model.",
+      "abstract": "Aim: To develop and validate a machine learning–based associational prediction model for nurse‐led identification of financial toxicity (FT) among stroke patients. Background: FT is increasingly recognized among patients with chronic conditions, yet evidence in stroke patients remains limited. Early identification may help nurses provide timely financial, psychosocial, and discharge‐related support. Methods: A total of 575 stroke patients were recruited. Based on Health Ecology Theory, factors were grouped into five levels. The dataset was randomly split 7:3 into training and test sets. Least Absolute Shrinkage and Selection Operator (LASSO) was applied for feature selection, and five machine learning models were trained and evaluated on the independent internal test set. The optimal model was interpreted using SHapley Additive exPlanations (SHAP) and evaluated in an external cross‐sectional validation dataset of 207 patients from another hospital. A web‐based calculator was developed for individualized FT assessment. Results: The prevalence of FT was 62.3%. The eXtreme Gradient Boosting (XGBoost) model demonstrated the best model performance, achieving an AUC of 0.823 in the internal test set and 0.865 in the external cross‐sectional validation set. SHAP analysis based on the XGBoost model identified age, fear of progression, complications, primary caregiver, and out‐of‐pocket cost as the most important associated factors of FT. A web‐based calculator based on the XGBoost model was further developed to support individualized FT assessment in nursing practice. Conclusions: The XGBoost model showed good internal and external performance in identifying FT among stroke patients. The web‐based XGBoost tool may support nurse‐led contemporaneous FT assessment in routine practice. Longitudinal validation is warranted to establish its clinical utility. Implications for Nursing Management: The tool may help nurse leaders embed structured FT assessment into admission and discharge workflows, enabling nurses to identify financially vulnerable stroke patients and initiate timely financial navigation, psychosocial support, and multidisciplinary referral.",
+      "authors": "Song, Yuan\n                Xing, Yunjing\n                Zong, Ce\n                Liu, Hongbing\n                Zhao, Haixu\n                Liu, Yichang\n                Zhang, Fuze\n                Zhang, Jiaqi\n                Zhang, Ke\n                Sun, Changqing\n                Gao, Yuan\n                Fontenot, Justin\n                School of Nursing and Health,, Zhengzhou University,, Zhengzhou, Henan, China, zzu.edu.cn",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "7/20",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Nurse%E2%80%90Led%20Identification%20of%20Financial%20Toxicity%20in%20Stroke%20Patients%20Using%20Machine%20Learning%3A%20Development%20and%20Validation%20of%20an%20Associational%20Prediction%20Model.",
+      "source": "CINAHL",
+      "summary": "Researchers built a machine learning model to help nurses identify financial toxicity in stroke patients, using data from 575 patients. The XGBoost model performed best, with age, fear of progression, complications, primary caregiver, and out-of-pocket costs as key related factors; it was tested on 207 patients from another hospital and turned into a web-based calculator. This tool could help nurses spot financially vulnerable patients early and connect them with support, though longitudinal validation is still needed.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    }
+  ]
+}

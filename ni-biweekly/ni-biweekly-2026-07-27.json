@@ -181,36 +181,34 @@
   ],
   "synthesis": {
     "overview": [
-      "This issue's ten papers center on <strong>AI tools tested for clinical judgment tasks: large language models answering oncology nursing questions, an AI agent screening for delirium in ICU patients, machine learning flagging financial toxicity in stroke patients, and AI supporting drug therapy decisions in pharmacy. A second thread covers <strong>documentation and unstructured text, including a nurse-led voice documentation pilot, a redesigned initial assessment form, an ICD coding review, and an LLM-RAG approach extracting fall risk factors from aged care notes. Education appears in two papers, one reviewing AI-powered simulation and one protocol on nursing student attitudes toward AI.",
-      "Compared to the previous issue's 49 papers, this issue has far fewer (10, a drop of 39), and the balance has shifted: <strong>Clinical Decision Support now leads (4 papers), while <strong>Workforce & Education has fallen from 29 papers to just 2. NLP & Generative AI continues as a thread (2 papers, down from 4), and EHR & Workflows persists with 2 papers. Notably absent this issue are the large volume of student attitude surveys, patient-facing chatbot studies, and AI ethics/governance papers that appeared previously."
+      "This issue centers on clinical decision support, with four papers testing how AI tools assist nurses in specific tasks: comparing large language models on oncology nursing scenarios, building a delirium-screening agent for ICU settings, reviewing AI use across clinical pharmacy, and developing a machine learning model to flag financial toxicity in stroke patients. A second thread looks at extracting information from unstructured text, including a review of AI for automated ICD coding and a generative AI approach to finding fall risk factors in aged care nursing notes. Workflow redesign also appears, through a voice documentation pilot and a co-designed initial assessment form.",
+      "Papers dropped from 49 to 10, and the leading topic shifted from Workforce & Education (29 papers last issue) to Clinical Decision Support (4 papers this issue), with education's share falling to just two papers, one a review protocol not yet reporting findings. The clinical decision support thread continues from last issue but shifts focus, moving from triage and risk-prediction tools toward LLM-based agents and screening support. Documentation and generative AI threads also continue, echoed in the voice documentation pilot and text-extraction studies. Patient-facing AI tools and AI ethics papers, both present last issue, do not appear this issue."
     ],
     "themes": [
       {
-        "name": "AI-assisted clinical judgment and screening",
+        "name": "LLMs in clinical decision support",
         "paper_ids": [
           "42497362",
           "41629753",
-          "cinahl:3",
           "cinahl:1"
         ]
       },
       {
-        "name": "Extracting and structuring clinical text",
+        "name": "Extracting insights from unstructured clinical text",
         "paper_ids": [
           "42461368",
-          "42460585",
-          "42460589"
+          "42460585"
         ]
       },
       {
-        "name": "Nurse-involved technology design and rollout",
+        "name": "Nurse-involved documentation and workflow redesign",
         "paper_ids": [
           "42487193",
           "42460589"
         ]
       },
       {
-        "name": "AI literacy and training in nursing education",
+        "name": "AI attitudes and training in nursing education",
         "paper_ids": [
           "42479870",
           "42463212"
@@ -230,7 +228,7 @@
       "flagged": 3,
       "flagged_delta": -23
     },
-    "generated_at": "2026-07-30T16:19:11.919920Z",
+    "generated_at": "2026-07-30T16:21:06.395595Z",
     "model": "claude-sonnet-5"
   }
 }

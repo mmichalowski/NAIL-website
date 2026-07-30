@@ -793,29 +793,25 @@
   ],
   "synthesis": {
     "overview": [
-      "This issue's 49 papers lean heavily toward <strong>workforce and education, with 29 papers covering AI literacy scales, student attitudes, generative AI in teaching, and nurse educator roles. A second cluster centers on <strong>clinical decision support (9 papers), spanning triage, ECMO outcome prediction, infection risk, diabetes risk, and pressure injury alerts. Several papers examine nursing care plan generation and speech recognition under <strong>NLP & generative AI (4 papers), while patient-facing chatbot tools appear in 4 papers. Ethics and governance, EHR workflow effects, and scheduling algorithms each appear in a single paper.",
-      "The issue mixes <strong>scoping and systematic reviews (covering nursing education AI tools, intelligent tutoring systems, EHR impacts in low- and middle-income countries, AI literacy levels, and lung nodule classification) with original surveys, pilot studies, and qualitative interviews. Settings vary widely, from Taiwanese, Chinese, Mexican, Palestinian, Turkish, French, German, and Saudi Arabian institutions to unspecified populations flagged across many education papers. A repeated cluster involves nursing student attitudes and self-efficacy toward AI, alongside a separate cluster of machine learning models tested for clinical prediction tasks like infection, diabetes, and ECMO outcomes."
+      "This issue leans heavily toward nursing education, with 29 of the papers examining AI literacy, attitudes, and teaching tools for students and faculty, from scales measuring AI and informatics competency to studies of chatbots, podcasts, and virtual reality simulations. A second thread covers clinical decision support, including triage systems, ECMO outcome prediction, diabetes risk models, and a pressure injury alert tool, often finding nurses treat AI as a helpful reminder rather than a decision-maker. A smaller set of papers looks at patient-facing AI tools like chatbots for caregivers and health information, and at generative AI applied to documentation and care plan writing.",
+      "The issue mixes original studies and reviews: many are cross-sectional surveys of students or nurses, alongside several scoping reviews, systematic reviews, and meta-analyses of nursing education literature. Settings span multiple countries, including Taiwan, Mexico, Palestine, China, Turkey, Saudi Arabia, South Korea, and France, though several papers flag unclear population or setting details. A cluster of related work addresses AI literacy scales and competency frameworks for students and nurse practitioners, while another cluster focuses on generative AI care plan and documentation quality. Study designs range from small pilot feasibility work to larger pooled analyses."
     ],
     "themes": [
       {
-        "name": "AI literacy and attitudes in nursing education",
+        "name": "AI literacy and attitudes measurement",
         "paper_ids": [
           "42407060",
           "42393979",
           "42361129",
           "42235277",
           "42192255",
+          "42130247",
           "41855758",
-          "41915914",
-          "41894178",
-          "41804972",
-          "cinahl:0",
-          "cinahl:20",
-          "42130247"
+          "cinahl:20"
         ]
       },
       {
-        "name": "Generative AI as a teaching tool",
+        "name": "Generative AI in teaching and simulation",
         "paper_ids": [
           "42378141",
           "42284856",
@@ -824,28 +820,28 @@
           "42043776",
           "41914807",
           "41839174",
-          "42177027",
-          "42130271",
           "41785655",
-          "42252748"
+          "cinahl:0",
+          "41804972"
         ]
       },
       {
-        "name": "Clinical prediction and decision support models",
+        "name": "AI-enabled clinical decision support and trust",
         "paper_ids": [
+          "42405422",
           "42386267",
           "42261749",
-          "42233760",
           "42049546",
           "41980858",
           "41957825",
           "cinahl:4",
           "cinahl:24",
-          "41946121"
+          "cinahl:1",
+          "42233760"
         ]
       },
       {
-        "name": "AI-generated clinical documentation and communication",
+        "name": "Generative AI for documentation and patient-facing information",
         "paper_ids": [
           "42417979",
           "41792055",
@@ -853,13 +849,12 @@
           "42047653",
           "cinahl:6",
           "cinahl:10",
-          "cinahl:19",
-          "cinahl:1"
+          "cinahl:19"
         ]
       }
     ],
     "deltas": null,
-    "generated_at": "2026-07-30T16:19:02.808658Z",
+    "generated_at": "2026-07-30T16:20:57.754188Z",
     "model": "claude-sonnet-5"
   }
 }

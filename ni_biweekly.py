@@ -1913,14 +1913,19 @@ footer a:hover{{color:var(--amber);}}
 
 
 def regenerate_index() -> None:
-    """Rebuild index.html from every ni-biweekly-*.json in the current directory."""
+    """Rebuild index.html from every ni-biweekly-*.json in the current directory.
+    Also writes latest.json — a compact summary of the newest issue that the
+    nailcollab.org landing page fetches client-side to render its digest card."""
     import glob
     all_json = sorted(glob.glob("ni-biweekly-*.json"), reverse=True)
     all_issues = []
+    newest_data = None
     for jf in all_json:
         try:
             with open(jf, encoding="utf-8") as f:
                 data = json.load(f)
+            if newest_data is None:
+                newest_data = data
             topic_counts = {}
             sources_used = set()
             for p in data.get("papers", []):
@@ -1944,6 +1949,28 @@ def regenerate_index() -> None:
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"  INDEX → index.html ({len(all_issues)} issue(s))")
+
+    if all_issues and newest_data is not None:
+        cur = all_issues[0]
+        synth = newest_data.get("synthesis") or {}
+        teaser = ""
+        if synth.get("overview"):
+            teaser = re.sub(r"<[^>]+>", "", synth["overview"][0])
+        latest = {
+            "issue":        cur["issue_num"],
+            "filename":     cur["filename"],
+            "date_range":   newest_data.get("date_range", {}),
+            "generated_at": newest_data.get("generated_at", ""),
+            "paper_count":  cur["paper_count"],
+            "flag_count":   cur["flag_count"],
+            "topic_counts": cur["topic_counts"],
+            "teaser":       teaser,
+            "themes":       [{"name": t.get("name", ""), "count": len(t.get("paper_ids", []))}
+                             for t in synth.get("themes", [])],
+        }
+        with open("latest.json", "w", encoding="utf-8") as f:
+            json.dump(latest, f, indent=2, ensure_ascii=False)
+        print("  LATEST → latest.json (landing-page digest card)")
 
 
 def is_english_enough(text: str, threshold: float = 0.15) -> bool:

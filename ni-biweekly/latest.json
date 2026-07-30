@@ -1,0 +1,36 @@
+{
+  "issue": 2,
+  "filename": "ni-biweekly-2026-07-27.html",
+  "date_range": {
+    "start": "Jul 13, 2026",
+    "end": "Jul 27, 2026"
+  },
+  "generated_at": "2026-07-27T09:53:17.744876Z",
+  "paper_count": 10,
+  "flag_count": 3,
+  "topic_counts": {
+    "Clinical Decision Support": 4,
+    "EHR & Workflows": 2,
+    "Workforce & Education": 2,
+    "NLP & Generative AI": 2
+  },
+  "teaser": "This issue centers on clinical decision support, with four papers testing how AI tools assist nurses in specific tasks: comparing large language models on oncology nursing scenarios, building a delirium-screening agent for ICU settings, reviewing AI use across clinical pharmacy, and developing a machine learning model to flag financial toxicity in stroke patients. A second thread looks at extracting information from unstructured text, including a review of AI for automated ICD coding and a generative AI approach to finding fall risk factors in aged care nursing notes. Workflow redesign also appears, through a voice documentation pilot and a co-designed initial assessment form.",
+  "themes": [
+    {
+      "name": "LLMs in clinical decision support",
+      "count": 3
+    },
+    {
+      "name": "Extracting insights from unstructured clinical text",
+      "count": 2
+    },
+    {
+      "name": "Nurse-involved documentation and workflow redesign",
+      "count": 2
+    },
+    {
+      "name": "AI attitudes and training in nursing education",
+      "count": 2
+    }
+  ]
+}

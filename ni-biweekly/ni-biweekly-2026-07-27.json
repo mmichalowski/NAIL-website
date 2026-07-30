@@ -178,5 +178,59 @@
       "topic": "Clinical Decision Support",
       "topic_confidence": "high"
     }
-  ]
+  ],
+  "synthesis": {
+    "overview": [
+      "This issue's ten papers center on <strong>AI tools tested for clinical judgment tasks: large language models answering oncology nursing questions, an AI agent screening for delirium in ICU patients, machine learning flagging financial toxicity in stroke patients, and AI supporting drug therapy decisions in pharmacy. A second thread covers <strong>documentation and unstructured text, including a nurse-led voice documentation pilot, a redesigned initial assessment form, an ICD coding review, and an LLM-RAG approach extracting fall risk factors from aged care notes. Education appears in two papers, one reviewing AI-powered simulation and one protocol on nursing student attitudes toward AI.",
+      "Compared to the previous issue's 49 papers, this issue has far fewer (10, a drop of 39), and the balance has shifted: <strong>Clinical Decision Support now leads (4 papers), while <strong>Workforce & Education has fallen from 29 papers to just 2. NLP & Generative AI continues as a thread (2 papers, down from 4), and EHR & Workflows persists with 2 papers. Notably absent this issue are the large volume of student attitude surveys, patient-facing chatbot studies, and AI ethics/governance papers that appeared previously."
+    ],
+    "themes": [
+      {
+        "name": "AI-assisted clinical judgment and screening",
+        "paper_ids": [
+          "42497362",
+          "41629753",
+          "cinahl:3",
+          "cinahl:1"
+        ]
+      },
+      {
+        "name": "Extracting and structuring clinical text",
+        "paper_ids": [
+          "42461368",
+          "42460585",
+          "42460589"
+        ]
+      },
+      {
+        "name": "Nurse-involved technology design and rollout",
+        "paper_ids": [
+          "42487193",
+          "42460589"
+        ]
+      },
+      {
+        "name": "AI literacy and training in nursing education",
+        "paper_ids": [
+          "42479870",
+          "42463212"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 1,
+      "papers": 10,
+      "papers_delta": -39,
+      "leading_topic": "Clinical Decision Support",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "Clinical Decision Support",
+      "rising_pp": 22,
+      "falling_topic": "Workforce & Education",
+      "falling_pp": -39,
+      "flagged": 3,
+      "flagged_delta": -23
+    },
+    "generated_at": "2026-07-30T16:19:11.919920Z",
+    "model": "claude-sonnet-5"
+  }
 }

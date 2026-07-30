@@ -790,5 +790,76 @@
       "topic": "Clinical Decision Support",
       "topic_confidence": "high"
     }
-  ]
+  ],
+  "synthesis": {
+    "overview": [
+      "This issue's 49 papers lean heavily toward <strong>workforce and education, with 29 papers covering AI literacy scales, student attitudes, generative AI in teaching, and nurse educator roles. A second cluster centers on <strong>clinical decision support (9 papers), spanning triage, ECMO outcome prediction, infection risk, diabetes risk, and pressure injury alerts. Several papers examine nursing care plan generation and speech recognition under <strong>NLP & generative AI (4 papers), while patient-facing chatbot tools appear in 4 papers. Ethics and governance, EHR workflow effects, and scheduling algorithms each appear in a single paper.",
+      "The issue mixes <strong>scoping and systematic reviews (covering nursing education AI tools, intelligent tutoring systems, EHR impacts in low- and middle-income countries, AI literacy levels, and lung nodule classification) with original surveys, pilot studies, and qualitative interviews. Settings vary widely, from Taiwanese, Chinese, Mexican, Palestinian, Turkish, French, German, and Saudi Arabian institutions to unspecified populations flagged across many education papers. A repeated cluster involves nursing student attitudes and self-efficacy toward AI, alongside a separate cluster of machine learning models tested for clinical prediction tasks like infection, diabetes, and ECMO outcomes."
+    ],
+    "themes": [
+      {
+        "name": "AI literacy and attitudes in nursing education",
+        "paper_ids": [
+          "42407060",
+          "42393979",
+          "42361129",
+          "42235277",
+          "42192255",
+          "41855758",
+          "41915914",
+          "41894178",
+          "41804972",
+          "cinahl:0",
+          "cinahl:20",
+          "42130247"
+        ]
+      },
+      {
+        "name": "Generative AI as a teaching tool",
+        "paper_ids": [
+          "42378141",
+          "42284856",
+          "42276655",
+          "42276648",
+          "42043776",
+          "41914807",
+          "41839174",
+          "42177027",
+          "42130271",
+          "41785655",
+          "42252748"
+        ]
+      },
+      {
+        "name": "Clinical prediction and decision support models",
+        "paper_ids": [
+          "42386267",
+          "42261749",
+          "42233760",
+          "42049546",
+          "41980858",
+          "41957825",
+          "cinahl:4",
+          "cinahl:24",
+          "41946121"
+        ]
+      },
+      {
+        "name": "AI-generated clinical documentation and communication",
+        "paper_ids": [
+          "42417979",
+          "41792055",
+          "cinahl:2",
+          "42047653",
+          "cinahl:6",
+          "cinahl:10",
+          "cinahl:19",
+          "cinahl:1"
+        ]
+      }
+    ],
+    "deltas": null,
+    "generated_at": "2026-07-30T16:19:02.808658Z",
+    "model": "claude-sonnet-5"
+  }
 }

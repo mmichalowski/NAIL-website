@@ -984,8 +984,9 @@ Paragraph 1 — the 2–4 dominant threads of THIS issue. Ground every claim in 
 papers above, referring to them by what they studied (not by author or ID).
 Paragraph 2 — follow the PARAGRAPH 2 INSTRUCTIONS above.
 
-Each paragraph: maximum 110 words. You may bold up to three key phrases per
-paragraph using <strong>...</strong>; use no other HTML.
+Each paragraph: maximum 110 words. You may bold up to three SHORT key phrases
+(2–5 words each) per paragraph by wrapping them as <strong>phrase</strong> —
+every <strong> MUST have a matching closing </strong>. Use no other HTML.
 
 Then list 2–4 named themes. A theme is a thread that cuts across papers (it may
 span topic buckets). Assign each theme the IDs of the papers that belong to it,
@@ -1040,6 +1041,10 @@ def generate_synthesis(client: "anthropic.Anthropic", papers: list[dict], issue_
                 para = str(para).strip()
                 # allow <strong> only; strip any other tag the model may emit
                 para = re.sub(r"</?(?!strong\b)[^>]+>", "", para)
+                # unbalanced bolding would leak across the rest of the page —
+                # if open/close counts differ, drop the bolding entirely
+                if para.count("<strong>") != para.count("</strong>"):
+                    para = para.replace("<strong>", "").replace("</strong>", "")
                 if para:
                     overview.append(para)
             if not overview:

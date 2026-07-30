@@ -858,6 +858,224 @@ def summarise_paper(client: anthropic.Anthropic, paper: dict, dry_run: bool = Fa
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# STEP 2c — ISSUE SYNTHESIS ("This Issue at a Glance")
+# ─────────────────────────────────────────────────────────────────────────────
+# One extra model call per issue. The model writes the thematic narrative from
+# the per-paper summaries ONLY; every number shown in the glance box (paper
+# counts, deltas, theme counts) is computed deterministically in Python and is
+# never produced by the model.
+
+def compute_deltas(papers: list[dict], prev_issue: dict | None) -> dict | None:
+    """Compare this issue's topic mix against the previous issue's JSON data.
+    Topic movement is measured in percentage points of issue share, so a
+    49-paper issue and a 10-paper issue compare fairly. Returns None when
+    there is no previous issue."""
+    if not prev_issue or not prev_issue.get("papers"):
+        return None
+
+    def topic_counts(plist):
+        counts: dict[str, int] = {}
+        for p in plist:
+            t = p.get("topic", "Other / Unclassified")
+            counts[t] = counts.get(t, 0) + 1
+        return counts
+
+    cur_counts  = topic_counts(papers)
+    prev_counts = topic_counts(prev_issue["papers"])
+    cur_total, prev_total = len(papers), len(prev_issue["papers"])
+    cur_flagged  = sum(1 for p in papers if p.get("flags"))
+    prev_flagged = sum(1 for p in prev_issue["papers"] if p.get("flags"))
+
+    def leading(counts):
+        best = max(counts.values(), default=0)
+        for t in TOPIC_BUCKETS:  # bucket order breaks ties deterministically
+            if counts.get(t, 0) == best and best > 0:
+                return t
+        return None
+
+    share_changes = {}
+    for t in TOPIC_BUCKETS:
+        if t == "Other / Unclassified":
+            continue
+        cur_share  = cur_counts.get(t, 0)  / cur_total  * 100 if cur_total  else 0
+        prev_share = prev_counts.get(t, 0) / prev_total * 100 if prev_total else 0
+        share_changes[t] = round(cur_share - prev_share)
+
+    rising  = max(share_changes, key=lambda t: share_changes[t]) if share_changes else None
+    falling = min(share_changes, key=lambda t: share_changes[t]) if share_changes else None
+
+    return {
+        "prev_issue":        prev_issue.get("issue"),
+        "papers":            cur_total,
+        "papers_delta":      cur_total - prev_total,
+        "leading_topic":     leading(cur_counts),
+        "prev_leading_topic": leading(prev_counts),
+        "rising_topic":      rising  if rising  and share_changes[rising]  > 0 else None,
+        "rising_pp":         share_changes.get(rising, 0)  if rising  else 0,
+        "falling_topic":     falling if falling and share_changes[falling] < 0 else None,
+        "falling_pp":        share_changes.get(falling, 0) if falling else 0,
+        "flagged":           cur_flagged,
+        "flagged_delta":     cur_flagged - prev_flagged,
+    }
+
+
+def build_synthesis_prompt(papers: list[dict], issue_num: int, deltas: dict | None,
+                           prev_issue: dict | None) -> str:
+    """Prompt for the issue-level 'At a Glance' synthesis. Follows the same
+    AINurse-26 commitments as the per-paper prompts: the model may draw ONLY
+    on the per-paper summaries already generated under those rules."""
+    paper_lines = []
+    for p in papers:
+        flags = f" · flags: {', '.join(p['flags'])}" if p.get("flags") else ""
+        paper_lines.append(f"- [{p['pmid']}] ({p['topic']}) {p['title']}\n  Summary: {p['summary']}{flags}")
+    paper_block = "\n".join(paper_lines)
+
+    counts: dict[str, int] = {}
+    for p in papers:
+        counts[p["topic"]] = counts.get(p["topic"], 0) + 1
+    count_block = "\n".join(f"- {t}: {n}" for t, n in sorted(counts.items(), key=lambda x: -x[1]))
+
+    if prev_issue and deltas:
+        prev_counts: dict[str, int] = {}
+        for p in prev_issue.get("papers", []):
+            t = p.get("topic", "Other / Unclassified")
+            prev_counts[t] = prev_counts.get(t, 0) + 1
+        prev_count_block = "\n".join(f"- {t}: {n}" for t, n in sorted(prev_counts.items(), key=lambda x: -x[1]))
+        prev_synth = ""
+        if prev_issue.get("synthesis", {}) and prev_issue["synthesis"].get("overview"):
+            prev_synth = "\nPREVIOUS ISSUE'S SYNTHESIS (for continuity of narrative):\n" + \
+                         "\n".join(prev_issue["synthesis"]["overview"])
+        prev_block = f"""
+PREVIOUS ISSUE (#{prev_issue.get('issue')}, {prev_issue.get('date_range', {}).get('start', '')} – {prev_issue.get('date_range', {}).get('end', '')}):
+- Total papers: {len(prev_issue.get('papers', []))}
+- Topic counts:
+{prev_count_block}
+{prev_synth}
+COMPUTED CHANGES vs previous issue (already verified in code — use these numbers, do not derive your own):
+- Papers: {deltas['papers']} this issue ({deltas['papers_delta']:+d})
+- Leading topic now: {deltas['leading_topic']} (previously: {deltas['prev_leading_topic']})
+- Rising share: {deltas['rising_topic'] or 'none'} · Falling share: {deltas['falling_topic'] or 'none'}
+
+PARAGRAPH 2 INSTRUCTIONS: describe what changed relative to the previous issue —
+the shift in topic balance, threads that continued, and notable absences —
+using ONLY the computed changes above and the paper summaries."""
+    else:
+        prev_block = """
+This is the first issue, so there is no previous issue to compare against.
+
+PARAGRAPH 2 INSTRUCTIONS: instead of changes over time, describe the spread of
+the issue — the balance between study types (e.g. reviews vs. original studies),
+settings, and any clusters of related work."""
+
+    return f"""You will write the "At a Glance" synthesis that opens Issue #{issue_num} of the NAIL Digest.
+Readers use it to understand, in under a minute, what this issue's literature is about and what is shifting.
+
+THIS ISSUE'S PAPERS — each already summarised under the digest's faithfulness rules:
+{paper_block}
+
+TOPIC COUNTS THIS ISSUE (computed in code):
+{count_block}
+{prev_block}
+
+INSTRUCTIONS:
+Write exactly TWO paragraphs, then name the recurring themes.
+
+Paragraph 1 — the 2–4 dominant threads of THIS issue. Ground every claim in the
+papers above, referring to them by what they studied (not by author or ID).
+Paragraph 2 — follow the PARAGRAPH 2 INSTRUCTIONS above.
+
+Each paragraph: maximum 110 words. You may bold up to three key phrases per
+paragraph using <strong>...</strong>; use no other HTML.
+
+Then list 2–4 named themes. A theme is a thread that cuts across papers (it may
+span topic buckets). Assign each theme the IDs of the papers that belong to it,
+copied exactly from the [brackets] above. A paper may appear in at most one theme;
+not every paper needs a theme.
+
+HARD RULES — you must follow all of these without exception:
+- Draw only on the summaries and computed numbers above. No outside knowledge.
+- Do not speculate about where the field is heading or what the trends imply.
+- No recommendations, no clinical conclusions.
+- Do not use the words "groundbreaking", "revolutionary", "novel", "first ever", "unprecedented", or any superlative unless they appear in a summary above.
+- Plain language, approximately 8th-grade reading level. Active voice.
+- Any count you mention must match the computed numbers provided.
+
+OUTPUT FORMAT — return only valid JSON, nothing else:
+{{
+  "overview": ["<paragraph 1>", "<paragraph 2>"],
+  "themes": [{{"name": "<short theme name>", "paper_ids": ["<id>", "<id>"]}}]
+}}"""
+
+
+def generate_synthesis(client: "anthropic.Anthropic", papers: list[dict], issue_num: int,
+                       deltas: dict | None, prev_issue: dict | None,
+                       dry_run: bool = False) -> dict | None:
+    """Generate the issue-level synthesis. Returns None on dry run or failure —
+    the issue then simply publishes without the glance box."""
+    if dry_run or not papers:
+        return None
+
+    prompt = build_synthesis_prompt(papers, issue_num, deltas, prev_issue)
+    valid_ids = {p["pmid"] for p in papers}
+
+    for attempt in range(2):
+        try:
+            resp = client.messages.create(
+                model=MODEL,
+                max_tokens=1500,
+                thinking={"type": "disabled"},
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+            if text_block is None:
+                raise ValueError("No text block in response")
+            raw = text_block.text.strip()
+            raw = re.sub(r"^```json\s*", "", raw)
+            raw = re.sub(r"\s*```$", "", raw)
+            parsed = json.loads(raw)
+
+            overview = []
+            for para in parsed.get("overview", [])[:2]:
+                para = str(para).strip()
+                # allow <strong> only; strip any other tag the model may emit
+                para = re.sub(r"</?(?!strong\b)[^>]+>", "", para)
+                if para:
+                    overview.append(para)
+            if not overview:
+                raise ValueError("Empty overview")
+
+            themes = []
+            for th in parsed.get("themes", [])[:4]:
+                name = re.sub(r"<[^>]+>", "", str(th.get("name", ""))).strip()
+                ids = [i for i in th.get("paper_ids", []) if i in valid_ids]
+                if name and ids:
+                    themes.append({"name": name, "paper_ids": ids})
+
+            joined = " ".join(overview)
+            banned = check_banned_words(joined)
+            too_long = any(len(p.split()) > 125 for p in overview)
+            if (banned or too_long) and attempt == 0:
+                if banned:
+                    prompt += f"\n\nIMPORTANT: Your previous response contained banned words: {banned}. Remove them."
+                if too_long:
+                    prompt += "\n\nIMPORTANT: Your previous paragraphs exceeded 110 words. Shorten them."
+                continue
+
+            return {
+                "overview":     overview,
+                "themes":       themes,
+                "deltas":       deltas,
+                "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+                "model":        MODEL,
+            }
+        except Exception as e:
+            print(f"  SYNTHESIS ERROR (attempt {attempt+1}): {type(e).__name__}: {e}")
+            time.sleep(1)
+    return None
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # STEP 3 — RENDER HTML OUTPUT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -1038,7 +1256,62 @@ def build_config_overlay(cfg: dict) -> str:
 </script>"""
 
 
-def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: str, config: dict = None) -> str:
+def build_glance_html(synthesis: dict | None, papers: list[dict]) -> str:
+    """Render the 'This Issue at a Glance' box. Returns '' when the issue has
+    no synthesis (older issues, dry runs, or a failed generation) so the page
+    degrades gracefully."""
+    if not synthesis or not synthesis.get("overview"):
+        return ""
+    from html import escape
+
+    paras = "".join(f"<p>{p}</p>" for p in synthesis["overview"])
+
+    title_by_id = {p["pmid"]: p["title"] for p in papers}
+    chips = ""
+    for th in synthesis.get("themes", []):
+        titles = " • ".join(title_by_id.get(i, i) for i in th["paper_ids"])
+        chips += (f'<span class="theme" title="{escape(titles, quote=True)}">'
+                  f'{escape(th["name"])} <i>{len(th["paper_ids"])}</i></span>')
+    themes_html = f'<div class="themes">{chips}</div>' if chips else ""
+
+    d = synthesis.get("deltas")
+    delta_html = ""
+    if d:
+        def arrow(delta: int) -> str:
+            if delta > 0:
+                return f'<span class="up">▲ {delta}</span>'
+            if delta < 0:
+                return f'<span class="down">▼ {abs(delta)}</span>'
+            return '<span class="d-was">±0</span>'
+
+        items = ""
+        if d.get("prev_issue"):
+            items += f'<div class="d-item"><small>Compared with</small><span>Issue #{d["prev_issue"]}</span></div>'
+        items += f'<div class="d-item"><small>Papers</small><span>{d["papers"]} {arrow(d["papers_delta"])}</span></div>'
+        lead = d.get("leading_topic")
+        if lead:
+            was = d.get("prev_leading_topic")
+            suffix = f' <span class="d-was">(was {was})</span>' if was and was != lead else ' <span class="d-was">(unchanged)</span>'
+            items += f'<div class="d-item"><small>Leading topic</small><span>{lead}{suffix}</span></div>'
+        if d.get("rising_topic"):
+            items += f'<div class="d-item"><small>Rising</small><span class="up">▲ {d["rising_topic"]}</span></div>'
+        if d.get("falling_topic"):
+            items += f'<div class="d-item"><small>Cooling</small><span class="down">▼ {d["falling_topic"]}</span></div>'
+        items += f'<div class="d-item"><small>Flagged</small><span>{d["flagged"]} {arrow(d["flagged_delta"])}</span></div>'
+        delta_html = f'<div class="delta-strip">{items}</div>'
+
+    return f"""
+    <div class="glance">
+      <div class="glance-kick">This issue at a glance</div>
+      {paras}
+      {themes_html}
+      {delta_html}
+    </div>"""
+
+
+def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: str,
+                config: dict = None, synthesis: dict = None,
+                generated_at_str: str = None) -> str:
     """Render a single issue as Option B (Slate & Amber) HTML."""
     by_topic: dict[str, list] = {t: [] for t in TOPIC_BUCKETS}
     flagged = []
@@ -1152,13 +1425,16 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
     if flag_count:
         filter_pills += f'<a href="#" data-filter="flagged" class="flag-pill"><i class="ti ti-flag" style="font-size:11px;"></i> Flagged ({flag_count})</a>'
 
-    generated_at = datetime.now(timezone.utc).strftime("%b %d, %Y")
+    generated_at = generated_at_str or datetime.now(timezone.utc).strftime("%b %d, %Y")
     date_slug = datetime.now().strftime("%Y-%m-%d")
     issue_filename = f"ni-biweekly-{date_slug}.html"
 
     # Config overlay — use passed config or fall back to defaults
     _cfg = config if config else DEFAULT_CONFIG
     config_overlay_html = build_config_overlay(_cfg)
+
+    # "At a Glance" synthesis box — empty string when no synthesis exists
+    glance_html = build_glance_html(synthesis, papers)
 
     # sidebar topic bars — use topic_totals (flagged + unflagged) for accuracy
     max_n = max((topic_totals[t] for t in TOPIC_BUCKETS if topic_totals[t]), default=1)
@@ -1248,6 +1524,19 @@ def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: s
 .pli h3{{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.45;margin-bottom:5px;color:var(--slate-deep);letter-spacing:-.1px;}}
 .pli h3 a{{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .18s,color .18s;}}
 .pli h3 a:hover{{color:var(--sky);border-color:var(--sky);}}
+.glance{{background:linear-gradient(135deg,#FFFDF6,#FFFFFF 55%);border:1px solid #EFE3BC;border-left:3px solid var(--amber);border-radius:0 var(--r-m) var(--r-m) 0;padding:22px 26px;box-shadow:var(--shadow-s);margin-bottom:28px;}}
+.glance-kick{{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--amber-strong);margin-bottom:12px;}}
+.glance-kick::after{{content:'';flex:1;height:1px;background:#F0DFA0;}}
+.glance p{{font-size:14.5px;color:#37444F;line-height:1.75;margin-bottom:12px;}}
+.glance p strong{{color:var(--slate-deep);font-weight:600;}}
+.glance .themes{{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px;}}
+.glance .theme{{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--slate-deep);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 13px;cursor:default;}}
+.glance .theme i{{font-style:normal;font-size:11px;font-weight:700;color:var(--amber-strong);background:var(--amber-pale);border-radius:99px;padding:1px 7px;}}
+.glance .delta-strip{{display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px dashed #EFE3BC;}}
+.glance .d-item small{{display:block;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);}}
+.glance .d-item span{{font-size:13.5px;font-weight:600;color:var(--slate-deep);}}
+.glance .d-was{{color:var(--mut);font-weight:400;font-size:12px;}}
+.glance .up{{color:#1E8A6E;}}.glance .down{{color:#B91C1C;}}
 .pli .authors{{font-size:13px;color:var(--mut);font-style:italic;margin-bottom:2px;}}
 .pli .venue{{font-size:13px;color:var(--mut);margin-bottom:10px;}}
 .pli-summary{{font-size:14px;color:#44525D;line-height:1.75;margin-bottom:12px;padding:14px 16px;background:var(--paper-dim);border-radius:var(--r-s);border:1px solid var(--line-soft);}}
@@ -1332,9 +1621,10 @@ footer a:hover{{color:var(--amber);}}
       <h2>Issue #{issue_num} <span>Week of {start_date} – {end_date}</span></h2>
       <div class="issue-count"><b>{total}</b><small>Papers</small></div>
     </div>
+    {glance_html}
     <div class="provenance" id="how-it-works">
       <i class="ti ti-shield-check" aria-hidden="true"></i>
-      <p><strong>How this digest is made:</strong> Papers retrieved bi-weekly from the community-configured sources (PubMed, arXiv, medRxiv, and/or CINAHL — see Digest Settings for this issue's exact sources) using search terms agreed at AINurse-26. Results are restricted to English-language papers; both title and abstract are checked independently, and either being predominantly non-English excludes the paper. Papers are then classified against the community's chosen topics — anything that doesn't clearly match is left out of the issue rather than shown as "Other." Summaries are generated by Claude Sonnet, constrained to report only what the abstract states, with no speculation or inference. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
+      <p><strong>How this digest is made:</strong> Papers retrieved bi-weekly from the community-configured sources (PubMed, arXiv, medRxiv, and/or CINAHL — see Digest Settings for this issue's exact sources) using search terms agreed at AINurse-26. Results are restricted to English-language papers; both title and abstract are checked independently, and either being predominantly non-English excludes the paper. Papers are then classified against the community's chosen topics — anything that doesn't clearly match is left out of the issue rather than shown as "Other." Summaries are generated by Claude Sonnet, constrained to report only what the abstract states, with no speculation or inference. The "At a Glance" section above is written under the same constraints — the model synthesizes themes only from the summaries included in this issue, and every number in it (counts, changes since the previous issue) is computed directly from the archive, not by the model. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
     </div>
     <div class="filters">{filter_pills}</div>
     {topic_sections}
@@ -1617,6 +1907,40 @@ footer a:hover{{color:var(--amber);}}
 </html>"""
 
 
+def regenerate_index() -> None:
+    """Rebuild index.html from every ni-biweekly-*.json in the current directory."""
+    import glob
+    all_json = sorted(glob.glob("ni-biweekly-*.json"), reverse=True)
+    all_issues = []
+    for jf in all_json:
+        try:
+            with open(jf, encoding="utf-8") as f:
+                data = json.load(f)
+            topic_counts = {}
+            sources_used = set()
+            for p in data.get("papers", []):
+                t = p.get("topic", "Other / Unclassified")
+                topic_counts[t] = topic_counts.get(t, 0) + 1
+                sources_used.add(p.get("source", "PubMed"))
+            all_issues.append({
+                "issue_num":    data.get("issue", 1),
+                "filename":     jf.replace(".json", ".html"),
+                "start_date":   data.get("date_range", {}).get("start", ""),
+                "end_date":     data.get("date_range", {}).get("end", ""),
+                "generated_at": data.get("generated_at", "")[:10],
+                "paper_count":  data.get("paper_count", 0),
+                "flag_count":   sum(1 for p in data.get("papers", []) if p.get("flags")),
+                "topic_counts": topic_counts,
+                "sources_used": sorted(sources_used),
+            })
+        except Exception as e:
+            print(f"  WARNING: could not read {jf}: {e}")
+    index_html = render_index(all_issues)
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(index_html)
+    print(f"  INDEX → index.html ({len(all_issues)} issue(s))")
+
+
 def is_english_enough(text: str, threshold: float = 0.15) -> bool:
     """Lightweight, dependency-free English-language check.
 
@@ -1655,6 +1979,8 @@ def main():
     parser.add_argument("--clean",    action="store_true",      help="Reset index.html to blank (run before going live)")
     parser.add_argument("--config",   type=str, default=None,   help="Path to audience config JSON (e.g. config.json)")
     parser.add_argument("--classify-only", action="store_true", help="Fetch + classify topics only (cheap), skip summaries. Prints a topic/source breakdown and exits.")
+    parser.add_argument("--resynthesize",  action="store_true", help="Backfill: generate the At-a-Glance synthesis for existing issues that lack one, re-render their HTML, and rebuild the index. No new papers fetched.")
+    parser.add_argument("--force-resynth", action="store_true", help="With --resynthesize: regenerate the synthesis even for issues that already have one.")
     args = parser.parse_args()
 
     # ── Load config (audience votes override defaults) ─────────────────────
@@ -1686,6 +2012,56 @@ def main():
     if not args.dry_run and not ANTHROPIC_API_KEY:
         print("ERROR: ANTHROPIC_API_KEY not set.")
         print("  export ANTHROPIC_API_KEY='sk-ant-...'")
+        return
+
+    # ── --resynthesize: backfill At-a-Glance synthesis for existing issues ──
+    if args.resynthesize:
+        import glob
+        files = sorted(glob.glob("ni-biweekly-*.json"))  # chronological
+        if not files:
+            print("  No issue JSON files found in the current directory. Run from ni-biweekly/.")
+            return
+        client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY) if not args.dry_run else None
+        prev_data = None
+        for jf in files:
+            with open(jf, encoding="utf-8") as f:
+                data = json.load(f)
+            issue_n = data.get("issue", 1)
+            if data.get("synthesis") and not args.force_resynth:
+                print(f"  Issue #{issue_n} ({jf}): synthesis already present — skipping generation.")
+            else:
+                print(f"  Issue #{issue_n} ({jf}): generating synthesis...")
+                deltas = compute_deltas(data.get("papers", []), prev_data)
+                synthesis = generate_synthesis(client, data.get("papers", []), issue_n,
+                                               deltas, prev_data, dry_run=args.dry_run)
+                if synthesis:
+                    data["synthesis"] = synthesis
+                    with open(jf, "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=2, ensure_ascii=False)
+                    print(f"    ✓ synthesis written to {jf}")
+                else:
+                    print(f"    synthesis not generated (dry run or error) — leaving {jf} unchanged")
+            # Re-render HTML either way so template changes propagate to old issues
+            gen_iso = data.get("generated_at", "")[:10]
+            try:
+                gen_str = datetime.fromisoformat(gen_iso).strftime("%b %d, %Y")
+            except ValueError:
+                gen_str = gen_iso
+            html_out = render_html(
+                data.get("papers", []), issue_n,
+                data.get("date_range", {}).get("start", ""),
+                data.get("date_range", {}).get("end", ""),
+                config=data.get("config"),
+                synthesis=data.get("synthesis"),
+                generated_at_str=gen_str,
+            )
+            html_path = jf.replace(".json", ".html")
+            with open(html_path, "w", encoding="utf-8") as f:
+                f.write(html_out)
+            print(f"    HTML → {html_path}")
+            prev_data = data
+        regenerate_index()
+        print("\n✓ Resynthesize complete.\n")
         return
 
     print(f"\n{'='*60}")
@@ -1843,8 +2219,27 @@ def main():
             "topic_confidence": confidence,
         })
 
-    # ── Step 3: Output ─────────────────────────────────────────────────────
+    # ── Step 2c: Issue synthesis ("This Issue at a Glance") ────────────────
     date_slug = datetime.today().strftime("%Y-%m-%d")
+    print(f"\n► Step 2c: Generating issue synthesis (At a Glance)...")
+    import glob
+    prev_issue_data = None
+    prev_files = [f for f in sorted(glob.glob("ni-biweekly-*.json"))
+                  if f != f"ni-biweekly-{date_slug}.json"]  # exclude same-day rerun
+    if prev_files:
+        try:
+            with open(prev_files[-1], encoding="utf-8") as f:
+                prev_issue_data = json.load(f)
+            print(f"  Comparing against Issue #{prev_issue_data.get('issue')} ({prev_files[-1]})")
+        except Exception as e:
+            print(f"  WARNING: could not read previous issue {prev_files[-1]}: {e}")
+    deltas = compute_deltas(processed, prev_issue_data)
+    synthesis = generate_synthesis(client, processed, args.issue, deltas,
+                                   prev_issue_data, dry_run=args.dry_run)
+    print("  Synthesis " + ("generated." if synthesis else
+          "skipped (dry run or generation failed) — issue will publish without the glance box."))
+
+    # ── Step 3: Output ─────────────────────────────────────────────────────
     print(f"\n► Step 3: Writing output...")
 
     if args.output in ("json", "both"):
@@ -1856,48 +2251,21 @@ def main():
                 "date_range":   {"start": start_str, "end": end_str},
                 "paper_count":  len(processed),
                 "config":       cfg,
+                "synthesis":    synthesis,
                 "papers":       processed,
             }, f, indent=2, ensure_ascii=False)
         print(f"  JSON → {json_path}")
 
     if args.output in ("html", "both"):
         html_path = f"ni-biweekly-{date_slug}.html"
-        html = render_html(processed, args.issue, start_str, end_str, config=cfg)
+        html = render_html(processed, args.issue, start_str, end_str, config=cfg,
+                           synthesis=synthesis)
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html)
         print(f"  HTML → {html_path}")
 
         # Regenerate index.html from all JSON files in the current directory
-        import glob
-        all_json = sorted(glob.glob("ni-biweekly-*.json"), reverse=True)
-        all_issues = []
-        for jf in all_json:
-            try:
-                with open(jf) as f:
-                    data = json.load(f)
-                topic_counts = {}
-                sources_used = set()
-                for p in data.get("papers", []):
-                    t = p.get("topic", "Other / Unclassified")
-                    topic_counts[t] = topic_counts.get(t, 0) + 1
-                    sources_used.add(p.get("source", "PubMed"))
-                all_issues.append({
-                    "issue_num":    data.get("issue", 1),
-                    "filename":     jf.replace(".json", ".html"),
-                    "start_date":   data.get("date_range", {}).get("start", ""),
-                    "end_date":     data.get("date_range", {}).get("end", ""),
-                    "generated_at": data.get("generated_at", "")[:10],
-                    "paper_count":  data.get("paper_count", 0),
-                    "flag_count":   sum(1 for p in data.get("papers", []) if p.get("flags")),
-                    "topic_counts": topic_counts,
-                    "sources_used": sorted(sources_used),
-                })
-            except Exception as e:
-                print(f"  WARNING: could not read {jf}: {e}")
-        index_html = render_index(all_issues)
-        with open("index.html", "w", encoding="utf-8") as f:
-            f.write(index_html)
-        print(f"  INDEX → index.html ({len(all_issues)} issue(s))")
+        regenerate_index()
 
     flag_count = sum(1 for p in processed if p.get("flags"))
     print(f"\n✓ Done. {len(processed)} papers · {flag_count} flagged.\n")

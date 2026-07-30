@@ -1,0 +1,48 @@
+name: "NAIL Digest: Resynthesize Issues"
+
+# Manual utility: backfills the "At a Glance" synthesis for existing issues
+# that lack one, re-renders their HTML, and rebuilds the index. Does NOT
+# fetch new papers. Safe to re-run — issues that already have a synthesis
+# are skipped unless "force" is checked.
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate synthesis even for issues that already have one"
+        type: boolean
+        default: false
+
+jobs:
+  resynthesize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python3 -m pip install anthropic requests
+
+      - name: Resynthesize issues
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd ni-biweekly
+          python3 ../ni_biweekly.py --config config.json --resynthesize ${{ inputs.force == true && '--force-resynth' || '' }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "NAIL Digest Bot"
+          git config user.email "ainurse@nailcollab.org"
+          git add ni-biweekly/
+          git diff --cached --quiet || git commit -m "NAIL Digest: backfill At-a-Glance synthesis"
+          git push

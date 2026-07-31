@@ -153,7 +153,10 @@ footer a:hover{color:var(--amber);}
     .sub-btn{font-family:inherit;font-size:13px;font-weight:700;color:var(--slate-deep,#111C26);background:var(--amber,#E8C46A);border:none;border-radius:99px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:transform .18s;}
     .sub-btn:hover{transform:translateY(-1px);}
     .sub-btn:disabled{opacity:.6;cursor:default;transform:none;}
-    .sub-msg{font-size:12.5px;color:var(--mut,#5E6B76);margin-top:10px;}
+    .sub-msg{font-size:12.5px;margin-top:10px;}
+    .sub-msg.is-pending{color:var(--amber-strong,#B08A1F);}
+    .sub-msg.is-ok{color:#2F7A52;}
+    .sub-msg.is-err{color:#A63D3D;}
     </style>
     <script>
     (function(){
@@ -163,7 +166,18 @@ footer a:hover{color:var(--amber);}
           var btn = form.querySelector('.sub-btn');
           var msg = form.parentElement.querySelector('.sub-msg');
           var data = new FormData(form);
-          btn.disabled = true; btn.textContent = 'Sending...';
+
+          btn.disabled = true;
+          msg.style.display = 'block';
+          msg.className = 'sub-msg is-pending';
+          var dots = ['.', '..', '...'];
+          var dotIdx = 0;
+          msg.textContent = 'Sending your confirmation email (this can take a few seconds)' + dots[dotIdx];
+          var dotTimer = setInterval(function(){
+            dotIdx = (dotIdx + 1) % dots.length;
+            msg.textContent = 'Sending your confirmation email (this can take a few seconds)' + dots[dotIdx];
+          }, 450);
+
           try {
             var resp = await fetch(form.dataset.worker + '/subscribe', {
               method: 'POST',
@@ -171,16 +185,19 @@ footer a:hover{color:var(--amber);}
               body: JSON.stringify({ email: data.get('email'), hp: data.get('hp') })
             });
             var json = await resp.json();
-            msg.style.display = 'block';
+            clearInterval(dotTimer);
             if (resp.ok) {
               form.style.display = 'none';
+              msg.className = 'sub-msg is-ok';
               msg.textContent = json.already ? 'You are already subscribed.' : 'Check your inbox to confirm.';
             } else {
+              msg.className = 'sub-msg is-err';
               msg.textContent = json.error || 'Something went wrong — try again.';
               btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
             }
           } catch (err) {
-            msg.style.display = 'block';
+            clearInterval(dotTimer);
+            msg.className = 'sub-msg is-err';
             msg.textContent = 'Network error — try again shortly.';
             btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
           }

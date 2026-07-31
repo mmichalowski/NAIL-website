@@ -71,7 +71,7 @@ MODEL = "claude-sonnet-5"
 # deploy (either the *.workers.dev URL Cloudflare assigns, or your custom
 # domain route once nailcollab.org's DNS is on Cloudflare). Used to render
 # the subscribe widget on every issue page and the hub page.
-SUBSCRIBE_WORKER_URL = "https://nail-subscribe.martin-michalowski.workers.dev"
+SUBSCRIBE_WORKER_URL = "https://nail-subscribe.YOUR-SUBDOMAIN.workers.dev"
 
 # Community-agreed topic buckets (AINurse-26 vote, July 10 2026)
 TOPIC_BUCKETS = [
@@ -1341,18 +1341,18 @@ def build_subscribe_widget_html() -> str:
       <div class="sub-msg" style="display:none;"></div>
     </div>
     <style>
-    .sub-widget-box{background:var(--slate-deep,#111C26);border:1px solid rgba(240,223,160,.12);border-radius:var(--r-m,12px);padding:20px 22px;position:relative;overflow:hidden;}
-    .sub-widget-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(240,223,160,.38);margin-bottom:10px;}
-    .sub-widget-copy{font-size:13.5px;color:rgba(220,208,186,.65);line-height:1.7;margin-bottom:12px;}
+    .sub-widget-box{background:var(--card,#FFFFFF);border:1px solid var(--line,#E4E0D8);border-radius:var(--r-m,12px);padding:20px 22px;box-shadow:var(--shadow-s,0 1px 2px rgba(17,28,38,.05),0 2px 8px rgba(17,28,38,.04));}
+    .sub-widget-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut,#5E6B76);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line,#E4E0D8);}
+    .sub-widget-copy{font-size:13.5px;color:var(--mut,#5E6B76);line-height:1.7;margin-bottom:12px;}
     .sub-form{display:flex;flex-direction:column;gap:8px;}
-    .sub-input{font-family:inherit;font-size:13.5px;padding:9px 12px;border-radius:8px;border:1px solid rgba(240,223,160,.2);background:rgba(255,255,255,.04);color:#fff;}
-    .sub-input::placeholder{color:rgba(220,208,186,.4);}
-    .sub-input:focus{outline:none;border-color:var(--amber,#E8C46A);}
+    .sub-input{font-family:inherit;font-size:13.5px;padding:9px 12px;border-radius:8px;border:1px solid var(--line,#E4E0D8);background:var(--paper-dim,#F3F1EC);color:var(--ink,#1D2B3A);}
+    .sub-input::placeholder{color:#9A978D;}
+    .sub-input:focus{outline:none;border-color:var(--amber,#E8C46A);background:var(--card,#FFFFFF);}
     .sub-hp{display:none !important;}
     .sub-btn{font-family:inherit;font-size:13px;font-weight:700;color:var(--slate-deep,#111C26);background:var(--amber,#E8C46A);border:none;border-radius:99px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:transform .18s;}
     .sub-btn:hover{transform:translateY(-1px);}
     .sub-btn:disabled{opacity:.6;cursor:default;transform:none;}
-    .sub-msg{font-size:12.5px;color:rgba(220,208,186,.75);margin-top:10px;}
+    .sub-msg{font-size:12.5px;color:var(--mut,#5E6B76);margin-top:10px;}
     </style>
     <script>
     (function(){
@@ -1972,7 +1972,7 @@ footer a:hover{{color:var(--amber);}}
       <div class="cc-stat"><b>{cc_flags}</b><span>Flagged</span></div>
     </div>
   </div>
-  <div style="max-width:360px;margin-bottom:52px;">{build_subscribe_widget_html()}</div>
+  <div style="max-width:400px;margin:0 auto 52px;">{build_subscribe_widget_html()}</div>
   <div class="sec-hdr"><h2>Back Issues</h2></div>
   <div class="back-issues-grid">{back_cards_html}</div>
   <div class="about-strip">

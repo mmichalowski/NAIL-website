@@ -31,7 +31,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: python3 -m pip install anthropic requests
+        run: python3 -m pip install anthropic requests resend
 
       - name: Check if bi-weekly interval has passed
         id: interval
@@ -83,3 +83,14 @@ jobs:
           git add ni-biweekly/
           git diff --cached --quiet || git commit -m "NAIL Digest: Issue #${{ steps.issue.outputs.number }} — $(date +%Y-%m-%d)"
           git push
+
+      # Runs AFTER commit & push on purpose — the email links straight to the
+      # live issue page, so the page needs to already be reachable.
+      - name: Send digest email to subscribers
+        if: steps.interval.outputs.should_run == 'true'
+        env:
+          RESEND_API_KEY:     ${{ secrets.RESEND_API_KEY }}
+          SUBSCRIBER_API_KEY: ${{ secrets.SUBSCRIBER_API_KEY }}
+        run: |
+          cd ni-biweekly
+          python3 ../send_digest_email.py --issue ${{ steps.issue.outputs.number }}

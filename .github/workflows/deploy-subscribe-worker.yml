@@ -1,0 +1,21 @@
+name: "Deploy Subscribe Worker"
+
+on:
+  push:
+    branches: [main]              # ← adjust if your default branch has a different name
+    paths: ["subscribe-worker/**"]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: subscribe-worker

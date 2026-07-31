@@ -71,7 +71,7 @@ MODEL = "claude-sonnet-5"
 # deploy (either the *.workers.dev URL Cloudflare assigns, or your custom
 # domain route once nailcollab.org's DNS is on Cloudflare). Used to render
 # the subscribe widget on every issue page and the hub page.
-SUBSCRIBE_WORKER_URL = "https://nail-subscribe.YOUR-SUBDOMAIN.workers.dev"
+SUBSCRIBE_WORKER_URL = "https://nail-subscribe.martin-michalowski.workers.dev"
 
 # Community-agreed topic buckets (AINurse-26 vote, July 10 2026)
 TOPIC_BUCKETS = [

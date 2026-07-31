@@ -1,0 +1,44 @@
+name: "Test: Send Digest Email"
+
+# Manual-only utility for testing the subscriber-fetch + Resend pipeline
+# against an issue that ALREADY EXISTS in ni-biweekly/ — no new content is
+# generated, no Anthropic API call is made. Safe to re-run any time; it
+# just re-sends a real issue's email to your current confirmed subscribers.
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: "Issue number to send (must already exist in ni-biweekly/)"
+        default: "2"
+      email:
+        description: "Send to only this address (leave blank to send to every confirmed subscriber)"
+        default: ""
+
+jobs:
+  test-send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python3 -m pip install resend requests
+
+      - name: Send test email
+        env:
+          RESEND_API_KEY:     ${{ secrets.RESEND_API_KEY }}
+          SUBSCRIBER_API_KEY: ${{ secrets.SUBSCRIBER_API_KEY }}
+          TARGET_EMAIL:       ${{ inputs.email }}
+        run: |
+          cd ni-biweekly
+          if [ -n "$TARGET_EMAIL" ]; then
+            python3 ../send_digest_email.py --issue ${{ inputs.issue }} --email "$TARGET_EMAIL"
+          else
+            python3 ../send_digest_email.py --issue ${{ inputs.issue }}
+          fi

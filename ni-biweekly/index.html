@@ -130,6 +130,64 @@ footer a:hover{color:var(--amber);}
       <div class="cc-stat"><b>3</b><span>Flagged</span></div>
     </div>
   </div>
+  <div style="max-width:360px;margin-bottom:52px;">
+    <div class="sub-widget-box">
+      <div class="sub-widget-label">Subscribe</div>
+      <p class="sub-widget-copy">Get NAIL Digest by email every other Monday — no spam, unsubscribe any time.</p>
+      <form class="sub-form" data-worker="https://nail-subscribe.martin-michalowski.workers.dev">
+        <input type="email" name="email" class="sub-input" placeholder="you@hospital.org" required>
+        <input type="text" name="hp" class="sub-hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="sub-btn"><i class="ti ti-mail"></i> Subscribe</button>
+      </form>
+      <div class="sub-msg" style="display:none;"></div>
+    </div>
+    <style>
+    .sub-widget-box{background:var(--slate-deep,#111C26);border:1px solid rgba(240,223,160,.12);border-radius:var(--r-m,12px);padding:20px 22px;position:relative;overflow:hidden;}
+    .sub-widget-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(240,223,160,.38);margin-bottom:10px;}
+    .sub-widget-copy{font-size:13.5px;color:rgba(220,208,186,.65);line-height:1.7;margin-bottom:12px;}
+    .sub-form{display:flex;flex-direction:column;gap:8px;}
+    .sub-input{font-family:inherit;font-size:13.5px;padding:9px 12px;border-radius:8px;border:1px solid rgba(240,223,160,.2);background:rgba(255,255,255,.04);color:#fff;}
+    .sub-input::placeholder{color:rgba(220,208,186,.4);}
+    .sub-input:focus{outline:none;border-color:var(--amber,#E8C46A);}
+    .sub-hp{display:none !important;}
+    .sub-btn{font-family:inherit;font-size:13px;font-weight:700;color:var(--slate-deep,#111C26);background:var(--amber,#E8C46A);border:none;border-radius:99px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:transform .18s;}
+    .sub-btn:hover{transform:translateY(-1px);}
+    .sub-btn:disabled{opacity:.6;cursor:default;transform:none;}
+    .sub-msg{font-size:12.5px;color:rgba(220,208,186,.75);margin-top:10px;}
+    </style>
+    <script>
+    (function(){
+      document.querySelectorAll('.sub-form').forEach(function(form){
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          var btn = form.querySelector('.sub-btn');
+          var msg = form.parentElement.querySelector('.sub-msg');
+          var data = new FormData(form);
+          btn.disabled = true; btn.textContent = 'Sending...';
+          try {
+            var resp = await fetch(form.dataset.worker + '/subscribe', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ email: data.get('email'), hp: data.get('hp') })
+            });
+            var json = await resp.json();
+            msg.style.display = 'block';
+            if (resp.ok) {
+              form.style.display = 'none';
+              msg.textContent = json.already ? 'You are already subscribed.' : 'Check your inbox to confirm.';
+            } else {
+              msg.textContent = json.error || 'Something went wrong — try again.';
+              btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+            }
+          } catch (err) {
+            msg.style.display = 'block';
+            msg.textContent = 'Network error — try again shortly.';
+            btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+          }
+        });
+      });
+    })();
+    </script></div>
   <div class="sec-hdr"><h2>Back Issues</h2></div>
   <div class="back-issues-grid">
       <a href="ni-biweekly-2026-07-10.html" class="back-card">

@@ -28,7 +28,7 @@ import requests
 import resend
 
 # ← set this to the same Worker URL used in ni_biweekly.py's SUBSCRIBE_WORKER_URL
-WORKER_BASE = "https://nail-subscribe.YOUR-SUBDOMAIN.workers.dev"
+WORKER_BASE = "https://nail-subscribe.martin-michalowski.workers.dev"
 SUBSCRIBERS_URL = f"{WORKER_BASE}/subscribers"
 UNSUBSCRIBE_BASE = f"{WORKER_BASE}/unsubscribe"
 SITE_BASE = "https://www.nailcollab.org/ni-biweekly"

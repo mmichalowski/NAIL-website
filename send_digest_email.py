@@ -116,6 +116,9 @@ def build_email_html(issue: dict, unsub_token: str) -> str:
 def main():
     parser = argparse.ArgumentParser(description="Send the NAIL Digest issue to confirmed subscribers")
     parser.add_argument("--issue", type=int, required=True, help="Issue number just published")
+    parser.add_argument("--email", type=str, default="",
+                         help="Send to only this address (must be an existing confirmed subscriber). "
+                              "Leave unset to send to every confirmed subscriber.")
     args = parser.parse_args()
 
     resend.api_key = os.environ["RESEND_API_KEY"]
@@ -127,6 +130,14 @@ def main():
     print(f"► Fetching confirmed subscriber list...")
     subscribers = get_confirmed_subscribers()
     print(f"  {len(subscribers)} confirmed subscriber(s)")
+
+    if args.email:
+        target = args.email.strip().lower()
+        subscribers = [s for s in subscribers if s["email"].lower() == target]
+        if not subscribers:
+            print(f"  No confirmed subscriber matches '{args.email}'. Nothing sent.")
+            return
+        print(f"  Restricting send to single recipient: {subscribers[0]['email']}")
 
     if not subscribers:
         print("  No subscribers yet — nothing to send.")

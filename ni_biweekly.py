@@ -67,6 +67,12 @@ except ImportError:
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 MODEL = "claude-sonnet-5"
 
+# Subscribe Worker — set this to your deployed Worker's URL after the first
+# deploy (either the *.workers.dev URL Cloudflare assigns, or your custom
+# domain route once nailcollab.org's DNS is on Cloudflare). Used to render
+# the subscribe widget on every issue page and the hub page.
+SUBSCRIBE_WORKER_URL = "https://nail-subscribe.martin-michalowski.workers.dev"
+
 # Community-agreed topic buckets (AINurse-26 vote, July 10 2026)
 TOPIC_BUCKETS = [
     "Clinical Decision Support",
@@ -507,7 +513,7 @@ def fetch_cinahl(days_back: int = 14, max_results: int = 20) -> list[dict]:
     profile_id  = os.environ.get("EBSCO_PROFILE_ID",  "cineit")
     cust_id     = os.environ.get("EBSCO_CUST_ID",     "s5240361")
     group_id    = os.environ.get("EBSCO_GROUP_ID",    "main")
-    profile_pwd = os.environ.get("EBSCO_PROFILE_PWD", "ebs3648")
+    profile_pwd = os.environ.get("EBSCO_PROFILE_PWD", "")
     db          = os.environ.get("EBSCO_DB",           "cul")  # per EBSCO EIT profile setup
     fmt         = os.environ.get("EBSCO_FORMAT",       "detailed")  # brief|detailed|full — brief has NO abstract
 
@@ -1314,6 +1320,76 @@ def build_glance_html(synthesis: dict | None, papers: list[dict]) -> str:
     </div>"""
 
 
+def build_subscribe_widget_html() -> str:
+    """Self-contained subscribe box: markup + scoped CSS + JS, all in one
+    string. Uses var(--name, #fallback) throughout so it renders correctly
+    whether it's embedded on a page that defines the Slate/Amber custom
+    properties (every ni-biweekly page does) or one that doesn't (e.g. if
+    it's ever pasted onto a page outside this generator's templates).
+    Reused as-is by both render_html() (issue pages) and render_index()
+    (hub page) — edit once here, both pages pick it up on the next run.
+    """
+    template = """
+    <div class="sub-widget-box">
+      <div class="sub-widget-label">Subscribe</div>
+      <p class="sub-widget-copy">Get NAIL Digest by email every other Monday — no spam, unsubscribe any time.</p>
+      <form class="sub-form" data-worker="__WORKER_URL__">
+        <input type="email" name="email" class="sub-input" placeholder="you@hospital.org" required>
+        <input type="text" name="hp" class="sub-hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="sub-btn"><i class="ti ti-mail"></i> Subscribe</button>
+      </form>
+      <div class="sub-msg" style="display:none;"></div>
+    </div>
+    <style>
+    .sub-widget-box{background:var(--slate-deep,#111C26);border:1px solid rgba(240,223,160,.12);border-radius:var(--r-m,12px);padding:20px 22px;position:relative;overflow:hidden;}
+    .sub-widget-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:rgba(240,223,160,.38);margin-bottom:10px;}
+    .sub-widget-copy{font-size:13.5px;color:rgba(220,208,186,.65);line-height:1.7;margin-bottom:12px;}
+    .sub-form{display:flex;flex-direction:column;gap:8px;}
+    .sub-input{font-family:inherit;font-size:13.5px;padding:9px 12px;border-radius:8px;border:1px solid rgba(240,223,160,.2);background:rgba(255,255,255,.04);color:#fff;}
+    .sub-input::placeholder{color:rgba(220,208,186,.4);}
+    .sub-input:focus{outline:none;border-color:var(--amber,#E8C46A);}
+    .sub-hp{display:none !important;}
+    .sub-btn{font-family:inherit;font-size:13px;font-weight:700;color:var(--slate-deep,#111C26);background:var(--amber,#E8C46A);border:none;border-radius:99px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:transform .18s;}
+    .sub-btn:hover{transform:translateY(-1px);}
+    .sub-btn:disabled{opacity:.6;cursor:default;transform:none;}
+    .sub-msg{font-size:12.5px;color:rgba(220,208,186,.75);margin-top:10px;}
+    </style>
+    <script>
+    (function(){
+      document.querySelectorAll('.sub-form').forEach(function(form){
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          var btn = form.querySelector('.sub-btn');
+          var msg = form.parentElement.querySelector('.sub-msg');
+          var data = new FormData(form);
+          btn.disabled = true; btn.textContent = 'Sending...';
+          try {
+            var resp = await fetch(form.dataset.worker + '/subscribe', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ email: data.get('email'), hp: data.get('hp') })
+            });
+            var json = await resp.json();
+            msg.style.display = 'block';
+            if (resp.ok) {
+              form.style.display = 'none';
+              msg.textContent = json.already ? 'You are already subscribed.' : 'Check your inbox to confirm.';
+            } else {
+              msg.textContent = json.error || 'Something went wrong \u2014 try again.';
+              btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+            }
+          } catch (err) {
+            msg.style.display = 'block';
+            msg.textContent = 'Network error \u2014 try again shortly.';
+            btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+          }
+        });
+      });
+    })();
+    </script>"""
+    return template.replace("__WORKER_URL__", SUBSCRIBE_WORKER_URL)
+
+
 def render_html(papers: list[dict], issue_num: int, start_date: str, end_date: str,
                 config: dict = None, synthesis: dict = None,
                 generated_at_str: str = None) -> str:
@@ -1657,6 +1733,7 @@ footer a:hover{{color:var(--amber);}}
       <p>Help shape NAIL Digest — propose search terms, flag missed papers, or suggest governance changes.</p>
       <a href="mailto:ainurse@nailcollab.org">ainurse@nailcollab.org <i class="ti ti-arrow-right" style="font-size:12px;"></i></a>
     </div>
+    {build_subscribe_widget_html()}
   </aside>
 </div>
 <footer><p>NAIL Digest · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · Born at AINurse-26, Ottawa 2026</p></footer>
@@ -1895,6 +1972,7 @@ footer a:hover{{color:var(--amber);}}
       <div class="cc-stat"><b>{cc_flags}</b><span>Flagged</span></div>
     </div>
   </div>
+  <div style="max-width:360px;margin-bottom:52px;">{build_subscribe_widget_html()}</div>
   <div class="sec-hdr"><h2>Back Issues</h2></div>
   <div class="back-issues-grid">{back_cards_html}</div>
   <div class="about-strip">

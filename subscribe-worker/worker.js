@@ -126,7 +126,13 @@ export default {
 
       const normalized = email.trim().toLowerCase();
       const key = `sub:${normalized}`;
-      const existingRaw = await env.SUBSCRIBERS.get(key);
+
+      let existingRaw;
+      try {
+        existingRaw = await env.SUBSCRIBERS.get(key);
+      } catch (e) {
+        return new Response(JSON.stringify({ error: "Storage unavailable. Try again shortly." }), { status: 502, headers: cors });
+      }
       if (existingRaw) {
         const existing = JSON.parse(existingRaw);
         if (existing.status === "confirmed") {
@@ -145,15 +151,20 @@ export default {
         subscribed_at: new Date().toISOString(),
         confirmed_at: null,
       };
-      await env.SUBSCRIBERS.put(key, JSON.stringify(record));
-      await env.SUBSCRIBERS.put(`token:${confirmToken}`, normalized);
-      await env.SUBSCRIBERS.put(`token:${unsubToken}`, normalized);
+      try {
+        await env.SUBSCRIBERS.put(key, JSON.stringify(record));
+        await env.SUBSCRIBERS.put(`token:${confirmToken}`, normalized);
+        await env.SUBSCRIBERS.put(`token:${unsubToken}`, normalized);
+      } catch (e) {
+        return new Response(JSON.stringify({ error: "Storage unavailable. Try again shortly." }), { status: 502, headers: cors });
+      }
 
       const confirmUrl = `${url.origin}/confirm?token=${confirmToken}`;
       try {
         await sendConfirmEmail(env, normalized, confirmUrl);
       } catch (e) {
         return new Response(
+
           JSON.stringify({ error: "Could not send confirmation email. Try again shortly." }),
           { status: 502, headers: cors }
         );

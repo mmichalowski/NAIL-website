@@ -1,0 +1,15 @@
+name = "nail-subscribe"
+main = "worker.js"
+compatibility_date = "2026-07-01"
+workers_dev = true
+
+# Created once via the Cloudflare dashboard (Workers & Pages → KV → Create
+# namespace, named SUBSCRIBERS) — paste its ID below before the first deploy.
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "05943761408543e1a0ebf49464a0239d"
+
+# Optional upgrade, not needed to launch: once nailcollab.org's DNS is
+# managed by Cloudflare, uncomment this to serve the Worker at a branded
+# subdomain instead of the default *.workers.dev URL.
+# routes = [{ pattern = "subscribe.nailcollab.org/*", zone_name = "nailcollab.org" }]

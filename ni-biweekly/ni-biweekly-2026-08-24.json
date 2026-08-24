@@ -1,0 +1,165 @@
+{
+  "issue": 4,
+  "generated_at": "2026-08-24T06:58:21.294212Z",
+  "date_range": {
+    "start": "Aug 10, 2026",
+    "end": "Aug 24, 2026"
+  },
+  "paper_count": 6,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "synthesis": {
+    "overview": [
+      "This issue centers on generative AI's mixed track record across three papers: chatbots and language models can draft investigation reports, support chronic disease education, or code newspaper sentiment, but each study found real limits, from overcoding in qualitative analysis to unresolved safety and literacy gaps. A workforce study raises a different caution, linking heavy AI reliance in nursing students to reduced focus. Meanwhile, one hospital's digital closed-loop workflow improved surgical timing and staff experience at scale, and a Hong Kong pilot protocol aims to test chatbot-assisted advance care planning conversations with families.",
+      "Papers dropped from 30 to 6 this issue, and NLP & Generative AI became the leading topic with 3 papers, up from just 1 last issue, while Workforce & Education fell sharply from 17 papers to 1. The decision-support and ethics threads from last issue are absent here. Documentation work continues, echoed in the ambient AI scribe study for safety reports. Patient-facing AI persists with the ChatACP protocol, again in early stages. EHR & Workflows remains present but small, matching last issue's 2-paper showing with 1 paper here."
+    ],
+    "themes": [
+      {
+        "name": "Generative AI performance and limits",
+        "paper_ids": [
+          "42594845",
+          "42579870",
+          "42574744"
+        ]
+      },
+      {
+        "name": "AI's cognitive and educational impact on students",
+        "paper_ids": [
+          "42619200"
+        ]
+      },
+      {
+        "name": "Digital tools for care coordination and family engagement",
+        "paper_ids": [
+          "42585665",
+          "cinahl:3"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 3,
+      "papers": 6,
+      "papers_delta": -24,
+      "leading_topic": "NLP & Generative AI",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "NLP & Generative AI",
+      "rising_pp": 47,
+      "falling_topic": "Workforce & Education",
+      "falling_pp": -40,
+      "flagged": 2,
+      "flagged_delta": -11
+    },
+    "generated_at": "2026-08-24T06:58:21.294106Z",
+    "model": "claude-sonnet-5"
+  },
+  "papers": [
+    {
+      "pmid": "42619200",
+      "title": "AI Dependency and Brain Rot Among Nursing Students: A Mixed-Methods Study.",
+      "abstract": "Artificial intelligence (AI) can be beneficial in tailoring learning experiences to each student's learning style, needs, and preferences. But the integration of AI into education has also raised a host of concerns, including AI dependency and brain rot. Thus far, there has been limited research on the relationship between the use of AI and brain rot. This study aimed to explore the relationship between AI dependency and brain rot, specifically among nursing students. This mixed-methods study involved undergraduate nursing students at a university in Türkiye. Quantitative data were collected via an online survey that included a sociodemographic questionnaire, the eight-item Brain Rot Scale (BRS-8), and the Dependence on Artificial Intelligence (DAI) Scale. Qualitative data were collected via semistructured interviews. Quantitative data analysis included the use of descriptive statistics, independent samples t tests, one-way analysis of variance, Pearson correlational analysis, and simple linear regression analysis. Qualitative data were analyzed via thematic analysis. A total of 222 nursing students participated in the quantitative phase and 11 also participated in the qualitative interviews. Of the 222 nursing students in the quantitative phase, 90.1% were female; their mean age was 20.63 years. Quantitative analysis found a moderate, positive, and statistically significant correlation between DAI Scale and BRS-8 scores (r = 0.39). Qualitative analysis indicated that students often relied heavily on AI tools in preparing for or taking examinations, with some reporting that the overuse of AI led to reduced focus and dulled thinking. This study found a moderate, positive, and statistically significant relationship between AI dependency and brain rot among nursing students. The findings indicate that the excessive use of AI tools may contribute to cognitive fatigue and mental exhaustion, and can negatively impact foundational cognitive skills such as critical thinking and decision-making. It is essential that nursing programs ensure the AI literacy of their students and develop a balance of traditional and AI-related pedagogical strategies that best support students' brain functions and cognitive abilities.",
+      "authors": "Sağlam RK, Kalanlar B",
+      "journal": "The American journal of nursing",
+      "pub_date": "Sep 2026",
+      "doi": "10.1097/AJN.0000000000000364",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42619200/",
+      "summary": "This mixed-methods study surveyed and interviewed 222 undergraduate nursing students in Türkiye to explore links between AI dependency and 'brain rot.' Researchers found a moderate, positive correlation between AI reliance and brain rot scores; interviews suggested heavy AI use during exam prep led some students to report reduced focus and dulled thinking. The authors suggest nursing programs may need to build AI literacy and balance AI tools with traditional teaching methods.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42594845",
+      "title": "Analyzing Nurse Sentiment in a Dutch Regional Newspaper During the COVID-19 Pandemic: Comparative Content Analysis of GPT-5, Gemini 2.5 Pro, and Human Coding.",
+      "abstract": "Large language models (LLMs) are increasingly used in qualitative research, but their reliability compared to human analysis, especially on large, non-English datasets, is unclear. Previous studies on older models (like GPT-4) show limitations in nuance and token capacity. This study compared the qualitative analysis capabilities of OpenAI's GPT-5 and Google's Gemini 2.5 Pro (Gemini) with a human qualitative analysis. The study uses a large dataset of 317 Dutch newspaper articles from January 1, 2020, to December 31, 2023, investigating the sentiment toward nurses during the COVID-19 pandemic. The study used a 2-phase methodology. First, a thematic comparison was conducted where the human researchers, GPT-5, and Gemini independently generated inductive coding trees from the entire corpus. Second, a comparative test was performed where all 3 coders applied a predefined codebook to a 10% stratified random subsample. The human baseline was validated through double-coding by 2 independent researchers, achieving an acceptable intercoder reliability (α=0.703). The AI analysis was iterative, using model-optimized prompts and an article-by-article approach. Both AI models successfully identified third-order themes (eg, \"Health care heroes\") consistent with the data. In deductive application, however, both models systematically overcoded compared to the human consensus (181 and 183 codes vs 138), resulting in low intercoder reliability against the human baseline (α=0.487) for GPT-5 and (α=0.507) for Gemini. This study suggests a potential divergence in analytical logic. The observed coding frequencies indicate that LLMs may default to semantic presence (literal frequency), whereas human coders appear to prioritize interpretive significance (contextual weight), leading to systematic overcoding. Consequently, this article argues that LLMs should not be viewed as autonomous researchers but as high-sensitivity filtering instruments requiring human calibration. This study concludes that AI can serve as a valuable assistant for qualitative researchers. Still, it benefits from a rigorous, iterative, and human-in-the-loop approach to manage methodological friction and ensure nuanced, valid analysis.",
+      "authors": "van den Berkmortel B, Westra D, Gifford R, van de Baan FC",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Aug 2026",
+      "doi": "10.2196/98374",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42594845/",
+      "summary": "Researchers compared GPT-5, Gemini 2.5 Pro, and human coders analyzing 317 Dutch newspaper articles about nurse sentiment during COVID-19. Both AI models found similar themes to humans but overcoded during structured analysis, showing low agreement with human coders (α=0.487 and 0.507). This suggests AI tools work best as assistants needing human oversight, not as standalone qualitative researchers, which matters for teams using AI in nursing research.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42585665",
+      "title": "Messaging and Chatbot-Assisted Nursing Consultation (ChatACP) to Empower Family Members of Residents of Nursing Homes on Advance Care Planning: Protocol for a Mixed Methods Pilot Study.",
+      "abstract": "Advance care planning (ACP) involves proactive communication about end-of-life care preferences among patients, families, and health care providers. In Chinese culture, older adults commonly delegate such care decisions to adult children, yet family reluctance-rooted in beliefs that aggressive treatments are beneficial-remains a major barrier to ACP participation. Existing interventions improve documentation and communication through education, hypothetical scenarios, and physician engagement, but few target family members specifically or use a theoretical framework. The transtheoretical model is particularly underused for assessing family readiness. Infographics, videos, and large language models demonstrate strong potential for engagement, highlighting the need for tailored, theory-driven family empowerment interventions. This study aims to evaluate the feasibility, acceptability, and preliminary efficacy of a 10-day digital intervention (ChatACP) designed to empower family members to support care home residents in ACP. An explanatory sequential mixed methods study using a pilot randomized controlled trial with a postintervention and 3-month assessment and a posttrial qualitative study will be conducted. Eligible family members (N=60) of care home residents from 6 homes will be enrolled. The intervention group will receive ChatACP, and the control group will receive a self-learning ACP pamphlet. The ChatACP intervention consists of 2 phases. Phase 1 includes a 10-day series of ACP educational infographics, video clips, and a content-specific chatbot on ACP knowledge in Hong Kong. Upon completion of phase 1, those not advancing to the action stage will receive phase 2 of a nurse-led telephone consultation. This project was recommended for support in September 2025. Recruitment and data collection will commence in September 2026. Primary outcomes of feasibility and acceptability include rates of recruitment, retention, fidelity, engagement, usability, and safety. Secondary outcomes include the family members' ACP readiness, engagement, and completion of ACP activities. The feasibility and acceptability outcomes will be compared to predefined progress criteria. Preliminary efficacy outcomes will be analyzed using a generalized mixed-effects model. The study will inform whether the ChatACP intervention can empower families on ACP. Findings from this study can inform the development of large-scale interventions to improve ACP engagement among family members of care home residents. ClinicalTrials.gov NCT07448649; https://clinicaltrials.gov/study/NCT07448649. PRR1-10.2196/94883.",
+      "authors": "Wang T, Chu HN, Chau PH, Zhou X, Lin CC",
+      "journal": "JMIR research protocols",
+      "pub_date": "Aug 2026",
+      "doi": "10.2196/94883",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42585665/",
+      "summary": "This protocol describes a pilot study testing ChatACP, a 10-day digital intervention using infographics, videos, and a chatbot, to help family members of care home residents in Hong Kong engage in advance care planning. The study will recruit 60 family members across 6 care homes, comparing ChatACP to a pamphlet control group, but recruitment has not yet started. Results will show whether digital, theory-based tools can help nurses support families facing culturally rooted barriers to end-of-life planning discussions.",
+      "flags": [
+        "in_progress"
+      ],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42579870",
+      "title": "Application of Large Language Models in Chronic Disease Care: Mixed Methods Systematic Review and Thematic Synthesis.",
+      "abstract": "Chronic diseases account for nearly three-quarters of global deaths and demand continuous, personalized long-term management; yet traditional care models often fall short in delivering such sustained support. Large language models, with advanced conversational and analytical capabilities, present promising opportunities to address the problem by offering scalable, interactive support. However, a comprehensive synthesis of evidence across diverse study designs, which moves beyond isolated technical metrics to evaluate large language models through a structured, theory-driven lens, remains limited. This study aimed to synthesize quantitative, qualitative, and mixed methods evidence on technical performance, application scenarios, and documented challenges of large language models in chronic disease care, and to critically evaluate these findings through a theory-driven, 3D framework informed by Orem's Self-Care Theory. The mixed methods systematic review adhered to the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) 2020 and SWiM (Synthesis Without Meta-Analysis) guidelines. A comprehensive computer-based search was conducted across PubMed, Web of Science, Embase, Cochrane Library, CINAHL, Wiley Online Library, SpringerLink, ScienceDirect, China National Knowledge Infrastructure, Wanfang Data, VIP Database, and the China Biology Medicine Disc from inception to April 2026. Two independent researchers performed study screening, data extraction, and quality appraisal using the Mixed Methods Appraisal Tool 2018. Given significant clinical and methodological heterogeneity across the included studies, a quantitative meta-analysis was not appropriate; instead, thematic synthesis was used following Thomas and Harden's 3-step approach, with NVivo 14 (Lumivero) used for line-by-line coding and theme development, all informed by Orem's 3D framework. A total of 20 studies were included, all rated as moderate or high quality. The thematic synthesis revealed three core themes aligned with the proposed framework: (1) foundational safety, privacy, and fairness (hallucination risks and data concerns); (2) self-care enablement through perceived usefulness (patient education, decision support, and self-management); and (3) design and system integration challenges (readability mismatches and workflow gaps). Patient education and clinical decision support were the most common application scenarios. Key technical enhancements (retrieval-augmented generation [RAG] and fine-tuning) primarily strengthened the second theme, while barriers such as content readability, hallucination risks, and ethical ambiguities limited real-world readiness. This review is the first to integrate Orem's Self-Care Theory into a 3D evaluative framework for large language models in chronic care, thereby moving beyond fragmented, technology-centric assessments toward a structured, nursing-informed, and theory-driven synthesis. Unlike prior reviews that primarily focused on isolated technical metrics or broad feasibility, this synthesis provides a layered, discipline-grounded evaluation distinguishing foundational safety, self-care enablement, and system integration. These findings show evidence mainly supports the intermediate layer, while safeguards and operational integration remain deficient, guiding nursing research toward safety assurances, health-literacy-adaptive design, and implementation science for equitable, patient-centered care.",
+      "authors": "Zhang L, Huai P, Xu R, Sun J, Jin R, Lv H",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Aug 2026",
+      "doi": "10.2196/90744",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42579870/",
+      "summary": "This mixed methods systematic review examined 20 studies on large language models (LLMs) used in chronic disease care, evaluating them through a framework based on Orem's Self-Care Theory. The review found LLMs mainly support patient education and decision-making, but safety, privacy, readability, and system integration issues remain unresolved. For nursing informatics, this points to needed research on safeguards, health-literacy-adaptive design, and real-world implementation.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42574744",
+      "title": "Nurse-Led Ambient AI Scribe for Patient Safety Incident Investigation Reports (Project NARRATE): Retrospective Pre-Post Comparative Document-Quality Study.",
+      "abstract": "Patient safety investigation reports support organizational learning only when they are complete, usable, and sufficiently detailed. Conventional free-text reports are often inconsistent and may omit information needed for review and learning. Project NARRATE (Nursing AI-Refined for Accurate Transcription of Events) is a nursing-led ambient artificial intelligence workflow that uses prompts aligned with the World Health Organization Minimal Information Model for Patient Safety Incident Reporting and Learning Systems, Situation-Background-Assessment-Recommendation output, and visible missing-information cues to support structured supervisor reporting. This study aimed to compare the completeness and narrative quality of conventional and NARRATE-period supervisor investigation reports for falls and medication administration-related incidents. We conducted a retrospective pre-post document-quality study at a tertiary academic medical center in Singapore. We reviewed 150 deidentified completed supervisor investigation reports: 75 conventional reports from June to August 2025 and 75 confirmed NARRATE reports from January to March 2026. NARRATE use was voluntary, and recorded use represented approximately 40% of eligible postimplementation reports. Two blinded reviewers rated reports using a World Health Organization (WHO)-aligned completeness checklist and an adapted 8-domain Physician Documentation Quality Instrument (PDQI). Report-level comparisons were adjusted for repeated reports by the same supervisor using random-intercept linear mixed-effects models. A stratified 60-report plain-paragraph rerating examined whether visible structure influenced ratings. All 150 reports were analyzed. Unadjusted mean WHO total completeness was 11.81 (SD 3.39) for conventional reports and 13.61 (SD 2.54) for NARRATE reports; the unadjusted difference was 1.80 points, and the cluster-adjusted mean difference was 1.95 (95% CI 0.91-3.00; P<.001). The adapted PDQI mean was 3.61 (SD 0.52) and 4.13 (SD 0.34), respectively; the unadjusted difference was 0.52 points, and the cluster-adjusted mean difference was 0.53 (95% CI 0.37-0.69; P<.001). In the plain-paragraph sensitivity analysis, the completeness advantage remained (adjusted mean difference 1.70, 95% CI 0.27-3.14; P=.02), as did the adapted PDQI mean advantage (adjusted mean difference 0.25, 95% CI 0.06-0.43; P=.009). Explanation, organization, and comprehensibility remained significantly higher after deformatting; actions were borderline (P=.05), and synthesis, internal consistency, and fairness/balance were not statistically significant. Among voluntary early adopters, NARRATE use was associated with more complete reports and higher adapted PDQI mean scores after accounting for supervisor clustering. Because recorded use represented approximately 40% of eligible postimplementation reports and users self-selected, findings may reflect adopter and supervisor characteristics. Results support the structured workflow as a whole, not any single AI component, and do not demonstrate downstream patient-safety effects. Confirmatory evaluation under broader adoption with a concurrent, reliably classified comparison group is needed.",
+      "authors": "Teo KY, Huang L, Woh KCY, Ang SY, Ng JGN",
+      "journal": "JMIR nursing",
+      "pub_date": "Aug 2026",
+      "doi": "10.2196/100775",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42574744/",
+      "summary": "This study compared 150 supervisor investigation reports on falls and medication incidents at a Singapore academic medical center, before and after nurses used NARRATE, an ambient AI tool for structured reporting. NARRATE-period reports scored higher on completeness and documentation quality, even after adjusting for structure and supervisor clustering. Since use was voluntary and covered only 40% of eligible reports, results may reflect adopter traits, and further study is needed to confirm effects under wider adoption.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:3",
+      "title": "Integrating Patient‐Centered Perioperative Care Continuum Digital Closed‐Loop Management With Overall Every Control to Improve Perioperative Efficiency: A Mixed‐Methods Study.",
+      "abstract": "Background: Perioperative care is inherently complex, requiring seamless coordination among multidisciplinary teams. Traditional, fragmented workflows often lead to delays, inefficiencies, and increased risk, compromising both patient safety and operational performance. Objectives: This study aimed to evaluate the impact of a patient‐centered, digitally enabled closed‐loop perioperative management system, implemented within the overall every control (OEC) framework, on operating room efficiency. Methods: We developed and implemented a patient‐centered perioperative care continuum digital closed‐loop system that integrated real‐time data from the surgical anesthesia system to orchestrate a standardized workflow across the preoperative, intraoperative, and postoperative continuum. The study employed a mixed‐methods design. Quantitative data on the on‐time start rate of the first surgery, turnover time, and operating room utilization were collected from the preintervention baseline period (2022, n = 18,076 cases) through the postintervention period (2023–2024, n = 54,684 cases). Qualitative data from semistructured interviews with surgeons, nurses, and patients provided insights into the user experience. Results: Quantitative data revealed a significant and sustained improvement, with the on‐time start rate increasing from 74.6% to 89.5% (p < 0.001), and operating room utilization also rose significantly (p < 0.001), despite a 51% rise in surgical volume and a higher‐acuity patient caseload. Importantly, no system‐related adverse events were detected throughout the study period. Qualitatively, healthcare providers reported better teamwork, reduced cognitive load, and greater professional fulfillment, while patients experienced substantially shorter waiting times and less preoperative anxiety. The mixed‐methods approach suggested that these efficiency improvements were not only procedural but also associated with a fundamental enhancement of the work environment and care experience. Conclusions: The OEC‐guided closed‐loop management system was associated with enhanced perioperative efficiency and sustained patient safety under conditions of increased demand. This model demonstrates that integrating real‐time digital feedback with a standardized management framework may create a virtuous cycle of continuous improvement, yielding favorable outcomes for both healthcare providers and patients. Implications for Nursing Management: Nursing leadership is pivotal in implementing digital closed‐loop perioperative systems, which may enhance efficiency and patient safety by streamlining workflows, reducing cognitive load, and improving staff well‐being, thereby demonstrating the potential of digitally augmented, nurse‐led management models.",
+      "authors": "Wei, Yan Shu\n                Liu, Xiao Li\n                Pei, Jin\n                Li, Xue Jing\n                Zhao, Xin\n                Wang, Jing\n                Xia, Xin\n                Wu, Wen Ping\n                Ren, Yue\n                He, Miao\n                Feng, Yi\n                Zhang, Hai Yan\n                Chen, Jie\n                Chen, Xiu Yuan\n                Fontenot, Justin\n                Operating Room,, Peking University People's Hospital,, Beijing, China, pku.edu.cn",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "8/12",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Integrating%20Patient%E2%80%90Centered%20Perioperative%20Care%20Continuum%20Digital%20Closed%E2%80%90Loop%20Management%20With%20Overall%20Every%20Control%20to%20Improve%20Perioperative%20Efficiency%3A%20A%20Mixed%E2%80%90Methods%20Study.",
+      "source": "CINAHL",
+      "summary": "This mixed-methods study at a Chinese hospital tested a digital closed-loop system that connects preoperative, intraoperative, and postoperative steps in the operating room, using data from over 72,000 surgical cases. On-time surgery starts rose from 74.6% to 89.5%, and room utilization improved, even as surgical volume grew 51% with no safety incidents. Staff reported better teamwork and less mental strain, and patients had shorter waits and less anxiety, suggesting nurse-led digital workflow tools can boost both efficiency and experience.",
+      "flags": [],
+      "topic": "EHR & Workflows",
+      "topic_confidence": "high"
+    }
+  ]
+}

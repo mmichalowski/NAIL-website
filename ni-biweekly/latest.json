@@ -1,38 +1,32 @@
 {
-  "issue": 3,
-  "filename": "ni-biweekly-2026-08-10.html",
+  "issue": 4,
+  "filename": "ni-biweekly-2026-08-24.html",
   "date_range": {
-    "start": "Jul 27, 2026",
-    "end": "Aug 10, 2026"
+    "start": "Aug 10, 2026",
+    "end": "Aug 24, 2026"
   },
-  "generated_at": "2026-08-10T07:45:06.733314Z",
-  "paper_count": 30,
-  "flag_count": 13,
+  "generated_at": "2026-08-24T06:58:21.294212Z",
+  "paper_count": 6,
+  "flag_count": 2,
   "topic_counts": {
-    "Clinical Decision Support": 8,
-    "Workforce & Education": 17,
-    "EHR & Workflows": 2,
+    "Workforce & Education": 1,
+    "NLP & Generative AI": 3,
     "Patient-Facing AI": 1,
-    "AI Ethics & Governance": 1,
-    "NLP & Generative AI": 1
+    "EHR & Workflows": 1
   },
-  "teaser": "This issue is dominated by nursing education and AI, with 17 papers covering student attitudes, ChatGPT use, readiness scales, and proposed teaching frameworks across settings in Türkiye, China, Canada, and elsewhere. A second thread looks at clinical decision support tools, including wound care systems, delirium and stroke prediction models, and a simulation exploring how accurate AI must be for safe nursing use. Smaller threads cover documentation workflows, such as a voice documentation pilot and a palliative care AI note-drafting study, plus single papers on a patient-facing chatbot protocol and an ethics review process for AI summarization tools.",
+  "teaser": "This issue centers on generative AI's mixed track record across three papers: chatbots and language models can draft investigation reports, support chronic disease education, or code newspaper sentiment, but each study found real limits, from overcoding in qualitative analysis to unresolved safety and literacy gaps. A workforce study raises a different caution, linking heavy AI reliance in nursing students to reduced focus. Meanwhile, one hospital's digital closed-loop workflow improved surgical timing and staff experience at scale, and a Hong Kong pilot protocol aims to test chatbot-assisted advance care planning conversations with families.",
   "themes": [
     {
-      "name": "Student and educator experiences with generative AI",
-      "count": 10
+      "name": "Generative AI performance and limits",
+      "count": 3
     },
     {
-      "name": "Frameworks and readiness for AI adoption in nursing",
-      "count": 7
+      "name": "AI's cognitive and educational impact on students",
+      "count": 1
     },
     {
-      "name": "Predictive and decision-support models for clinical risk",
-      "count": 8
-    },
-    {
-      "name": "AI in documentation and workflow",
-      "count": 4
+      "name": "Digital tools for care coordination and family engagement",
+      "count": 2
     }
   ]
 }

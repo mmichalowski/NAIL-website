@@ -280,12 +280,17 @@ export default {
     }
 
     // ── GET /subscribers (GitHub Action only) ──────────────────────────────
+    // Default: confirmed-only, {email, unsub_token} — unchanged, this is
+    // what send_digest_email.py relies on for the actual send list.
+    // ?status=all: every record, with its status included — used by
+    // list_subscribers.py to audit pending/unsubscribed signups.
     if (url.pathname === "/subscribers" && request.method === "GET") {
       const auth = request.headers.get("Authorization") || "";
       if (auth !== `Bearer ${env.SUBSCRIBER_API_KEY}`) {
         return new Response("Unauthorized", { status: 401 });
       }
-      const confirmed = [];
+      const includeAll = url.searchParams.get("status") === "all";
+      const results = [];
       let cursor;
       do {
         const page = await env.SUBSCRIBERS.list({ prefix: "sub:", cursor });
@@ -293,14 +298,16 @@ export default {
           const raw = await env.SUBSCRIBERS.get(k.name);
           if (!raw) continue;
           const rec = JSON.parse(raw);
-          if (rec.status === "confirmed") {
-            confirmed.push({ email: rec.email, unsub_token: rec.unsub_token });
+          if (includeAll) {
+            results.push({ email: rec.email, status: rec.status, unsub_token: rec.unsub_token });
+          } else if (rec.status === "confirmed") {
+            results.push({ email: rec.email, unsub_token: rec.unsub_token });
           }
         }
         cursor = page.list_complete ? undefined : page.cursor;
       } while (cursor);
 
-      return new Response(JSON.stringify(confirmed), {
+      return new Response(JSON.stringify(results), {
         headers: { "Content-Type": "application/json" },
       });
     }

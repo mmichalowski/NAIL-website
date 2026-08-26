@@ -74,6 +74,49 @@ async function sendConfirmEmail(env, to, confirmUrl) {
   }
 }
 
+function unsubscribeConfirmPage(token) {
+  return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsubscribe · NAIL Digest</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500&family=Instrument+Sans:wght@400;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Instrument Sans',sans-serif;background:#1D2B3A;color:#fff;min-height:100vh;
+     display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4vw,38px);margin-bottom:14px;color:#fff;}
+p{color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;max-width:420px;margin:0 auto 24px;}
+button{display:inline-flex;background:#E8C46A;color:#111C26;font-weight:600;font-size:14px;
+  padding:12px 24px;border-radius:99px;border:none;cursor:pointer;font-family:inherit;}
+button:disabled{opacity:.6;cursor:default;}
+a{color:rgba(255,255,255,.6);font-size:13px;display:inline-block;margin-top:18px;}
+</style></head>
+<body><div id="box">
+  <h1>Unsubscribe from NAIL Digest?</h1>
+  <p>Click below to confirm. You won't receive further issues by email.</p>
+  <button id="btn">Yes, unsubscribe me</button>
+  <div><a href="https://www.nailcollab.org/ni-biweekly/">Cancel, take me back</a></div>
+</div>
+<script>
+document.getElementById('btn').addEventListener('click', async function() {
+  var btn = this;
+  btn.disabled = true; btn.textContent = 'Unsubscribing...';
+  try {
+    var resp = await fetch('/unsubscribe', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ token: ${JSON.stringify(token)} })
+    });
+    document.getElementById('box').innerHTML = resp.ok
+      ? '<h1>You\\'re unsubscribed</h1><p>You won\\'t receive further NAIL Digest emails. You can resubscribe any time.</p><a href="https://www.nailcollab.org/ni-biweekly/">Back to NAIL Digest</a>'
+      : '<h1>Something went wrong</h1><p>Please try again shortly.</p>';
+  } catch (e) {
+    document.getElementById('box').innerHTML = '<h1>Something went wrong</h1><p>Please try again shortly.</p>';
+  }
+});
+</script>
+</body></html>`;
+}
+
 function brandedPage(title, message) {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -197,13 +240,34 @@ export default {
       );
     }
 
-    // ── GET /unsubscribe ────────────────────────────────────────────────
+    // ── GET /unsubscribe — shows a confirm page only, changes nothing ──────
+    // (Security scanners that auto-fetch links in incoming email would
+    // otherwise silently unsubscribe people before they ever open the
+    // message. Only the POST below, triggered by a real button click,
+    // actually changes status.)
     if (url.pathname === "/unsubscribe" && request.method === "GET") {
       const token = url.searchParams.get("token") || "";
       const email = await env.SUBSCRIBERS.get(`token:${token}`);
       if (!email) {
         return new Response(brandedPage("Link expired", "This unsubscribe link is invalid or has already been used."),
           { status: 404, headers: { "Content-Type": "text/html" } });
+      }
+      return new Response(unsubscribeConfirmPage(token), { headers: { "Content-Type": "text/html" } });
+    }
+
+    // ── POST /unsubscribe — the actual action ───────────────────────────
+    if (url.pathname === "/unsubscribe" && request.method === "POST") {
+      let body;
+      try {
+        body = await request.json();
+      } catch {
+        return new Response(JSON.stringify({ error: "Invalid request." }), { status: 400, headers: cors });
+      }
+      const token = body.token || "";
+      const email = await env.SUBSCRIBERS.get(`token:${token}`);
+      if (!email) {
+        return new Response(JSON.stringify({ error: "This unsubscribe link is invalid or has already been used." }),
+          { status: 404, headers: cors });
       }
       const key = `sub:${email}`;
       const raw = await env.SUBSCRIBERS.get(key);
@@ -212,10 +276,7 @@ export default {
         rec.status = "unsubscribed";
         await env.SUBSCRIBERS.put(key, JSON.stringify(rec));
       }
-      return new Response(
-        brandedPage("You're unsubscribed", "You won't receive further NAIL Digest emails. You can resubscribe any time."),
-        { headers: { "Content-Type": "text/html" } }
-      );
+      return new Response(JSON.stringify({ ok: true }), { headers: cors });
     }
 
     // ── GET /subscribers (GitHub Action only) ──────────────────────────────

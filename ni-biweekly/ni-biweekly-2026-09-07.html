@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAIL Digest Issue #5 — Aug 24, 2026 | NAIL Collaborative</title>
+<meta name="description" content="NAIL Digest: AI-Driven Nursing Informatics Issue #5 — 30 papers from PubMed, summarized by Claude Sonnet, overseen by the NAIL Collaborative.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%231D2B3A'/%3E%3Cpath d='M11 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M25 26.5V9.5' stroke='%23F0DFA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5' stroke='%23E8C46A' stroke-width='2.4' stroke-linejoin='round' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+:root{--ink:#1D2B3A;--slate:#1D2B3A;--slate-deep:#111C26;--amber:#E8C46A;--amber-strong:#B08A1F;--amber-pale:#FDF5E0;--paper:#FAFAF7;--paper-dim:#F3F1EC;--card:#FFFFFF;--line:#E4E0D8;--line-soft:#EDEAE2;--mut:#5E6B76;--sky:#1A6CB0;--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',-apple-system,sans-serif;--shadow-s:0 1px 2px rgba(17,28,38,.05),0 2px 8px rgba(17,28,38,.04);--shadow-m:0 2px 6px rgba(17,28,38,.07),0 12px 28px rgba(17,28,38,.1);--r-s:8px;--r-m:12px;--r-l:18px;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}::selection{background:var(--amber-pale);color:var(--slate-deep);}
+.nav{position:sticky;top:0;z-index:200;background:rgba(250,250,247,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1140px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+.logo svg{width:36px;height:36px;flex-shrink:0;border-radius:8px;box-shadow:var(--shadow-s);}
+.logo-t b{display:block;font-family:var(--serif);font-weight:500;font-size:17px;line-height:1.15;color:var(--slate-deep);}
+.logo-t span{display:block;font-size:10px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-top:1px;}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-btn{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;padding:6px 14px;border-radius:99px;border:1px solid var(--line);transition:color .18s,border-color .18s;}
+.nav-btn:hover{color:var(--slate-deep);border-color:var(--slate);}
+.hero{background:var(--slate);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.06' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.hero::after{content:'';position:absolute;width:600px;height:600px;right:-180px;top:-300px;border-radius:50%;background:radial-gradient(circle,rgba(232,196,106,.14),transparent 65%);}
+.hero-in{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:64px 28px 0;}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--amber);font-size:11.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:18px;animation:rise .55s .05s cubic-bezier(.22,.8,.36,1) both;}
+.kicker::before{content:'';width:24px;height:2px;background:var(--amber);border-radius:2px;}
+.hero h1{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(28px,4.5vw,50px);line-height:1.1;letter-spacing:-.4px;max-width:680px;margin-bottom:16px;animation:rise .55s .1s cubic-bezier(.22,.8,.36,1) both;}
+.hero h1 em{font-style:italic;color:var(--amber);}
+.hero-sub{color:rgba(220,208,186,.7);font-size:16px;line-height:1.7;max-width:680px;margin-bottom:28px;animation:rise .55s .18s cubic-bezier(.22,.8,.36,1) both;}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;padding:11px 22px;border-radius:99px;cursor:pointer;border:none;transition:transform .2s;text-decoration:none;font-family:var(--sans);}
+.btn:hover{transform:translateY(-2px);}
+.btn-amber{background:var(--amber);color:var(--slate-deep);box-shadow:0 6px 18px rgba(232,196,106,.3);}
+.btn-ghost{background:transparent;color:rgba(220,208,186,.85);border:1px solid rgba(240,223,160,.25);}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;animation:rise .55s .26s cubic-bezier(.22,.8,.36,1) both;margin-bottom:44px;}
+@keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero-meta{position:relative;z-index:2;border-top:1px solid rgba(240,223,160,.1);}
+.hero-meta-in{max-width:1140px;margin:0 auto;padding:18px 28px 24px;display:flex;gap:48px;flex-wrap:wrap;animation:rise .55s .34s cubic-bezier(.22,.8,.36,1) both;}
+.hm-item{display:flex;flex-direction:column;gap:2px;align-items:center;text-align:center;}
+.hm-label{font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(240,223,160,.38);}
+.hm-value{font-size:13.5px;color:rgba(220,208,186,.8);font-weight:500;}
+.page-body{max-width:1140px;margin:0 auto;padding:48px 28px 80px;display:grid;grid-template-columns:1fr 284px;gap:48px;align-items:start;}
+@media(max-width:860px){.page-body{grid-template-columns:1fr;}}
+.provenance{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 var(--r-m) var(--r-m) 0;padding:16px 20px;margin-bottom:28px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow-s);}
+.provenance i{font-size:17px;color:var(--amber-strong);flex-shrink:0;margin-top:1px;}
+.provenance p{font-size:13.5px;color:#44525D;line-height:1.65;}
+.provenance p strong{color:var(--slate-deep);}
+.issue-hdr{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.issue-hdr h2{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--slate-deep);letter-spacing:-.3px;}
+.issue-hdr h2 span{font-size:14px;font-weight:400;font-family:var(--sans);color:var(--mut);display:block;margin-top:2px;}
+.issue-count b{font-family:var(--serif);font-size:34px;font-weight:500;color:var(--amber-strong);display:block;line-height:1;text-align:right;}
+.issue-count small{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);}
+.filters{display:inline-flex;gap:3px;margin-bottom:24px;flex-wrap:wrap;background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:4px;}
+.filters a{background:transparent;border:none;border-radius:99px;font-size:13px;font-weight:600;color:var(--mut);cursor:pointer;padding:6px 14px;transition:background .18s,color .18s;text-decoration:none;display:inline-block;}
+.filters a.flag-pill{color:#B91C1C;}
+.filters a.active-flagged{background:#B91C1C;color:#fff;}
+.filters a:hover{color:var(--slate-deep);}
+.filters a.active{background:var(--slate-deep);color:#fff;}
+.sec-h{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--slate-deep);letter-spacing:-.2px;margin:34px 0 14px;}
+.sec-h-sub{font-size:15px;margin:22px 0 10px;padding-left:14px;color:var(--mut);}
+.sec-h-sub i{font-size:14px;}
+.sec-h:first-of-type{margin-top:0;}
+.sec-h i{font-size:17px;color:var(--amber-strong);}
+.sec-h::after{content:'';flex:1;height:1px;background:var(--line);}
+.sec-h .cnt{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--mut);font-family:var(--sans);background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:3px 10px;}
+.sec-h .cnt-flagged{display:inline-flex;align-items:center;gap:4px;color:#B91C1C;background:#FEE2E2;border-color:#FCA5A5;}
+.sec-h .cnt-flagged i{font-size:10px;}
+.pli{padding:20px 0;border-bottom:1px solid var(--line);}
+.pli:first-of-type{border-top:1px solid var(--line);}
+.pli-body{flex:1;min-width:0;}
+.pli-topic{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px;}
+.pli-topic::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.t-cds{color:#1E8A6E;}.t-nlp{color:#7C5CC4;}.t-eth{color:#C76B33;}.t-ehr{color:#1A6CB0;}.t-edu{color:#B08A1F;}.t-oth{color:#5E6B76;}
+.pli h3{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.45;margin-bottom:5px;color:var(--slate-deep);letter-spacing:-.1px;}
+.pli h3 a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .18s,color .18s;}
+.pli h3 a:hover{color:var(--sky);border-color:var(--sky);}
+.glance{background:linear-gradient(135deg,#FFFDF6,#FFFFFF 55%);border:1px solid #EFE3BC;border-left:3px solid var(--amber);border-radius:0 var(--r-m) var(--r-m) 0;padding:22px 26px;box-shadow:var(--shadow-s);margin-bottom:28px;}
+.glance-kick{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--amber-strong);margin-bottom:12px;}
+.glance-kick::after{content:'';flex:1;height:1px;background:#F0DFA0;}
+.glance p{font-size:14.5px;color:#37444F;line-height:1.75;margin-bottom:12px;}
+.glance p strong{color:var(--slate-deep);font-weight:600;}
+.glance .themes{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px;}
+.glance .theme{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--slate-deep);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 13px;cursor:default;}
+.glance .theme i{font-style:normal;font-size:11px;font-weight:700;color:var(--amber-strong);background:var(--amber-pale);border-radius:99px;padding:1px 7px;}
+.glance .delta-strip{display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px dashed #EFE3BC;}
+.glance .d-item small{display:block;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);}
+.glance .d-item span{font-size:13.5px;font-weight:600;color:var(--slate-deep);}
+.glance .d-was{color:var(--mut);font-weight:400;font-size:12px;}
+.glance .up{color:#1E8A6E;}.glance .down{color:#B91C1C;}
+.pli .authors{font-size:13px;color:var(--mut);font-style:italic;margin-bottom:2px;}
+.pli .venue{font-size:13px;color:var(--mut);margin-bottom:10px;}
+.pli-summary{font-size:14px;color:#44525D;line-height:1.75;margin-bottom:12px;padding:14px 16px;background:var(--paper-dim);border-radius:var(--r-s);border:1px solid var(--line-soft);}
+.pmeta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.plink{font-size:12px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;background:var(--card);border:1px solid var(--line);padding:5px 12px;border-radius:99px;transition:border-color .18s,box-shadow .18s;}
+.plink:hover{box-shadow:var(--shadow-s);}
+.plink-pubmed{color:#1A6CB0;border-color:#BFDBF7;}.plink-pubmed:hover{border-color:#1A6CB0;}
+.plink-arxiv{color:#B83B1A;border-color:#F5C8BC;background:#FEF6F4;}.plink-arxiv:hover{border-color:#B83B1A;}
+.plink-medrxiv{color:#1A8A6E;border-color:#B8E8DA;background:#F2FCF9;}.plink-medrxiv:hover{border-color:#1A8A6E;}
+.plink-cinahl{color:#7C5CC4;border-color:#D8CEEF;background:#F7F4FD;}.plink-cinahl:hover{border-color:#7C5CC4;}
+.plink-doi{color:#9A6200;border-color:#F0D49A;background:#FEF8EC;}.plink-doi:hover{border-color:#9A6200;}
+.pmid{font-size:12px;color:var(--mut);background:var(--paper-dim);border:1px solid var(--line);padding:5px 12px;border-radius:99px;}
+.flag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#B91C1C;background:#FEE2E2;border:1px solid #FCA5A5;padding:3px 9px;border-radius:99px;margin-bottom:8px;}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:20px 22px;margin-bottom:16px;box-shadow:var(--shadow-s);}
+.sc-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--line-soft);}
+.sr:last-child{border-bottom:none;}
+.sr-lbl{font-size:13.5px;color:var(--mut);}.sr-val{font-size:14px;font-weight:600;color:var(--slate-deep);}
+.tbr{display:flex;align-items:center;gap:9px;padding:4px 0;}
+.tbr-name{font-size:12.5px;color:var(--mut);min-width:110px;}
+.tbr-track{flex:1;height:4px;background:var(--paper-dim);border-radius:2px;overflow:hidden;}
+.tbr-fill{height:100%;background:var(--amber);border-radius:2px;}
+.tbr-n{font-size:12px;color:var(--mut);min-width:14px;text-align:right;}
+.arch-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line-soft);}
+.arch-row:last-child{border-bottom:none;}
+.arch-lnk{font-size:13.5px;font-weight:600;color:var(--sky);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:gap .18s;}
+.arch-lnk:hover{gap:9px;}
+.arch-meta{font-size:12px;color:var(--mut);}
+.about-txt{font-size:13.5px;color:#44525D;line-height:1.7;margin-bottom:12px;}
+.gh-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--slate-deep);text-decoration:none;background:var(--paper-dim);border:1px solid var(--line);border-radius:99px;padding:7px 16px;transition:border-color .18s,box-shadow .18s;}
+.gh-btn:hover{border-color:var(--slate);box-shadow:var(--shadow-s);}
+.dark-sc{background:var(--slate-deep);border:1px solid rgba(240,223,160,.12);border-radius:var(--r-m);padding:20px 22px;position:relative;overflow:hidden;}
+.dark-sc::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52'%3E%3Cpath d='M26 22v8M22 26h8' stroke='%23F0DFA0' stroke-opacity='.05' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");}
+.dark-sc .sc-label{position:relative;color:rgba(240,223,160,.38);border-color:rgba(240,223,160,.12);}
+.dark-sc p{position:relative;font-size:13.5px;color:rgba(220,208,186,.65);line-height:1.7;margin-bottom:10px;}
+.dark-sc a{position:relative;color:var(--amber);font-weight:600;text-decoration:none;font-size:13.5px;display:inline-flex;align-items:center;gap:5px;transition:gap .18s;}
+.dark-sc a:hover{gap:9px;}
+footer{background:var(--slate-deep);padding:24px;text-align:center;}
+footer p{font-size:13px;color:rgba(220,208,186,.38);}
+footer a{color:rgba(220,208,186,.6);text-decoration:none;font-weight:600;}
+footer a:hover{color:var(--amber);}
+</style>
+<!-- ANALYTICS: privacy-friendly, no cookies. Dashboard: https://nailcollab.goatcounter.com -->
+<script data-goatcounter="https://nailcollab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="/ni-biweekly/">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#1D2B3A"/><path d="M11 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M25 26.5V9.5" stroke="#F0DFA0" stroke-width="2.6" stroke-linecap="round"/><path d="M11 9.5l5.5 9 2-5 2 7.5 4.5 5.5" stroke="#E8C46A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/></svg>
+      <div class="logo-t"><b>NI Weekly</b><span>NAIL Collaborative</span></div>
+    </a>
+    <div class="nav-right">
+      <a class="nav-btn" href="/ni-biweekly/"><i class="ti ti-layout-list"></i> All Issues</a>
+      <a class="nav-btn" href="https://www.nailcollab.org/"><i class="ti ti-arrow-left"></i> nailcollab.org</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-in">
+    <div class="kicker">NAIL Digest · Issue #5</div>
+    <h1>NAIL Digest: <em>AI-Driven Nursing Informatics</em></h1>
+    <p class="hero-sub">Week of Aug 24, 2026 – Sep 07, 2026 · Retrieved from PubMed · Summarized by Claude Sonnet</p>
+    <div class="cta-row">
+      <a href="/ni-biweekly/" class="btn btn-amber"><i class="ti ti-layout-list"></i> All Issues</a>
+      <a href="#how-it-works" class="btn btn-ghost"><i class="ti ti-info-circle"></i> How it works</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-in">
+      <div class="hm-item"><span class="hm-label">Issue</span><span class="hm-value">#5</span></div>
+      <div class="hm-item"><span class="hm-label">Week</span><span class="hm-value">Aug 24, 2026 – Sep 07, 2026</span></div>
+      <div class="hm-item"><span class="hm-label">Papers</span><span class="hm-value">30</span></div>
+      <div class="hm-item"><span class="hm-label">Flagged</span><span class="hm-value" style="color:#F0A0A0;">14</span></div>
+      <div class="hm-item"><span class="hm-label">Generated</span><span class="hm-value">Sep 07, 2026</span></div>
+    </div>
+  </div>
+</header>
+<div class="page-body">
+  <main>
+    <div class="issue-hdr">
+      <h2>Issue #5 <span>Week of Aug 24, 2026 – Sep 07, 2026</span></h2>
+      <div class="issue-count"><b>30</b><small>Papers</small></div>
+    </div>
+    
+    <div class="glance">
+      <div class="glance-kick">This issue at a glance</div>
+      <p>This issue centers heavily on nursing education, with 19 papers on how students and educators use generative AI tools, virtual tutors, and AI-based teaching models for topics like ECG interpretation, pediatric care, and clinical reasoning. A second thread examines clinical decision support across 8 papers, covering AI early warning systems, deterioration prediction, and discharge planning, generally finding potential benefits alongside calls for more validation and human oversight. Several papers also probe student attitudes and readiness, from AI literacy scales to dependency concerns, while just 2 papers address ethics and governance frameworks and 1 compares AI-generated versus nurse-written discharge instructions.</p><p>Papers jumped from 6 to 30 this issue, and the leading topic shifted from NLP & Generative AI to Workforce & Education, which rose from 1 paper last issue to 19 now, while NLP & Generative AI fell from 3 papers to 1. The workforce theme of AI dependency and reduced focus among nursing students continues from last issue. Clinical decision support and ethics threads, absent last issue, reappear with 8 and 2 papers respectively. The prior issue's patient-facing chatbot and EHR workflow threads are not present this issue.</p>
+      <div class="themes"><span class="theme" title="AI Use, Perceptions, and Perceived Impact Among Nursing Students: Cross-Sectional Study. • AI Dependency and Brain Rot Among Nursing Students: A Mixed-Methods Study. • Validity and Reliability of the Medical Artificial Intelligence Readiness Scale, Korean Version: A Methodological and Cross-Sectional Study. • Optimists, Realists, and Traditionalists: Profiling Nursing Students’ Engagement with Artificial Intelligence (AI) in Pediatric Nursing Education. • The Relationship Between Artificial Intelligence Literacy and Attitudes Toward Artificial Intelligence Among Nursing Students. • Nurses&#x27; and Nursing Students&#x27; Experiences With Generative Artificial Intelligence in Educational and Clinical Settings: A Scoping Review. • Enhancing Learning in Graduate Nursing Education Through a Co-Designed AI Virtual Tutor: A Mixed-Methods Evaluation. • Enhancing Learning in Graduate Nursing Education Through a Co‐Designed AI Virtual Tutor: A Mixed‐Methods Evaluation.">Student AI use, attitudes, and literacy <i>8</i></span><span class="theme" title="Navigating the Artificial Intelligence Integration Challenge: One Nursing School&#x27;s Journey From Uncertainty to Systematic Action. • Beyond the Prompt: Leveraging Generative AI and Tanner&#x27;s Model to Decode Clinical Logic in Undergraduate Nursing. • Development and application of an artificial intelligence agent-based case teaching model for health assessment: A quasi-experimental study. • Generative AI for ECG Interpretation Education: Impact on Nursing, Student Performance, and AI Model Accuracy. • Generative artificial intelligence in undergraduate paediatric nursing education: A scoping review of current applications and ethical considerations. • Eroding scholarly integrity: Confronting the misuse of generative AI in nursing education. • Toward an AI-integrated nursing curriculum: A Kano model analysis of generative AI competency needs. • Shaping the Future of Radiography Education: Lessons From ChatGPT and Generative AI.">AI in nursing curricula and teaching models <i>8</i></span><span class="theme" title="Trusting the Algorithm or Trusting the Nurse? Critical Care Nurses&#x27; Experiences of Automation Bias and Professional Autonomy in AI-Assisted Early Warning. • Harnessing Artificial Intelligence to Strengthen Acute and Critical Care Nursing Practice: A Systematic Review. • Mapping artificial intelligence applications for clinical and operational decision support in prehospital emergency medical services: A scoping review. • Validation of a machine learning model for predicting early deterioration in the emergency department. • Development and Evaluation of a Standardized Nursing Language Clinical Decision Support System for Long-Term Care Nurses Using GPT-4.0-Generated Nursing Scenarios. • Development and Evaluation of a Standardized Nursing Language Clinical Decision Support System for Long-Term Care Nurses Using GPT-4.0–Generated Nursing Scenarios. • Effect of a Machine Learning Algorithm to Guide Goal-Directed Therapy After Cardiac Surgery. • Machine Learning in Discharge Planning for Stroke Patients: A Review of Feature Representation and Aggregation Strategies With Suggestions for Improvement...Cui Y, Xiang L, Zhao P, et al. Machine learning decision support model for discharge planning in stroke patients. Journal of Clinical Nursing (John Wiley &amp; Sons, Inc). 2024;33(8):3145-3160.">AI clinical decision support and trust in practice <i>8</i></span><span class="theme" title="Artificial Intelligence in Family Nursing: An Evidence-Informed Policy Framework for Safe and Equitable Integration. • Ethical AI Readiness in Vocational Rehabilitation: A Process Framework for Practice. • Turning Pages Into Pixels: Leveraging Technology and Artificial Intelligence in Nursing Professional Development. • Architecting Enterprise Digital Infrastructure for Nursing Professional Development: The Registered Nurse Experience Platform as a Scalable Model for Standardizing Peer Feedback and Workforce Evaluation. • Efficiency in Action: How AI Drives Advances in Nursing Professional Development.">Governance and policy frameworks <i>5</i></span></div>
+      <div class="delta-strip"><div class="d-item"><small>Compared with</small><span>Issue #4</span></div><div class="d-item"><small>Papers</small><span>30 <span class="up">▲ 24</span></span></div><div class="d-item"><small>Leading topic</small><span>Workforce & Education <span class="d-was">(was NLP & Generative AI)</span></span></div><div class="d-item"><small>Rising</small><span class="up">▲ Workforce & Education</span></div><div class="d-item"><small>Cooling</small><span class="down">▼ NLP & Generative AI</span></div><div class="d-item"><small>Flagged</small><span>14 <span class="up">▲ 12</span></span></div></div>
+    </div>
+    <div class="provenance" id="how-it-works">
+      <i class="ti ti-shield-check" aria-hidden="true"></i>
+      <p><strong>How this digest is made:</strong> Papers retrieved bi-weekly from the community-configured sources (PubMed, arXiv, medRxiv, and/or CINAHL — see Digest Settings for this issue's exact sources) using search terms agreed at AINurse-26. Results are restricted to English-language papers; both title and abstract are checked independently, and either being predominantly non-English excludes the paper. Papers are then classified against the community's chosen topics — anything that doesn't clearly match is left out of the issue rather than shown as "Other." Summaries are generated by Claude Sonnet, constrained to report only what the abstract states, with no speculation or inference. The "At a Glance" section above is written under the same constraints — the model synthesizes themes only from the summaries included in this issue, and every number in it (counts, changes since the previous issue) is computed directly from the archive, not by the model. Flagged items indicate incomplete abstracts or unverified peer-review status.</p>
+    </div>
+    <div class="filters"><a href="#" class="active" data-filter="all">All (30)</a><a href="#" data-filter="Clinical Decision Support">Clinical Decision Support (8)</a><a href="#" data-filter="NLP & Generative AI">NLP & Generative AI (1)</a><a href="#" data-filter="AI Ethics & Governance">AI Ethics & Governance (2)</a><a href="#" data-filter="Workforce & Education">Workforce & Education (19)</a><a href="#" data-filter="flagged" class="flag-pill"><i class="ti ti-flag" style="font-size:11px;"></i> Flagged (14)</a></div>
+    
+    <div class="sec-h" data-topic="Clinical Decision Support"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>Clinical Decision Support<span class="cnt">8 papers</span></div>
+    
+    <div class="pli" data-topic="Clinical Decision Support">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42598921/" target="_blank">Trusting the Algorithm or Trusting the Nurse? Critical Care Nurses' Experiences of Automation Bias and Professional Autonomy in AI-Assisted Early Warning.</a></h3>
+        <div class="authors">Samy R, Ramadan OME, Elsayed GEA</div>
+        <div class="venue">Nursing in critical care · Sep 2026</div>
+        <div class="pli-summary">This qualitative study interviewed 23 critical care nurses across four Saudi Arabian hospitals about their experiences using an AI-assisted early warning system integrated with electronic health records. Nurses treated algorithmic alerts as useful but incomplete, calibrating trust through experience and sometimes overriding alerts without documentation under workload pressure, revealing a governance gap. This suggests safe AI use in critical care needs supportive governance, training on trust calibration, and nursing leadership involved in implementation.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42598921</span><a href="https://pubmed.ncbi.nlm.nih.gov/42598921/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/nicc.70620" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42563433/" target="_blank">Harnessing Artificial Intelligence to Strengthen Acute and Critical Care Nursing Practice: A Systematic Review.</a></h3>
+        <div class="authors">Almagharbeh WT, Alkubati SA, Alasmari AA, Alharbi AA, Alfanash HA, Abuadas FH et al.</div>
+        <div class="venue">Nursing in critical care · Sep 2026</div>
+        <div class="pli-summary">This systematic review examined seven studies (about 75,000 patients) on nurse-used AI clinical decision support systems in acute and critical care, covering areas like sepsis, deterioration, and delirium prevention. Nurse-facing AI-CDSS were linked to lower hospital mortality, along with improved length of stay and protocol adherence, though evidence was limited and nurse-reported outcomes were sparse. This suggests potential benefits for nursing practice, but careful, nurse-centred evaluation is needed before wider use.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42563433</span><a href="https://pubmed.ncbi.nlm.nih.gov/42563433/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/nicc.70606" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42184774/" target="_blank">Validation of a machine learning model for predicting early deterioration in the emergency department.</a></h3>
+        <div class="authors">Lee YR, Ruffolo I, Mashouri P, Brudno M, Ben-Yakov M</div>
+        <div class="venue">The American journal of emergency medicine · Sep 2026</div>
+        <div class="pli-summary">Researchers studied 17,481 adult ED visits over six months, combining structured triage data with AI-processed text from nursing notes to predict early deterioration (ICU admission or death within 7 days). A version weighted to prioritize high-risk patients improved recall to 0.77 and ROC-AUC to 0.90, with age, respiratory rate, and blood pressure as top contributors. The authors state this tool could support—not replace—clinical judgment, but needs real-time testing before clinical use.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42184774</span><a href="https://pubmed.ncbi.nlm.nih.gov/42184774/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.ajem.2026.05.007" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        
+        <h3 style="margin-top:0;"><a href="https://scholar.google.com/scholar?q=Effect%20of%20a%20Machine%20Learning%20Algorithm%20to%20Guide%20Goal-Directed%20Therapy%20After%20Cardiac%20Surgery." target="_blank">Effect of a Machine Learning Algorithm to Guide Goal-Directed Therapy After Cardiac Surgery.</a></h3>
+        <div class="authors">Rea, Amanda
+                Deasel, Alexandra
+                Fonner, Clifford Edwin
+                Salenger, Rawn
+                lead of advanced practice, clinical program manager, Division of Cardiac Surgery, University of Maryland St Joseph Medical Center, Towson, Maryland</div>
+        <div class="venue">American Journal of Critical Care · Sep2</div>
+        <div class="pli-summary">This single-center study compared cardiac surgery patients (coronary artery bypass, ejection fraction ≥45%) using a machine learning-guided goal-directed fluid therapy program to historical control patients. Patients in the goal-directed therapy group had lower rates of acute kidney injury on postoperative day 2, day 7, and at discharge. This suggests machine learning tools may offer a less invasive way to monitor fluid status in ICU patients after cardiac surgery.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Effect%20of%20a%20Machine%20Learning%20Algorithm%20to%20Guide%20Goal-Directed%20Therapy%20After%20Cardiac%20Surgery." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h" data-topic="NLP & Generative AI"><i class="ti ti-message-code" aria-hidden="true"></i>NLP & Generative AI<span class="cnt">1 paper</span></div>
+    
+    <div class="pli" data-topic="NLP & Generative AI">
+      <div class="pli-body">
+        <div class="pli-topic t-nlp">NLP & Generative AI</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42655921/" target="_blank">Evaluating the Accuracy, Empathy, and Readability of Generative AI Versus Registered Nurses in Discharge Planning: A Vignette-Based Study.</a></h3>
+        <div class="authors">Wang Y, Ji M, Bai X, Zhuang Y</div>
+        <div class="venue">Nursing open · Sep 2026</div>
+        <div class="pli-summary">This vignette-based study compared discharge instructions written by GPT-4 versus registered nurses, judged blindly by 15 clinical experts and 38 patients. AI produced more complete information but included safety risks, while nurses scored higher on empathy and readability; older, less-educated patients trusted AI text less. This suggests AI may assist nurses with drafting but needs mandatory nurse review before use.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42655921</span><a href="https://pubmed.ncbi.nlm.nih.gov/42655921/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1002/nop2.70777" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h" data-topic="AI Ethics & Governance"><i class="ti ti-scale" aria-hidden="true"></i>AI Ethics & Governance<span class="cnt">2 papers</span></div>
+    
+    <div class="pli" data-topic="AI Ethics & Governance">
+      <div class="pli-body">
+        <div class="pli-topic t-eth">AI Ethics & Governance</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42702934/" target="_blank">Artificial Intelligence in Family Nursing: An Evidence-Informed Policy Framework for Safe and Equitable Integration.</a></h3>
+        <div class="authors">Junko H, Sakiko I, Kazumi K</div>
+        <div class="venue">International nursing review · Sep 2026</div>
+        <div class="pli-summary">This paper reviews literature on artificial intelligence, digital health, and family nursing to propose a policy framework for safely integrating AI into family-centered nursing care, using Japan as an illustrative example. The authors identify five policy domains: ethical and data governance, workforce development, interdisciplinary co-design, adaptive regulation and accountability, and sustainable funding. This matters because it stresses AI should support, not replace, nurses' relational judgment and family communication.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42702934</span><a href="https://pubmed.ncbi.nlm.nih.gov/42702934/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/inr.70237" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h" data-topic="Workforce & Education"><i class="ti ti-school" aria-hidden="true"></i>Workforce & Education<span class="cnt">19 papers</span></div>
+    
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42684392/" target="_blank">AI Use, Perceptions, and Perceived Impact Among Nursing Students: Cross-Sectional Study.</a></h3>
+        <div class="authors">Taka I, Hasalla E, Sula A, Bahiti B, Oboni R, Bani B</div>
+        <div class="venue">JMIR nursing · Aug 2026</div>
+        <div class="pli-summary">This cross-sectional study surveyed 279 nursing students in Elbasan, Albania, about their use and perceptions of AI tools. Most students used AI, especially virtual assistants like ChatGPT, mainly for information searching, and higher GPA was linked to more AI use. AI helped with understanding lectures and exam prep but showed limited impact on self-confidence, empathy, and critical thinking, raising questions for how AI is integrated into nursing curricula.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42684392</span><a href="https://pubmed.ncbi.nlm.nih.gov/42684392/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.2196/97832" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42619200/" target="_blank">AI Dependency and Brain Rot Among Nursing Students: A Mixed-Methods Study.</a></h3>
+        <div class="authors">Sağlam RK, Kalanlar B</div>
+        <div class="venue">The American journal of nursing · Sep 2026</div>
+        <div class="pli-summary">This mixed-methods study surveyed and interviewed 222 undergraduate nursing students in Türkiye to explore the link between AI dependency and 'brain rot,' a term referring to reduced mental sharpness. Researchers found a moderate positive correlation between AI dependency and brain rot scores, and interviews revealed that heavy AI use during exam prep sometimes reduced focus and dulled thinking. This suggests nursing programs may need to build AI literacy and balance AI use with traditional teaching methods to protect students' critical thinking skills.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42619200</span><a href="https://pubmed.ncbi.nlm.nih.gov/42619200/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/AJN.0000000000000364" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42551863/" target="_blank">Nurses' and Nursing Students' Experiences With Generative Artificial Intelligence in Educational and Clinical Settings: A Scoping Review.</a></h3>
+        <div class="authors">Woo MWJ, Tan AHT</div>
+        <div class="venue">Nursing & health sciences · Sep 2026</div>
+        <div class="pli-summary">This scoping review looked at 20 studies from 2020 to 2025 on how nurses and nursing students experience using Generative AI in school and clinical settings. Nurses mostly had positive experiences, while students had mixed but generally positive views, shaped by their attitudes, social norms, and sense of control over the technology. The findings suggest nurse leaders play a key role in creating policies and ethical guidelines for responsible GenAI use.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42551863</span><a href="https://pubmed.ncbi.nlm.nih.gov/42551863/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/nhs.70403" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42552456/" target="_blank">Validity and Reliability of the Medical Artificial Intelligence Readiness Scale, Korean Version: A Methodological and Cross-Sectional Study.</a></h3>
+        <div class="authors">Lee M, Yi N, Lee S, Paek Y</div>
+        <div class="venue">Nursing & health sciences · Sep 2026</div>
+        <div class="pli-summary">Researchers translated and adapted the Medical Artificial Intelligence Readiness Scale into Korean and tested it with 317 nursing students in South Korea. The final 15-item K-MAIRS scale covers four areas—cognition, ability, vision, and ethics—and showed valid, reliable results. This tool can help nursing educators measure and build AI readiness in nursing curricula.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42552456</span><a href="https://pubmed.ncbi.nlm.nih.gov/42552456/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/nhs.70402" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42248818/" target="_blank">Enhancing Learning in Graduate Nursing Education Through a Co-Designed AI Virtual Tutor: A Mixed-Methods Evaluation.</a></h3>
+        <div class="authors">Chu CH, Jibb LA, MacInnes N, Shan CC, Mohammed SD, Nanos SM et al.</div>
+        <div class="venue">Journal of clinical nursing · Sep 2026</div>
+        <div class="pli-summary">This pilot study tested a co-designed AI virtual tutor built into a graduate nursing course, tracking usage logs, surveys, and interviews with students and teaching assistants. Students used the tutor mostly for lower-level learning tasks early on, shifting to more application and analysis later, and reported high AI self-efficacy though usefulness varied. The tutor was feasible and valued for its accuracy and immediacy, but usability, privacy, and over-reliance concerns highlight the need for careful pedagogical integration.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42248818</span><a href="https://pubmed.ncbi.nlm.nih.gov/42248818/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1111/jocn.70376" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42134231/" target="_blank">Generative artificial intelligence in undergraduate paediatric nursing education: A scoping review of current applications and ethical considerations.</a></h3>
+        <div class="authors">Williams S, Dabkowski E, Webb C</div>
+        <div class="venue">Nurse education today · Sep 2026</div>
+        <div class="pli-summary">This scoping review examined six quantitative studies on generative AI (GenAI) used to teach paediatric content in undergraduate nursing programs, all from Asian or Middle Eastern settings. GenAI supported scenario-based learning, ethical reasoning, and feedback, with improved engagement, but studies were small, single-site, and relied on self-report, with little evaluation of competence or safety. This matters because nursing informatics research needs larger, rigorous, ethically-guided studies before GenAI is widely used in paediatric nursing education.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42134231</span><a href="https://pubmed.ncbi.nlm.nih.gov/42134231/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.nedt.2026.107157" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42114223/" target="_blank">Development and application of an artificial intelligence agent-based case teaching model for health assessment: A quasi-experimental study.</a></h3>
+        <div class="authors">Yang Z, Wen J, Bi X, Lin J, Zhao Q, Zhang P et al.</div>
+        <div class="venue">Nurse education today · Sep 2026</div>
+        <div class="pli-summary">This quasi-experimental study tested an AI agent-based case teaching model for health assessment among 102 sophomore nursing students at a Chinese university. Students using the AI agent scored higher in clinical reasoning, knowledge, and teaching satisfaction than those using a traditional platform, and used more simulated assessment interactions overall. The findings suggest AI agent-based teaching may support nursing skill development, offering a reference point for future AI-enabled nursing education research.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42114223</span><a href="https://pubmed.ncbi.nlm.nih.gov/42114223/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.nedt.2026.107142" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://pubmed.ncbi.nlm.nih.gov/42096877/" target="_blank">Toward an AI-integrated nursing curriculum: A Kano model analysis of generative AI competency needs.</a></h3>
+        <div class="authors">Xia Y, Liu J, Wang K, Chen T, Gong X, Wu L et al.</div>
+        <div class="venue">Nurse education today · Sep 2026</div>
+        <div class="pli-summary">This cross-sectional survey of 1219 clinical nurses at a tertiary hospital in China used the Kano model to rank generative AI (GenAI) learning needs. Most nurses had used GenAI (87.69%) and felt positive about it (97.10%), but only 7.39% had formal training; practical skills like teaching materials and patient education ranked as top priorities, while foundational and ethics topics ranked lower. Findings suggest nursing curricula could phase in practical GenAI skills first, then build toward ethics and advanced competencies.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42096877</span><a href="https://pubmed.ncbi.nlm.nih.gov/42096877/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.nedt.2026.107133" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://scholar.google.com/scholar?q=Enhancing%20Learning%20in%20Graduate%20Nursing%20Education%20Through%20a%20Co%E2%80%90Designed%20AI%20Virtual%20Tutor%3A%20A%20Mixed%E2%80%90Methods%20Evaluation." target="_blank">Enhancing Learning in Graduate Nursing Education Through a Co‐Designed AI Virtual Tutor: A Mixed‐Methods Evaluation.</a></h3>
+        <div class="authors">Chu, Charlene H.
+                Jibb, Lindsay A.
+                MacInnes, Neal
+                Shan, Cordelia C.
+                Mohammed, Shan D.
+                Nanos, Stephanie M.
+                O'Sullivan, Mary
+                Muntaner, Carles
+                Thomson, Heather
+                Widger, Kimberley
+                Lawrence Bloomberg Faculty of Nursing, University of Toronto, Toronto Ontario,, Canada</div>
+        <div class="venue">Journal of Clinical Nursing (John Wiley & Sons, Inc.) · Sep2</div>
+        <div class="pli-summary">Researchers piloted a co-designed AI virtual tutor, trained on course materials, in a graduate Master of Nursing course with about 120 students. Usage logs, surveys, and interviews showed students mostly used it for lower-level learning tasks, valued its immediacy and accuracy, but raised concerns about usability, privacy, and over-reliance. This suggests AI tutors can support graduate nursing learning when designed carefully, but need ongoing attention to ethical and pedagogical integration.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Enhancing%20Learning%20in%20Graduate%20Nursing%20Education%20Through%20a%20Co%E2%80%90Designed%20AI%20Virtual%20Tutor%3A%20A%20Mixed%E2%80%90Methods%20Evaluation." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        
+        <h3 style="margin-top:0;"><a href="https://scholar.google.com/scholar?q=Optimists%2C%20Realists%2C%20and%20Traditionalists%3A%20Profiling%20Nursing%20Students%E2%80%99%20Engagement%20with%20Artificial%20Intelligence%20%28AI%29%20in%20Pediatric%20Nursing%20Education." target="_blank">Optimists, Realists, and Traditionalists: Profiling Nursing Students’ Engagement with Artificial Intelligence (AI) in Pediatric Nursing Education.</a></h3>
+        <div class="authors">Karataş, Pelin
+                Öztürk, Demet
+                Department of Pediatric Nursing, Aydın Adnan Menderes University Faculty of Nursing, Aydın, Türkiye.</div>
+        <div class="venue">Journal of Education & Research in Nursing / Hemşirelikte Eğitim ve Araştırma Dergisi · Sep2</div>
+        <div class="pli-summary">This cross-sectional study surveyed 241 nursing students in a pediatric nursing course to explore how they use AI tools and their attitudes toward AI. Cluster analysis identified three profiles—Optimists, Realists, and Traditionalists—with Optimists showing the highest AI use and trust, and Traditionalists the lowest. The findings suggest nursing educators may need differentiated teaching approaches based on students' attitudes toward AI.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Optimists%2C%20Realists%2C%20and%20Traditionalists%3A%20Profiling%20Nursing%20Students%E2%80%99%20Engagement%20with%20Artificial%20Intelligence%20%28AI%29%20in%20Pediatric%20Nursing%20Education." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sec-h" data-topic="flagged"><i class="ti ti-flag" aria-hidden="true"></i>Flagged Papers<span class="cnt">14</span></div>
+    
+    <div class="sec-h sec-h-sub" data-topic="Clinical Decision Support"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i>Clinical Decision Support<span class="cnt cnt-flagged"><i class="ti ti-flag"></i> 4 Flagged</span></div>
+    
+    <div class="pli" data-topic="Clinical Decision Support" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42561610/" target="_blank">Mapping artificial intelligence applications for clinical and operational decision support in prehospital emergency medical services: A scoping review.</a></h3>
+        <div class="authors">Di Nardo Di Maio N, Carducci A, Dante A</div>
+        <div class="venue">International emergency nursing · Sep 2026</div>
+        <div class="pli-summary">This scoping review examined 37 studies on artificial intelligence use in prehospital emergency medical services, covering dispatch, triage, and transport coordination. Most studies used machine learning and were observational or proof-of-concept, showing potential to support early diagnosis and operational decisions, but lacking external validation and real-world testing. For nursing informatics, this highlights the need for rigorous validation, workflow integration, and training before these tools can be safely adopted.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42561610</span><a href="https://pubmed.ncbi.nlm.nih.gov/42561610/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.ienj.2026.101887" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42411859/" target="_blank">Development and Evaluation of a Standardized Nursing Language Clinical Decision Support System for Long-Term Care Nurses Using GPT-4.0-Generated Nursing Scenarios.</a></h3>
+        <div class="authors">Shin JH, Park CH, Lee M, Lee SK, Farina CL, Park S et al.</div>
+        <div class="venue">Journal of gerontological nursing · Sep 2026</div>
+        <div class="pli-summary">Researchers built a clinical decision support system for skilled nursing facility nurses, using standardized nursing language and GPT-4.0-generated resident scenarios. Four participants tested the system, giving a moderate usability score (SUS = 60) and a higher usefulness/satisfaction score (USE = 6.62), with ease of learning rated well. This early work suggests such tools could support nursing care, though testing involved only a small group at one facility.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42411859</span><a href="https://pubmed.ncbi.nlm.nih.gov/42411859/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.3928/00989134-20260626-03" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://scholar.google.com/scholar?q=Development%20and%20Evaluation%20of%20a%20Standardized%20Nursing%20Language%20Clinical%20Decision%20Support%20System%20for%20Long-Term%20Care%20Nurses%20Using%20GPT-4.0%E2%80%93Generated%20Nursing%20Scenarios." target="_blank">Development and Evaluation of a Standardized Nursing Language Clinical Decision Support System for Long-Term Care Nurses Using GPT-4.0–Generated Nursing Scenarios.</a></h3>
+        <div class="authors">Shin, Juh Hyun
+                Park, Chung Hyuk
+                Lee, Myungeun
+                Lee, Soo-Kyoung
+                Farina, Crystel L.
+                Park, Suhyun
+                Korer, Burton
+                Batchelor, Melissa
+                School of Nursing, George Washington University, Ashburn, Virginia</div>
+        <div class="venue">Journal of Gerontological Nursing · Sep2</div>
+        <div class="pli-summary">Researchers built a clinical decision support system for skilled nursing facility nurses, using GPT-4.0-generated resident scenarios and standardized nursing language, then tested it with four participants at one facility. Usability scores were moderate to good, with high ratings for ease of learning, and nursing faculty experts gave overall positive feedback. This early evaluation suggests such tools may help support nursing care decisions in long-term care settings.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Development%20and%20Evaluation%20of%20a%20Standardized%20Nursing%20Language%20Clinical%20Decision%20Support%20System%20for%20Long-Term%20Care%20Nurses%20Using%20GPT-4.0%E2%80%93Generated%20Nursing%20Scenarios." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Clinical Decision Support" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-cds">Clinical Decision Support</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span><span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://scholar.google.com/scholar?q=Machine%20Learning%20in%20Discharge%20Planning%20for%20Stroke%20Patients%3A%20A%20Review%20of%20Feature%20Representation%20and%20Aggregation%20Strategies%20With%20Suggestions%20for%20Improvement...Cui%20Y%2C%20Xiang%20L%2C%20Zhao%20P%2C%20et%20al.%20Machine%20learning%20decision%20support%20model%20for%20discharge%20planning%20in%20stroke%20patients.%20Journal%20of%20Clinical%20Nursing%20%28John%20Wiley%20%26%20Sons%2C%20Inc%29.%202024%3B33%288%29%3A3145-3160." target="_blank">Machine Learning in Discharge Planning for Stroke Patients: A Review of Feature Representation and Aggregation Strategies With Suggestions for Improvement...Cui Y, Xiang L, Zhao P, et al. Machine learning decision support model for discharge planning in stroke patients. Journal of Clinical Nursing (John Wiley & Sons, Inc). 2024;33(8):3145-3160.</a></h3>
+        <div class="authors">Liu, Siyu
+                Cai, Jiaxin
+                School of Computer and Information Engineering, Xiamen University of Technology, Xiamen Fujian,, China</div>
+        <div class="venue">Journal of Clinical Nursing (John Wiley & Sons, Inc.) · Sep2</div>
+        <div class="pli-summary">This article reviews a machine learning model that helps plan discharge for acute stroke patients by combining clinical severity, function, and social factors like family income. A random forest algorithm performed best, using predictors such as NIHSS score, Barthel Index, and FRAIL score. The authors suggest better feature aggregation methods could improve accuracy, but stress these tools should support, not replace, nurses' clinical judgment.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Machine%20Learning%20in%20Discharge%20Planning%20for%20Stroke%20Patients%3A%20A%20Review%20of%20Feature%20Representation%20and%20Aggregation%20Strategies%20With%20Suggestions%20for%20Improvement...Cui%20Y%2C%20Xiang%20L%2C%20Zhao%20P%2C%20et%20al.%20Machine%20learning%20decision%20support%20model%20for%20discharge%20planning%20in%20stroke%20patients.%20Journal%20of%20Clinical%20Nursing%20%28John%20Wiley%20%26%20Sons%2C%20Inc%29.%202024%3B33%288%29%3A3145-3160." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h sec-h-sub" data-topic="AI Ethics & Governance"><i class="ti ti-scale" aria-hidden="true"></i>AI Ethics & Governance<span class="cnt cnt-flagged"><i class="ti ti-flag"></i> 1 Flagged</span></div>
+    
+    <div class="pli" data-topic="AI Ethics & Governance" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-eth">AI Ethics & Governance</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span><span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://scholar.google.com/scholar?q=Ethical%20AI%20Readiness%20in%20Vocational%20Rehabilitation%3A%20A%20Process%20Framework%20for%20Practice." target="_blank">Ethical AI Readiness in Vocational Rehabilitation: A Process Framework for Practice.</a></h3>
+        <div class="authors">Iwanaga, Kanako
+                Department of Rehabilitation Counseling, Virginia Commonwealth University, Richmond, Virginia, USA</div>
+        <div class="venue">Journal of Vocational Rehabilitation · Sep2</div>
+        <div class="pli-summary">This article proposes a conceptual framework to help vocational rehabilitation counselors handle ethical challenges from AI use in practice. The Ethical AI Readiness Framework outlines three capacities—AI literacy, ethical attentiveness, and ethical action readiness—shaped by organizational context and refined through experience. For nursing informatics, this offers a model for thinking about ethical AI use in other health fields, though it does not report tested outcomes or a specific care setting.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Ethical%20AI%20Readiness%20in%20Vocational%20Rehabilitation%3A%20A%20Process%20Framework%20for%20Practice." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-h sec-h-sub" data-topic="Workforce & Education"><i class="ti ti-school" aria-hidden="true"></i>Workforce & Education<span class="cnt cnt-flagged"><i class="ti ti-flag"></i> 9 Flagged</span></div>
+    
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42613662/" target="_blank">Turning Pages Into Pixels: Leveraging Technology and Artificial Intelligence in Nursing Professional Development.</a></h3>
+        <div class="authors">Alemar D, Ang L, Barreda E, Cortes O, Teichman A, Waszmer S</div>
+        <div class="venue">Journal for nurses in professional development · 2026</div>
+        <div class="pli-summary">This article describes how a multi-campus nursing professional development center replaced paper-based workflows with QR codes, electronic competencies, cloud-based resources, e-learning, and generative AI. The team reported improved access, streamlined documentation, increased engagement, and reduced instructional design time, while applying ethical governance to AI use. This shows how digital tools can ease administrative burden in nursing education and support responsible AI adoption.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42613662</span><a href="https://pubmed.ncbi.nlm.nih.gov/42613662/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NND.0000000000001277" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span><span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42607007/" target="_blank">Architecting Enterprise Digital Infrastructure for Nursing Professional Development: The Registered Nurse Experience Platform as a Scalable Model for Standardizing Peer Feedback and Workforce Evaluation.</a></h3>
+        <div class="authors">Jarvis A, Jendzio T, Talaga E</div>
+        <div class="venue">Journal for nurses in professional development · 2026</div>
+        <div class="pli-summary">This article describes the RN Experience Platform, a digital infrastructure built to standardize peer feedback, self-assessment, and evaluation in nursing professional development. The platform combines structured data collection, longitudinal analytics, and AI-assisted narrative synthesis to support reflective practice and leadership decisions. It shows one way NPD practitioners might use AI tools to improve efficiency while keeping professional judgment and ethics central.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42607007</span><a href="https://pubmed.ncbi.nlm.nih.gov/42607007/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NND.0000000000001274" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span><span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42606955/" target="_blank">Efficiency in Action: How AI Drives Advances in Nursing Professional Development.</a></h3>
+        <div class="authors">Uggerud AL, Alcock LR, Brady-Schluttner KA, Nelson NR</div>
+        <div class="venue">Journal for nurses in professional development · 2026</div>
+        <div class="pli-summary">This article discusses how AI can support nursing professional development practitioners in designing education, communicating change, and managing workflows. It highlights practical AI uses that may reduce rework, improve consistency, and expand educator capacity while maintaining ethical safeguards and human oversight. This matters because it points to ways AI might improve efficiency without compromising clinical judgment or professional standards.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42606955</span><a href="https://pubmed.ncbi.nlm.nih.gov/42606955/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NND.0000000000001270" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42330070/" target="_blank">Navigating the Artificial Intelligence Integration Challenge: One Nursing School's Journey From Uncertainty to Systematic Action.</a></h3>
+        <div class="authors">Mudd SS, Montejo L, Frangieh J, Capello A, Lukkahatai N, Aryal S et al.</div>
+        <div class="venue">Nurse educator · 2026</div>
+        <div class="pli-summary">One nursing school describes how its faculty and staff addressed the lack of clear guidance for integrating AI into nursing education. The team reviewed existing AI literacy frameworks, selected the Digital Education Council framework, and adapted an AI use framework to build a phased plan covering foundational literacy, teaching alignment, and course-level guidance. This approach may help other nursing programs build structured, discipline-specific AI integration while balancing different stakeholder views.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42330070</span><a href="https://pubmed.ncbi.nlm.nih.gov/42330070/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NNE.0000000000002224" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span><span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42330069/" target="_blank">Beyond the Prompt: Leveraging Generative AI and Tanner's Model to Decode Clinical Logic in Undergraduate Nursing.</a></h3>
+        <div class="authors">Zeigler K, Bester ME</div>
+        <div class="venue">Nurse educator · 2026</div>
+        <div class="pli-summary">This article describes a teaching approach for undergraduate nursing students that combines Generative AI with Tanner's Clinical Judgment Model to build clinical reasoning skills. Students use an 'If This, Then That' framework and AI as a 'thinking partner' to practice noticing, interpreting, responding, and reflecting on clinical scenarios in a low-stakes setting. The approach aims to help students move from memorization to pattern recognition, which may better prepare them for real clinical situations.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42330069</span><a href="https://pubmed.ncbi.nlm.nih.gov/42330069/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NNE.0000000000002230" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42139039/" target="_blank">Generative AI for ECG Interpretation Education: Impact on Nursing, Student Performance, and AI Model Accuracy.</a></h3>
+        <div class="authors">Dzikowicz DJ, DiPaulo N, Serwetnyk T, Marconi M, Carey MG</div>
+        <div class="venue">Nurse educator · 2026</div>
+        <div class="pli-summary">Researchers compared four generative AI models on an 88-item ECG exam and then tested one model, GoodNurse, in a nursing ECG course. GoodNurse had the highest accuracy (85.3%), fewest waveform errors, and best cost-efficiency; course students who used it scored higher (95.1%) than nonusers (88.8%). This suggests domain-specific AI tools may support ECG learning and could inform future nursing education technology choices.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42139039</span><a href="https://pubmed.ncbi.nlm.nih.gov/42139039/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1097/NNE.0000000000002178" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://pubmed.ncbi.nlm.nih.gov/42096878/" target="_blank">Eroding scholarly integrity: Confronting the misuse of generative AI in nursing education.</a></h3>
+        <div class="authors">Iheduru-Anderson K</div>
+        <div class="venue">Nurse education today · Sep 2026</div>
+        <div class="pli-summary">This paper examines a case in undergraduate nursing education where a student submitted fabricated citations and DOIs and misattributed authorship, using generative AI tools like ChatGPT. The author argues this type of error differs from traditional plagiarism, is hard to detect, and reveals gaps in students' understanding of evidence-based scholarship. Nursing programs need AI literacy training, updated integrity policies, and stronger citation skills to protect scholarly standards.</div>
+        <div class="pmeta">
+          <span class="pmid">PMID 42096878</span><a href="https://pubmed.ncbi.nlm.nih.gov/42096878/" class="plink plink-pubmed" target="_blank"><i class="ti ti-external-link"></i> PubMed</a><a href="https://doi.org/10.1016/j.nedt.2026.107145" class="plink plink-doi" target="_blank"><i class="ti ti-external-link"></i> DOI</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Population unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://scholar.google.com/scholar?q=Shaping%20the%20Future%20of%20Radiography%20Education%3A%20Lessons%20From%20ChatGPT%20and%20Generative%20AI." target="_blank">Shaping the Future of Radiography Education: Lessons From ChatGPT and Generative AI.</a></h3>
+        <div class="authors">Chau, Minh T.
+                Kerr, Haydn
+                Singh, Clare L.
+                Ofori‐Manteaw, Bismark
+                Arruzza, Elio
+                Bentley‐Spuur, Kelly
+                School of Dentistry and Medical Sciences, Charles Sturt University, Wagga Wagga New South Wales,, Australia</div>
+        <div class="venue">Journal of Medical Radiation Sciences · Sep2</div>
+        <div class="pli-summary">This narrative review looks at how ChatGPT and other generative AI tools are used in radiography education, covering image critique, communication training, simulation, and reflective practice. The review finds AI can support structured learning and self-assessment, but it lacks emotional depth, relational nuance, and professional judgment. This matters for nursing informatics because it highlights how AI's educational value depends on careful framing, educator oversight, and learner critical thinking, not just the technology itself.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=Shaping%20the%20Future%20of%20Radiography%20Education%3A%20Lessons%20From%20ChatGPT%20and%20Generative%20AI." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+    <div class="pli" data-topic="Workforce & Education" data-flagged="true">
+      <div class="pli-body">
+        <div class="pli-topic t-edu">Workforce & Education</div>
+        <span class="flag"><i class="ti ti-flag"></i> Setting unclear</span>
+        <h3 style="margin-top:7px;"><a href="https://scholar.google.com/scholar?q=The%20Relationship%20Between%20Artificial%20Intelligence%20Literacy%20and%20Attitudes%20Toward%20Artificial%20Intelligence%20Among%20Nursing%20Students." target="_blank">The Relationship Between Artificial Intelligence Literacy and Attitudes Toward Artificial Intelligence Among Nursing Students.</a></h3>
+        <div class="authors">Çil, Merve
+                Eren Fidancı, Berna
+                Yıldız, Dilek
+                Department of Pediatric Nursing, Lokman Hekim University, Ankara, Türkiye.</div>
+        <div class="venue">Journal of Education & Research in Nursing / Hemşirelikte Eğitim ve Araştırma Dergisi · Sep2</div>
+        <div class="pli-summary">This cross-sectional study surveyed 478 nursing students to examine how AI literacy relates to attitudes toward AI. Students showed generally positive AI literacy and attitudes, with higher literacy linked to more positive attitudes; scores also varied by academic year and prior AI knowledge. This suggests nursing education programs could consider building AI literacy to help prepare students for future practice.</div>
+        <div class="pmeta">
+          <a href="https://scholar.google.com/scholar?q=The%20Relationship%20Between%20Artificial%20Intelligence%20Literacy%20and%20Attitudes%20Toward%20Artificial%20Intelligence%20Among%20Nursing%20Students." class="plink plink-cinahl" target="_blank"><i class="ti ti-external-link"></i> CINAHL</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside>
+    <div class="sc">
+      <div class="sc-label">This Issue</div>
+      <div class="sr"><span class="sr-lbl">Issue</span><span class="sr-val">#5</span></div>
+      <div class="sr"><span class="sr-lbl">Papers</span><span class="sr-val">30</span></div>
+      <div class="sr"><span class="sr-lbl">Flagged</span><span class="sr-val">14</span></div>
+      <div class="sr"><span class="sr-lbl">Generated</span><span class="sr-val">Sep 07, 2026</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-label">By Topic</div>
+      <div class="tbr"><span class="tbr-name">Clinical Decision</span><div class="tbr-track"><div class="tbr-fill" style="width:42%"></div></div><span class="tbr-n">8</span></div><div class="tbr"><span class="tbr-name">NLP & Gen AI</span><div class="tbr-track"><div class="tbr-fill" style="width:5%"></div></div><span class="tbr-n">1</span></div><div class="tbr"><span class="tbr-name">Ethics & Gov.</span><div class="tbr-track"><div class="tbr-fill" style="width:11%"></div></div><span class="tbr-n">2</span></div><div class="tbr"><span class="tbr-name">Workforce & Edu.</span><div class="tbr-track"><div class="tbr-fill" style="width:100%"></div></div><span class="tbr-n">19</span></div>
+    </div>
+    <div class="sc" id="about">
+      <div class="sc-label">About NI Weekly</div>
+      <p class="about-txt">Born at <strong>AINurse-26</strong> (Ottawa, July 2026) — participants voted on sources, topics, and summary constraints. Runs every other Monday via GitHub Actions.</p>
+      <button class="gh-btn cfg-trigger" style="cursor:pointer;border:none;"><i class="ti ti-adjustments-horizontal"></i> Digest settings</button>
+    </div>
+    <div class="dark-sc">
+      <div class="sc-label">Suggest a Topic</div>
+      <p>Help shape NAIL Digest — propose search terms, flag missed papers, or suggest governance changes.</p>
+      <a href="mailto:ainurse@nailcollab.org">ainurse@nailcollab.org <i class="ti ti-arrow-right" style="font-size:12px;"></i></a>
+    </div>
+    
+    <div class="sub-widget-box">
+      <div class="sub-widget-label">Subscribe</div>
+      <p class="sub-widget-copy">Get NAIL Digest by email every other Monday — no spam, unsubscribe any time.</p>
+      <form class="sub-form" data-worker="https://nail-subscribe.martin-michalowski.workers.dev">
+        <input type="email" name="email" class="sub-input" placeholder="you@hospital.org" required>
+        <input type="text" name="hp" class="sub-hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="sub-btn"><i class="ti ti-mail"></i> Subscribe</button>
+      </form>
+      <div class="sub-msg" style="display:none;"></div>
+    </div>
+    <style>
+    .sub-widget-box{background:var(--card,#FFFFFF);border:1px solid var(--line,#E4E0D8);border-radius:var(--r-m,12px);padding:20px 22px;margin-top:16px;box-shadow:var(--shadow-s,0 1px 2px rgba(17,28,38,.05),0 2px 8px rgba(17,28,38,.04));}
+    .sub-widget-label{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut,#5E6B76);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line,#E4E0D8);}
+    .sub-widget-copy{font-size:13.5px;color:var(--mut,#5E6B76);line-height:1.7;margin-bottom:12px;}
+    .sub-form{display:flex;flex-direction:column;gap:8px;}
+    .sub-input{font-family:inherit;font-size:13.5px;padding:9px 12px;border-radius:8px;border:1px solid var(--line,#E4E0D8);background:var(--paper-dim,#F3F1EC);color:var(--ink,#1D2B3A);}
+    .sub-input::placeholder{color:#9A978D;}
+    .sub-input:focus{outline:none;border-color:var(--amber,#E8C46A);background:var(--card,#FFFFFF);}
+    .sub-hp{display:none !important;}
+    .sub-btn{font-family:inherit;font-size:13px;font-weight:700;color:var(--slate-deep,#111C26);background:var(--amber,#E8C46A);border:none;border-radius:99px;padding:9px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;justify-content:center;transition:transform .18s;}
+    .sub-btn:hover{transform:translateY(-1px);}
+    .sub-btn:disabled{opacity:.6;cursor:default;transform:none;}
+    .sub-msg{font-size:12.5px;margin-top:10px;}
+    .sub-msg.is-pending{color:var(--amber-strong,#B08A1F);}
+    .sub-msg.is-ok{color:#2F7A52;}
+    .sub-msg.is-err{color:#A63D3D;}
+    </style>
+    <script>
+    (function(){
+      document.querySelectorAll('.sub-form').forEach(function(form){
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          var btn = form.querySelector('.sub-btn');
+          var msg = form.parentElement.querySelector('.sub-msg');
+          var data = new FormData(form);
+
+          btn.disabled = true;
+          msg.style.display = 'block';
+          msg.className = 'sub-msg is-pending';
+          var dots = ['.', '..', '...'];
+          var dotIdx = 0;
+          msg.textContent = 'Sending your confirmation email (this can take a few seconds)' + dots[dotIdx];
+          var dotTimer = setInterval(function(){
+            dotIdx = (dotIdx + 1) % dots.length;
+            msg.textContent = 'Sending your confirmation email (this can take a few seconds)' + dots[dotIdx];
+          }, 450);
+
+          try {
+            var resp = await fetch(form.dataset.worker + '/subscribe', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({ email: data.get('email'), hp: data.get('hp') })
+            });
+            var json = await resp.json();
+            clearInterval(dotTimer);
+            if (resp.ok) {
+              form.style.display = 'none';
+              msg.className = 'sub-msg is-ok';
+              msg.textContent = json.already ? 'You are already subscribed.' : 'Check your inbox to confirm.';
+            } else {
+              msg.className = 'sub-msg is-err';
+              msg.textContent = json.error || 'Something went wrong — try again.';
+              btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+            }
+          } catch (err) {
+            clearInterval(dotTimer);
+            msg.className = 'sub-msg is-err';
+            msg.textContent = 'Network error — try again shortly.';
+            btn.disabled = false; btn.innerHTML = '<i class="ti ti-mail"></i> Subscribe';
+          }
+        });
+      });
+    })();
+    </script>
+  </aside>
+</div>
+<footer><p>NAIL Digest · <a href="https://www.nailcollab.org/">NAIL Collaborative</a> · Summaries by Claude Sonnet · Born at AINurse-26, Ottawa 2026</p></footer>
+
+<!-- CONFIG OVERLAY -->
+<div id="cfg-overlay" role="dialog" aria-modal="true" aria-label="Digest configuration" style="display:none;">
+  <div id="cfg-backdrop"></div>
+  <div id="cfg-modal">
+    <button id="cfg-close" aria-label="Close"><i class="ti ti-x"></i></button>
+    <div id="cfg-modal-head">
+      <div id="cfg-modal-icon"><i class="ti ti-adjustments-horizontal"></i></div>
+      <div>
+        <h2>Digest Configuration</h2>
+        <p>Settings community-agreed at <strong>AINurse-26</strong>, Ottawa, July 10 2026.</p>
+      </div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-section-label"><i class="ti ti-database-search"></i> Sources</div>
+      <div class="cfg-sources">
+        <div class="cfg-source-row">
+          <div class="cfg-source-pill" style="color:#1A6CB0;background:#FFFFFF;border-color:#BFDBF7;"><i class="ti ti-database-search"></i> PubMed</div>
+          <span class="cfg-source-desc">Peer-reviewed biomedical literature</span>
+        </div>
+        <div class="cfg-source-row">
+          <div class="cfg-source-pill" style="color:#7C5CC4;background:#F7F4FD;border-color:#D8CEEF;"><i class="ti ti-heart-rate-monitor"></i> CINAHL</div>
+          <span class="cfg-source-desc">Nursing & allied health literature (max 25/issue)</span>
+        </div></div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-section-label"><i class="ti ti-text-size"></i> Summary Style</div>
+      <div class="cfg-style-name">2–3 sentences</div>
+      <div class="cfg-style-desc">What was studied · What was found · Why it matters for nursing practice.</div>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-section-label"><i class="ti ti-tags"></i> Topics (8 active)</div>
+      <div class="cfg-topic-pills"><span class="cfg-topic-pill" style="border-color:#1E8A6E;color:#1E8A6E;">Clinical Decision Support</span><span class="cfg-topic-pill" style="border-color:#7C5CC4;color:#7C5CC4;">NLP & Generative AI</span><span class="cfg-topic-pill" style="border-color:#C76B33;color:#C76B33;">AI Ethics & Governance</span><span class="cfg-topic-pill" style="border-color:#1A6CB0;color:#1A6CB0;">EHR & Workflows</span><span class="cfg-topic-pill" style="border-color:#B08A1F;color:#B08A1F;">Workforce & Education</span><span class="cfg-topic-pill" style="border-color:#1E8A6E;color:#1E8A6E;">Patient-Facing AI</span><span class="cfg-topic-pill" style="border-color:#5E6B76;color:#5E6B76;">AI Methods & Evaluation</span></div>
+      
+      <p class="cfg-filter-note">Papers are classified before summarising. Any paper that doesn't clearly match one of these topics is left out of the issue entirely — not summarised, not shown as "Other."</p>
+      <p class="cfg-filter-note">Results are also restricted to English-language papers. Title and abstract are each checked independently; either being predominantly non-English excludes the paper from this issue, regardless of topic relevance.</p>
+    </div>
+    <div class="cfg-section">
+      <div class="cfg-section-label"><i class="ti ti-flag"></i> Why a paper gets flagged</div>
+      <div class="cfg-flag-list">
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Population unclear</span><span class="cfg-flag-desc">The abstract doesn't state who was studied.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Setting unclear</span><span class="cfg-flag-desc">The abstract doesn't state the setting or context of the study.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Work in progress</span><span class="cfg-flag-desc">The paper describes work that's still underway, with no results yet.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Not peer-reviewed</span><span class="cfg-flag-desc">The paper is an unreviewed preprint, a protocol for a future systematic review, or a letter/correspondence piece. Completed reviews published in a peer-reviewed journal are not included here.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Abstract incomplete</span><span class="cfg-flag-desc">The abstract is very short or appears cut off.</span></div>
+        <div class="cfg-flag-row"><span class="cfg-flag-badge">Summary error</span><span class="cfg-flag-desc">A technical issue prevented a summary from being generated — not a comment on the paper itself.</span></div>
+      </div>
+      <p class="cfg-filter-note">A paper can carry more than one flag. Flagged papers still appear in the issue, grouped under their topic within the Flagged Papers section.</p>
+    </div>
+    <div class="cfg-footer">
+      Votes are version-controlled in <code>config.json</code> alongside this digest.
+      Propose changes via the NAIL Collaborative editorial board.
+    </div>
+  </div>
+</div>
+<style>
+#cfg-overlay{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;}
+#cfg-backdrop{position:absolute;inset:0;background:rgba(17,28,38,.65);backdrop-filter:blur(4px);}
+#cfg-modal{position:relative;background:#fff;border-radius:16px;padding:36px;max-width:560px;width:100%;box-shadow:0 24px 64px rgba(17,28,38,.28);max-height:90vh;overflow-y:auto;animation:cfg-in .22s cubic-bezier(.22,.8,.36,1);}
+@keyframes cfg-in{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+#cfg-close{position:absolute;top:16px;right:16px;background:var(--paper-dim,#F3F1EC);border:1px solid var(--line,#E4E0D8);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--mut,#5E6B76);transition:background .15s;}
+#cfg-close:hover{background:var(--line,#E4E0D8);}
+#cfg-modal-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--line,#E4E0D8);}
+#cfg-modal-icon{width:44px;height:44px;border-radius:10px;background:var(--amber-pale,#FDF5E0);border:1px solid #F0DFA0;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--amber-strong,#B08A1F);flex-shrink:0;}
+#cfg-modal-head h2{font-family:var(--serif,serif);font-size:20px;font-weight:500;color:var(--slate-deep,#111C26);margin-bottom:3px;}
+#cfg-modal-head p{font-size:13px;color:var(--mut,#5E6B76);line-height:1.5;}
+.cfg-section{margin-bottom:22px;}
+.cfg-section:last-of-type{margin-bottom:0;}
+.cfg-section-label{font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut,#5E6B76);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.cfg-source-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.cfg-source-pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--slate-deep,#111C26);background:var(--paper-dim,#F3F1EC);border:1px solid var(--line,#E4E0D8);padding:5px 12px;border-radius:99px;}
+.cfg-source-desc{font-size:12.5px;color:var(--mut,#5E6B76);}
+.cfg-style-name{font-size:15px;font-weight:600;color:var(--slate-deep,#111C26);margin-bottom:4px;}
+.cfg-style-desc{font-size:13px;color:var(--mut,#5E6B76);line-height:1.6;}
+.cfg-topic-pills{display:flex;flex-wrap:wrap;gap:7px;}
+.cfg-topic-pill{font-size:12px;font-weight:600;padding:4px 11px;border-radius:99px;border:1.5px solid;background:transparent;}
+.cfg-excl-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.cfg-excl-label{font-size:11px;font-weight:700;color:var(--mut,#5E6B76);text-transform:uppercase;letter-spacing:1px;}
+.cfg-excl-pill{font-size:12px;color:var(--mut,#5E6B76);background:var(--paper-dim,#F3F1EC);padding:3px 10px;border-radius:99px;text-decoration:line-through;opacity:.6;}
+.cfg-filter-note{font-size:12px;color:var(--mut,#5E6B76);line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line,#E4E0D8);}
+.cfg-filter-note + .cfg-filter-note{margin-top:6px;padding-top:0;border-top:none;}
+.cfg-flag-list{display:flex;flex-direction:column;gap:8px;}
+.cfg-flag-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+.cfg-flag-badge{flex-shrink:0;font-size:11px;font-weight:700;letter-spacing:.3px;color:#B91C1C;background:#FEE2E2;border:1px solid #FCA5A5;border-radius:99px;padding:2px 10px;white-space:nowrap;}
+.cfg-flag-desc{font-size:12.5px;color:var(--mut,#5E6B76);line-height:1.5;}
+.cfg-footer{margin-top:22px;padding-top:16px;border-top:1px solid var(--line,#E4E0D8);font-size:12.5px;color:var(--mut,#5E6B76);line-height:1.6;}
+.cfg-footer code{font-size:11.5px;background:var(--paper-dim,#F3F1EC);padding:1px 6px;border-radius:4px;}
+</style>
+<script>
+(function(){
+  var overlay=document.getElementById('cfg-overlay');
+  var backdrop=document.getElementById('cfg-backdrop');
+  var closeBtn=document.getElementById('cfg-close');
+  function openCfg(){overlay.style.display='flex';document.body.style.overflow='hidden';}
+  function closeCfg(){overlay.style.display='none';document.body.style.overflow='';}
+  document.querySelectorAll('.cfg-trigger').forEach(function(b){b.addEventListener('click',openCfg);});
+  if(backdrop)backdrop.addEventListener('click',closeCfg);
+  if(closeBtn)closeBtn.addEventListener('click',closeCfg);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCfg();});
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.filters a').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      document.querySelectorAll('.filters a').forEach(function(b){b.classList.remove('active');b.classList.remove('active-flagged');});
+      var filter=this.dataset.filter||'all';
+      this.classList.add(filter==='flagged'?'active-flagged':'active');
+      document.querySelectorAll('.pli').forEach(function(p){
+        if(filter==='all'){p.style.display='';}
+        else if(filter==='flagged'){p.style.display=p.dataset.flagged==='true'?'':'none';}
+        else{p.style.display=p.dataset.topic===filter?'':'none';}
+      });
+      document.querySelectorAll('.sec-h').forEach(function(hdr){
+        if(filter==='all'){hdr.style.display='';return;}
+        if(filter==='flagged'){
+          var isSub=hdr.classList.contains('sec-h-sub');
+          var sib=hdr.nextElementSibling,visible=false;
+          while(sib){
+            if(sib.classList.contains('sec-h')){
+              if(isSub)break;                          // sub-header stops at the very next header
+              if(!sib.classList.contains('sec-h-sub'))break; // top-level header skips over sub-headers, stops at next TOP-LEVEL header
+            }
+            if(sib.classList.contains('pli')&&sib.style.display!=='none')visible=true;
+            sib=sib.nextElementSibling;
+          }
+          hdr.style.display=visible?'':'none';
+        }else{hdr.style.display=hdr.dataset.topic===filter?'':'none';}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

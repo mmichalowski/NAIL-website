@@ -1,32 +1,36 @@
 {
-  "issue": 4,
-  "filename": "ni-biweekly-2026-08-24.html",
+  "issue": 5,
+  "filename": "ni-biweekly-2026-09-07.html",
   "date_range": {
-    "start": "Aug 10, 2026",
-    "end": "Aug 24, 2026"
+    "start": "Aug 24, 2026",
+    "end": "Sep 07, 2026"
   },
-  "generated_at": "2026-08-24T06:58:21.294212Z",
-  "paper_count": 6,
-  "flag_count": 2,
+  "generated_at": "2026-09-07T11:45:50.396507Z",
+  "paper_count": 30,
+  "flag_count": 14,
   "topic_counts": {
-    "Workforce & Education": 1,
-    "NLP & Generative AI": 3,
-    "Patient-Facing AI": 1,
-    "EHR & Workflows": 1
+    "AI Ethics & Governance": 2,
+    "Workforce & Education": 19,
+    "NLP & Generative AI": 1,
+    "Clinical Decision Support": 8
   },
-  "teaser": "This issue centers on generative AI's mixed track record across three papers: chatbots and language models can draft investigation reports, support chronic disease education, or code newspaper sentiment, but each study found real limits, from overcoding in qualitative analysis to unresolved safety and literacy gaps. A workforce study raises a different caution, linking heavy AI reliance in nursing students to reduced focus. Meanwhile, one hospital's digital closed-loop workflow improved surgical timing and staff experience at scale, and a Hong Kong pilot protocol aims to test chatbot-assisted advance care planning conversations with families.",
+  "teaser": "This issue centers heavily on nursing education, with 19 papers on how students and educators use generative AI tools, virtual tutors, and AI-based teaching models for topics like ECG interpretation, pediatric care, and clinical reasoning. A second thread examines clinical decision support across 8 papers, covering AI early warning systems, deterioration prediction, and discharge planning, generally finding potential benefits alongside calls for more validation and human oversight. Several papers also probe student attitudes and readiness, from AI literacy scales to dependency concerns, while just 2 papers address ethics and governance frameworks and 1 compares AI-generated versus nurse-written discharge instructions.",
   "themes": [
     {
-      "name": "Generative AI performance and limits",
-      "count": 3
+      "name": "Student AI use, attitudes, and literacy",
+      "count": 8
     },
     {
-      "name": "AI's cognitive and educational impact on students",
-      "count": 1
+      "name": "AI in nursing curricula and teaching models",
+      "count": 8
     },
     {
-      "name": "Digital tools for care coordination and family engagement",
-      "count": 2
+      "name": "AI clinical decision support and trust in practice",
+      "count": 8
+    },
+    {
+      "name": "Governance and policy frameworks",
+      "count": 5
     }
   ]
 }

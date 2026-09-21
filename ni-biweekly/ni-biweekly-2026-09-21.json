@@ -1,0 +1,273 @@
+{
+  "issue": 6,
+  "generated_at": "2026-09-21T12:09:12.011534Z",
+  "date_range": {
+    "start": "Sep 07, 2026",
+    "end": "Sep 21, 2026"
+  },
+  "paper_count": 12,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "synthesis": {
+    "overview": [
+      "This issue's twelve papers center on workforce and education, with five papers covering nursing informatics competencies, simulation training, AI in nursing practice education, workforce management tools, and pharmacy education. A second thread looks at patient-facing AI tools, including a gastric cancer education chatbot and an AI telephone follow-up system, both compared against human-delivered care. Clinical decision support appears twice, covering a dysphagia screening model and a decision mining tool for quality improvement. NLP and generative AI also appear twice, applied to quality-of-life narratives and rheumatoid arthritis literature, while one paper validates a Chinese-language AI ethics awareness scale.",
+      "Papers dropped from 30 to 12 this issue. Workforce and Education remains the leading topic but its share is falling, down from 19 papers last issue to 5 now, while Patient-Facing AI's share is rising, appearing twice after being absent last issue. Clinical decision support continued but shrank from 8 papers to 2, and AI ethics and governance held steady in focus with 1 paper compared to 2 previously. NLP and Generative AI grew slightly from 1 paper to 2. The prior issue's emphasis on student attitudes and AI dependency is not present this issue."
+    ],
+    "themes": [
+      {
+        "name": "AI tools compared to human performance",
+        "paper_ids": [
+          "42721321",
+          "cinahl:12",
+          "42710060"
+        ]
+      },
+      {
+        "name": "Education and competency development",
+        "paper_ids": [
+          "42752495",
+          "41605606",
+          "cinahl:2",
+          "cinahl:6"
+        ]
+      },
+      {
+        "name": "NLP and text analysis applications",
+        "paper_ids": [
+          "42743440",
+          "cinahl:1"
+        ]
+      },
+      {
+        "name": "Governance and ethics measurement",
+        "paper_ids": [
+          "cinahl:8",
+          "cinahl:0"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 5,
+      "papers": 12,
+      "papers_delta": -18,
+      "leading_topic": "Workforce & Education",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "Patient-Facing AI",
+      "rising_pp": 17,
+      "falling_topic": "Workforce & Education",
+      "falling_pp": -22,
+      "flagged": 5,
+      "flagged_delta": -9
+    },
+    "generated_at": "2026-09-21T12:09:12.011413Z",
+    "model": "claude-sonnet-5"
+  },
+  "papers": [
+    {
+      "pmid": "42756555",
+      "title": "Development and External Validation of an Explainable Machine Learning Model to Identify Positive Dysphagia Screening Results in People with Dementia: A Multicenter Cross-Sectional Study.",
+      "abstract": "To develop and externally validate an interpretable machine learning model for identifying the likelihood of a positive Standardized Swallowing Assessment (SSA) result in people with dementia, particularly in settings where instrumental swallowing assessments are not readily available. Candidate variables included demographic, physical, oral-health, and mental health variables routinely available in clinical practice. Least absolute shrinkage and selection operator (LASSO) regression was used for variable selection. Four machine learning models were developed and compared: logistic regression, support vector machines, random forest, and AdaBoost. Model performance was evaluated using the area under the receiver operating characteristic curve (AUC), sensitivity, calibration, and decision curve analysis. SHAP analysis was applied to enhance model interpretability. A web-based likelihood assessment tool was developed to estimate the individual probability of a concurrent positive SSA result. All four models showed good discrimination. AdaBoost achieved an AUC of 0.918 in internal cross-validation and AUCs of 0.900 and 0.889 in the domain and temporal external validation cohorts, respectively, with sensitivities ranging from 0.879 to 0.901. Since sensitivity was prioritized for case finding, AdaBoost was selected for model interpretation and online-tool development. SHAP analysis ranked body mass index as the leading contributor to the AdaBoost output, followed by number of teeth, eating ability, dietary type, and Clinical Dementia Rating score. The model showed good performance for identifying people likely to have a concurrent positive SSA screening result. The web-based tool may support case finding and referral for further swallowing assessment, but it should not be used as a standalone diagnostic or prognostic instrument. Prospective and geographically diverse validation is required before routine clinical implementation. Why was this study done? Swallowing problems are common in people with dementia. Specialist tests are often unavailable, especially in nursing homes. We aimed to develop a simple tool to flag those who may have a positive Standardized Swallowing Assessment screen result. What did the researchers do and find? We analysed data from 620 people with dementia from a hospital and a nursing home. We compared four machine learning models. The selected model used five simple characteristics: body mass index, number of teeth, eating ability, diet type, and dementia severity. It performed consistently in the development and validation cohorts. We created a free online tool that estimates the likelihood of a positive bedside result. What do the results mean? The tool helps nurses and clinicians identify who may need further swallowing assessment. It does not diagnose dysphagia. It cannot detect silent aspiration (when food or liquid enters the airway without a cough). It should never replace professional clinical judgment.",
+      "authors": "Du J, Zhang H, Wen X, Guo X, Hu J, Liu Z et al.",
+      "journal": "Clinical interventions in aging",
+      "pub_date": "2026",
+      "doi": "10.2147/CIA.S625367",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42756555/",
+      "summary": "Researchers studied 620 people with dementia in a hospital and a nursing home to build a machine learning tool predicting a positive swallowing screening result. An AdaBoost model using five factors—BMI, number of teeth, eating ability, diet type, and dementia severity—showed strong, consistent performance across validation groups. A free online tool now exists to help flag patients needing further swallowing assessment, though it cannot diagnose dysphagia or detect silent aspiration.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42752495",
+      "title": "Identification of Nursing Informatics Competencies for Ambulatory Care Nurses in Germany: A Cross-Sectional Survey.",
+      "abstract": "Ambulatory nursing care is increasingly shaped by digital transformation, which requires context-specific competencies. This study aimed to identify the relevance of nursing informatics competencies in the ambulatory care setting in Germany. A cross-sectional, anonymous online survey was conducted in which 43 competency areas were rated across five nursing roles using a 0 to 100% scale. Descriptive analyses were performed to identify the top five core competency areas for each role. Across all roles, data protection and privacy competency was consistently rated as highly relevant. The findings emphasize the need for targeted education and support the development of a context-specific competency framework.",
+      "authors": "Hering A, Egbert N, Kücking F, Hübner UH",
+      "journal": "Studies in health technology and informatics",
+      "pub_date": "Sep 2026",
+      "doi": "10.3233/SHTI261016",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42752495/",
+      "summary": "Researchers surveyed ambulatory care nurses in Germany about the relevance of 43 nursing informatics competencies across five nursing roles, using a 0-100% rating scale. Data protection and privacy competency ranked as highly relevant across all roles. These findings support developing targeted education and a context-specific competency framework for digital transformation in ambulatory nursing care.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42743440",
+      "title": "Quality of Life of People Living With Dementia Residing in Nursing Homes: Secondary Analysis of Observational Data.",
+      "abstract": "Quality of life (QoL) plays a crucial role in dementia care; however, QoL and its dynamic, context-dependent nature can be difficult to capture among people living with dementia due to challenges in memory and communication, and limitations of self-reported QoL instruments. Observational tools such as the Maastricht Electronic Daily Life Observation (MEDLO) provide narrative descriptions of the daily life of people living with dementia in nursing homes. However, the MEDLO tool was not developed to assess QoL specifically, and it remains unclear to what extent its narrative descriptions reflect aspects of QoL. Analyzing these narrative descriptions is labor-intensive and time-consuming. Recent advances in natural language processing, including large language models (LLMs), offer the potential to analyze these narrative descriptions at scale. The study aims to explore whether an LLM can be used to structure existing MEDLO narrative data into interpretable QoL-relevant patterns in people living with dementia. Specifically, this study examines whether N-gram analysis, sentiment analysis, and LLM-based topic modeling can identify recurring language patterns, emotional tone, and semantic clusters that can be mapped to Lawton QoL domains. This study conducted a secondary analysis of existing MEDLO observational data from 151 people living with dementia residing in Dutch long-term care. Narrative data had been documented by trained observers, describing activities, interactions, settings, and emotional expressions. For analysis, a local secure pipeline was developed in which GPT-4o-mini was deployed. The pipeline comprised three analytical steps: (1) N-gram frequency analysis, (2) sentiment analysis, and (3) topic modeling. Prompts were iteratively refined through prompt engineering. Coauthors and domain experts reviewed outputs for coherence, contextual plausibility, and relevance to long-term care practice. A total of 5622 narratives (50,106 words) from 151 people living with dementia were analyzed. The narratives were short, averaging 10.5 (SD 5.80) words per narrative. N-gram frequency analysis identified the frequent documentation of passive activities (sits at the table) in limited indoor settings (living room). Emotional well-being was often described in positive terms (smiles and laughs), whereas explicitly negative expressions (cries and distress) occurred less frequently. Weighted sentiment analysis showed that, although fewer in number, negative expressions carried a stronger intensity, resulting in an overall predominance of negative sentiment across all QoL domains. Topic modeling identified 8 coherent clusters, most of which mapped onto multiple QoL domains, underscoring QoL's multidimensionality. LLM-based analyses identified predominantly passive activities with little variation in indoor settings, while people living with dementia were often described as having positive affect. This exploratory study suggests that LLM-based analyses may help structure observational narratives into QoL-relevant patterns, but further validation is needed before such outputs can inform person-centered care practice.",
+      "authors": "Steijger D, Scheper MC, van der Willigen RF, Christie H, de Vugt ME, Verbeek H et al.",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Sep 2026",
+      "doi": "10.2196/91968",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42743440/",
+      "summary": "Researchers used an LLM (GPT-4o-mini) to analyze 5622 narrative observations of 151 people with dementia in Dutch nursing homes, aiming to identify quality-of-life patterns. The tool found frequent passive activities, limited settings, and mostly positive emotional descriptions, though negative expressions carried stronger sentiment intensity. This suggests LLMs may help structure observational data for quality-of-life insights, but the authors say more validation is needed before use in care practice.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42721321",
+      "title": "Development and Usability Assessment of a Health Education Conversational Agent for Patients With Gastric Cancer: Action Research Study.",
+      "abstract": "To provide patients with gastric cancer with adequate health education information for effective overall management is crucial, while traditional manners exposed certain challenges. Conversational agents have increasingly been adopted for health care use to provide innovative solutions for patient education. This study aimed to develop a health education embodied conversational agent to focus on gastric cancer disease using an action research approach and test its accuracy, usability, and user experience among patients and other related stakeholders. The AI-guided conversational agent was developed based on the OpenMEDLab 2.0 foundation model and the Retrieval-Augmented Generation (RAG) architecture. A 4-phase action research approach was adopted to implement this system at a gastric cancer center in China. Diagnose and plan phase used participatory observation and in-depth interviews to explore current health education models and patients' needs for health education. Act and implement phase was used to develop and deploy the conversational agent. Evaluate phase comprised 3 rounds of alpha testing to assess accuracy and RAG knowledge hit rate, and 1 round of beta testing to assess the usability and relevance. Reflect phase conducted in-depth interviews to gain insights into users' experiences. Data collection was conducted from September 2023 through April 2025. Participants include patients, clinical nurses, nursing managers, surgeons, clinical psychologists, and dietitians. Thematic analysis and multiple-group chi-square tests were performed, respectively, for qualitative and quantitative data. A 2-sided P value of <.05 was considered statistically significant. A total of 44 patients, 13 nurses, 3 nursing managers, 2 surgeons, 1 clinical psychologist, and 1 dietitian were recruited during the study procedure. Favorable outcomes in terms of accuracy and usability were achieved. The accuracy of the agent in 3 rounds was 67% (37/55), 71% (44/62), and 82% (31/38), respectively; RAG knowledge hit rates reached 86% (47/55), 98% (61/62), and 100% (38/38). Significant differences (P<.01) in RAG knowledge hit rates were observed. The mean chatbot usability questionnaire score was 91.9 (SD 3.6), while the mean content relevance score was 3.75 (SD 0.9). Three themes of user experiences were identified: perceived usefulness, ease of use, and intention to use, revealing potential in reducing staff workload and reinforcing patient education. This study provided insights into how the action research approach can inform the development and usability assessment of a gastric cancer health education conversational agent, also illustrating the value of RAG technology. Additional assessments and improvements are warranted to confirm the effectiveness and safety.",
+      "authors": "Kang Y, Yan Y, Wang T, Yu Z, Hu Y, Wang Z et al.",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Sep 2026",
+      "doi": "10.2196/82746",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42721321/",
+      "summary": "Researchers at a gastric cancer center in China built an AI conversational agent, using RAG technology, to give patients health education, then tested it with patients, nurses, and other clinicians through an action research approach. Accuracy improved across three rounds (67% to 82%), knowledge hit rates reached up to 100%, and usability scores were high, with users noting ease of use and potential to reduce staff workload. The authors state further testing is needed to confirm effectiveness and safety.",
+      "flags": [],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42710060",
+      "title": "Evaluation of a Decision Mining Tool for Nursing Quality Improvement by Hospital Nurses: Theory-Guided Qualitative Study.",
+      "abstract": "Clinical decision support systems (CDSSs) are widely implemented in hospitals, yet their uptake in nursing practice remains inconsistent. While electronic health records continuously capture nursing decision data, these data are rarely used to support structured quality improvement. Decision mining offers a novel approach by reconstructing and visualizing decision logic from clinical decision logs to support retrospective reflection and protocol evaluation rather than real-time alerting. Before such tools can be integrated into quality improvement programs, their acceptance by clinical users must be empirically examined. This study aimed to conduct an early-stage, user-centered evaluation of a clinical decision mining tool for nursing quality improvement and to examine how nurses evaluate the factors influencing their intention to use the tool, using the unified theory of acceptance and use of technology (UTAUT) as a conceptual organizing framework. An exploratory qualitative design was used, using a theory-guided expert discussion as the primary method. A purposive sample of 5 quality improvement nurses from a large Dutch hospital participated in a 90-minute session comprising a structured prototype demonstration, a 12-item UTAUT-derived questionnaire administered as a facilitation instrument, and an expert discussion. Questionnaire scores were summarized descriptively by construct to anchor and organize the expert group discussion. Expert discussion data were analyzed using directed content analysis, with UTAUT constructs-performance expectancy, effort expectancy, attitude toward use, social influence, and behavioral intention-as sensitizing categories. Attitude toward use was included following UTAUT extensions validated in nursing informatics contexts. Performance expectancy scores were consistently high, driven by perceived value for protocol evaluation and data-supported quality improvement discussions. Effort expectancy was moderate and variable, reflecting concerns about data interpretation and limited data literacy rather than interface usability. Attitude toward use showed the lowest construct-level scores and the widest variation, contingent on whether the tool was framed as learning-oriented rather than a monitoring or control mechanism. Behavioral intention was relatively high for targeted use, but participants positioned adoption in structured quality improvement meetings rather than daily in bedside practice, reflecting role differentiation rather than rejection. Social influence did not emerge as a substantive theme at this preimplementation stage. Nurses perceived strong value in the CDM tool's capacity to make protocol adherence and decision variation transparent and discussable within quality improvement settings. Acceptance was conditional on a learning-oriented framing, interpretive scaffolding, and investment in data literacy. The findings suggest that governance framing and interpretive burden function as adoption determinants for retrospective decision support tools in ways not fully captured by standard UTAUT constructs. Retrospective decision mining may complement existing CDSSs not by adding alerts but by strengthening local data-driven learning cycles.",
+      "authors": "Berkhout M, Leenen JPL, Smit K, van Houwelingen T",
+      "journal": "JMIR formative research",
+      "pub_date": "Sep 2026",
+      "doi": "10.2196/100274",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42710060/",
+      "summary": "This study explored how five quality improvement nurses at a Dutch hospital viewed a new decision mining tool that reviews past nursing decision data for quality improvement, rather than real-time alerts. Nurses saw value in making protocol adherence and decision variation visible for discussion, but acceptance depended on framing the tool as learning-focused rather than for monitoring, plus support for data interpretation. This suggests governance framing and interpretive support matter for adopting retrospective decision tools in nursing quality improvement work.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41605606",
+      "title": "Practical strategies to maximise medical simulation learning with minimal resources.",
+      "abstract": "Simulation-based education is a powerful tool for clinical skills development, but its implementation is often hindered by resource constraints, time limitations and institutional barriers. Effective simulation can occur in almost any setting, regardless of technology or budget; the key drivers of learning are not high-fidelity equipment and dedicated simulation centres, but rather carefully selected learning objectives, engaged faculty and motivated participants.Effective simulation begins with a targeted needs assessment and the development of achievable learning outcomes. New educators should avoid 'the fidelity trap' where an over-reliance on expensive or complex simulation tools and technology counterintuitively reduces educational value, and instead focus on simplified low-cost scenarios with high-impact patient outcomes. Scenario design can be enhanced by adapting real-life cases, using free online resources and cautiously incorporating generative artificial intelligence for content creation. Quality and safety must be prioritised through rigorous review, ensuring relevance to local practices, whichever method of scenario generation is taken.Task trainers, simulated monitors and audiovisual cues can all be created using cheap, accessible tools which can immerse participants in the scenario without breaking departmental budgets.This article aims to empower new simulation educators to deliver impactful, accessible simulation through careful planning and creative resource development.",
+      "authors": "Talbot J, Sharp L, Barrett D, Wallace J, Best H, Volkman T",
+      "journal": "Archives of disease in childhood. Education and practice edition",
+      "pub_date": "Sep 2026",
+      "doi": "10.1136/archdischild-2025-329360",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41605606/",
+      "summary": "This article addresses the challenge of running clinical simulation training when educators face limited resources, time, or institutional support. It argues that effective learning depends on clear goals, engaged faculty, and simple, low-cost scenarios rather than expensive high-fidelity equipment, and suggests cheap tools and careful review can create realistic, safe scenarios. For nursing informatics, this highlights practical, low-tech approaches to simulation design and quality review.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:0",
+      "title": "Digital Innovations in Nursing Workforce Management: A Scoping Review of Advanced Applications and Implementation Challenges.",
+      "abstract": "Objective: Artificial intelligence (AI) is increasingly being adopted to support healthcare workforce planning and operational decision‐making. However, evidence regarding its application specifically within nursing workforce management remains fragmented across diverse disciplines and publication types. This scoping review aimed to map the current evidence on AI applications in nursing workforce management, identify major application domains, synthesise reported organisational outcomes and implementation challenges and highlight priorities for future research. Design: Scoping review. Methods: The review was conducted in accordance with the Arksey and O'Malley methodological framework, subsequent methodological enhancements by Levac and colleagues, the Joanna Briggs Institute guidance and the PRISMA Extension for Scoping Reviews (PRISMA‐ScR). A comprehensive literature search was undertaken in PubMed, Scopus, Web of Science, CINAHL and IEEE Xplore from database inception to May 2025, with a supplementary top‐up search executed in August 2026 to ensure currency. Two reviewers independently screened studies, extracted data using a standardised data‐charting form and synthesised findings through descriptive numerical analysis and thematic synthesis. Results: Twenty‐eight studies met the eligibility criteria. AI applications were identified across six principal workforce management domains: workforce planning and demand forecasting, nurse scheduling and rostering, workload optimisation, burnout and workforce sustainability, workforce analytics and managerial decision support. Most publications described conceptual models, pilot projects, qualitative investigations or review‐based evidence, whereas relatively few evaluated implemented AI systems in routine nursing management practice. Commonly reported organisational benefits included improvements in workforce allocation, scheduling transparency, operational efficiency and data‐informed managerial decision‐making. Frequently reported implementation challenges included ethical concerns, organisational readiness, data quality, interoperability, digital competence and user acceptance. Conclusion: Current evidence suggests that AI has considerable potential to support nursing workforce management; however, empirical evidence regarding implementation effectiveness remains limited. Future research should prioritise prospective implementation studies, rigorous evaluation of workforce outcomes and development of transparent, nurse‐centred AI governance frameworks. Implications for Nursing Management: AI‐enabled workforce management may assist nurse leaders in efforts to improve staffing decisions, potentially enhancing operational efficiency and supporting efforts toward more equitable workload distribution. Successful implementation requires organisational readiness, robust governance, multidisciplinary collaboration and meaningful involvement of nurses throughout system design and evaluation.",
+      "authors": "Rezapour-Nasrabad, Rafat\n                Nasrollahi-Nasrabad, Sina\n                Department of Psychiatric Nursing and Management,, School of Nursing and Midwifery,, Shahid Beheshti University of Medical Sciences,, Tehran, Iran, sbmu.ac.ir",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "9/14",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Digital%20Innovations%20in%20Nursing%20Workforce%20Management%3A%20A%20Scoping%20Review%20of%20Advanced%20Applications%20and%20Implementation%20Challenges.",
+      "source": "CINAHL",
+      "summary": "This scoping review examined 28 studies on AI applications in nursing workforce management, covering areas like scheduling, workload optimization, burnout, and analytics. Most studies were conceptual models or pilot projects rather than evaluations of AI systems actually used in practice. The review shows AI may help with staffing decisions, but calls for more research testing real implementations and building nurse-centered governance frameworks.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:1",
+      "title": "Application of natural language processing in patients with rheumatoid arthritis:a scoping review.",
+      "abstract": "Objective: To summarize studies on the application of natural language processing in patients with rheumatoid arthritis. Methods:Guided by the scoping review methodological framework,relevant databases were searched from inception to April 18,2025. The included literature was synthesized and analyzed. Results: A total of 16 articles were included.The application scenarios of natural language processing in the field of rheumatoid arthritis included focusing on patients with rheumatoid arthritis-associated interstitial lung disease, constructing knowledge graphs, exploring rheumatoid arthritis medications, and supporting machine learning. The application methods were diverse.The application effects were excellent. Conclusions:Natural language processing has broad application prospects in patients with rheumatoid arthritis.However,relevant studies are currently limited.Future research should strengthen model interpretability, address the challenges of multimodal text integration, and further expand application scope, so as to evaluate its effectiveness and reliability comprehensively.",
+      "authors": "GUO, Yifan\n                LIU, Sanjiao\n                REN, Hua\n                BAI, Jing\n                School of Nursing, Shanxi University of Chinese Medicine, Shanxi 030619 China",
+      "journal": "Chinese Nursing Research",
+      "pub_date": "Sep2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Application%20of%20natural%20language%20processing%20in%20patients%20with%20rheumatoid%20arthritis%3Aa%20scoping%20review.",
+      "source": "CINAHL",
+      "summary": "This scoping review looked at 16 studies on how natural language processing (NLP) is used with rheumatoid arthritis patients, covering areas like lung disease detection, knowledge graphs, medication research, and machine learning support. The review found NLP methods varied but worked well overall. This matters for nursing informatics because it shows NLP's potential in rheumatoid arthritis care, while noting that future work needs clearer models and better handling of mixed text data.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:2",
+      "title": "Artificial Intelligence in Nursing Practice Education: A Systematic Review and Meta‐Analysis.",
+      "abstract": "Objective: To systematically evaluate the application effect of artificial intelligence (AI) technology in nursing practice courses and to provide evidence‐based guidance for the intelligent reform of nursing education. Methods: Computerized searches were performed in PubMed, Web of Science, Embase, the Cochrane Library, CNKI, WanFang, CBM, and VIP databases for randomized controlled trials and quasi‐experimental studies on the educational effectiveness of AI in nursing practice courses. The retrieval period was from the establishment of each database to February 2026. Data extraction, quality evaluation, and literature screening were carried out separately by two researchers. RevMan 5.4 was used to conduct the meta‐analysis. The PROSPERO registration number for this review protocol is CRD420261403298. The PRISMA 2020 guidelines are followed in this systematic review. Results: A total of 16 studies with a sample size of 1647 participants were included, including 7 randomized controlled trials and 9 quasi‐experimental studies. The results of this meta‐analysis indicate that incorporating AI into nursing practical training programs may enhance students′ learning outcomes in a variety of ways, with beneficial facilitative effects noted in knowledge level (SMD = 0.72, 95% CI [0.20–1.24], p = 0.007), practical ability (SMD = 1.25, 95% CI [0.50–2.00], p = 0.001), critical thinking and clinical reasoning abilities (SMD = 0.43, 95% CI [0.21–0.65], p < 0.001), learning satisfaction (SMD = 0.38, 95% CI [0.16–0.59], p = 0.0005), and ethical awareness and decision‐making capacity (SMD = 0.50, 95% CI [0.29–0.71], p < 0.001). However, high heterogeneity was observed for knowledge level (I2 = 91%) and practical ability (I2 = 95%), while the remaining outcomes showed low to mild heterogeneity (I2 < 50%). The overall methodological quality of the included studies was moderate to high. Conclusion: There are encouraging advantages to using AI in practical nursing courses. According to preliminary data, it may have positive benefits on a variety of learning parameters. These results are still preliminary and need to be confirmed by future high‐quality research due to significant variation, especially in knowledge level and practical abilities, as well as limitations in the quantity and design of included studies. Implications for Nursing Management: Nursing education management can gain multifaceted practical insights from the use of AI in practical training courses: (1) Institutions shall actively adopt mechanisms for the implementation, evaluation, and continuous improvement of AI‐assisted teaching; allocate resources in a coordinated manner; and advance the intelligent upgrading of practical courses to ease the shortage of clinical practice resources. (2) To improve nursing educators' competence in AI instructional design and ethical standards, a tiered and categorized training system will be implemented. To promote educational innovation, corresponding reward and assessment schemes should be developed. (3) Teaching management must incorporate a multifaceted evaluation system for AI teaching outcomes. Formative assessment using platform data can be used to continuously monitor and enhance the quality of instruction. (4) The goals of nursing talent training should include AI digital literacy. To avoid an over‐reliance on technology, instructors must cultivate students' critical thinking and autonomous judgment while enhancing their practical skills. (5) To standardize educational data management, a strong ethical and safety framework for AI application must be refined. This ensures a uniform and long‐lasting intelligent change of nursing education by striking a balance between humanistic care and technology empowerment.",
+      "authors": "Wang, Jingting\n                Kuang, Mingxi\n                Chen, Jiayuan\n                Yan, Youqing\n                Li, Zhen\n                Department of Organ Transplantation, , The First Affiliated Hospital of Kunming Medical University, , Kunming 650032, , China, kmmc.cn",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "9/10",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20Intelligence%20in%20Nursing%20Practice%20Education%3A%20A%20Systematic%20Review%20and%20Meta%E2%80%90Analysis.",
+      "source": "CINAHL",
+      "summary": "This systematic review and meta-analysis pooled 16 studies (1647 nursing students) to examine how AI tools affect learning in nursing practice courses. AI use showed improvements in knowledge, practical ability, critical thinking, learning satisfaction, and ethical decision-making, though knowledge and practical ability results varied widely across studies. For nursing education and informatics, this suggests AI may support skill-building, but findings remain preliminary and need confirmation from higher-quality research.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:6",
+      "title": "Application of Artificial Intelligence in Pharmacy Education: A Scoping Review.",
+      "abstract": "Artificial intelligence (AI) shows emerging potential in pharmacy education that it fundamentally enhancing the way students learn, practice, and apply clinical knowledge. With AI-driven adaptive learning systems, instruction becomes highly personalized, catering to individual learning styles and needs. This scoping review seeks to comprehensively synthesize the current literature on the application of artificial intelligence (AI) in pharmacy education, while also identifying gaps that demand further investigation. This scoping review was conducted in accordance with methodological guidance from the Joanna Briggs Institute. The literature search aimed to identify peer-reviewed publications in English in PubMed, Embase, and Scopus, which were searched from inception to August 7, 2025. Two reviewers independently completed title, abstract, and full-text screening against inclusion criteria. Data extracted were used to describe the body of literature using descriptive and qualitative approaches. A total of seven studies have been identified that explore the role of AI in pharmacy education. Five studies focus on how AI can change teaching and learning, while one study focuses on its capability to predict academic performance for admissions. The final study critically evaluates the benefits and limitations of employing AI text generation, particularly ChatGPT, highlighting its relevance and implications for the future of pharmacy education. At present, the number of publications exploring the application of AI in pharmacy education is quite limited. This presents significant challenges, including the necessity for faculty expertise and time, the restricted generalizability of available tools, insufficient outcomes data, and various legal and ethical considerations.",
+      "authors": "Watema-Lord, Ronald\n                Sanya, Chiranjeev\n                College of Pharmacy,    3688   Dalhousie University   ,  Halifax, Canada",
+      "journal": "Journal of Pharmacy Practice",
+      "pub_date": "Sep2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Application%20of%20Artificial%20Intelligence%20in%20Pharmacy%20Education%3A%20A%20Scoping%20Review.",
+      "source": "CINAHL",
+      "summary": "This scoping review looked at seven studies on how artificial intelligence is used in pharmacy education, including personalized learning, predicting admissions performance, and tools like ChatGPT. The review found very few published studies overall, along with challenges such as limited faculty expertise, unclear generalizability, weak outcomes data, and unresolved ethical and legal questions. For nursing informatics, this highlights similar gaps that may exist in evaluating AI tools across health professions education.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:8",
+      "title": "Chinesization of the Nurse Artificial Intelligence Ethical Awareness Scale and its reliability and validity test.",
+      "abstract": "Objective: To translate the Nurse Artificial Intelligence Ethical Awareness Scale into Chinese and to test its reliability and validity within the Chinese nursing context. Methods: The scale was translated following the modified Brislin translation model. The Chinese version of the Nurse Artificial Intelligence Ethical Awareness Scale was developed after cultural adaptation.In October 2025,a convenience sampling method was used to select 384 clinical nurses from a tertiary grade A hospital in Henan province as the study subjects for a questionnaire survey to test the reliability and validity of the scale. Results: The Chinese version of the Nurse Artificial Intelligence Ethical Awareness Scale consisted of 6 dimensions(data privacy and confidentiality,informed consent and autonomy,transparency and accountability,bias and fairness,safety and professional integrity,and education and sustainability) with a total of 21 items.The scale- level content validity index was 0.905,and the item -level content validity index ranged from 0.833 to 1.000.Exploratory factor analysis extracted 6 common factors with eigenvalues>1, and the cumulative variance contribution rate was 88.946%. Confirmatory factor analysis showed that all fit indices reached ideal standards.The overall Cronbach's α coefficient of the scale was 0.861,and the test-retest reliability was 0.950. Conclusions:The Chinese version of the Nurse Artificial Intelligence Ethical Awareness Scale demonstrates good reliability and validity.The scale could be used to assess the level of ethical awareness among Chinese clinical nurses in the application of artificial intelligence.",
+      "authors": "TANG, Yifan\n                FENG, Yingpu\n                WANG, Hao\n                WANG, Kexin\n                ZHANG, Chi\n                LIU, Meng\n                LI, Danyang\n                SONG, Wenshuo\n                LI, Bo\n                School of Nursing and Health, Henan University, Henan 475000 China",
+      "journal": "Chinese Nursing Research",
+      "pub_date": "Sep2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Chinesization%20of%20the%20Nurse%20Artificial%20Intelligence%20Ethical%20Awareness%20Scale%20and%20its%20reliability%20and%20validity%20test.",
+      "source": "CINAHL",
+      "summary": "Researchers translated the Nurse Artificial Intelligence Ethical Awareness Scale into Chinese and tested it with 384 clinical nurses at a tertiary hospital in Henan province. The 21-item, 6-dimension scale showed strong content validity, factor structure, and reliability, with high internal consistency and test-retest scores. This gives nursing informatics researchers a validated Chinese-language tool to measure nurses' ethical awareness around AI use in clinical care.",
+      "flags": [],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:12",
+      "title": "Application of artificial intelligence telephone follow?up in patient management for intravitreal injection.",
+      "abstract": "Objective: To explore the application effect of artificial intelligence(AI) telephone follow-up in patient management for intravitreal injection. Methods:A total of 1 000 patients who underwent intravitreal injection at the intravitreal injection center of Tianjin Medical University Eye Hospital from January to June 2025 were selected as the study subjects. The patients were divided into an AI telephone follow - up group and a manual telephone follow - up group using a random number table method, with 500 cases each. In the manual telephone follow-up group,follow-up calls were conducted by nurses.In the AI telephone follow-up group,an AI telephone follow-up system developed by the research team was used for follow - up. The two groups were compared in terms of call success rate, effective connection rate,information collection rate,complete information collection rate,and patient follow -up satisfaction,and the average call duration was also calculated. Results:The average call duration was 146 seconds in the AI telephone follow-up group and 79 seconds in the manual telephone follow-up group.The call success rate in the AI telephone follow-up group was 79.20%,which was higher than that in the manual telephone follow-up group (71.40%).However,the effective connection rate(79.80%),information collection rate(76.58%), complete information collection rate(59.50%), and patient follow - up satisfaction(92.4%) in the AI telephone follow - up group were all lower than those in the manual telephone follow - up group (effective connection rate was 99.72%, information collection rate was 92.98%,complete information collection rate was 92.15%,patient follow-up satisfaction was 100.0%). Conclusions:The application of AI telephone follow - up in patients undergoing intravitreal injection could improve call success rate, but it has limitations in terms of interaction quality,information completeness,and call duration control.In the future,AI telephone follow-up could be used as an auxiliary tool for manual follow-up to comprehensively improve the efficiency and digital level of nursing follow-up.",
+      "authors": "QIN, Chunxiu\n                ZHANG, Zhanhe\n                QI, Qi\n                ZHANG, Mingxuan\n                ZHAO, Yingxiang\n                GUO, Kanghui\n                ZHANG, Qinru\n                LIU, Hua\n                REN, Xinjun\n                Tianjin Medical University Eye Hospital, Eye Institute and School of Optometry/Tianjin Branch of National Clinical Research Center for Ocular Disease/Tianjin Key Laboratory of Retinal Functions and Diseases, Tianjin 300384 China",
+      "journal": "Chinese Nursing Research",
+      "pub_date": "Sep2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Application%20of%20artificial%20intelligence%20telephone%20follow%3Fup%20in%20patient%20management%20for%20intravitreal%20injection.",
+      "source": "CINAHL",
+      "summary": "This study compared AI-based and manual telephone follow-up for 1,000 patients after intravitreal injection at an eye hospital. AI calls had a higher success rate (79.20% vs 71.40%) but lower effective connection, information collection, complete information collection, and patient satisfaction than manual calls, plus longer call duration. The findings suggest AI follow-up could support, but not replace, manual nursing follow-up.",
+      "flags": [],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    }
+  ]
+}

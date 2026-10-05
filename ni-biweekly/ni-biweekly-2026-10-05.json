@@ -1,0 +1,673 @@
+{
+  "issue": 7,
+  "generated_at": "2026-10-05T13:48:52.179809Z",
+  "date_range": {
+    "start": "Sep 21, 2026",
+    "end": "Oct 05, 2026"
+  },
+  "paper_count": 37,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "synthesis": {
+    "overview": [
+      "This issue's 37 papers cluster around nurses' readiness for AI and clinical decision support testing. Several studies measure nursing students' and clinicians' AI literacy, anxiety, and attitudes, often finding mixed knowledge but generally positive views. A parallel set of papers tests prediction tools for triage, delirium, pressure injuries, and stroke mortality using nursing and bedside data, usually comparing machine learning against simpler scores. A third thread raises governance and ethics questions, covering intersectionality in AI design, ethics scales, professional organization roles, and frameworks for system-level oversight.",
+      "Papers grew from 12 to 37 (+25), with Workforce & Education remaining the leading topic, as it was last issue. AI Ethics & Governance rose in share, now including papers on governance frameworks, human rights advocacy, and concept analysis of AI justification, while Patient-Facing AI fell to a single paper this issue after being a rising thread last time. Clinical Decision Support expanded substantially, from 2 papers to 10, covering triage, delirium, pressure injury, and medication error tools. The prior issue's patient-facing chatbot and telephone follow-up comparisons are not continued this issue."
+    ],
+    "themes": [
+      {
+        "name": "Nurses' attitudes, anxiety, and readiness for AI",
+        "paper_ids": [
+          "42785821",
+          "42176534",
+          "42161040",
+          "42161039",
+          "41841218",
+          "cinahl:23",
+          "42596885",
+          "42785826"
+        ]
+      },
+      {
+        "name": "Testing clinical prediction and decision support tools",
+        "paper_ids": [
+          "42807935",
+          "42648602",
+          "42046536",
+          "41556156",
+          "cinahl:18",
+          "cinahl:0",
+          "cinahl:11",
+          "41991332",
+          "cinahl:3"
+        ]
+      },
+      {
+        "name": "Governance, ethics, and accountability frameworks",
+        "paper_ids": [
+          "42814478",
+          "42806788",
+          "42659609",
+          "41712187",
+          "42364428",
+          "cinahl:15",
+          "cinahl:16",
+          "42712017"
+        ]
+      },
+      {
+        "name": "Language models for text analysis and evaluation",
+        "paper_ids": [
+          "42803770",
+          "42235299",
+          "cinahl:4",
+          "cinahl:6",
+          "42150508",
+          "42791231"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 6,
+      "papers": 37,
+      "papers_delta": 25,
+      "leading_topic": "Workforce & Education",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "AI Ethics & Governance",
+      "rising_pp": 11,
+      "falling_topic": "Patient-Facing AI",
+      "falling_pp": -14,
+      "flagged": 16,
+      "flagged_delta": 11
+    },
+    "generated_at": "2026-10-05T13:48:52.179703Z",
+    "model": "claude-sonnet-5"
+  },
+  "papers": [
+    {
+      "pmid": "42814478",
+      "title": "Intersectionality in AI and Machine Learning for Health Care: Protocol for a Scoping Review.",
+      "abstract": "AI and machine learning (ML) are increasingly being used in health care settings but may reproduce or exacerbate systemic biases. The integration of intersectionality and equity-related concepts offers an analytical framework to guide more reflexive, equity-oriented AI and ML design and implementation, particularly when paired with a coproduction philosophy that meaningfully includes community-based collaborators and knowledge users. However, there is limited synthesis on how intersectionality is conceptualized and operationalized in this context, and the extent to which interdisciplinary collaborators and patient partners are involved in such undertakings is unknown. This study aims to synthesize how intersectionality is conceptualized and operationalized, including frameworks, pedagogical tools, and methods, in AI and ML for health care, as well as the extent to which such projects use participatory or coproduction frameworks. The proposed scoping review will be conducted in accordance with the scoping review framework developed by the Joanna Briggs Institute. With the assistance of a research librarian, the following databases will be searched for published articles with primary data: MEDLINE, Embase, Emcare Nursing, APA PsycInfo, Cochrane Database of Systematic Reviews, and Cochrane Central Register of Controlled Trials. Eligible studies will include any primary article that applies intersectionality in guiding the design and implementation of AI and ML in health care. This review will only include studies written in English. Two independent reviewers will screen the title and abstracts of articles, followed by its full-text review, for eligibility against a priori inclusion criteria. Conflicts regarding inclusion or exclusion will be resolved through consensus. Data will be extracted from the included studies and summarized narratively, supplemented by tables and charts. Patient or family partners will be engaged throughout the review process to refine the scope of the review, interpret findings, and support knowledge translation efforts, ensuring outputs are equity oriented and responsive to community priorities. Preliminary searches yielded a total of 4191 records across 6 databases. The scoping review will be completed by October 2026. This scoping review will map how intersectionality is used in AI and ML research in health care, with a particular focus on how the term is conceptualized, operationalized, and used in the context of community participatory practice. Findings from the review will identify key gaps in the literature and provide community-relevant recommendations on how to meaningfully integrate intersectionality into the development of AI and ML for health care. DERR1-10.2196/103601.",
+      "authors": "Dinh DA, St Louis J, Ziegler E, Gongal P, Bain KL, Orchanian-Cheff A et al.",
+      "journal": "JMIR research protocols",
+      "pub_date": "Sep 2026",
+      "doi": "10.2196/103601",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42814478/",
+      "summary": "This protocol describes a planned scoping review of how intersectionality is used to guide AI and machine learning design in health care, including whether patient partners and interdisciplinary teams are involved. The review has not yet been completed; preliminary searches found 4191 records, with results expected by October 2026. This matters for nursing informatics because it will map gaps and offer community-informed guidance on building more equity-oriented AI tools.",
+      "flags": [
+        "in_progress",
+        "not_peer_reviewed"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42807935",
+      "title": "Development and Temporal Validation of a Logistic Regression-Based Risk Score for Identifying Life-Threatening Chest Pain at Emergency Department Triage: A Retrospective Cohort Study.",
+      "abstract": "Chest pain is a frequent emergency department (ED) presentation with highly time-dependent outcomes. Widely used risk tools such as HEART and GRACE incorporate laboratory results that are unavailable at first nurse contact, limiting their value for immediate triage. In mainland China, acuity assignment follows the Chinese Emergency Triage Scale (CETS), yet nurse triage accuracy remains variable, particularly among less experienced staff. To develop and temporally validate a simplified, non-laboratory clinical risk score that identifies life-threatening conditions (LTCs)-defined as final physician-assigned CETS Level I or II-among adults presenting to the ED with chest pain, and to map score thresholds onto the four-level CETS framework for nurse-facing decision support. This was a single-centre retrospective observational cohort study, reported in accordance with TRIPOD+AI, at an ED of a large tertiary academic hospital in Hefei, Anhui Province, China. The cohort was split by calendar time into an internal development cohort (n = 2,005; July 2020-February 2021) and a temporal validation cohort (n = 501; February-March 2021). The internal cohort was randomly divided into a training set (n = 1,391) and a test set (n = 614). Candidate predictors were restricted to information routinely available at nurse triage. Least absolute shrinkage and selection operator (LASSO) regression identified parsimonious predictors, which were entered into a multivariable logistic regression (LR) model. Six machine-learning (ML) algorithms were trained as benchmarks. Discrimination (AUC, AUPRC), calibration (calibration curves, Brier score), clinical utility (decision-curve analysis, standardised net benefit), and DeLong tests for AUC differences were evaluated. An integer risk score was derived from LR coefficients. Feature contributions were examined with SHAP values based on the LR model. LTC prevalence was 44.8% (899/2,005) in the internal cohort and ED mortality was 1.7% (34/2,005). LASSO retained 13 predictors: age, sex, mode of arrival, symptom onset time, cardiogenic chest pain (CCP), chest tightness, hypertension, diabetes, coronary artery disease (CAD), chronic kidney disease (CKD), cerebrovascular disease (CVD), shock index (SI), and Modified Early Warning Score (MEWS). The LR model showed stable discrimination-AUC 0.864 (95% CI 0.844-0.883) in training, 0.876 (0.849-0.904) in the test set, and 0.860 (0.825-0.896) in temporal validation-without statistically significant AUC superiority of more complex ML models on the test or validation sets (DeLong P > 0.05). In the test set, LR achieved the highest AUPRC (0.858), F1 score (0.792), and standardised net benefit (0.690), with the lowest Brier score (0.142). The integer score ranged from -3 to 49. At the Youden-optimal cut-off of 18.8, four CETS-aligned tiers were defined: Level IV (score < 6.4), Level III (6.4-18.8), Level II (18.8-32.1), and Level I (score > 32.1). SHAP analysis of the LR model ranked transportation, CCP, MEWS, SI, sex, and age among the strongest contributors. An internally and temporally validated, laboratory-free LR-based integer score showed discrimination and calibration comparable to more complex ML models, with clearer interpretability for ED nursing practice. The score is intended to support-not replace-clinical judgement. Multicentre external validation and prospective implementation studies are required before routine clinical adoption.",
+      "authors": "Xu D, Gao P, Xu Q, Nie H",
+      "journal": "Vascular health and risk management",
+      "pub_date": "2026",
+      "doi": "10.2147/VHRM.S623118",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42807935/",
+      "summary": "Researchers in Hefei, China, built a simplified risk score to spot life-threatening chest pain at ED nurse triage, using only information available without lab results. Tested on 2,506 adults, the logistic regression score performed as well as more complex machine-learning models and mapped onto China's four-level triage scale. This gives nurses an interpretable tool to support—not replace—triage decisions, though wider testing is needed before routine use.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42806788",
+      "title": "Measuring Ethical Perceptions of AI in Nursing: The Development and Validation of the AI-Ren Ethics in Healthcare (RATI) Scale.",
+      "abstract": "To develop and validate a culturally sensitive instrument for assessing nurses' ethical perceptions of artificial intelligence in clinical practice. A two-phase scale development study was conducted among nurses in China. The first phase involved item generation through literature review and expert consultation, followed by item analysis, exploratory factor analysis and reliability testing. The second phase used confirmatory factor analysis and structural modelling to evaluate construct validity and examine relationships between ethical perceptions, technology acceptance and professional burnout. The final scale consisted of 20 items across four dimensions: Ren-Based Ethical Awareness, AI Responsibility Judgement, Technological Humility and Collaboration and Integration of Cultural Values. The instrument demonstrated satisfactory reliability, construct validity, convergent validity and discriminant validity. Ethical perceptions of artificial intelligence were positively associated with technology acceptance and negatively associated with professional burnout, supporting the practical relevance of the scale in healthcare settings. The AI-Ren Ethics in Healthcare Scale provides a reliable and culturally grounded instrument for assessing nurses' ethical perceptions of artificial intelligence in clinical practice. The scale may support ethical evaluation, education and culturally responsive implementation of artificial intelligence in healthcare environments.",
+      "authors": "Zou Y, Su H, Long Q, Xie M",
+      "journal": "International journal of nursing practice",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/ijn.70183",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42806788/",
+      "summary": "Researchers developed and tested a new scale to measure Chinese nurses' ethical views on AI use in clinical practice, using a two-phase process with factor analysis and structural modelling. The final 20-item tool covers four dimensions, including cultural values and technological humility, and showed good reliability and validity. Higher ethical perception scores linked to more technology acceptance and less burnout, suggesting the scale could support AI ethics education and culturally aware implementation in nursing settings.",
+      "flags": [],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42803770",
+      "title": "Cloud-Based and Locally Deployed Language Models in Nursing and Health Care: An AI Act-Aligned Framework.",
+      "abstract": "The integration of large language models (LLMs) into high-risk systems such as health care is accelerating. Rigorous evaluations aligned with emerging legislation are imperative prior to their incorporation into university educational platforms and clinical practice settings. The study aimed at implementing the first Regulation (European Union [EU]) 2024/1689-aligned methodological framework for a systematic, comprehensive, and dynamically adaptable language model evaluation, supporting decision-making in specialized health care management. We analyzed 15 LLMs and 2 small language models. A 7-domain, EU AI Act-aligned methodological framework was used. Feasibility was tested with a dataset of 32 multiparametric-engineered clinical prompts to elicit evaluation in 27 items, with Delphi expert responses as ground truth (available in the repository [32 Clinical Engineered Prompts and Delphi Panel's Responses]). Double-blind interdisciplinary evaluation on a 7-point Likert scale achieved high interrater reliability per model (Krippendorff α=.759 on average). A comprehensive analysis identified specific strengths and vulnerabilities. Safety was analyzed as alignment with both evidence-based nursing and novel structured assessments, including ethical resilience testing via progressive \"jailbreaking.\" Further novel structured assessments included reference classification, automated consistency, and NANDA-I (North American Nursing Diagnosis Association-International) terminology. A stringent \"Safety-Gatekeeper\" domain immediately classified 11 of 17 language models as unsuitable due to critical failures in evidence-based alignment or ethical resilience. GPT-o1, GPT-4o, Gemini 2.0 Pro Experimental, and 3 Anthropic models surpassed minimum thresholds, permitting evaluation progression. Only Anthropic Sonnet variants achieved uniform \"recommended\" categorization. For instance, Claude 3.7 Sonnet (extended thinking) produced 75.9% of accurate, focused references, and achieved high average scores both in clinical safety and data security (mean 6.73, SD 0.23 and mean 6.83, SD 0.41, respectively). DeepSeek-R1, Perplexity Sonar, Mistral Large 2, and Qwen2.5-14B-Instruct failed to resist even explicit harmful prompts; Claude 3 Opus resisted both explicit harmful prompts and all jailbreak attempts, while demonstrating null sycophancy. Notably, Qwen2.5-14B-Instruct, operating locally, outperformed 4 of the 15 LLMs in multistep problems in nurse staffing optimization. NANDA-I diagnostic translation capability improved significantly with taxonomy-embedded contexts, with Gemini demonstrating adequate performance (F1-score=0.59, Mean Absolute Priority Distance=4.0). Regulatory-aligned LLM integration in pilot university hospitals can enhance health care education and decision-making across standardized taxonomy, evidence-based personalized clinical care algorithms, computational tasks, and nondiscrimination policies, under structured interdisciplinary expert oversight. The methodology demonstrates adaptability across various clinical settings. Future advancements should prioritize multimodal capabilities and locally functioning models, addressing resource disparities in line with Sustainable Development Goal 10, alongside operational resilience, and enhanced data protection.",
+      "authors": "Sblendorio E, Dentamaro V, De Maria M, Tempesta S, Barile E, Napolitano D et al.",
+      "journal": "JMIR medical informatics",
+      "pub_date": "Sep 2026",
+      "doi": "10.2196/90854",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42803770/",
+      "summary": "Researchers tested 17 language models (15 large, 2 small) using a new evaluation framework aligned with EU AI Act rules, applying clinical nursing prompts judged against expert panel answers. A strict safety check ruled out 11 models for failing ethical or evidence-based standards; only Anthropic's Sonnet models consistently met recommended safety and accuracy levels, while a locally run model showed promise for staffing tasks. This suggests structured, expert-reviewed evaluation frameworks may help guide safer LLM use in nursing education and clinical decision support.",
+      "flags": [
+        "setting_unclear"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42791231",
+      "title": "Understanding Mothers' Experiences of Very Low Birth Weight Infants Across the Childbirth Trajectory in Japan: A Retrospective Analysis Using Natural Language Processing.",
+      "abstract": "Mothers of very low birth weight infants face various challenges during pregnancy and throughout the first postpartum year. This study aimed to describe the experiences of mothers of very low birth weight infants from gestation through their infants' first year of life. We conducted a retrospective study using documents from a parent-child support class for very low birth weight infants (< 1500 g) held between 2003 and 2018 in Japan. The textual data consisted of notebook records documenting the mothers' experiences during pregnancy, their initial meeting with their infants, the neonatal intensive care unit stay, and the first postpartum year. The data were analyzed using a Japanese morphological analyzer and structural topic modeling. A total of 280 mothers (mean age, 34 years; 68.2% primiparous) met the inclusion criteria. Topic modeling identified five to seven topics across each period of the mother's experiences. The topics at first encounter with their babies and neonatal intensive care unit stay were characterized by terms that may reflect apologetic or self-blaming expressions. Conversely, between 6 and 12 months postpartum, the focus was on more routine concerns, such as everyday caregiving. The findings provide a descriptive overview of mothers' narratives and may serve as a foundation for further qualitative and clinical research examining how mothers of very low birth weight infants experience pregnancy, neonatal intensive care unit hospitalization, and child-rearing.",
+      "authors": "Kojima M, Yamamoto T, Ishii A, Nishimura T, Fujino H",
+      "journal": "Japan journal of nursing science : JJNS",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jjns.70079",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42791231/",
+      "summary": "Researchers in Japan analyzed notebook records from 280 mothers of very low birth weight infants, written during a support class between 2003 and 2018, using natural language processing to study experiences from pregnancy through the infant's first year. Topic modeling found apologetic or self-blaming language around the first meeting with their baby and the NICU stay, shifting to routine caregiving concerns by 6-12 months postpartum. This descriptive overview may support future qualitative and clinical research on maternal experiences during this period.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42785826",
+      "title": "Ethical considerations of undergraduate nursing students using artificial intelligence for learning: A qualitative study.",
+      "abstract": "Artificial intelligence technology is rapidly penetrating the field of nursing education, and students are widely using AI tools in their learning process. As a result, the ethical issues thus raised are drawing increasing attention. This study aims to explore nursing undergraduates' ethical experiences in AI-assisted learning, such as academic integrity, privacy protection, and learning fairness. This descriptive qualitative study was conducted at a university in Eastern China. Purposive sampling was used to recruit 21 undergraduate nursing students across all four academic years. Data were collected through semi-structured interviews from December 2025 to February 2026. Thematic analysis was performed following Braun & Clarke's six-step framework. 4 themes and 13 sub-themes were identified. Students' trust in AI varied along a spectrum from complete reliance to deep skepticism. While some students proactively protected privacy and verified AI-generated information through systematic cross-checking, others showed indifference or a lack of verification due to limited motivation or access. Perceptions of fairness were diverse, ranging from viewing AI as an equal-opportunity tool to concerns about resource disparities between free and paid platforms. Despite AI's efficiency, a recurring theme among participants was the irreplaceable value of face-to-face interpersonal communication with teachers and peers. This single-center qualitative study offers contextual insights into nursing students' ethical experiences with AI-assisted learning. These insights may inform the development of AI ethics curricula and institutional guidance, while further research is needed to explore transferability across diverse settings and to evaluate the effectiveness of educational interventions.",
+      "authors": "Shi M, Hu X, Zhu X",
+      "journal": "Applied nursing research : ANR",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.apnr.2026.152140",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42785826/",
+      "summary": "Researchers interviewed 21 nursing undergraduates at one Eastern China university about ethical experiences using AI for learning, covering academic integrity, privacy, and fairness. Students' trust in AI, verification habits, and views on fairness varied widely, and many valued face-to-face interaction with teachers and peers despite AI's efficiency. These findings may help inform AI ethics curricula, though broader applicability and intervention effectiveness still need study.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42785821",
+      "title": "Nurses' knowledge, attitudes, literacy, anxiety, and readiness towards artificial intelligence in clinical practice: An international scoping review.",
+      "abstract": "Artificial intelligence (AI) is rapidly transforming healthcare delivery, yet its successful integration into clinical practice depends substantially on nurses, who form the largest group of frontline technology users. This scoping review mapped and synthesized empirical evidence on nurses' knowledge, attitudes, literacy, anxiety, readiness, and perceived barriers regarding AI integration in nursing practice. The review followed the Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews (PRISMA-ScR). PubMed, CINAHL, Scopus, and Web of Science were searched for empirical studies published between 2022 and 2026. Of 412 records identified, 33 studies (29 quantitative, one mixed methods, and three qualitative) involving more than 9000 nurses across 10 countries met the inclusion criteria. Nurses' knowledge of AI was predominantly low to moderate, whereas attitudes were generally positive, with most nurses recognising AI's potential to reduce workload, support clinical decision-making, and improve the quality of patient care. AI literacy was moderate overall and consistently associated with lower AI-related anxiety. Anxiety and worry centred on job displacement, dehumanisation of care, accountability, and data security. Readiness and behavioural intention were shaped by attitudes, digital literacy, ethical awareness, trust, prior AI training, age, and gender. Barriers included inadequate training, limited infrastructure, and absent governance frameworks. Nurses display guarded optimism towards AI, but substantial knowledge and preparedness gaps persist across regions. Because the evidence rests largely on observational studies of varying methodological quality, positive attitudes should not be read as implementation readiness; structured AI education, clear ethical governance, and sustained organisational support are needed to translate favourable attitudes into safe clinical adoption.",
+      "authors": "Clement David-Olawade A, Osonuga AA, Olawade DB",
+      "journal": "Applied nursing research : ANR",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.apnr.2026.152135",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42785821/",
+      "summary": "This scoping review examined 33 studies (over 9000 nurses across 10 countries) on nurses' knowledge, attitudes, literacy, anxiety, and readiness regarding AI in clinical practice. Nurses showed low to moderate AI knowledge but generally positive attitudes, with anxiety linked to job loss, dehumanized care, and data security concerns. Since evidence comes from observational studies of varying quality, the review suggests structured education and governance are needed before favorable attitudes translate into safe adoption.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42783468",
+      "title": "From Sentiment to Signal: Narrative-Physiology Discordance as a Testable Target for Artificial Intelligence in Critical Care.",
+      "abstract": "Intensive care units generate dense physiological, laboratory, imaging, microbiological and treatment data, yet much of the clinical reasoning that drives decisions is recorded only in free text. Over the past decade, clinical sentiment analysis has repeatedly shown that the affective tone of nursing and medical notes is associated with mortality. The incremental discrimination over established severity scores has nevertheless been small, of the order of 0.01 in the area under the receiver operating characteristic curve in the largest published intensive care cohort, and general-purpose sentiment tools transfer poorly to critical care text. We argue that this plateau reflects a misspecified prediction target rather than a limitation of natural language processing. Mortality at 28 days is not the question the clinician asks at the bedside. We propose that the clinically useful quantity is the narrative-physiology discordance score: the signed difference, expressed on a common calibrated scale, between the short-horizon deterioration risk implied by the documented assessment and the risk implied by time-aligned multimodal data. We specify this quantity formally, fix index time and forecast horizon, and set out the leakage, copy-forward and provenance controls without which retrospective performance is uninterpretable. We then treat alert burden as a design constraint rather than a post hoc observation, deriving the operating threshold from an explicit and context-dependent alert budget, and we outline a staged evaluation pathway aligned with TRIPOD + AI and DECIDE-AI in which discordant cases are adjudicated by clinicians. Until that adjudication has been performed, discordance is a record-level inconsistency that prompts reassessment, not evidence of missed deterioration. Clinical sentiment analysis becomes useful when it stops predicting death and starts flagging disagreement.",
+      "authors": "Martin-Loeches I, Cai H",
+      "journal": "Medical sciences (Basel, Switzerland)",
+      "pub_date": "Sep 2026",
+      "doi": "10.3390/medsci14050595",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42783468/",
+      "summary": "This paper addresses a problem in critical care informatics: sentiment analysis of ICU clinical notes predicts mortality only marginally better than existing severity scores. The authors propose a new target instead—a 'narrative-physiology discordance score' that measures gaps between clinician-documented risk and data-driven risk, with formal controls and a staged evaluation plan involving clinician adjudication. This reframing could help nursing informatics researchers design tools that flag disagreement needing review, rather than just predicting death.",
+      "flags": [
+        "in_progress"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42712017",
+      "title": "Whose Knowledge Counts in Labour? Obstetric Nurses Negotiating Clinical Judgement, Algorithmic Authority and Woman-Centred Care in Artificial Intelligence-Enhanced Foetal Monitoring.",
+      "abstract": "Artificial intelligence-enhanced foetal monitoring is entering intrapartum care, yet little is known about how it reshapes the credibility of nursing knowledge, professional authority and relational practice. This interpretive description study explored how obstetric nurses negotiated clinical judgement, autonomy and woman-centred care while working with an artificial intelligence-enhanced cardiotocography system in a physician-led tertiary maternity service in Saudi Arabia. Semi-structured interviews with 18 obstetric nurses, each with 6 months to 4 years' experience of the system, were analysed using reflexive thematic analysis sensitised by Cognitive Continuum Theory and the concept of epistemic injustice. Analysis showed that nurses read beyond the trace, negotiated autonomy under algorithmic surveillance and worked deliberately to keep the woman in view. Alerts often legitimised concerns nurses had already formed, functioning as institutional permission to escalate rather than clinical revelation. When judgement diverged from system output, nurses experienced asymmetric accountability and performed epistemic translation work, recasting embodied and relational knowledge into algorithm-compatible language to secure recognition. Artificial intelligence-enhanced monitoring was therefore experienced as an epistemic and relational intervention, not merely decision support, that could reinforce established hierarchies of credibility. Whose knowledge counts during labour is thus a question of justice as much as safety. Trial Registration: Not applicable. This study was a qualitative interview study and did not involve a clinical trial.",
+      "authors": "Ramadan OME, Alshammari AM, Alshammari AO, Elsayed GEA, Alasqah I, Shaban HTEM",
+      "journal": "Nursing inquiry",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/nin.70166",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42712017/",
+      "summary": "This interpretive description study interviewed 18 obstetric nurses in a physician-led Saudi maternity service about using AI-enhanced cardiotocography monitoring. Nurses often already suspected problems before alerts appeared, and when their judgement differed from the system, they faced unequal accountability and had to translate their relational knowledge into algorithm-friendly terms to be heard. This suggests AI monitoring can reshape whose clinical knowledge is trusted during labour, raising questions for nursing informatics about credibility and authority, not just safety.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42659609",
+      "title": "System-Level AI Governance in Nursing: A Practical Framework for Safe and Scalable Adoption.",
+      "abstract": "Health care organizations are rapidly adopting artificial intelligence (AI)-enabled tools, yet nurse leaders often lack a clear framework to evaluate, govern, and safely scale these technologies. This article presents a practical, system-level AI governance model grounded in risk mitigation, interdisciplinary partnership, and nursing leadership decision rights commonly enacted through nursing professional governance structures. We outline core components of an effective governance structure, including clinical usefulness, safety and reliability, fairness and inclusiveness, transparency and explainability, privacy and security, and organizational accountability. Real-world examples illustrate how nurse executives can guide responsible AI adoption to reduce cognitive load, improve documentation efficiency, and enhance patient outcomes. The framework equips nursing leaders with actionable strategies and practical workflow checklist to lead AI transformation in complex health care environments.",
+      "authors": "Wang J, Yang Y, Marshall D, Shucoski P, Gross T, Frederick R et al.",
+      "journal": "Nursing administration quarterly",
+      "pub_date": "2026",
+      "doi": "10.1097/NAQ.0000000000000772",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42659609/",
+      "summary": "This article addresses the challenge nurse leaders face in evaluating and governing AI tools in health care organizations. It presents a practical governance framework covering clinical usefulness, safety, fairness, transparency, privacy, and accountability, illustrated with real-world examples. This gives nursing leaders actionable strategies and a workflow checklist to guide safe, responsible AI adoption and support nursing informatics practice.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42659608",
+      "title": "Implementing America's AI Action Plan in Health Care: Impact on Student and Practice-Based EHR Education.",
+      "abstract": "National artificial intelligence (AI) policy in the United States is accelerating rapidly through initiatives such as America's AI Action Plan, creating urgency for health care organizations to respond. Although these policies are not health care-specific, their implementation has immediate implications for clinical practice because AI is increasingly operationalized through electronic health record (EHR)-embedded workflows. This article argues that a critical policy and practice gap exists: National AI strategies emphasize speed and innovation while insufficiently addressing health care's core operational reality-the EHR as AI infrastructure-and the preparedness of the clinical workforce to safely use AI tools. Using a conceptual framework that links national AI policy momentum, EHR infrastructure, and workforce education, this article demonstrates that most health care organizations already deploy production-level AI through EHRs, including ambient documentation, clinical decision support, predictive analytics, chart summarization, documentation integrity tools, and patient-facing AI portals. As these tools become routine, clinicians increasingly function as the \"human in the loop,\" bearing responsibility for AI-informed decisions without consistent training or governance support. The article highlights evidence from nursing education and workforce studies demonstrating gaps in EHR and AI readiness, particularly among students and newly graduated clinicians. It concludes that workforce education constitutes essential \"human infrastructure\" for health care AI. Health care executives-especially those accountable for quality and safety-must actively engage in shaping AI implementation by aligning policy advocacy, EHR governance, and EHR-based education to ensure that accelerated AI adoption improves care rather than amplifies risk.",
+      "authors": "Tietze M, Tellson A, Varghese A, Knecht K, Dickerman E",
+      "journal": "Nursing administration quarterly",
+      "pub_date": "2026",
+      "doi": "10.1097/NAQ.0000000000000776",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42659608/",
+      "summary": "This conceptual article examines the gap between fast-moving U.S. AI policy and health care organizations' readiness, focusing on EHR-embedded AI tools and clinician education. It finds that many organizations already use AI features like ambient documentation and clinical decision support, but clinicians often lack consistent training to safely oversee these tools. The authors argue workforce education and EHR governance are essential to ensure AI adoption improves care rather than increasing risk.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42648602",
+      "title": "An interpretable machine learning framework with clinical nomogram for predicting in-hospital mortality in acute ischemic stroke using high-granularity bedside data.",
+      "abstract": "This multicenter study developed and validated an interpretable machine learning model integrating granular nursing and emergency department data collected within the first 24 hours to predict in-hospital mortality in acute ischemic stroke (AIS). We analyzed a retrospective cohort of 5,014 adult AIS patients from three tertiary academic centers (2019-2023). Centers A and B (n = 3,512) formed the development cohort; Center C (n = 1,502) served as the external validation cohort. Sixty-three predictors across seven domains were extracted from the initial 24 hours. A consensus feature selection approach combining LASSO, RFE-RF, filter methods, and XGBoost importance was employed, and six machine learning algorithms were evaluated using nested cross-validation, Bayesian optimization, SMOTE, and rigorous anti-leakage protocols. SHAP values and a logistic nomogram enhanced interpretability. The best-performing CatBoost model with 22 RFE-RF features achieved AUC-ROC of 0.917 (95% CI 0.899-0.933) internally and 0.891 (95% CI 0.868-0.912) externally, significantly outperforming APACHE III, SOFA, OASIS, and GCS (ΔAUC 0.142-0.193, all p < 0.001). Calibration was excellent (slopes 0.934-0.977, Brier 0.098-0.114). A pre-specified 0-12 h sensitivity analysis confirmed predictive validity is not dependent on late-stage trajectories (external AUC 0.873). A 10-feature nomogram achieved external AUC 0.871 (ΔAUC -0.020 vs CatBoost) with superior DCA net benefit over all comparators. Integration of bedside nursing assessments with emergency and laboratory data into an ensemble gradient-boosting model markedly improves early in-hospital mortality prediction in AIS compared with established ICU scores.",
+      "authors": "Li G, Gong C",
+      "journal": "Journal of stroke and cerebrovascular diseases : the official journal of National Stroke Association",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.jstrokecerebrovasdis.2026.108727",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42648602/",
+      "summary": "Researchers used nursing, emergency, and lab data from the first 24 hours to build a machine learning model predicting in-hospital death in 5,014 acute ischemic stroke patients across three hospitals. The CatBoost model and a simpler 10-feature nomogram both outperformed standard ICU scoring systems in internal and external testing, with strong accuracy and calibration. This suggests bedside nursing data, combined with early clinical information, can improve early mortality prediction tools for stroke patients.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42608279",
+      "title": "The Invisible Workforce: An Algorithmic Audit of Nursing, Primary Care, and Holistic Gaps in AI-Generated Survivorship Plans.",
+      "abstract": "Advanced ovarian cancer survivorship requires multidisciplinary coordination. As patients use large language models (LLMs) as clinical navigators, essential professional roles may be inconsistently represented. This study evaluates the comprehensiveness, professional attribution, and readability of LLM-generated survivorship plans. An algorithmic audit (N = 50) queried ChatGPT-5.1 using a standardized persona: a 58-year-old advanced ovarian cancer survivor. A dual-layer content analysis assessed nine guideline-derived domains, distinguishing explicit professional attribution from implicit functional guidance. A Nursing Function Layer quantified implicit nursing content. Readability was measured via the Flesch-Kincaid Grade Level. Medical Oncology achieved 100% explicit attribution. Conversely, Primary Care was explicitly referenced in 2% (implicit: 14%), Genetic Counseling in 0%, and Nursing in 14% (implicit: 80%), revealing a 66-point attribution gap. Despite low explicit professional attribution, nursing-relevant functional content appeared in 96% of responses (mean = 4.16 functions/response). Responses averaged an 11.57 Flesch-Kincaid Grade Level, substantially exceeding the sixth- to eighth-grade literacy benchmark. LLMs demonstrate high biomedical content coverage but systematically underrepresent holistic care professionals. The functional presence of nursing content without professional visibility highlights algorithmic bias. Unsupervised LLM use risks fragmented survivorship guidance, necessitating \"nurse-in-the-loop\" validation workflows to correct attribution gaps and calibrate literacy levels. AI-generated survivorship plans reflect a purely biomedical focus, systematically omitting primary care integration (2%) and explicit nursing roles (14%). This structural fragmentation necessitates \"nurse-in-the-loop\" workflows, positioning oncology nurses to actively review AI outputs, activate neglected primary care referrals for comorbidity management, and calibrate reading difficulty to safe patient literacy levels.",
+      "authors": "İnan M, Akar İnan S, Bumin G, Aypak C",
+      "journal": "Seminars in oncology nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.soncn.2026.152304",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42608279/",
+      "summary": "Researchers audited 50 ChatGPT-5.1 responses using a simulated advanced ovarian cancer survivor to see how survivorship plans credited different healthcare professionals. Medical oncology received full credit (100%), but nursing, primary care, and genetic counseling were rarely named, even though nursing-related tasks appeared in 96% of responses. The findings suggest nurses should review AI-generated plans to fix missing referrals and simplify reading level, since responses averaged an 11th-grade reading difficulty.",
+      "flags": [],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42596885",
+      "title": "Is the Application of Artificial Intelligence-Based Competency Assessments for Selecting Clinical Nurses Acceptable? A Qualitative Study.",
+      "abstract": "Artificial intelligence (AI)-based competency assessments have been incorporated into nurse recruitment processes in South Korea; however, nursing applicants' and educators' experiences with these assessments, as well as their perceptions of the effectiveness of these assessments in nurse selection, have not been examined. The aim of this study was to comprehensively explore the perceptions of nursing applicants and educators of the effectiveness of AI-based competency assessments in the process of selecting new nurses for patient care roles. A qualitative descriptive design was used in this study. Data were collected between February and August 2024 in South Korea. Semistructured focus group interviews were conducted with 10 nursing applicants and 10 nurse educators, including nursing professors and nurse managers, regarding their experience participating in AI-based competency assessments. Focus group interviews were conducted in five groups, each consisting of three to five participants. Data were analyzed using conventional content analysis. The COREQ (Consolidated Criteria for Reporting Qualitative Research) guidelines were used to assess study rigor. The analysis of the interviews revealed eight subthemes and four themes derived from 32 codes. The following four themes were identified: (a) doubts about the evaluation method and criteria, (b) efficiency of AI-based competency assessments, (c) challenges in preparing for AI-based competency assessments, and (d) improvements and alternative approaches to nurse selection. This study highlights the potential of AI-based competency assessments to improve fairness and efficiency in the process of selecting and hiring new nurses. To ensure validity, developing tailored algorithms that reflect core nursing competencies and establishing clear evaluation criteria is necessary. Also, interdisciplinary collaboration is needed to support the ethical and practical integration of AI in the process of selecting and hiring new nurses.",
+      "authors": "Lee H, Ryu H, Yoo HJ",
+      "journal": "The journal of nursing research : JNR",
+      "pub_date": "Oct 2026",
+      "doi": "10.1097/jnr.0000000000000768",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42596885/",
+      "summary": "This qualitative study in South Korea interviewed 10 nursing applicants and 10 nurse educators about AI-based competency assessments used in nurse hiring. Participants raised doubts about evaluation methods, noted efficiency gains, described preparation challenges, and suggested improvements. The findings point to a need for tailored algorithms, clear criteria, and interdisciplinary collaboration to support fair, ethical use of AI in nurse selection.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42509100",
+      "title": "Emerging Technologies in Oncology Nursing: Integrating Informatics Competencies to Advance Safe, High-Quality, and Compassionate Care.",
+      "abstract": "To describe the rapid evolution of emerging digital technologies in oncology nursing and clarify the essential informatics competencies required by oncology nurses to advance safe, high-quality, and compassionate care across the cancer continuum. A narrative review of use cases from peer-reviewed literature, national workforce policy documents, and professional nursing frameworks as they relate to emerging technologies and their integration into oncology care. Real-world implementations of artificial intelligence, telehealth, virtual nursing, remote patient monitoring (RPM), and medical device integration (MDI) demonstrate measurable clinical benefits, including enhanced symptom management, fewer emergency visits, and potential survival advantages. However, significant implementation gaps persist regarding algorithmic accountability, health equity, and a historic lack of direct nursing inclusion during technology design and validation. Nurse-led frameworks such as the Emerging Technology and AI Toolkit, which encompasses the 5 Rights of AI, the Innovation Inventory Heatmap, and Calculated INSIGHT provide practical scaffolding to educate nurses in evaluating and adopting emerging technologies. Grounded in caring science, emerging digital tools must function as intelligent partners that augment rather than replace human clinical judgment and the therapeutic nurse-patient relationship. As care models continuously evolve across inpatient and outpatient settings, investment in standardized oncology nursing informatics competencies remains critical. Nurse leaders must actively transition from passive technology recipients to informed advocates and architects of the digital ecosystem, ensuring that automated systems amplify the capacity for presence, equity, and individualized, compassionate cancer care.",
+      "authors": "Connor M, Kagan O",
+      "journal": "Seminars in oncology nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.soncn.2026.152307",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42509100/",
+      "summary": "This narrative review examines emerging digital technologies, such as AI, telehealth, virtual nursing, remote monitoring, and device integration, used in oncology nursing care. These tools show benefits like better symptom management and fewer emergency visits, but gaps remain in accountability, equity, and nurse involvement in design. Nurse-led frameworks can help oncology nurses build informatics skills so technology supports, rather than replaces, compassionate care.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42364428",
+      "title": "Conscious justification in using artificial intelligence: A concept analysis for global nursing practice.",
+      "abstract": "Artificial intelligence (AI) systems increasingly mediate nursing decisions globally, from clinical assessments to care planning. While technical explainability receives attention, the concept of conscious justification-deliberate, reasoned articulation of AI-mediated decisions addressable to stakeholders-remains poorly defined, impeding development of international standards for responsible AI deployment in nursing. To analyze the concept of conscious justification in artificial intelligence use. Concept analysis employing Walker and Avant's methodology. Systematic search of CINAHL, Google Scholar, PubMed, and arXiv databases (2015-2025). Thematic synthesis following Walker and Avant's eight-step framework: concept selection, aims determination, uses identification, defining attributes determination, model case development, additional cases development, antecedents and consequences identification, and empirical referents definition. Conscious justification is defined as the deliberate, reasoned articulation of AI-mediated decisions providing intelligible, normatively relevant explanations addressable to affected stakeholders, enabling understanding, evaluation, and challenge. Six defining attributes emerged: (1) intentional-stance reasoning-explaining decisions as goal-directed actions; (2) normative transparency-making value commitments explicit; (3) relational answerability-recognizing stakeholders' standing to demand reasons; (4) context-sensitive deliberation-adapting reasoning to situational particulars; (5) epistemic humility-acknowledging uncertainty and limitations; (6) auditability-systematically documenting decision rationales. Antecedents include technical infrastructure, normative specification, institutional accountability structures, AI literacy, design intentionality, and sociotechnical alignment. Consequences encompass enhanced accountability, improved trust, better decision quality, moral learning, and stakeholder empowerment, with potential risks including justification theater, cognitive overload, cultural imposition, and resource burdens. Conscious justification bridges technical explainability and ethical accountability, essential for responsible AI deployment in nursing globally. Implementation requires coordinated attention to technical systems, normative frameworks, institutional structures, and professional competencies, with particular attention to cultural context and resource variations across healthcare systems.",
+      "authors": "Ramos MD, Smith R, Allen R, Giarratano G",
+      "journal": "International journal of nursing studies",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.ijnurstu.2026.105623",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42364428/",
+      "summary": "This concept analysis used Walker and Avant's method to define 'conscious justification'—the deliberate, reasoned explanation of AI-mediated decisions in nursing, addressed to affected stakeholders. The authors identified six key attributes, including normative transparency, relational answerability, and epistemic humility, plus antecedents and consequences like improved trust but also risks like justification theater. This framework helps nursing informatics build global standards for explaining AI decisions responsibly across different healthcare systems and cultures.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42235299",
+      "title": "Advancing qualitative analysis in nursing research: Comparing text analysis rigor and efficiency of large language models with human-coded analysis for interview data.",
+      "abstract": "Qualitative data analysis in nursing research remains labor-intensive and vulnerable to researcher bias. While large language models offer transformative potential for automating thematic extraction and improving analytical consistency, their methodological rigor, alignment with human analysis, and applicability to nursing contexts remain underexplored. This study examined whether large language models can assist qualitative descriptive analysis by generating preliminary, data-near summaries of participants' accounts and whether these AI-generated outputs align with human-generated descriptive syntheses. Using kinesiophobia in postoperative bone tumor patients as a case study, we propose a triangulated framework that combines large language models and human coding to enhance analytical rigor and efficiency. Semi-structured interviews (N = 15) with postoperative bone tumor patients were analyzed using two approaches: (1) large language model analysis via ChatGPT and DeepSeek; and (2) human-coded analysis by an experienced qualitative researcher. Methodological trustworthiness was assessed through coding consistency and time-efficiency metrics. Both large language models, aligned with the human analyst, identified four common themes: (1) Disease and treatment experiences; (2) Mind-body dynamics in rehabilitation; (3) Utilization of health education; and (4) Roles of family support. The thematic output of the large language models showed strong overlap with the human-coded analysis (Cohen's κ = 0.89) while substantially reducing coding time. Remaining discrepancies may reflect differences in interpreting implicit emotional cues, variation in analytic focus and scope between human and model outputs, and the potential illusion of model understanding. Large language models hold promise as valuable supplementary tools in qualitative nursing research, improving efficiency and reducing potential bias of human-coded analysis. Yet, human expertise remains essential for interpreting psychosocial nuances and ensuring contextual relevance. This study introduces a hybrid large language model-human methodology, enhancing qualitative rigor while maintaining the patient-centered ethos of nursing. Future research should assess the scalability of this approach across diverse study populations.",
+      "authors": "Zeng Y, Chen Y, Yu J, Yang J, Fu Y, Chen J et al.",
+      "journal": "International journal of nursing studies",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.ijnurstu.2026.105584",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42235299/",
+      "summary": "Researchers tested whether large language models (ChatGPT and DeepSeek) could analyze interview data from 15 postoperative bone tumor patients experiencing kinesiophobia, comparing results to a human researcher's coding. The AI models identified the same four themes as the human analyst, showing strong agreement (Cohen's κ = 0.89) while cutting coding time. This suggests LLMs can support faster qualitative analysis, but human judgment is still needed to interpret emotional nuances and context.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42176534",
+      "title": "Network structure of artificial intelligence anxiety among nursing students and educational implications: A multicenter network analysis.",
+      "abstract": "While artificial intelligence (AI) transforms nursing practice, nursing students experience profession-specific AI anxiety. This study examines the network structure of such anxiety and its association with learning needs. This study aims to describe the network structure of AI anxiety among nursing students, compare anxiety network differences between students with associate degree or below and those with bachelor's degree or higher, and explore the association between anxiety and learning needs. A multi-center cross-sectional survey using stratified convenience sampling. Schools of nursing within 93 medical universities from 13 provinces across China's five major geographic regions (North, South, East, Western, and Central China), representing diverse nursing education environments. 1253 nursing students were recruited from May to June 2025. The study used a general information survey, the Artificial Intelligence Anxiety Scale (AIAS; 21 items, 4 dimensions), and a learning needs assessment. Gaussian graphical network and bridge centrality analysis identified core symptoms and cross-dimensional pathways. Group comparisons used permutation-based network invariance testing. This study collected 1113 valid questionnaires. Nursing students' AI anxiety exhibited a complex network structure (21 nodes, 103 edges, density = 49.05%), with learning interaction anxiety (node strength = 1.746) and concerns about AI misuse (bridge strength = 1.808) as core symptoms. Learning AI technology and specific functions showed the highest predictability (R2 = 0.925). Students with associate degrees or lower demonstrated stronger cross-dimensional anxiety connections (e.g., fear of robot autonomy → job displacement, P = 0.022), while fear of job displacement was positively correlated with learning motivation (edge weight = 0.29). The network displayed excellent stability (CS coefficient = 0.75). AI anxiety among nursing students forms a stable and interconnected network, with profession-specific hubs. Targeted interventions should prioritize procedural learning anxiety and ethical misuse concerns, while using occupational threats as a catalyst for learning. Curriculum reform must address the higher susceptibility of associate degree or below education students to anxiety spillover effects.",
+      "authors": "Zeng Q, Zhu J, Hu J, Su S, Yang M, Luo B et al.",
+      "journal": "Nurse education today",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.nedt.2026.107177",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42176534/",
+      "summary": "This multicenter survey of 1113 nursing students across China mapped the network structure of AI-related anxiety using the Artificial Intelligence Anxiety Scale. Learning interaction anxiety and fear of AI misuse emerged as core symptoms, with associate-degree students showing stronger anxiety spillover between fear of job loss and robot autonomy. The findings suggest nursing curricula may need targeted strategies addressing procedural and ethical concerns, particularly for students in shorter degree programs.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42161040",
+      "title": "The mediating role of critical thinking between AI literacy and learning burnout in nursing students using generative AI: A cross-sectional descriptive study.",
+      "abstract": "Learning burnout hinders nursing students' academic and professional development. Despite the growing integration of artificial intelligence (AI) in education, the mediating role of critical thinking between AI literacy and learning burnout remains unclear in nursing education. This study aims to explore the relationships among AI literacy, learning burnout and critical thinking, and to investigate whether critical thinking mediates the relationship between AI literacy and learning burnout in nursing undergraduates using generative AI tools. A cross-sectional descriptive study. A convenience sample of 617 undergraduate nursing students was recruited from seven universities across China during July 2025. Data were collected using a demographic and AI usage questionnaire, the Learning Burnout of Undergraduates Scale, the Critical Thinking Scale and the Artificial Intelligence Literacy Scale. Descriptive statistics summarized the demographic characteristics, correlation analyses examined variable relationships, and PROCESS macro (Model 4) tested critical thinking's mediation role. The average scores for learning burnout, AI literacy, and critical thinking were 55.86 (SD 10.90), 70.17 (SD 7.59) and 87.68 (SD 9.42). Critical thinking was negatively correlated with learning burnout (r = -0.54, P < 0.001) and positively correlated with AI literacy (r = 0.44, P < 0.001). AI literacy showed a weak negative correlation with learning burnout (r = -0.18, P < 0.01). Mediation analysis revealed that critical thinking fully mediated the relationship between AI literacy and learning burnout (total effect = -0.261, 95%CI [-0.373, -0.150], indirect effect = -0.364, 95% CI [-0.444, -0.293]; direct effect = 0.103, 95% CI [-0.003, 0.210]). Nursing undergraduates reporting moderate learning burnout. Critical thinking fully mediated AI literacy's alleviating effect on burnout. Therefore, integrating AI literacy with critical thinking is essential for nursing students' well-being in AI-enhanced learning.",
+      "authors": "Jiang X, Wei Q, Pang S, Liu Q",
+      "journal": "Nurse education today",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.nedt.2026.107169",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42161040/",
+      "summary": "This cross-sectional study surveyed 617 nursing undergraduates across seven Chinese universities to examine how AI literacy, critical thinking, and learning burnout relate to each other. Critical thinking fully explained the link between AI literacy and lower learning burnout, meaning AI literacy alone did not directly reduce burnout without critical thinking skills. This suggests nursing education may need to build critical thinking alongside AI literacy to support student well-being.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42161039",
+      "title": "Generative AI use in instructor-assigned learning activities among nursing students: A cross-sectional survey of perceptions, ethical awareness, faculty restrictions, and continuance intention.",
+      "abstract": "Generative artificial intelligence (GenAI) tools are increasingly embedded in nursing students' learning. Despite widespread adoption, it remains unclear how nursing students' perceptions of GenAI, ethical awareness, and perceived faculty restrictions relate to their intention to use GenAI in instructor-assigned learning activities. This study examined nursing students' purposes for using GenAI, perceptions of its use, ethical awareness, perceived faculty restrictions, and factors associated with their intentions to use GenAI in instructor-assigned learning activities. A cross-sectional survey design was employed to examine factors associated with nursing students' intentions to use GenAI in instructor-assigned learning activities. Data were collected using an anonymous online questionnaire administered to a convenience sample of 266 nursing students at a university in northern Taiwan. The survey assessed patterns of GenAI use, perceptions of its use, ethical awareness, perceived faculty restrictions, and intentions to use GenAI. Descriptive statistics and hierarchical multiple regression analyses were conducted to identify associated factors. ChatGPT was the most commonly used GenAI tool. All respondents reported using it for professional inquiries, academic writing, and summarizing long texts. Students demonstrated highly favorable perceptions of GenAI, particularly regarding learning effectiveness and time efficiency. Hierarchical multiple regression analyses revealed that perceived learning enhancement, time savings, access to novel insights, personalized feedback, and awareness of potential inaccuracies in GenAI responses were significant predictors of intentions to use GenAI in instructor-assigned learning activities. In contrast, ethical concerns and perceived faculty restrictions were not significant predictors. Perceived academic benefits were the strongest predictors of nursing students' intentions to use GenAI in instructor-assigned learning activities, whereas ethical awareness and perceived faculty restrictions were not significantly associated. Nursing educators should intentionally integrate GenAI into instructional design and learning tasks as a structured learning assistant, supported by clear guidance and faculty oversight to promote responsible and effective use.",
+      "authors": "Huang YT, Hsiung HF, Lin HL, Chang LC, Liao LL",
+      "journal": "Nurse education today",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.nedt.2026.107162",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42161039/",
+      "summary": "This cross-sectional survey asked 266 nursing students in northern Taiwan about using GenAI tools like ChatGPT for instructor-assigned learning activities. Perceived academic benefits—like learning enhancement, time savings, and personalized feedback—predicted students' intention to use GenAI, while ethical concerns and faculty restrictions did not. This suggests nursing educators may need to actively guide GenAI use in coursework rather than rely on restrictions alone.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42150508",
+      "title": "Performance of large language models on nursing licensure examinations: A systematic review and meta-analysis.",
+      "abstract": "This systematic review and meta-analysis assessed the performance of large language models (LLMs) in nursing licensure examinations. Despite the increasing use of LLMs in healthcare education, their capabilities in nursing licensure examinations remain uncertain. This study provides evidence on the accuracy and limitations of LLMs to help guide their integration into nursing education and licensure. The systematic review and meta-analysis adhered to PRISMA 2020 guidelines. PubMed, CINAHL, PsycINFO, EMCARE, and ERIC were searched from April to June 2025. Studies were eligible if they evaluated LLMs (e.g., GPT-4, ChatGPT, Qwen-2.5) using multiple-choice nursing licensure questions under exam-like conditions and reported quantitative accuracy. Open-ended items were excluded from the meta-analysis due to incompatible scoring methods, but were narratively synthesised. Two reviewers independently screened, extracted data, and appraised the risk of bias. A random-effects meta-analysis estimated pooled accuracy; subgroup and meta-regression analyses explored heterogeneity. Twelve studies assessed 13,870 MCQs across seven exam systems and ten LLMs. Pooled accuracy was 69.6% (95% CI: 65.6-73.6%) with substantial heterogeneity (I2 = 98%). GPT-4 outperformed GPT-3.5 (77.2% vs. 60.4%); domain-customised and newer models reached 93.6%. LLMs excelled in general medicine and pharmacology but underperformed in ethics and psychosocial integrity. Accuracy did not differ significantly by exam system (p = 0.14), question difficulty (p = 0.90) or format (p = 0.96). In meta-regression, Custom GPT (p = 0.0006) and Qwen 2.5 (p = 0.026) were the only significant predictors of higher accuracy; no exam system, question format, or difficulty level reached significance. Methodological variability and underreporting of model parameters were common. LLMs show promise for low-stakes educational applications, such as formative assessments within hybrid teaching models; however, they are unsuitable for unmoderated, high-stakes licensure decisions due to inconsistent performance. Regulatory guidelines, equitable access, and nursing-specific model development are needed to ensure fairness and validity. Research must prioritise standardised frameworks, error analysis, and broader geographic representation to address these limitations.",
+      "authors": "Amankwaa I, Odoom A, Kasim A, Kobiah E, Diebieri M, Boateng EA et al.",
+      "journal": "Nurse education today",
+      "pub_date": "Oct 2026",
+      "doi": "10.1016/j.nedt.2026.107154",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42150508/",
+      "summary": "This systematic review and meta-analysis examined how large language models (LLMs) perform on nursing licensure exam questions, pooling 12 studies with 13,870 multiple-choice questions across ten LLMs. Pooled accuracy was 69.6%, with newer or nursing-customised models reaching up to 93.6%, though performance varied widely and models struggled with ethics and psychosocial content. This suggests LLMs may support low-stakes learning activities but are not yet reliable enough for unmoderated, high-stakes licensure decisions.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42046536",
+      "title": "Postoperative delirium risk estimation and assessment with machine learning: development and validation of the Open-DREAM Model: A peri-operative dataset analysis.",
+      "abstract": "Postoperative delirium (POD) is a common and serious complication in older surgical patients, associated with increased morbidity, prolonged hospitalisation and increased healthcare costs. Existing predictive models have limited clinical adoption due to implementation costs, suboptimal accuracy and poor generalisability. To develop an open-access, interpretable machine learning (ML) model using only preoperative data to predict the risk of POD in patients aged at least 60 years undergoing surgery. Observational diagnostic study using prospectively collected routine care data. Single secondary care hospital in Switzerland, January 2023 to January 2024. A total of 1425 patients were screened; 748 met the inclusion criteria (≥60 years, noncardiac, nonintracranial surgery, no preoperative delirium). None. POD, defined as a Nursing Delirium Screening Scale (Nu-DESC) score at least 2 at any peri-operative assessment. Three ML algorithms were trained and compared: Support Vector Machines; Logistic Regression and XGBoost. The calibrated XGBoost model achieved an area under the receiver operating characteristic curve (AUC) of 0.80, with a sensitivity of 0.89 at the optimal probability threshold of 0.35. Feature selection using SHapley Additive exPlanations (SHAP)-derived rankings reduced the predictor set from 55 to 15 features without loss of AUC. Type of anaesthesia (spinal vs. general) was the strongest predictor. An open-access ML-based model using routinely collected preoperative variables can predict POD with high sensitivity and preserved interpretability. External validation is warranted. Future research should explore causal inference for modifiable risk factors, acknowledging the limitations of observational data. This open-access application is currently intended for research and educational use only until external validation confirms its performance in independent patient groups.",
+      "authors": "Berger A, Gisselbaek M, Saxena S, Berger-Estilita J, Devos A",
+      "journal": "European journal of anaesthesiology",
+      "pub_date": "Oct 2026",
+      "doi": "10.1097/EJA.0000000000002410",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42046536/",
+      "summary": "Researchers at a Swiss hospital studied 748 surgical patients aged 60 and older to predict postoperative delirium using only preoperative data. A calibrated XGBoost machine learning model reached an AUC of 0.80 and 0.89 sensitivity, using 15 key features, with anaesthesia type as the strongest predictor. This open-access tool could support early delirium risk screening, though external validation is still needed before clinical use.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41991332",
+      "title": "Nursing Perceptions of the Intended Use of Artificial Intelligence to Prevent Medication Errors: A Qualitative Descriptive Study.",
+      "abstract": "To explore the perceptions of nursing professionals in high-demand healthcare services regarding the adoption of AI-based support systems for the prevention of medication errors. A qualitative descriptive study was conducted between November 2024 and March 2025. Sixteen semi-structured interviews were held with nurses from emergency and intensive care units, guided by conceptual dimensions of the Technology Acceptance Model framework. Participants were recruited using purposive and snowball sampling. ATLAS.ti v.9 software was used for an inductive thematic analysis. Two major themes emerged: (i) professional reflections on medication safety and related risks; and (ii) integrating artificial intelligence into nursing practice to reduce such risks and prevent medication errors. While artificial intelligence was recognised as a promising resource to support clinical decision-making and reduce cognitive load, nurses identified barriers, including limited training, inadequate technological infrastructure, unreliable data sources, and ethical concerns that could compromise its safe implementation and thereby hinder its potential to prevent medication errors. AI-based support systems are perceived as useful, but complex resources for addressing medication errors, which remain a critical challenge in healthcare. Its successful implementation depends not only on the availability of resources, but also on the organisational context and the ability to respond to the needs and concerns of healthcare professionals. Integrating artificial intelligence into routine workflows to support clinical decision-making and reduce medication errors in high-demand settings requires more than infrastructure and technical training. Effective adoption demands participatory design, clear role delineation, and context-sensitive training aligned with medication-management processes. Lack of alignment may result in artificial intelligence increasing complexity instead of contributing to safer and more efficient medication administration. Methods and findings are reported following SRQR recommendations. No patient or public contribution.",
+      "authors": "Martinez-Puertas J, Frutos-Rodríguez N, Winderholler-Heinzenknecht A, Morales-Plaza C, Martinez-Ortigosa A, Rodriguez-Arrastia M",
+      "journal": "Journal of clinical nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jocn.70326",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41991332/",
+      "summary": "This qualitative study interviewed 16 emergency and intensive care nurses about using AI tools to prevent medication errors. Nurses saw AI as helpful for decision-making and reducing cognitive load, but raised concerns about training gaps, weak infrastructure, unreliable data, and ethics. The findings suggest successful AI adoption needs participatory design and context-specific training, not just technology, to avoid adding complexity to medication safety work.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41841218",
+      "title": "Artificial Intelligence Technologies in Nursing Clinical Decision-Making: An Umbrella Review.",
+      "abstract": "To describe contemporary peer-reviewed literature on artificial intelligence in nurses' clinical decision-making. An umbrella review of literature reviews. Four major databases were searched for reviews published between 2019 and 2024. Sixteen literature reviews reported on 965 nursing artificial intelligence primary studies. The studies focused on technology development and emerging performance evaluations, whilst real-world testing or implementation in nursing clinical settings was rare. Rigorous comparative analyses were lacking. While artificial intelligence demonstrates promise in decision-making, challenges such as a lack of controlled studies, algorithmic bias, limited reproducibility and insufficient clinical trials hinder its practical impact. Ethical concerns, transparency and patient data privacy issues pose barriers to AI integration in nursing practice. Ethical and legal guidelines for patient privacy are needed and should be taught along with AI literacy training for nurses. Artificial intelligence has the potential to enhance clinical nursing decision-making, although evidence is limited by too few examples of nurse participation during development. Underutilisation in administrative nursing functions hinders implementation. Nurses should assume a central role in the design and development of AI applications to ensure that these technologies address the realities of nursing practice. With such improvements, artificial intelligence can transform nursing practice, improve nurses' clinical decision-making and ultimately enhance consumer healthcare outcomes. No Patient or Public Involvement. While there is no reporting checklist for umbrella reviews, the PRISMA guide for systematic reviews was followed.",
+      "authors": "Cant R, Ryan C, Chugh R",
+      "journal": "Journal of advanced nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jan.70579",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41841218/",
+      "summary": "This umbrella review examined 16 literature reviews covering 965 primary studies on artificial intelligence in nurses' clinical decision-making. The review found most research focuses on technology development rather than real-world testing, with gaps in controlled studies, algorithmic bias checks, and nurse involvement in AI design. This matters because nurses need a central role in building AI tools, plus ethics training and privacy guidelines, before AI can reliably support nursing practice.",
+      "flags": [
+        "setting_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41712187",
+      "title": "Nursing Professional Organisations as Human Rights Intermediaries: Towards an Integrated Framework of Stakeholdership for Healthcare AI Governance.",
+      "abstract": "To propose a normative framework that guides nursing professional organisations to act as human rights intermediaries in the governance of artificial intelligence in healthcare. Discursive paper. The paper presents a triaxial framework that conceptualises the role of nursing professional organisations in artificial intelligence governance. The framework consists of a domain axis, which identifies key areas of engagement; a modality axis, which aligns actions with the specific functions of these organisations; and a human rights axis, which defines their role towards rights claimants and duty bearers. The proposed framework provides a practical tool for nursing professional organisations to strategically plan and implement initiatives to influence the advancement and regulation of artificial intelligence. Its application can help ensure that healthcare innovation is equitable and rights-based. This paper provides a blueprint for nursing leaders and policymakers to engage proactively with the ethical dimensions of artificial intelligence. It emphasises the salient roles of nursing professional organisations in advocating for the human right to health in a technologically driven healthcare landscape. This paper addresses the gap in how the nursing profession can systematically engage with artificial intelligence governance. The main finding is a novel framework that provides a structured way for nursing professional organisations to act as human rights intermediaries. This research will have a significant impact on nursing leadership, patient advocacy groups, and policymakers involved in healthcare technology and ethics. Initial parts of this paper were presented to allied health practitioners via a webinar, providing early feedback and dialogue that informed its development.",
+      "authors": "Cleofas JV",
+      "journal": "Journal of clinical nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jocn.70256",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41712187/",
+      "summary": "This discursive paper proposes a framework to guide nursing professional organisations in shaping artificial intelligence governance in healthcare. The framework has three parts: a domain axis for areas of engagement, a modality axis for aligning actions with organisational functions, and a human rights axis defining roles toward rights claimants and duty bearers. It offers nursing leaders and policymakers a practical tool to advocate for equitable, rights-based AI use in healthcare.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41556156",
+      "title": "Integrating Artificial Intelligence in Nursing Practice With Decubitus Risk Prediction Alerts: A Pilot Process Evaluation.",
+      "abstract": "To evaluate the acceptability and feasibility among nurses of Decubitus Risk Prediction Alerts based on Artificial Intelligence (DRAAI), and to assess the feasibility of the implementation plan. A process evaluation of a pilot implementation study using mixed methods. Acceptability and feasibility of DRAAI among nurses from three general wards in a university hospital was assessed via questionnaire. The tailored implementation plan included thirteen strategies distributed over six domains, such as facilitation, continuous evaluation, and educational sessions. Adaptations, acceptability, and feasibility were recorded in field notes. Fifty-five nurses completed the questionnaire and valued DRAAI's predictions, believing these could contribute to pressure ulcer (PU) prevention. Some initially faced challenges distinguishing between PU risk and PU detection. Most found it feasible to integrate DRAAI into their workflow. Adaptations included adding PU preventive measures to educational sessions and sharing frequently asked questions and answers. Overall, implementation efforts were feasible. DRAAI generated PU risk predictions for 428 unique admitted patients; 128 (30%) patients received at least one at-risk prediction. Regarding fidelity, nearly 80% (101/128) of at-risk predictions were followed by a nursing care plan. Ongoing involvement and clear communication were crucial for successfully integrating AI into nursing workflows. Although some nurses were concerned that DRAAI might miss at-risk patients, they continued to independently identify at-risk patients. Implementation of DRAAI served as a prompt for nurses to focus more on PU prevention. While DRAAI shows promise in improving PU prevention, future research is needed to evaluate its clinical impact. Addressed the challenge of identifying patients at risk for developing pressure ulcers. Demonstrated feasibility and acceptability of implementing AI in clinical practice. Highlighted the need for ongoing support and communication for successful implementation. None. Standard for Reporting Implementation Studies (StaRI).",
+      "authors": "Spoon D, de Vroed A, Greup S, van Dijk M, Ista E",
+      "journal": "Journal of clinical nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jocn.70212",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41556156/",
+      "summary": "This study tested whether nurses on three hospital wards found an AI tool (DRAAI) for predicting pressure ulcer risk acceptable and workable in daily practice. Fifty-five nurses valued the predictions, found DRAAI feasible to use, and nursing care plans followed most at-risk alerts, though some needed help distinguishing risk prediction from detection. The findings suggest AI can support pressure ulcer prevention, but ongoing communication and support are needed, and clinical impact still needs testing.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "41293898",
+      "title": "Generative AI at the Bedside: An Integrative Review of Applications and Implications in Clinical Nursing Practice.",
+      "abstract": "The aim of this integrative review is to critically appraise and synthesise empirical evidence on the clinical applications, outcomes, and implications of generative artificial intelligence in nursing practice. Integrative review following Whittemore and Knafl's five-stage framework. Systematic searches were performed for peer-reviewed articles and book chapters published between 1 January 2018 and 30 June 2025. Two reviewers independently screened titles/abstracts and full texts against predefined inclusion/exclusion criteria focused on generative artificial intelligence tools embedded in nursing clinical workflow (excluding nursing education-only applications). Data were extracted into a standardised matrix and appraised for quality using design-appropriate checklists. Guided by Whittemore and Knafl's integrative review framework, a constant comparative analysis was applied to derive the main themes and subthemes. CINAHL, MEDLINE, and Embase. Included literature was a representative mix of single-group quality improvement pilots, mixed-method usability and feasibility studies, randomised controlled trials, qualitative descriptive and phenomenological studies, as well as preliminary and proof-of-concept observational research. Four overarching themes emerged: (1) Workflow Integration and Efficiency, (2) AI-Augmented Clinical Reasoning, (3) Patient-Facing Communication and Education, and (4) Role Boundaries, Ethics and Trust. Generative artificial intelligence holds promise for enhancing nursing efficiency, supporting clinical decision making, and extending patient communication. However, consistent human validation, ethical boundary setting, and more rigorous, longitudinal outcome and equity evaluations are essential before widespread clinical adoption. Although generative artificial intelligence could reduce nurses' documentation workload and routine decision-making burden, these gains cannot be assumed. Safe and effective integration will require rigorous nurse training, robust governance, transparent labelling of AI-generated content, and ongoing evaluation of both clinical outcomes and equity impacts. Without these safeguards, generative artificial intelligence risks introducing new errors and undermining patient safety and trust. PRISMA 2020.",
+      "authors": "Watson AL, Bond C, Aveyard H, Smith GD, Jackson D",
+      "journal": "Journal of clinical nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.1111/jocn.70151",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41293898/",
+      "summary": "This integrative review examined studies on generative AI tools used in nursing clinical workflows, published between 2018 and 2025. Researchers found four key themes: workflow efficiency, AI-supported clinical reasoning, patient communication, and ethics/trust concerns. The review stresses that human oversight, staff training, clear governance, and equity evaluation are needed before wider adoption, as unchecked use could introduce errors and harm patient trust.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:0",
+      "title": "Evaluating Large Language Model‐Assisted Emergency Triage: A Comparison of Acuity Assessments by GPT‐4 and Medical Experts.",
+      "abstract": "Aim: To evaluate the accuracy of the Emergency Severity Index (ESI) assignments by GPT‐4, a large language model (LLM), compared to senior emergency department (ED) nurses and physicians. Method: An observational study of 100 consecutive adult ED patients was conducted. ESI scores assigned by GPT‐4, triage nurses, and by a senior clinician. Both model and human experts were provided the same patient data. Results: GPT‐4 assigned a lower median ESI score (2.0) compared to human evaluators (median 3.0; p < 0.001), suggesting a potential overestimation of patient severity by the LLM. The results showed differences in the triage assessment approaches between GPT‐4 and the human evaluators, including variations in how patient age and vital signs were considered in the ESI assignments. Conclusion: While GPT‐4 offers a novel methodology for patient triage, its propensity to overestimate patient severity highlights the necessity for further development and calibration of LLM tools in clinical environments. The findings underscore the potential and limitations of LLM in clinical decision‐making, advocating for cautious integration of LLMs in healthcare settings. Reporting Method: This study adhered to relevant EQUATOR guidelines for reporting observational studies.",
+      "authors": "Haim, Gal Ben\n                Saban, Mor\n                Barash, Yiftach\n                Cirulnik, David\n                Shaham, Amit\n                Eisenman, Ben Zion\n                Burshtein, Livnat\n                Mymon, Orly\n                Klang, Eyal\n                Department of Emergency Medicine, Sheba Medical Center, Ramat‐Gan, Israel",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Evaluating%20Large%20Language%20Model%E2%80%90Assisted%20Emergency%20Triage%3A%20A%20Comparison%20of%20Acuity%20Assessments%20by%20GPT%E2%80%904%20and%20Medical%20Experts.",
+      "source": "CINAHL",
+      "summary": "Researchers compared GPT-4's Emergency Severity Index (ESI) scores to those of senior ED nurses and physicians for 100 adult emergency department patients, using the same patient data for both. GPT-4 assigned lower median ESI scores than human evaluators, suggesting it rated patients as more severe, and the two approaches weighed age and vital signs differently. This points to a need for careful testing and adjustment before using LLMs in triage decisions.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:3",
+      "title": "Artificial Intelligence Technologies in Nursing Clinical Decision‐Making: An Umbrella Review.",
+      "abstract": "Aim: To describe contemporary peer‐reviewed literature on artificial intelligence in nurses' clinical decision‐making. Methods: An umbrella review of literature reviews. Data Sources: Four major databases were searched for reviews published between 2019 and 2024. Results: Sixteen literature reviews reported on 965 nursing artificial intelligence primary studies. The studies focused on technology development and emerging performance evaluations, whilst real‐world testing or implementation in nursing clinical settings was rare. Rigorous comparative analyses were lacking. While artificial intelligence demonstrates promise in decision‐making, challenges such as a lack of controlled studies, algorithmic bias, limited reproducibility and insufficient clinical trials hinder its practical impact. Ethical concerns, transparency and patient data privacy issues pose barriers to AI integration in nursing practice. Ethical and legal guidelines for patient privacy are needed and should be taught along with AI literacy training for nurses. Conclusions: Artificial intelligence has the potential to enhance clinical nursing decision‐making, although evidence is limited by too few examples of nurse participation during development. Underutilisation in administrative nursing functions hinders implementation. Nurses should assume a central role in the design and development of AI applications to ensure that these technologies address the realities of nursing practice. With such improvements, artificial intelligence can transform nursing practice, improve nurses' clinical decision‐making and ultimately enhance consumer healthcare outcomes. Patient or Public Involvement: No Patient or Public Involvement. Reporting Method: While there is no reporting checklist for umbrella reviews, the PRISMA guide for systematic reviews was followed. Implications for the Profession and/or Patient Care: What problem did the study address? ○Artificial intelligence applications have long been utilized in medicine for clinical decision‐making; however, a lack of uptake in nursing decision‐making should be remedied.What were the main findings? ○AI can transform nursing practice by improving nurses' clinical decision‐making; however, stronger evidence about applications and AI literacy training is necessary.Where and on whom will the research have an impact? ○The findings will impact curriculum designers, clinical facilitators and professional nurses who may translate findings into practice improvements.",
+      "authors": "Cant, Robyn\n                Ryan, Colleen\n                Chugh, Ritesh\n                Health Innovation and Transformation Centre, Federation University Australia, Berwick Victoria,, Australia",
+      "journal": "Journal of Advanced Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20Intelligence%20Technologies%20in%20Nursing%20Clinical%20Decision%E2%80%90Making%3A%20An%20Umbrella%20Review.",
+      "source": "CINAHL",
+      "summary": "This umbrella review examined 16 literature reviews covering 965 studies on artificial intelligence in nursing clinical decision-making, published between 2019 and 2024. Most studies focused on building and testing AI tools, but real-world use in nursing settings was rare, and strong comparative evidence was lacking. The authors say nurses should help design AI tools and receive AI literacy training to support safe, effective use in practice.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:4",
+      "title": "Mortality Research With Artificial Intelligence Tools: Applying Language Models to the National Violent Death Reporting System Suicide Narratives, 2003–2023.",
+      "abstract": "Suicide deaths in the United States have increased for a generation with no current evidence of meaningful decline. With advances in data collection and accumulation, suicide prevention research has started utilizing artificial intelligence (AI) tools, predominantly machine learning, predictive analytics, and language models, to help mainly in prediction of suicide by utilizing large electronic health record data sets. The National Violent Death Reporting System (NVDRS) compiles significant amounts of structured and unstructured data about suicide decedents, including narrative information about the death (i.e., death narrative) that summarizes details such as the scene, decedent characteristics, and witness and next-of-kin details from interviews. Over the last 20 years, the NVDRS has accumulated hundreds of thousands of suicide death narratives—more than any human can (or would care to) read because of their grim, and sometimes graphic, nature. This analytic essay briefly reviews how AI tools have been applied to suicide prevention research. It also summarizes an example of how AI tools (e.g., language models) can expedite analysis using 756 645 narratives from 483 303 suicide deaths contained in the 2003–2023 NVDRS. (Am J Public Health. 2026;116(10):1550–1556. https://doi.org/10.2105/AJPH.2026.308618)",
+      "authors": "Blosnich, John R.\n                Ranjit, Jaspreet\n                Swayamdipta, Swabha",
+      "journal": "American Journal of Public Health",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Mortality%20Research%20With%20Artificial%20Intelligence%20Tools%3A%20Applying%20Language%20Models%20to%20the%20National%20Violent%20Death%20Reporting%20System%20Suicide%20Narratives%2C%202003%E2%80%932023.",
+      "source": "CINAHL",
+      "summary": "This essay reviews how AI tools, including language models, have been used in suicide prevention research, then shows an example applying them to 756,645 death narratives from 483,303 suicide decedents in the National Violent Death Reporting System (2003–2023). The authors note these AI tools can help analyze narrative data too large for manual review. This suggests potential for nursing informatics research to process large, unstructured mortality datasets more efficiently.",
+      "flags": [
+        "setting_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:6",
+      "title": "Developing and Evaluating the Use of ChatGPT as a Screening Tool for Nurses Conducting Structured Literature Reviews: Proof of Concept Study Results.",
+      "abstract": "Aim: To examine the feasibility of using a large language model (LLM) as a screening tool during structured literature reviews to facilitate evidence‐based practice. Design: A proof‐of‐concept study. Methods: This paper outlines an innovative method of abstract screening using ChatGPT and computer coding for large scale, effective and efficient abstract screening. The authors, new to ChatGPT and computer coding, used online education and ChatGPT to upskill. The method was empirically tested using 400 abstracts relating to public involvement in nursing education from four different databases (CINAHL, Scopus, ERIC and MEDLINE), using four versions of ChatGPT. Results were compared with a human nursing researcher and reported using the CONSORT 2010 extension for pilot and feasibility trials checklist. Results: ChatGPT‐3.5 Turbo was most effective for rapid screening and had a broad inclusionary approach with a false‐negative rate lower than the human researcher. More recent versions of ChatGPT‐4, 4 Turbo, and 4 omni were less effective and had a higher number of false negatives compared to ChatGPT‐3.5 Turbo and the human researcher. These more recent versions of ChatGPT did not appear to appreciate the nuance and complexities of concepts that underpin nursing practice. Conclusion: LLMs can be useful in reducing the time nurses spend screening research abstracts without compromising on literature review quality, indicating the potential for expedited synthesis of research evidence to bridge the research–practice gap. However, the benefits of using LLMs can only be realised if nurses actively engage with LLMs, explore LLMs' capabilities to address complex nursing issues, and report on their findings. Implications for the Professional and/or Patient Care: Nurses need to engage with LLMs to explore their capabilities and suitability for nursing purposes. Patient or Public Contribution: No patient or public contribution.",
+      "authors": "Mudd, Alexandra\n                Conroy, Tiffany\n                Voldbjerg, Siri Lygum\n                Goldschmied, Anita\n                Feo, Rebecca\n                Schuwirth, Lambert\n                Flinders University, Adelaide, Australia",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Developing%20and%20Evaluating%20the%20Use%20of%20ChatGPT%20as%20a%20Screening%20Tool%20for%20Nurses%20Conducting%20Structured%20Literature%20Reviews%3A%20Proof%20of%20Concept%20Study%20Results.",
+      "source": "CINAHL",
+      "summary": "This proof-of-concept study tested four versions of ChatGPT against a human researcher for screening 400 nursing education abstracts from four databases. ChatGPT-3.5 Turbo screened fastest and missed fewer relevant studies than the human researcher, while newer versions (GPT-4, 4 Turbo, 4 omni) missed more and struggled with nuanced nursing concepts. This suggests LLMs may speed up literature screening, but nurses need to test and report on their performance before relying on them.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:7",
+      "title": "A Scoping Review of Artificial Intelligence Integration in Nursing Education: Challenges, Opportunities, and a Roadmap for the Future.",
+      "abstract": "The rapid advancement of artificial intelligence (AI) is dramatically altering the healthcare landscape and will challenge and provide opportunities for nursing education in the future. The primary aim of this study was to assess the status of AI inclusion in nursing education and how it has been viewed as impacting nursing students, faculty, and clinical practices, while situating these developments within existing simulation‐based teaching modalities. A scoping review was conducted using the Joanna Briggs Institute methodology and requirements outlined in the PRISMA‐ScR guidelines. A search of six databases (PubMed, SCOPUS, Web of Science, Google Scholar, PsycINFO, and MEDLINE) was conducted to identify relevant articles. The articles selected for this study included only peer‐reviewed English‐language publications from 2019 to 2024. Twenty‐one studies met the inclusion criteria, comprising both AI‐focused educational interventions and traditional simulation‐based studies used as methodological and outcome benchmarks. Most studies included nursing students. Four themes emerged from the synthesis of the studies: the potential and limitations of AI in nursing education, simulation‐based modalities and methodological benchmarking in nursing education, students' views and experiences with respect to a rapidly changing paradigm in nursing education, and the necessity of preparing nurses for the future. There are several positive aspects of AI technology that may enhance nursing learners' experience and access to information, especially when integrated thoughtfully with established standardized patient and high‐fidelity simulation practices. However, numerous ethical concerns regarding the responsible use of these technologies must be addressed, and human oversight of AI use is required to address them. While many believe that the greatest importance of education is the development of clinical skills, preparing nurses to work as effective members of an interdisciplinary team remains paramount. Conclusion: Although the integration of AI technology may be beneficial in enhancing nursing education through increased learner engagement and simulated learning, ethical concerns and the lack of uniformity in the preparation of nursing faculty hinder the integration of these technologies. By comparing AI‐enhanced approaches with benchmark simulation studies, this review suggests that AI is most likely to function as an extension of existing simulation pedagogy rather than a replacement. Therefore, the future integration of AI technology should prioritize the provision of targeted faculty training, clearly defined ethical frameworks, and collaborative efforts among professionals to maximize the benefits of AI technology while maintaining the quality of clinical excellence.",
+      "authors": "Alnomasy, Nader\n                Pasay-an, Eddieson\n                Mostoles, Romeo Jr.\n                Pangket, Petelyne\n                Alrashedi, Habib\n                Hobensack, Mollie\n                Vyas, Pankaj\n                Uy, Ma. Mirasol R.\n                Sacgaca, Lailani\n                Gonzales, Analita\n                Alatawi, Nuha Ayad H.\n                Alasmari, Amal Ali\n                Gutierrez, Jeneth\n                Song, Jiyoun\n                Kaushik, Shashank\n                Department of Medical-Surgical Nursing,, College of Nursing,, University of Hail,, Ha'il Region, Saudi Arabia, uoh.edu.sa",
+      "journal": "Nursing Forum",
+      "pub_date": "9/27",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=A%20Scoping%20Review%20of%20Artificial%20Intelligence%20Integration%20in%20Nursing%20Education%3A%20Challenges%2C%20Opportunities%2C%20and%20a%20Roadmap%20for%20the%20Future.",
+      "source": "CINAHL",
+      "summary": "This scoping review examined 21 peer-reviewed studies (2019–2024) on AI integration in nursing education, mostly involving nursing students, comparing AI-focused interventions with traditional simulation-based benchmarks. It found AI may enhance engagement and learning when combined with existing simulation methods, but ethical concerns and uneven faculty preparation remain barriers. This suggests AI should extend, not replace, simulation pedagogy, supporting calls for targeted faculty training and clear ethical frameworks.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:11",
+      "title": "Optimized Diagnostic Classification of Coronary Artery Disease: Integrating Genetic Algorithm for Feature Selection With an Improved AdaBoost Model.",
+      "abstract": "Background: Cardiovascular diseases (CVDs) remain the primary contributor to global morbidity and mortality, with coronary artery disease (CAD) representing the most prevalent and critical condition. Accurate diagnostic classification and disease detection are crucial for aiding clinical decision‐making and reducing diagnostic errors in high‐risk patients. Objective: This study proposes a novel diagnostic classification framework that integrates genetic algorithm (GA)–based feature selection with an Improved AdaBoost Ensemble Classifier for cross‐sectional CAD detection. The primary goal is to develop a robust model where K‐fold cross‐validation and a voting mechanism are embedded directly within the boosting loop to generate diverse, weighted subclassifiers for enhanced generalization and classification accuracy. Method: A public dataset (1190 records) and a local cohort collected from Noor Heart Center (589 records) were evaluated, with the positive clinical outcome strictly defined as confirmed CAD (presence of ≥50% vessel stenosis). GA was employed to identify the most informative clinical feature subsets by handling nonlinear interactions. Subsequently, the proposed Improved AdaBoost framework was applied for diagnostic classification, and its performance was benchmarked against various individual and ensemble classifiers. Results: The GA successfully identified chest pain type (cp), ST depression (oldpeak), slope, and patient sex as the most predictive clinical features across both datasets. Using this optimal feature subset, the proposed framework achieved superior diagnostic performance. Specifically, the Improved AdaBoost model attained an accuracy of 93.25%, a precision of 95.31%, and an AUC of 95.52% on the public dataset, and an accuracy of 94.50%, a precision of 95.88%, and an AUC of 95.91% on the local dataset. This performance significantly outperformed standard AdaBoost and the top‐performing individual classifiers such as RPART (p < 0.05). Conclusion: The empirical findings confirm the potential of the proposed GA‐based Improved AdaBoost framework as a dependable, highly accurate decision‐support tool for cardiologists in the cross‐sectional diagnostic classification of CAD, facilitating timely patient management and clinical resource optimization.",
+      "authors": "Nazari, Mojdeh\n                Rabiei, Reza\n                Emami, Hassan\n                Rabiee, Hamid R.\n                Salari, Arsalan\n                Sadr, Hossein\n                Department of Health Information Technology and Management,, School of Allied Medical Sciences,, Shahid Beheshti University of Medical Sciences,, Tehran, Iran, sbmu.ac.ir",
+      "journal": "Health & Social Care in the Community",
+      "pub_date": "9/27",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Optimized%20Diagnostic%20Classification%20of%20Coronary%20Artery%20Disease%3A%20Integrating%20Genetic%20Algorithm%20for%20Feature%20Selection%20With%20an%20Improved%20AdaBoost%20Model.",
+      "source": "CINAHL",
+      "summary": "Researchers tested a diagnostic model combining genetic algorithm feature selection with an Improved AdaBoost classifier to detect coronary artery disease, using a public dataset and a local cohort from Noor Heart Center. The model identified chest pain type, ST depression, slope, and sex as key predictors, reaching 93-95% accuracy and outperforming standard AdaBoost and other classifiers. This suggests potential for decision-support tools that could help clinicians classify CAD risk more accurately.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "AI Methods & Evaluation",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:15",
+      "title": "Ethical and Regulatory Challenges of Generative Artificial Intelligence in Healthcare: A Chinese Perspective.",
+      "abstract": "Aim: To provide practical insights that delve into the ethical issues and regulatory implications of generative artificial intelligence (GenAI) in healthcare. Ethical Challenges and Regulatory Impact in China is used as an example. Background: Despite China's efforts to strike a delicate balance between protecting public welfare and promoting technological advancement, numerous unresolved issues persist in the practical integration of generative artificial intelligence into healthcare settings. Conclusion: Key issues such as data application, privacy protection, cost‐effectiveness and regulatory remain areas of ambiguity that require clarification. Stringent ethical guidelines, data privacy protection measures and continuous supervision and evaluation of artificial intelligence decisions will help enhance the expected benefits of GenAI in healthcare. Relevance to Clinical Practice: The potential use of GenAI in healthcare has garnered widespread attention, emerging as a significant global research topic. However, its application in this domain presents substantial ethical and regulatory challenges. Compared to other fields, GenAI's role in healthcare is more sensitive and complex, necessitating an urgent assessment of its ethical implications for future development and deployment. Challenges and ethical considerations are particularly pronounced in developing countries with limited healthcare resources.",
+      "authors": "Yu, Lanyi\n                Zhai, Xiaomei\n                School of Population Medicine and Public Health, Chinese Academy of Medical Sciences & Peking Union Medical College, Beijing, China",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Ethical%20and%20Regulatory%20Challenges%20of%20Generative%20Artificial%20Intelligence%20in%20Healthcare%3A%20A%20Chinese%20Perspective.",
+      "source": "CINAHL",
+      "summary": "This discussion paper examines ethical and regulatory challenges of using generative AI in healthcare, using China as an example. It finds that issues like data use, privacy protection, cost-effectiveness, and regulation remain unclear, and calls for strict ethical guidelines and ongoing oversight. This matters because it highlights concerns nursing informatics professionals should consider when evaluating GenAI tools, especially in resource-limited settings.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:16",
+      "title": "Ethical Use of Artificial Intelligence in Public Health: Mitigating Risks and Advancing Health Equity.",
+      "abstract": "Artificial intelligence (AI) is increasingly integrated into public health practice, offering new tools for surveillance, behavioral interventions, disease prevention, risk communication, and population health management. Although AI demonstrates promise for earlier disease detection, improved intervention targeting, and cost-effective augmentation of limited public health capacity, many tools are being deployed amid fragmented regulatory frameworks, validation standards, and equity safeguards that govern other health interventions. Consequently, AI can introduce significant ethical, operational, and equity-related risks. Current industry-driven AI development lacks sufficient guardrails for the ethical and responsible use of AI across public health systems, creating risks that disproportionately affect underserved populations. We examine current AI applications in public health through the lens of established ethical principles, with particular attention to historically marginalized communities. In our analyses, we identify critical infrastructure and governance gaps across federal, state, local, and Tribal settings, and propose concrete strategies, including mandatory equity impact assessments, validation in the communities of intended use, alignment with data sovereignty principles, transparency with communities about when and how AI is used, and sustained investment in public health workforce capacity to evaluate AI tools. (Am J Public Health. 2026;116(10):1520–1528. https://doi.org/10.2105/AJPH.2026.308638)",
+      "authors": "Adirim, Terry\n                Molten, Amy",
+      "journal": "American Journal of Public Health",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Ethical%20Use%20of%20Artificial%20Intelligence%20in%20Public%20Health%3A%20Mitigating%20Risks%20and%20Advancing%20Health%20Equity.",
+      "source": "CINAHL",
+      "summary": "This paper examines how AI is being used in public health, including surveillance and disease prevention, and finds that weak regulation and oversight create ethical and equity risks, especially for marginalized communities. The authors propose steps like equity impact assessments, community validation, and data sovereignty principles. For nursing informatics, this highlights the need to build workforce capacity and governance frameworks before adopting AI tools in practice.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:18",
+      "title": "Charting and Predicting Risk: Artificial Intelligence/Machine Learning Pilot Model for Hospital-Acquired Pressure Injuries.",
+      "abstract": "Background: Hospital-acquired pressure injuries (HAPIs) are a significant and global adverse event impacting an estimated 2.5 million patients per year, costing from $20 900 to $151 700 per pressure injury. Purpose: The purpose of this pilot study was 2-fold: (1) to evaluate the effectiveness of artificial intelligence and machine learning (AI/ML) models in predicting HAPIs, and (2) to compare that effectiveness with the predictive accuracy of traditional analytic methods. Methods: Secondary data analysis was performed for this pilot study. A training dataset was created and used for our exploratory evaluation and comparisons between AI/ML models and traditional analytic methods for pressure injury predictive accuracy. Results: While logistic regression provided a reasonable fit and interpretable coefficients, tree-based AI models performed notably better in predicting HAPIs. Conclusions: The use of AI/ML models appears to offer an increase in precision for the identification of patients at risk for developing HAPIs.",
+      "authors": "Polancich, Shea\n                Hickman, Chris\n                Dick, Tracey\n                Hall, Allyson\n                Bordelon, Curry\n                Hearld, Ria\n                Author Affiliations: Department of Family, Community, and Health Systems (Drs Polancich and Bordelon), Department of Acute, Chronic, and Continuing Care, School of Nursing, University of Alabama at Birmingham (UAB) (Mr Hickman and Dr Dick), and Department of Health Services Administration, UAB School of Health Professions, Birmingham, Alabama (Drs Hall and Hearld).",
+      "journal": "Journal of Nursing Care Quality",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Charting%20and%20Predicting%20Risk%3A%20Artificial%20Intelligence/Machine%20Learning%20Pilot%20Model%20for%20Hospital-Acquired%20Pressure%20Injuries.",
+      "source": "CINAHL",
+      "summary": "This pilot study used secondary data to test whether AI/machine learning models could predict hospital-acquired pressure injuries (HAPIs) better than traditional logistic regression. Tree-based AI models predicted HAPIs more accurately than logistic regression, which still gave a reasonable, interpretable fit. This suggests AI/ML tools may help nurses identify at-risk patients more precisely, supporting earlier prevention efforts.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:23",
+      "title": "Artificial Intelligence Perceptions and Readiness Among Clinical Nurses: A Latent Profile Analysis With Implications for Nursing Management.",
+      "abstract": "Aims: This study aimed to identify latent profiles of artificial intelligence (AI) perceptions and readiness among clinical nurses based on their AI‐related attitudes, literacy, self‐efficacy, and anxiety, and to explore the influencing factors associated with each profile. Materials and Methods: Nurses were recruited via convenience sampling from public hospitals in China. A total of 1018 valid questionnaires were included for final analysis. Latent profile analysis was performed to classify subgroups. Multivariate logistic regression was adopted to explore the influencing factors of different profiles. Results: Three profiles were identified: the Low AI Perceptions and Readiness Profile (66.8%), characterized by the lowest AI attitudes, literacy, and self‐efficacy with moderate anxiety; the Ambivalent AI Perceptions and Readiness Profile (20.8%), exhibiting moderate attitudes and literacy but the highest self‐efficacy and anxiety; and the High AI Perceptions and Readiness Profile (12.4%), demonstrating the highest attitudes, literacy, and self‐efficacy with the lowest anxiety. Significant differences across profiles were found in education level, work experience, preceptor role, AI training experience, region, hospital level, and teaching hospital status. Conclusions: Clinical nurses exhibit substantial heterogeneity in AI perceptions and readiness patterns. Most are in the Low AI Perceptions and Readiness group due to insufficient training and limited resources. The Ambivalent AI Perceptions and Readiness group consists of nurses with mixed AI perceptions and high anxiety levels who require targeted support, while the High AI Perceptions and Readiness group can serve as peer mentors. These findings highlight the necessity of profile‐based training to enhance AI integration in nursing education and practice. Implications for Nursing Management: The three profiles identified in this study provide nurse administrators with an empirically based reference for differentiating educational approaches across learner groups. This classification can assist in designing targeted content, structuring peer support, and planning curricula to facilitate AI integration in nursing practice.",
+      "authors": "Yang, Bei\n                Hu, Jiacheng\n                Zeng, Qin\n                Department of Pediatric Gastroenterology Nursing,, West China Second University Hospital,, Sichuan University,, Chengdu Sichuan, 610041,, China, scu.edu.cn",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "9/28",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20Intelligence%20Perceptions%20and%20Readiness%20Among%20Clinical%20Nurses%3A%20A%20Latent%20Profile%20Analysis%20With%20Implications%20for%20Nursing%20Management.",
+      "source": "CINAHL",
+      "summary": "Researchers surveyed 1,018 clinical nurses at public hospitals in China to identify patterns in AI attitudes, literacy, self-efficacy, and anxiety. They found three distinct profiles: Low (66.8%), Ambivalent (20.8%), and High (12.4%) AI perceptions and readiness, linked to factors like education, training, and hospital setting. This suggests nurse administrators could use these profiles to design targeted AI training and peer support for nursing practice.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    }
+  ]
+}

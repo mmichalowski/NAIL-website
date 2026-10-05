@@ -1,37 +1,38 @@
 {
-  "issue": 6,
-  "filename": "ni-biweekly-2026-09-21.html",
+  "issue": 7,
+  "filename": "ni-biweekly-2026-10-05.html",
   "date_range": {
-    "start": "Sep 07, 2026",
-    "end": "Sep 21, 2026"
+    "start": "Sep 21, 2026",
+    "end": "Oct 05, 2026"
   },
-  "generated_at": "2026-09-21T12:09:12.011534Z",
-  "paper_count": 12,
-  "flag_count": 5,
+  "generated_at": "2026-10-05T13:48:52.179809Z",
+  "paper_count": 37,
+  "flag_count": 16,
   "topic_counts": {
-    "Clinical Decision Support": 2,
-    "Workforce & Education": 5,
-    "NLP & Generative AI": 2,
-    "Patient-Facing AI": 2,
-    "AI Ethics & Governance": 1
+    "AI Ethics & Governance": 7,
+    "Clinical Decision Support": 10,
+    "AI Methods & Evaluation": 2,
+    "NLP & Generative AI": 6,
+    "Workforce & Education": 11,
+    "Patient-Facing AI": 1
   },
-  "teaser": "This issue's twelve papers center on workforce and education, with five papers covering nursing informatics competencies, simulation training, AI in nursing practice education, workforce management tools, and pharmacy education. A second thread looks at patient-facing AI tools, including a gastric cancer education chatbot and an AI telephone follow-up system, both compared against human-delivered care. Clinical decision support appears twice, covering a dysphagia screening model and a decision mining tool for quality improvement. NLP and generative AI also appear twice, applied to quality-of-life narratives and rheumatoid arthritis literature, while one paper validates a Chinese-language AI ethics awareness scale.",
+  "teaser": "This issue's 37 papers cluster around nurses' readiness for AI and clinical decision support testing. Several studies measure nursing students' and clinicians' AI literacy, anxiety, and attitudes, often finding mixed knowledge but generally positive views. A parallel set of papers tests prediction tools for triage, delirium, pressure injuries, and stroke mortality using nursing and bedside data, usually comparing machine learning against simpler scores. A third thread raises governance and ethics questions, covering intersectionality in AI design, ethics scales, professional organization roles, and frameworks for system-level oversight.",
   "themes": [
     {
-      "name": "AI tools compared to human performance",
-      "count": 3
+      "name": "Nurses' attitudes, anxiety, and readiness for AI",
+      "count": 8
     },
     {
-      "name": "Education and competency development",
-      "count": 4
+      "name": "Testing clinical prediction and decision support tools",
+      "count": 9
     },
     {
-      "name": "NLP and text analysis applications",
-      "count": 2
+      "name": "Governance, ethics, and accountability frameworks",
+      "count": 8
     },
     {
-      "name": "Governance and ethics measurement",
-      "count": 2
+      "name": "Language models for text analysis and evaluation",
+      "count": 6
     }
   ]
 }

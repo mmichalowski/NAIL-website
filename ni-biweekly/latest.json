@@ -1,38 +1,37 @@
 {
-  "issue": 7,
-  "filename": "ni-biweekly-2026-10-05.html",
+  "issue": 8,
+  "filename": "ni-biweekly-2026-10-19.html",
   "date_range": {
-    "start": "Sep 21, 2026",
-    "end": "Oct 05, 2026"
+    "start": "Oct 05, 2026",
+    "end": "Oct 19, 2026"
   },
-  "generated_at": "2026-10-05T13:48:52.179809Z",
-  "paper_count": 37,
-  "flag_count": 16,
+  "generated_at": "2026-10-19T12:18:17.317809Z",
+  "paper_count": 12,
+  "flag_count": 4,
   "topic_counts": {
-    "AI Ethics & Governance": 7,
-    "Clinical Decision Support": 10,
-    "AI Methods & Evaluation": 2,
-    "NLP & Generative AI": 6,
-    "Workforce & Education": 11,
+    "NLP & Generative AI": 3,
+    "Workforce & Education": 4,
+    "Clinical Decision Support": 3,
+    "EHR & Workflows": 1,
     "Patient-Facing AI": 1
   },
-  "teaser": "This issue's 37 papers cluster around nurses' readiness for AI and clinical decision support testing. Several studies measure nursing students' and clinicians' AI literacy, anxiety, and attitudes, often finding mixed knowledge but generally positive views. A parallel set of papers tests prediction tools for triage, delirium, pressure injuries, and stroke mortality using nursing and bedside data, usually comparing machine learning against simpler scores. A third thread raises governance and ethics questions, covering intersectionality in AI design, ethics scales, professional organization roles, and frameworks for system-level oversight.",
+  "teaser": "This issue centers on nurses' readiness for AI and testing AI tools against real work. Several papers measure digital literacy, competence, or anxiety among nursing and allied health students, generally finding that ethics-focused and cognitive literacy matter alongside technical skill. A second thread tests large language models on nursing text, including handover transcripts, discharge letters, and free-text care notes, with mixed accuracy and ongoing uncertainty about clinical readiness. A third thread examines decision support design and use, from a long-term care prototype to participatory design practices and ICU nurses' experiences with AI and missed care.",
   "themes": [
     {
-      "name": "Nurses' attitudes, anxiety, and readiness for AI",
-      "count": 8
+      "name": "AI readiness and literacy in nursing education",
+      "count": 4
     },
     {
-      "name": "Testing clinical prediction and decision support tools",
-      "count": 9
+      "name": "Language models processing clinical text",
+      "count": 4
     },
     {
-      "name": "Governance, ethics, and accountability frameworks",
-      "count": 8
+      "name": "Designing and experiencing clinical decision support",
+      "count": 3
     },
     {
-      "name": "Language models for text analysis and evaluation",
-      "count": 6
+      "name": "Patient-facing AI tools",
+      "count": 1
     }
   ]
 }

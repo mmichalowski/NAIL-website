@@ -1,0 +1,270 @@
+{
+  "issue": 8,
+  "generated_at": "2026-10-19T12:18:17.317809Z",
+  "date_range": {
+    "start": "Oct 05, 2026",
+    "end": "Oct 19, 2026"
+  },
+  "paper_count": 12,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "synthesis": {
+    "overview": [
+      "This issue centers on nurses' readiness for AI and testing AI tools against real work. Several papers measure digital literacy, competence, or anxiety among nursing and allied health students, generally finding that ethics-focused and cognitive literacy matter alongside technical skill. A second thread tests large language models on nursing text, including handover transcripts, discharge letters, and free-text care notes, with mixed accuracy and ongoing uncertainty about clinical readiness. A third thread examines decision support design and use, from a long-term care prototype to participatory design practices and ICU nurses' experiences with AI and missed care.",
+      "Papers dropped sharply to 12 this issue (-25). Workforce & Education remains the leading topic, continuing last issue's focus on literacy and readiness, though with fewer papers overall. NLP & Generative AI gained ground, now testing concrete tasks like handover extraction and discharge letters rather than general attitudes. AI Ethics & Governance, a major thread last issue with seven papers, is absent this time, and AI Methods & Evaluation does not appear either. Clinical Decision Support continues but shrinks from 10 to 3 papers, now including implementation and participatory design questions rather than prediction-tool comparisons."
+    ],
+    "themes": [
+      {
+        "name": "AI readiness and literacy in nursing education",
+        "paper_ids": [
+          "42879445",
+          "cinahl:2",
+          "cinahl:8",
+          "cinahl:18"
+        ]
+      },
+      {
+        "name": "Language models processing clinical text",
+        "paper_ids": [
+          "42886841",
+          "42832768",
+          "42730664",
+          "42859266"
+        ]
+      },
+      {
+        "name": "Designing and experiencing clinical decision support",
+        "paper_ids": [
+          "42832741",
+          "cinahl:0",
+          "cinahl:1"
+        ]
+      },
+      {
+        "name": "Patient-facing AI tools",
+        "paper_ids": [
+          "cinahl:10"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 7,
+      "papers": 12,
+      "papers_delta": -25,
+      "leading_topic": "Workforce & Education",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "NLP & Generative AI",
+      "rising_pp": 9,
+      "falling_topic": "AI Ethics & Governance",
+      "falling_pp": -19,
+      "flagged": 4,
+      "flagged_delta": -12
+    },
+    "generated_at": "2026-10-19T12:18:17.317689Z",
+    "model": "claude-sonnet-5"
+  },
+  "papers": [
+    {
+      "pmid": "42886841",
+      "title": "Natural Language Processing in Nursing Practice for Clinical Reasoning and Workflow: Scoping Review.",
+      "abstract": "Recent advancements in digital health technologies have led to the accumulation of large volumes of unstructured text data, particularly in electronic health records. Given that nursing documentation frequently includes detailed descriptions of daily living activities and psychosocial contexts, existing medical natural language processing (NLP) tools may not be directly applicable without adaptation. Moreover, the integration of standardized nursing terminologies into NLP systems remains limited. Although NLP has the potential to support risk detection, information management, and care planning, its practical applications in nursing have not yet been systematically mapped. This scoping review aimed to map the practical applications of NLP in nursing practice, with a specific focus on real-world clinical use, particularly for assessment, documentation, and interventions, and to identify the study characteristics, application domains, outcomes, and challenges. Following the Joanna Briggs Institute methodology and PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses Extension for Scoping Reviews) guidelines, a systematic search was conducted across PubMed, CINAHL, the Cochrane Library, Scopus, Embase, and Ichushi-Web in October 2023 and June 2025. The population-concept-context framework (population: nurses; concept: NLP applications; context: clinical settings) was used to guide study selection. Two independent reviewers screened 2889 unique records and reviewed the full texts of 72 studies. Data were descriptively synthesized and thematically classified. Six studies met the inclusion criteria, indicating that empirically evaluated applications of NLP in real-world nursing practice remain limited. NLP applications were categorized into three domains: (1) text summarization and generation, (2) information extraction and classification, and (3) real-time detection and screening. NLP was applied across multiple stages of nursing practice, including handovers, assessment, care planning, continuity of care, and patient safety management. Notably, NLP was used as a form of augmented intelligence to complement, rather than replace, nurses' clinical judgment and to support clinical decision-making. These findings also highlight a substantial gap between rapid technological advances and the limited implementation of NLP in real-world nursing practice. This review highlights the substantial gap between rapid technological advances and the limited implementation of NLP in real-world nursing practice. NLP may help reduce manual review workload, support early risk identification, and facilitate individualized care planning in selected nursing contexts. However, direct empirical evidence regarding its effects on nursing workflows, nurses' clinical decision-making, and patient-level outcomes remains limited. Future research should prioritize real-world implementation studies and evaluate nurses' acceptance, adoption barriers, workflow integration, and the influence of NLP on clinical decision-making.",
+      "authors": "Iwase K, Teshima T, Yamakawa M, Takeya Y",
+      "journal": "JMIR nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/94778",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42886841/",
+      "summary": "This scoping review examined how natural language processing (NLP) is used in real-world nursing practice, screening nearly 2900 records but finding only six studies with empirical evidence. NLP applications fell into three areas: text summarization, information extraction, and real-time risk detection, mainly supporting documentation and care planning rather than replacing nursing judgment. The review shows a large gap between NLP's technical potential and its actual use in nursing, pointing to a need for more implementation research.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42879445",
+      "title": "From skills to smart care: The mediating role of digital literacy in the relationship between digital competence and medical artificial intelligence readiness among nursing students.",
+      "abstract": "The rapid integration of artificial intelligence (AI) in healthcare requires nurses to possess strong digital competence, advanced digital literacy, and readiness to engage with AI technologies. Despite this need, the ways in which digital competence influences AI readiness, and the mediating role of digital literacy, remain underexplored. This descriptive cross-sectional study examined 500 undergraduate nursing students from two Universities for Health Sciences in Saudi Arabia and Egypt using validated measures of digital competence, digital literacy, and medical AI readiness. Results indicated strong positive correlations between digital competence, digital literacy, and AI readiness, with digital literacy partially mediating the effect of digital competence on AI readiness. These findings highlight the importance of integrating ethical, reflective, and AI-focused digital literacy alongside technical skills in nursing education, ensuring that future nurses are prepared to use medical AI effectively and safely, thereby supporting clinical decision-making and improving quality of care.",
+      "authors": "Amin SM, El-Gazar HE, Alkubati SA, Zoromba MA, Mohamed HS, Elbakry MAAE et al.",
+      "journal": "PloS one",
+      "pub_date": "2026",
+      "doi": "10.1371/journal.pone.0359992",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42879445/",
+      "summary": "This cross-sectional study surveyed 500 undergraduate nursing students at two universities in Saudi Arabia and Egypt to examine how digital competence and digital literacy relate to readiness for medical AI. Digital competence, digital literacy, and AI readiness were all strongly linked, and digital literacy partially explained how competence affected readiness. This suggests nursing education should build AI-focused and ethical digital literacy skills, not just technical ones, to prepare nurses for safe AI use in care.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42859266",
+      "title": "Prototyping and evaluation of a clinical decision support system in long-term care in German nursing homes.",
+      "abstract": "Demographic change in Germany is increasing the demand for professional long-term care. Given rising requirements and simultaneous staff shortages, the need for digital systems is growing to effectively support nursing staff and mitigate staffing bottlenecks. This article introduces a hybrid clinical decision support system (CDSS) designed to generate actionable intervention recommendations by combining structured data and narrative nursing documentation. The CDSS consists of three interacting components: (1) knowledge models that encode state-of-the-art nursing knowledge, (2) a rule-based expert system that applies these models to generate individualized nursing interventions within the application fields mobility and pain management, and (3) a large language model (LLM) that extracts indicators that are necessary for knowledge-based decision-making from free-text entries to fill documentation gaps. A prototype was implemented and descriptively evaluated in two German nursing homes. Overall, 72% of the CDSS recommendations were rated as \"correct\" by nursing professionals, meaning appropriate for the care situation. In a separate evaluation, the LLM achieved 76% agreement rate in extracting care-relevant information from narratives. These results suggest that a hybrid architecture integrating expert knowledge, rule-based logic, and language models may have the potential to enhance nursing planning in long-term care settings.",
+      "authors": "Pilz M, Gebert A, Brünett M, Steffny L, Schubert C, Flechsig J et al.",
+      "journal": "Health care management science",
+      "pub_date": "Oct 2026",
+      "doi": "10.1007/s10729-026-09794-2",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42859266/",
+      "summary": "Researchers built a hybrid clinical decision support system for German nursing homes, combining nursing knowledge models, rule-based logic, and a large language model to support care planning for mobility and pain management. In testing, nursing professionals rated 72% of system recommendations as correct, and the language model reached 76% agreement extracting care information from free-text notes. This suggests combining structured and narrative data may help nursing planning in long-term care, though further evaluation is needed.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42832768",
+      "title": "AI-Based Structured Information Extraction From Synthetic Nursing Handover Transcripts: Comparative Evaluation of Large Language Models.",
+      "abstract": "Clinical handover is the process during which responsibility and accountability for care are transferred between clinicians. AI has the potential to improve the reliability and completeness of clinical handover by helping clinicians detect predefined content areas that have been communicated, identify explicit information gaps, and prompt clarification before responsibility is transferred. This study evaluated the performance of several large language models and prompt optimization strategies for structured information extraction of synthetic nursing handover transcripts. Two registered nurses independently annotated a dataset of 203 synthetic handover transcripts to produce consensus labels for information extraction tasks. Tasks included (1) labeling spans of text into SBAR (Situation, Background, Assessment, Recommendation) categories, (2) content detection to determine if specific pieces of information were communicated, and (3) labeling spans of text that communicated information using uncertain terms that included a subtask for identifying unknown facts. Baseline and Genetic-Pareto (GEPA)-optimized prompts were compared for the GPT-5.2, GPT-5-nano, and MedGemma 27B large language models. Additionally, the LangExtract framework was evaluated for span-extraction tasks. The GPT-5.2-optimized model achieved a micro-F1-score of 0.85 (95% CI 0.83-0.88) for content detection, an absolute improvement of +0.08 compared with the matched baseline. GPT-5-nano also performed better after optimization for content detection (micro-F1-score 0.81, 95% CI 0.78-0.84), suggesting that this structured task was not limited to the highest-capacity model. For SBAR span extraction, GPT-5.2 with prompt optimization achieved a micro-F1-score of 0.76 (95% CI 0.72-0.79), improving by +0.24 compared with baseline and exceeding LangExtract; GPT-5-nano also improved to a micro-F1-score of 0.69 (95% CI 0.66-0.72). Broad uncertainty-span extraction remained comparatively weak despite prompt optimization (micro-F1-score 0.41, 95% CI 0.33-0.48; absolute improvement +0.06). In contrast, explicit unknown-fact extraction was more accurate with GPT-5.2 (micro-F1-score 0.84, 95% CI 0.63-1.00), GPT-5-nano (micro-F1-score, 0.84 95% CI 0.63-1.00), and MedGemma 27B (micro-F1-score 0.80, 95% CI 0.63-1.00). Genetic-Pareto-optimized prompts outperformed the LangExtract approach across each span-extraction task. Prompt optimization improved matched-model point estimates, with the highest performance observed for predefined content detection and SBAR span extraction. Broad uncertainty extraction remained less accurate than the narrower unknown-fact task. These technical results do not establish clinical effectiveness, safety, or readiness for real-time use. Validation using authentic nursing handover communication and prospective evaluation in clinical workflows are required before clinical application.",
+      "authors": "Conway A, Hada A, Schluter J, Xu HG, Lowden D, Miller T et al.",
+      "journal": "JMIR nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/106133",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42832768/",
+      "summary": "Researchers tested whether large language models (GPT-5.2, GPT-5-nano, MedGemma 27B) could extract structured information from 203 synthetic nursing handover transcripts, using SBAR categories, content detection, and uncertainty labeling as tasks. Optimized prompts improved performance, with GPT-5.2 scoring highest on content detection and SBAR extraction, though broad uncertainty detection stayed weak. The authors note these results do not prove clinical safety or readiness, and real handover data and workflow testing are still needed.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42832741",
+      "title": "Participatory Design of AI-Based Clinical Decision Support Systems: Scoping Review.",
+      "abstract": "AI-based clinical decision support systems (CDSS) can improve diagnostics and treatment decisions, but they are rarely implemented in practice. Barriers include limited integration into clinical workflows, lack of transparency, and insufficient involvement of end users in system design. Participatory and user-centered approaches offer ways to address these challenges by aligning development processes with the needs and routines of clinical staff. However, systematic evidence on how such approaches are applied in the development of AI-based CDSS remains limited. Our study examined how participatory approaches are used in the development, piloting, and implementation of AI-based CDSS. We analyzed which user perspectives were included, which participatory methods were applied, how they contributed to technical design, and which ethical, legal, and social implications were addressed. This scoping review followed the PRISMA-ScR (Preferred Reporting Items for Systematic Reviews and Meta-Analyses extension for Scoping Reviews) guideline, with a protocol published in advance. A systematic search was conducted in MEDLINE, ACM Digital Library, CINAHL, and PsycInfo for studies published from 2012 onward, complemented by snowballing and manual searches. Primary studies in English or German were included if they involved clinical staff in the development, piloting, implementation, or evaluation of AI-based CDSS. Moreover, 3 independent reviewers conducted screening and data extraction, resolving disagreements by consensus. Data analysis followed JBI methodology and focused on the scope of participation, theoretical and methodological foundations, and reported impacts of participatory approaches. Of 4318 identified records, 37 met the inclusion criteria. The studies showed broad variation in terminology and methods, most often describing user-centered or iterative processes and less frequently co-design. Physicians were involved in nearly all studies, nurses frequently, and other professional groups only occasionally. Participation mainly supported requirements analysis, adaptation of models to clinical workflows, and the design of explainable interfaces. In several projects, it also influenced data selection, annotation, and visualization. Common barriers included time constraints, limited continuity of participation, and uncertainty toward AI. Ethical, legal, and social aspects were addressed implicitly through themes such as autonomy, responsibility, and traceability, while fairness and bias were rarely discussed. Participatory processes in AI-based CDSS development should extend across all stages of system design and address not only usability but also data quality, bias, and broader ethical, legal, and social issues. Equal inclusion of nursing and therapeutic expertise is essential to reflect the diversity of clinical decision-making. Clear methodological standards are needed to ensure comparability and to strengthen participation as a genuine co-design process shaping data, models, and values in clinical AI.",
+      "authors": "Rambach T, Gleim P, Heizmann C, Kellmeyer P, Kunze C",
+      "journal": "JMIR medical informatics",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/88368",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42832741/",
+      "summary": "This scoping review looked at 37 studies on how clinical staff participate in building AI-based clinical decision support systems. Physicians took part in nearly all studies and nurses often, but participation mostly focused on usability and workflow design, while fairness, bias, and ethical issues were rarely discussed. For nursing informatics, this points to a need for stronger, more consistent nursing involvement across all design stages, not just early feedback.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42730664",
+      "title": "Comprehension of an artificial intelligence-generated discharge letter versus a traditional discharge letter: two controlled quasi-experimental parallel-group studies.",
+      "abstract": "Discharge letters are essential for continuity of care, yet patients often misunderstand their content. Poor discharge communication is associated with medication errors, inappropriate healthcare use, and hospital readmissions. Artificial intelligence (AI) language models may improve discharge documentation clarity and accessibility. This study aimed to compare a GPT-4-generated, accessibility-optimized discharge letter with a conventional discharge letter regarding comprehension of key discharge information and to evaluate satisfaction and identify predictors of comprehension. Two controlled quasi-experimental parallel-group studies were conducted. Study 1 included adults recruited online (n = 341 analysed), while Study 2 involved medical and nursing students at the University of Turin (n = 791 analysed). Allocation was based on age parity. The primary outcome was a structured comprehension score assessing diagnosis, treatment, investigations, and follow-up instructions. Secondary outcomes included readability, clarity, perceived comprehension, organization, and satisfaction. Health literacy (HL) was assessed using the HLS-EU-Q6. Multiple linear regression analyses identified predictors of comprehension. Participants receiving the AI-generated discharge letter achieved significantly higher comprehension scores in both studies (Study 1: median 4 vs. 2; Study 2: median 4 vs. 3; both P < .001). Differences remained significant after adjustment for sociodemographic variables, HL, and healthcare background. AI-generated letters also improved all secondary outcomes (all P < .001). No significant improvement was observed for identification of follow-up appointment dates. Higher comprehension was associated with healthcare background, higher education, sufficient HL, and better perceived health status. AI-generated discharge letters significantly improved measured comprehension and satisfaction in both general and higher-literacy populations; validation using real clinical letters and diverse patients is required.",
+      "authors": "Bert F, Rosset L, Conrado F, Consoli D, Scaioli G, Lo Moro G et al.",
+      "journal": "International journal for quality in health care : journal of the International Society for Quality in Health Care",
+      "pub_date": "Oct 2026",
+      "doi": "10.1093/intqhc/mzag133",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42730664/",
+      "summary": "Two quasi-experimental studies compared GPT-4-generated discharge letters with conventional ones among online adults and medical/nursing students in Turin. Participants who received the AI-generated letters scored significantly higher on comprehension and satisfaction measures, though understanding of follow-up appointment dates did not improve. For nursing informatics, this suggests AI-assisted discharge letters could support patient understanding, but testing with real clinical letters and more diverse patients is still needed.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:0",
+      "title": "Nurses' Experiences With Artificial Intelligence and the Association Between Clinical Decision‐Making and Missed Nursing Care: A Convergent Mixed‐Methods Study.",
+      "abstract": "Introduction: Artificial intelligence (AI) is increasingly being incorporated into clinical nursing practice, but evidence remains limited on how nurses experience AI‐supported systems and how decision‐making orientation relates to missed nursing care (MNC). Aim: To explore nurses' experiences with AI‐supported clinical decision support (CDS) and examine associations among clinical decision‐making orientation, professional characteristics, and MNC. Design: A convergent parallel mixed‐methods study. Methods: The study was conducted in six hospitals in Beni Suef Governorate, Egypt. The quantitative sample included 210 intensive care unit (ICU) nurses who completed the Nursing Decision‐Making Instrument–Revised 2014 (NDMI‐R) and the Missed Intensive Nursing Care Scale (MINCS). Fourteen nurses completed semistructured interviews, and all transcripts were included in the thematic analysis. Results: NDMI‐R scores showed a small negative bivariate correlation with MNC (r = −0.178, p < 0.01), but the adjusted association was not statistically significant (β = −0.124, p = 0.063). The regression model explained 16.9% of the variance in MNC (adjusted R2 = 14.5%). Years of experience (β = 0.198, p = 0.004) and bachelor's degree or above compared with a technical nursing diploma (β = −0.255, p < 0.001) were significant predictors. The other education contrast, AI training/support and MISSCARE Reasons were not statistically significant. In interviews, nurses described AI‐related tools as potentially helpful for alerts, information review, workflow, and communication while also raising concerns about trust, overreliance, empathy, and training. Conclusion: Nurses perceived potential benefits from AI‐supported tools, but the quantitative findings did not establish an independent effect of AI or a statistically significant adjusted association between decision‐making orientation and MNC. These findings support cautious, nurse‐centered implementation and further longitudinal evaluation. Implications for Nursing Management: Managers should pair any AI‐supported CDS implementation with role‐specific training, clear accountability, usability monitoring, and safeguards that preserve clinical judgment and humanistic care.",
+      "authors": "Alanazi, Faisal Khalaf\n                Tawfik, Ahmed Farghaly\n                Mahgoub, Shimaa Abdelfattah\n                Alenezi, Ibrahim Naif\n                Atta, Mohamed Hussein Ramadan\n                El-Ashry, Ayman Mohamed\n                Lotfy, Enas Mohamed\n                Yehia, Alshaimaa Yehia Mohammed\n                Medical Surgical Nursing Department, College of Nursing, Northern Border University, Arar, Saudi Arabia, nbu.edu.sa",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "10/1",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Nurses%27%20Experiences%20With%20Artificial%20Intelligence%20and%20the%20Association%20Between%20Clinical%20Decision%E2%80%90Making%20and%20Missed%20Nursing%20Care%3A%20A%20Convergent%20Mixed%E2%80%90Methods%20Study.",
+      "source": "CINAHL",
+      "summary": "This mixed-methods study surveyed 210 ICU nurses in six Egyptian hospitals and interviewed 14 of them about AI-supported clinical decision support tools and missed nursing care. Decision-making orientation showed a small link to missed care that became non-significant after adjustment; years of experience and higher education were significant predictors instead. Nurses saw potential benefits from AI tools but also raised concerns about trust, overreliance, and training, supporting cautious, nurse-centered implementation.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:1",
+      "title": "Hospital Digital Transformation, Nursing Data Burden, and Leadership and Governance Capacity: A Critical Narrative Review.",
+      "abstract": "Aim: To critically synthesize how hospital digital transformation reconfigures nursing work and data burden, and to examine the distinct contributions of nurse‐leader capability and organizational governance capacity. Background: Digital systems can support documentation, surveillance, coordination, and clinical decision‐making. The same systems can add redundant entry, fragmented attention, excessive notifications, cognitive workload, and data‐quality responsibilities. Technology effects, nursing burden, and implementation leadership are often discussed separately, limiting their usefulness for nursing management. Design: Critical narrative review. Methods: A structured search of PubMed/MEDLINE and OpenAlex covered January 1, 2015, to August 21, 2026, supplemented by citation chasing and authoritative policy sources. Seventeen searches produced 8094 records before deduplication and 5735 unique records. A computer‐assisted relevance gate identified 2231 potentially relevant records, from which a rule‐based, domain‐balanced ranking generated 220 candidates. Two authors independently reviewed the candidates; 140 records underwent structured annotation, and 58 cited evidence records received detailed author‐led appraisal and claim verification. Evidence was organized across technology and work, data burden, leadership and governance, and context and equity. Interpretation was weighted by design, directness, access depth, methodological limitations, consistency, and setting. The Scale for the Assessment of Narrative Review Articles (SANRA) informed reporting quality but was not treated as a conduct standard. Results: Digital systems did not produce a uniform workload effect. Benefits were most credible when systems reduced duplicate entry, automated data transfer, improved information access, or fitted local workflow. Burden arose through documentation complexity, task switching, nonactionable alerts or alarms, verification work, and fragmented infrastructures. Individual digital competence supported adaptation but could not compensate for poor usability, inadequate staffing, weak training, or unclear accountability. Leadership capability and governance capacity operated at different levels and should not be modeled as a single mediator. Evidence from China illustrated rapid implementation and local innovation, but remained too context‐specific for national or cross‐system generalization. Conclusion: Hospital digital transformation is best evaluated as a sociotechnical reconfiguration of nursing work. Nurse managers need measures that distinguish time burden, cognitive burden, alert burden, alarm burden, and data‐quality work. Organizations need nursing representation, workflow‐centered design, continuing training, technical support, data standards, and explicit accountability. The proposed framework is an evidence‐informed organizing heuristic, not a validated causal model.",
+      "authors": "Xie, Jiang-Ying\n                Liu, Si-Yuan\n                He, Yan\n                Operating Room, Department of Anesthesiology, West China Hospital, Sichuan University, Chengdu, China, scu.edu.cn",
+      "journal": "Journal of Nursing Management",
+      "pub_date": "10/6",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Hospital%20Digital%20Transformation%2C%20Nursing%20Data%20Burden%2C%20and%20Leadership%20and%20Governance%20Capacity%3A%20A%20Critical%20Narrative%20Review.",
+      "source": "CINAHL",
+      "summary": "This critical narrative review examined how hospital digital systems change nursing work and data burden, and how nurse-leader skill and organizational governance each contribute. The review found that digital tools can reduce duplicate work but also add burden through complex documentation, alerts, and fragmented systems; leadership and governance act separately, not as one factor. This matters because it gives nurse managers a framework to measure different types of burden and guide workflow-focused system design.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "EHR & Workflows",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:2",
+      "title": "Artificial intelligence integration in allied health professions: A comprehensive review of educational, research, and clinical applications.",
+      "abstract": "Artificial intelligence (AI) is rapidly transforming healthcare delivery across multiple disciplines. Allied health professions–including diagnostic medical sonography (DMS), health informatics (HI), medical billing and coding (MBC), midwifery (MW), occupational therapy (OT), physical therapy (PT), and physician assistant (PA) practice–represent critical yet understudied domains of AI integration. Understanding of how AI technologies are adopted across these professions is essential for supporting ethical and effective implementation.This review synthesizes the current literature on AI integration across seven allied health professions, examining applications in education, research, and clinical practice while identifying implementation challenges, and ethical considerations.A structured literature review of peer-reviewed articles, systematic reviews, and professional practice guidelines published between 2018 and 2025 was conducted. Articles were selected based on relevance to AI applications in allied health professions and discussion of educational, research, or clinical implementations. Particular attention was given to applications where AI augments rather than replaces clinical judgment and therapeutic relationships.AI integration demonstrates several cross-disciplinary trends. In education, simulation platforms, adaptive learning systems, and virtual patient support competency development and personalized instruction. In research, AI enhances large-scale data analysis, predictive modeling, and evidence synthesis. Clinically, AI improves diagnostic accuracy, workflow efficiency, and decision support across professions. However, implementation raises concerns regarding data privacy, algorithmic bias, automation complacency, and inequitable access to technology.AI is reshaping allied health education, research, and clinical practice. Responsible integration requires discipline-specific validation, ethical governance, and interprofessional collaboration to ensure AI strengthens– rather than replaces–professional expertise and patient-centered care.",
+      "authors": "DeOliveira, Shushawna\n                Rappaport, Suzanne\n                Struk, Iryna\n                Yannotta, Richard\n                Haeri, Farhad\n                Dhaliwal, Puneet\n                Trimmingham, Andrea\n                Hinds, Lynette\n                Amar-Alattaby, Amal\n                Wiggins, Shakima\n                Lewis, Allen\n                Kaufman, David\n                Jumbo, Adiebonye\n                Faysel, Mohammad\n                School of Health Professions,    12298   SUNY Downstate Health Sciences University   , Brooklyn, NY, USA",
+      "journal": "Work",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20intelligence%20integration%20in%20allied%20health%20professions%3A%20A%20comprehensive%20review%20of%20educational%2C%20research%2C%20and%20clinical%20applications.",
+      "source": "CINAHL",
+      "summary": "This literature review looked at how AI is used in seven allied health fields, including health informatics, physical therapy, and occupational therapy, between 2018 and 2025. The review found AI supports education through simulations and adaptive learning, aids research through data analysis, and helps clinical decision-making, while raising concerns about privacy, bias, and unequal access. For nursing informatics, this highlights shared cross-discipline challenges in implementing AI responsibly alongside professional judgment.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:8",
+      "title": "Artificial intelligence adaptation in the future healthcare workforce: Evaluating literacy and anxiety levels.",
+      "abstract": "Increasing integration of artificial intelligence (AI) into clinical workflows necessitates assessing how future healthcare professionals adapt to these technologies.This study aims to determine the artificial intelligence literacy and anxiety levels of students at a Vocational School of Health Services (VSHS) and to analyze the factors influencing these levels.This cross-sectional and descriptive-predictive study invited 800 associate degree healthcare students, resulting in a final sample of 545 participants (response rate: 68.12%). Instruments included a Sociodemographic Form, the AI Literacy Scale (AILS), and the AI Anxiety Scale (AIAS).The mean age of participants was   20.41 ± 4.07   years. While   55.6 %   of students reported partial knowledge of AI, only   44.4 %   reported active use of AI-supported tools. In univariate analyses, gender (  p = .005 ,  η 2  = 0.015  ), prior AI knowledge (  p = .002  ), and active AI application use (  p = .007  ) showed statistically significant differences in anxiety levels. Total AI literacy was weakly negatively correlated with AI anxiety (  r = − 0.20 , p < .001  ). Multivariable regression analysis confirmed that the established model significantly predicted anxiety   (  F  7 , 537   = 10.387 , p < .001  ), explaining   11.9 %   of the total variance (   R 2  = .119  , Adjusted    R 2  = .108  ). Within the multivariable model, cognitive literacy subdimensions—Awareness (  β = − .143 , p = .002  ), Evaluation (  β = − .116 , p = .027  ), and Ethics (  β = − .093 , p = .046  )—and male gender (  β = − .188 , p < .001  ) were associated with lower anxiety. Conversely, the operational AI Usage subdimension (  β = .106 , p = .023  ) was associated with higher anxiety.Cognitive AI literacy (awareness, evaluation, and ethics) serves as a protective buffer against technological anxiety, whereas practical execution introduces accountability-related stress. Vocational health curricula should incorporate structured AI simulations, socio-technical frameworks, and ethical evaluation to foster digital confidence.",
+      "authors": "Arpacı, Pınar\n                52953   Manisa Celal Bayar University    Health Services Vocational School, Manisa, Türkiye",
+      "journal": "Work",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Artificial%20intelligence%20adaptation%20in%20the%20future%20healthcare%20workforce%3A%20Evaluating%20literacy%20and%20anxiety%20levels.",
+      "source": "CINAHL",
+      "summary": "This cross-sectional study surveyed 545 vocational health students in Türkiye on AI literacy and anxiety. Higher cognitive literacy (awareness, evaluation, ethics) linked to lower anxiety, while hands-on AI tool use linked to higher anxiety; the model explained about 12% of variance in anxiety scores. For nursing informatics, this suggests health curricula may need ethics-focused AI training alongside practical skills to build student confidence.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:10",
+      "title": "AI assistants for cancer pain management: A comparative evaluation of ChatGPT and Gemini responses in terms of response quality and readability.",
+      "abstract": "Cancer pain is common and distressing in oncology patients, who often seek management information via online and AI-based tools.This study aimed to evaluate the quality and readability of responses provided by ChatGPT-4 and Gemini-2 to frequently asked questions regarding cancer painOn April 15, 2025, responses were collected from each artificial intelligence (AI) model using a set of frequently asked questions about cancer pain. These questions were selected based on expert input from oncology and pain management specialists. A total of ten questions were asked, and the responses were evaluated by eleven independent experts using a four-point Likert scale assessing accuracy, completeness, relevance, and clinical usefulness. Readability levels were analyzed using the Flesch–Kincaid Grade Level via WordCalc software.According to statistical analyses, significant differences were found in questions 2 (z = −2.583, p = 0.010), 3 (z = −2.927, p = 0.003), 5 (z = −2.583, p = 0.010), 7 (z −2.693, p = 0.007), 8 (z = −2.820, p = 0.005) and 9 (z = −2.529, p = 0.011). On the other hand, no statistically significant difference was found in questions 1, 4, 6 and 10, which shows that the models produced answers with similar quality levels for some questions.ChatGPT-4 produces content across a more consistent range of reading levels, whereas Gemini-2 shows a wider variation in reading levels and may be more sensitive to different types of prompts. The use of AI models in responding to cancer pain queries may contribute to better patient education and potentially support clinical decision-making in pain management.",
+      "authors": "Duzova, Mursel\n                Saygili Duzova, Ulku\n                Cihan, Emine\n                Sahbaz Pirincci, Cansu\n                Faculty of Medicine, Department of Radiation Oncology, Selcuk University, Konya, Turkey",
+      "journal": "Work",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=AI%20assistants%20for%20cancer%20pain%20management%3A%20A%20comparative%20evaluation%20of%20ChatGPT%20and%20Gemini%20responses%20in%20terms%20of%20response%20quality%20and%20readability.",
+      "source": "CINAHL",
+      "summary": "Eleven experts rated ChatGPT-4 and Gemini-2 responses to ten common cancer pain questions for accuracy, completeness, relevance, and usefulness, and checked reading levels. Six of ten questions showed significant differences between the models, and ChatGPT-4 kept a more consistent reading level while Gemini-2 varied more. This suggests nursing informatics teams should consider which AI tool they recommend for patient education on cancer pain.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Patient-Facing AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:18",
+      "title": "Assessment Tools for Nursing Informatics Competency: A Scoping Review.",
+      "abstract": "To conduct a scoping review of existing nursing informatics competency assessment tools in China and abroad.Following the methodological framework for scoping reviews, eight databases were systematically searched for studies related to tools assessing nursing informatics competency. The search period was from database inception to 10 March 2025. Two researchers independently completed literature screening and data extraction.A total of 41 articles were finally included, involving 23 tools. Among these, 22 articles reported tool development, 11 cross-cultural adaptations, three tool revisions, and five tool validations.This study systematically reviewed existing nursing informatics competency assessment tools in China and abroad and found that most tools were developed by scholars in the United States and have not yet been localized for China. In the future, scholars may develop or culturally adapt assessment tools based on China's national context to promote the study and application of nursing informatics competency in the country.",
+      "authors": "Zheng, Kexin\n                Zong, Siyu\n                Fan, Lifang\n                Chen, Weilai\n                Wang, Qian\n                Liu, Fang\n                Nursing Department, Shanghai Xindaopei Hematology Hospital, Shanghai, China",
+      "journal": "Creative Nursing",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Assessment%20Tools%20for%20Nursing%20Informatics%20Competency%3A%20A%20Scoping%20Review.",
+      "source": "CINAHL",
+      "summary": "This scoping review searched eight databases to identify existing tools for assessing nursing informatics competency in China and other countries, finding 41 articles describing 23 tools for development, adaptation, revision, or validation. Most tools came from the United States and have not been adapted for China. This gap suggests a need for culturally adapted tools to support nursing informatics research and practice in China.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    }
+  ]
+}

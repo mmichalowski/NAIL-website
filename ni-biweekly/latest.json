@@ -1,37 +1,36 @@
 {
-  "issue": 8,
-  "filename": "ni-biweekly-2026-10-19.html",
+  "issue": 9,
+  "filename": "ni-biweekly-2026-11-02.html",
   "date_range": {
-    "start": "Oct 05, 2026",
-    "end": "Oct 19, 2026"
+    "start": "Oct 19, 2026",
+    "end": "Nov 02, 2026"
   },
-  "generated_at": "2026-10-19T12:18:17.317809Z",
-  "paper_count": 12,
-  "flag_count": 4,
+  "generated_at": "2026-11-02T14:55:14.920181Z",
+  "paper_count": 29,
+  "flag_count": 11,
   "topic_counts": {
+    "Workforce & Education": 20,
     "NLP & Generative AI": 3,
-    "Workforce & Education": 4,
-    "Clinical Decision Support": 3,
-    "EHR & Workflows": 1,
-    "Patient-Facing AI": 1
+    "Clinical Decision Support": 5,
+    "AI Ethics & Governance": 1
   },
-  "teaser": "This issue centers on nurses' readiness for AI and testing AI tools against real work. Several papers measure digital literacy, competence, or anxiety among nursing and allied health students, generally finding that ethics-focused and cognitive literacy matter alongside technical skill. A second thread tests large language models on nursing text, including handover transcripts, discharge letters, and free-text care notes, with mixed accuracy and ongoing uncertainty about clinical readiness. A third thread examines decision support design and use, from a long-term care prototype to participatory design practices and ICU nurses' experiences with AI and missed care.",
+  "teaser": "This issue is dominated by nursing education, with student AI literacy and use patterns studied across China, Korea, Egypt, Saudi Arabia, and Mediterranean universities. Several papers examine how students actually use generative AI, from distinct usage personas to links between AI dependence and lower achievement motivation. Others test education tools directly, comparing GenAI-assisted debriefing to facilitator-led methods and AI-simulated patients to traditional practice. A smaller set of papers builds machine learning prediction models for frailty, delirium, and haemorrhage, and tests LLMs for detecting spiritual pain and screening curriculum content, generally finding good accuracy but a continued need for human review and external validation.",
   "themes": [
     {
-      "name": "AI readiness and literacy in nursing education",
-      "count": 4
+      "name": "Student AI literacy, use patterns, and dependence",
+      "count": 8
     },
     {
-      "name": "Language models processing clinical text",
-      "count": 4
+      "name": "AI tools in nursing education and simulation",
+      "count": 9
     },
     {
-      "name": "Designing and experiencing clinical decision support",
-      "count": 3
+      "name": "Machine learning prediction models for clinical risk",
+      "count": 6
     },
     {
-      "name": "Patient-facing AI tools",
-      "count": 1
+      "name": "LLMs analyzing clinical and patient-generated text",
+      "count": 2
     }
   ]
 }

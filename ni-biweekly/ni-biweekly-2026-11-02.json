@@ -1,0 +1,542 @@
+{
+  "issue": 9,
+  "generated_at": "2026-11-02T14:55:14.920181Z",
+  "date_range": {
+    "start": "Oct 19, 2026",
+    "end": "Nov 02, 2026"
+  },
+  "paper_count": 29,
+  "config": {
+    "sources": [
+      "pubmed",
+      "cinahl"
+    ],
+    "summary_style": "2-3_sentences",
+    "topics": [
+      "Clinical Decision Support",
+      "NLP & Generative AI",
+      "AI Ethics & Governance",
+      "EHR & Workflows",
+      "Workforce & Education",
+      "Patient-Facing AI",
+      "AI Methods & Evaluation",
+      "Other / Unclassified"
+    ],
+    "_comment": "NAIL Digest config — generated from AINurse-26 audience votes, July 10 2026",
+    "_sources_note": "Options: 'pubmed', 'arxiv', 'medrxiv', 'cinahl' ",
+    "_summary_style_note": "Options: '1_sentence' | '2-3_sentences' | 'structured' | 'ai_decides'",
+    "_topics_note": "Remove any topic to exclude it."
+  },
+  "synthesis": {
+    "overview": [
+      "This issue is dominated by nursing education, with student AI literacy and use patterns studied across China, Korea, Egypt, Saudi Arabia, and Mediterranean universities. Several papers examine how students actually use generative AI, from distinct usage personas to links between AI dependence and lower achievement motivation. Others test education tools directly, comparing GenAI-assisted debriefing to facilitator-led methods and AI-simulated patients to traditional practice. A smaller set of papers builds machine learning prediction models for frailty, delirium, and haemorrhage, and tests LLMs for detecting spiritual pain and screening curriculum content, generally finding good accuracy but a continued need for human review and external validation.",
+      "Papers nearly tripled to 29 this issue (+17), with Workforce & Education remaining the leading topic and growing its share, now 20 of 29 papers compared to 4 last issue. NLP & Generative AI's share fell even though its paper count rose slightly, as it was outpaced by the education surge. Clinical Decision Support continued as a thread, covering frailty, delirium, haemorrhage, and pressure injury prediction, though with different applications than last issue's participatory design and missed-care focus. AI Ethics & Governance returned with one paper after being absent, while EHR & Workflows and Patient-Facing AI, present last issue, do not appear this time."
+    ],
+    "themes": [
+      {
+        "name": "Student AI literacy, use patterns, and dependence",
+        "paper_ids": [
+          "42961890",
+          "42612542",
+          "42600232",
+          "42475913",
+          "42456212",
+          "42447606",
+          "42242110",
+          "42294612"
+        ]
+      },
+      {
+        "name": "AI tools in nursing education and simulation",
+        "paper_ids": [
+          "42470729",
+          "42456216",
+          "42424114",
+          "42224794",
+          "42202602",
+          "42462464",
+          "42497627",
+          "42678779",
+          "42945491"
+        ]
+      },
+      {
+        "name": "Machine learning prediction models for clinical risk",
+        "paper_ids": [
+          "42950281",
+          "42758328",
+          "40903102",
+          "cinahl:20",
+          "cinahl:18",
+          "cinahl:2"
+        ]
+      },
+      {
+        "name": "LLMs analyzing clinical and patient-generated text",
+        "paper_ids": [
+          "42955097",
+          "42902828"
+        ]
+      }
+    ],
+    "deltas": {
+      "prev_issue": 8,
+      "papers": 29,
+      "papers_delta": 17,
+      "leading_topic": "Workforce & Education",
+      "prev_leading_topic": "Workforce & Education",
+      "rising_topic": "Workforce & Education",
+      "rising_pp": 36,
+      "falling_topic": "NLP & Generative AI",
+      "falling_pp": -15,
+      "flagged": 11,
+      "flagged_delta": 7
+    },
+    "generated_at": "2026-11-02T14:55:14.920032Z",
+    "model": "claude-sonnet-5"
+  },
+  "papers": [
+    {
+      "pmid": "42961890",
+      "title": "Preliminary Psychometric Evaluation of the Arabic Version of the NURS-DIAL Questionnaire Among Nursing Students in Saudi Arabia: Cross-Sectional Study.",
+      "abstract": "The rapid progress in digital transformation and the increasing reliance on AI in health care have created an urgent need for validated assessments of digital and AI literacy among nursing students. However, there is a substantial gap in culturally adapted assessment tools for Arabic-speaking populations. This study aimed to translate, culturally adapt, and conduct a preliminary psychometric evaluation of the Arabic version of the Nursing Digital and AI Literacy Assessment (NURS-DIAL). This cross-sectional study evaluated the Arabic-translated and culturally adapted version of the NURS-DIAL. The psychometric evaluation included content validity, confirmatory factor analysis (CFA) using diagonally weighted least squares estimation, internal consistency reliability, construct validity, and known-groups validity. Given the complexity of the 52-item, 5-factor NURS-DIAL model and the limited sample size, the CFA findings should be interpreted as preliminary. Content validity was strong, with item-level content validity indices ranging from 0.83 to 1.00 and a scale-level content validity index average of 0.94. CFA provided preliminary support for a 52-item, 5-factor model after removing 4 items. Model fit indices were as follows: comparative fit index was 0.930, Tucker-Lewis index was 0.926, root mean square error of approximation was 0.055, standardized root mean square residual was 0.103, and goodness-of-fit index was 0.947. The internal consistency estimates ranged from 0.856 to 0.919. Selected known-group comparisons also provided preliminary validity evidence. The NURS-DIAL demonstrated preliminary evidence of content validity, structural validity, internal consistency reliability, and construct validity among nursing students at 1 university in Saudi Arabia. Because of the limited sample size and single-institution setting, the tool should currently be used for exploratory research and formative assessment in similar settings. Larger multi-institutional studies are needed to confirm its factor structure and broader applicability.",
+      "authors": "Alnomasy N, Alrashedi H, Pangket P",
+      "journal": "JMIR nursing",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/106044",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42961890/",
+      "summary": "Researchers translated and culturally adapted the NURS-DIAL, a tool measuring digital and AI literacy, into Arabic and tested it with nursing students at one university in Saudi Arabia. The tool showed strong content validity, preliminary support for its 52-item, 5-factor structure, and good internal consistency. These early results suggest the tool may help assess digital and AI literacy in Arabic-speaking nursing students, but larger multi-institutional studies are needed to confirm its structure and wider use.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42955097",
+      "title": "Detecting spiritual pain in electronic medical records using large language models.",
+      "abstract": "Spiritual pain is one dimension of total pain in terminally ill patients with cancer. Reducing the burden of assessing spiritual pain in electronic medical records is essential for improving the quality of spiritual care. Large language models may offer a solution. This study explored whether large language models can be used to develop an automatic system for accurately identifying spiritual pain in patients with terminal cancer. We used unstructured nursing records from patients with cancer who died in an inpatient palliative care unit at a university hospital in Japan between July and December 2024. A total of 500 records generated within 3 weeks before patients' death were randomly selected for analysis. Records were labeled for the presence of spiritual pain. Gemini-2.5-flash and Microsoft Copilot, accessible within the Tohoku University network environment, were utilized. Prompts included definitions of spiritual pain and example sentences. The analyzed records were derived from 109 patients with cancer (57 (52.3%) male; mean age, 70.9 years). Manual review identified spiritual pain in 56 records (11.2%). Sensitivity for Gemini and Copilot was 1.00; specificity was 0.75 and 0.61; positive predictive value was 0.34 and 0.25; and negative predictive value was 1.00 and 1.00, respectively. Error analysis of false positives indicated that the models frequently misclassified decreased physical functions and delirium as spiritual pain. This study demonstrates that large language models can identify spiritual pain with performance comparable to, or exceeding, that of previous studies utilizing classical natural language processing methods.",
+      "authors": "Masukawa K, Meguro M, Aihara E, Ishida M, Kondo U, Inoue R et al.",
+      "journal": "Supportive care in cancer : official journal of the Multinational Association of Supportive Care in Cancer",
+      "pub_date": "Oct 2026",
+      "doi": "10.1007/s00520-026-11416-0",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42955097/",
+      "summary": "Researchers tested whether large language models (Gemini-2.5-flash and Microsoft Copilot) could detect spiritual pain in nursing records from 109 terminally ill cancer patients at a Japanese palliative care unit. Both models caught all true cases of spiritual pain (sensitivity 1.00) but often flagged unrelated issues like physical decline or delirium as spiritual pain, lowering accuracy. This suggests LLMs may help screen records for spiritual pain, though human review remains needed to catch false positives.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42950281",
+      "title": "Development and Internal Validation of an Electronic Medical Record-Based Machine Learning Model for Frailty Prediction in Hospitalized Patients: Retrospective Cohort Study.",
+      "abstract": "Frailty is prevalent among hospitalized patients and is associated with increased risk of complications, prolonged hospitalization, higher mortality, and health care costs. Existing frailty screening tools, including the Clinical Frailty Scale (CFS) and Hospital Frailty Risk Score (HFRS), have limitations related to subjectivity, resource intensity, or reliance on retrospective data, limiting their use in routine acute care. Early identification of frailty is critical to support targeted interventions and resource allocation, yet scalable approaches for predicting frailty early during hospital admission remain limited. This paper evaluates whether routinely collected electronic medical record (EMR) data available within the first 72 hours of admission can be used to predict frailty in hospitalized patients. A retrospective cohort study was conducted using routinely collected EMR data from the Royal Adelaide Hospital (RAH), including overnight admissions with a length of stay of at least 72 hours between July 2023 and December 2024. Frailty was defined using the HFRS (score >4). Predictors were derived from EMR data available within 72 hours of admission, including demographics, medications, laboratory results, nursing assessments, and medical and allied health consult orders. Data were split into training (21,436/26,824, 80%) and test (5388/26,824, 20%) sets. Multiple machine learning models were trained, with the F2-score as the primary optimization metric. Model performance was evaluated using the F2-score, recall, area under the receiver operating characteristic curve (AUROC), calibration, and clinical utility analyses. This study included 26,824 admissions, of whom 9427 (35%) were classified as frail. The final XGBoost (XGB) model achieved an F2-score of 0.755 (95% CI 0.741-0.768), an AUROC of 0.777 (95% CI 0.764-0.790), and a recall of 0.873 (95% CI 0.857-0.887) on the test dataset, with good calibration and an expected-to-observed ratio close to 1 (0.996, 95% CI 0.963-1.028). Key predictors included polypharmacy, laboratory results (including creatinine, albumin, and sodium), allied health consult orders, and nursing assessment data. Model performance was lower at 24 hours postadmission and improved by discharge. An EMR-based frailty prediction model using data available at 72 hours postadmission can identify patients with frailty early in their hospital stay, supporting targeted interventions and operational planning. Reduced performance in Indigenous patients highlights the need for culturally validated frailty indices and ongoing evaluation of equity in predictive modeling.",
+      "authors": "Laurea Szabo GC, Bills M, Williams M, Conway A, Van Bochove L, O'Callaghan G",
+      "journal": "JMIR medical informatics",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/95478",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42950281/",
+      "summary": "Researchers used electronic medical record data from the first 72 hours of hospital admission at Royal Adelaide Hospital to predict frailty in 26,824 patients. A machine learning model (XGBoost) identified frail patients with good accuracy, using factors like polypharmacy, lab results, and nursing assessments, though it performed less well for Indigenous patients. This approach could help hospitals spot frailty early and plan care, while highlighting the need for equity checks in predictive tools.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42945491",
+      "title": "Strengthening competency-based outcomes in DNP education: Addressing curriculum gaps.",
+      "abstract": "This article reviews common gaps in Doctor of Nursing Practice (DNP) education, including variability in DNP project rigor, informatics/artificial intelligence skills, competency-based preparation, and scholarly writing. Standardized competency assessments for DNP projects are needed, along with robust faculty development.",
+      "authors": "Budisalich K, Showalter D, Gilbert BM",
+      "journal": "The Nurse practitioner",
+      "pub_date": "Nov 2026",
+      "doi": "10.1097/01.NPR.0000000000000492",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42945491/",
+      "summary": "This review examines gaps in Doctor of Nursing Practice (DNP) education, including uneven project rigor, limited informatics and AI skills, inconsistent competency-based preparation, and weak scholarly writing. The authors call for standardized competency assessments for DNP projects and stronger faculty development. This matters because it highlights areas where DNP programs may need to improve training to better prepare nurses for informatics-related practice demands.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear",
+        "abstract_incomplete"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42902828",
+      "title": "Characterizing Cancer Symptom Experiences and Related Psychosocial Concerns Through Chinese Social Media Narratives: Computational Text Analysis.",
+      "abstract": "Patients with cancer frequently experience complex and multidimensional symptom burdens. Standardized patient-reported outcome measures provide structured approaches to symptom assessment but may not capture the full range of symptom-related and psychosocial concerns expressed in patients' narratives. Patient-generated social media data offer a complementary source for examining how these concerns are expressed online. This study aimed to characterize cancer symptom-related narratives in Chinese social media posts using a conventional symptom assessment framework and to identify additional experiential themes through neural topic modeling. A computational text analysis integrating large language model (LLM) annotation and neural topic modeling was conducted. A corpus of 26,086 first-person patient narratives was collected from Xiaohongshu and Zhihu between November 2013 and February 2026 using cancer-related search terms. First-person narratives and 6 SPPADE (sleep disturbance, pain, physical function impairment, anxiety, depression, and low energy or fatigue) symptom domains were identified using GPT-4o-mini (OpenAI) and validated against independent human coding. Symptom occurrence, co-occurrence, multiplicity, and coping strategies were characterized, with exploratory stratified analyses by cancer type. BERTopic modeling was applied to identify latent themes, platform sensitivity analyses, and temporal distribution were examined. For first-person narrative identification, human raters showed 89.2% agreement (Cohen κ=0.784); the LLM achieved an F1-score of 81.2% against the adjudicated reference standard. For SPPADE extraction, mean Cohen κ values for LLM-human agreement were 0.714 (SD 0.114) and 0.754 (SD 0.095) across the 6 symptom domains. Overall, 13,896 of 26,086 (53.3%) posts contained at least 1 identifiable symptom. Pain was the most frequently identified symptom (5783/26,086, 22.2%), followed by physical function impairment (4153/26,086, 15.9%) and depression (4050/26,086, 15.5%). Pain and physical function impairment formed the most frequent co-occurring symptom pair (n=1407). Coping strategies were described in 7104/26,086 (27.2%) posts; medication-based approaches were most prominent, particularly for pain and sleep disturbance, while social and psychological support were more common for anxiety and depression. BERTopic modeling identified 13 latent themes, including cancer treatment trajectories, health care system interaction, existential distress, family involvement, and financial burden, highlighting experiential concerns that may be underrepresented in conventional symptom assessment. The proportion of posts containing at least 1 SPPADE symptom was similar between Xiaohongshu and Zhihu (53.2% vs 54.1%; P=.35), although individual symptom distributions differed across platforms. Chinese social media posts contained multidimensional symptom-related narratives alongside psychosocial and experiential concerns that may be less visible in structured symptom assessment. Patient-generated social media data may therefore provide a complementary source for understanding cancer symptom experiences and supportive care concerns. However, differences in platform composition, uneven temporal coverage, and the nonrepresentativeness of social media users limit generalizability, and the clinical utility of integrating such data into routine symptom assessment requires further evaluation.",
+      "authors": "Yu H, Wang Y, Ding J, Wang Y, Zhang Y, Wang Y et al.",
+      "journal": "Journal of medical Internet research",
+      "pub_date": "Oct 2026",
+      "doi": "10.2196/102862",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42902828/",
+      "summary": "Researchers analyzed 26,086 first-person cancer-related posts from two Chinese social media platforms, using an LLM and topic modeling to identify symptoms and broader concerns. Pain, physical function impairment, and depression were the most common symptoms, while topic modeling also revealed themes like financial burden, existential distress, and health care system interactions not captured by standard symptom tools. This suggests social media narratives could complement structured symptom assessment, though platform differences and nonrepresentative users limit how broadly these findings apply.",
+      "flags": [],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42758328",
+      "title": "Development and validation of a machine learning-based prediction model for postoperative delirium after glioma surgery.",
+      "abstract": "Postoperative delirium after glioma surgery is difficult to predict because risk information evolves throughout the perioperative period. We developed and internally validated a temporally structured machine-learning framework for early risk stratification. This single-centre retrospective study included adults who underwent resection of pathologically confirmed glioma between December 2021 and December 2025. Predictors were classified according to their temporal availability. A perioperative reference model included variables available by the end of surgery, whereas the primary fixed 24-h postoperative landmark model additionally incorporated ICU admission status ascertained by the 24-h landmark. Feature selection was performed in the training cohort using clinical review, correlation analysis, and LASSO regression. Six machine-learning algorithms were evaluated for discrimination, calibration, classification performance, clinical utility using decision-curve analysis, and model interpretability using SHAP. Among 316 eligible patients, 221 were assigned to the training cohort and 95 to the internal validation cohort. Postoperative delirium occurred in 44 and 19 patients, respectively. The perioperative model retained six predictors: age, ASA III-IV status, tumour size, neutrophil-to-lymphocyte ratio, albumin, and intraoperative blood loss. ICU admission was interpreted as an early postoperative predictive marker rather than a causal risk factor. XGBoost achieved the highest numerical validation AUC (0.895) and the lowest Brier score (0.134), with an accuracy of 0.832, sensitivity of 0.842, specificity of 0.829, and F1-score of 0.667. Paired DeLong testing showed that XGBoost had significantly higher discrimination than logistic regression, whereas differences from the other machine-learning models were not statistically significant. SHAP analysis identified clinically interpretable contributions from perioperative and early postoperative predictors. A temporally structured machine-learning framework showed promising internal validation performance for early POD risk stratification after glioma surgery. External multicentre validation and prospective evaluation are required before clinical implementation.",
+      "authors": "Li J, Xiao N",
+      "journal": "The International journal of neuroscience",
+      "pub_date": "Nov 2026",
+      "doi": "10.1080/00207454.2026.2736052",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42758328/",
+      "summary": "Researchers used retrospective data from 316 adults having glioma surgery at one hospital to build machine-learning models predicting postoperative delirium, using predictors available at different time points. An XGBoost model using perioperative factors plus 24-hour ICU admission status showed the best performance (AUC 0.895) in internal validation. This approach could help nurses identify high-risk patients early, but the authors say external, multicentre, and prospective testing is needed before clinical use.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42678779",
+      "title": "Beyond AI Detection: A Decision-Making Guide for Strategic Assessment Design in Nursing Education.",
+      "abstract": "The use of artificial intelligence (AI) by pre- and postlicensure nursing students threatens the validity of assessments and raises concerns about competency-based evaluation and public safety. Nurse educators lack a structured framework for evaluating the degree to which specific assessments are vulnerable to inappropriate AI use and for prioritizing where assessment design efforts are most needed. Graduate nursing faculty used a backward design process, anchoring criterion development in known low-vulnerability assessments and refining criteria through iterative review and applied testing across multiple assessment types. The Assessment and AI Vulnerability Decision-Making Guide for Nursing produces a total vulnerability score across 2 domains-assessment setting and assessment method-paired with a targeted improvement guide for faculty. This decision-making guide enables nursing educators to strategically direct assessment design efforts toward high-stakes contexts where AI poses the greatest risk to the validity of competency evaluation, while preserving pedagogical flexibility when AI use aligns with professional practice.",
+      "authors": "McCusker KA, Kennedy BB, Parish A",
+      "journal": "Nurse educator",
+      "pub_date": "2026",
+      "doi": "10.1097/NNE.0000000000002281",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42678779/",
+      "summary": "Graduate nursing faculty developed a decision-making guide to help educators judge how vulnerable specific assessments are to inappropriate AI use. The tool scores assessments across two areas—setting and method—and pairs each score with improvement guidance. This helps nursing programs focus assessment redesign on high-stakes areas where AI threatens valid competency evaluation, while keeping flexibility where AI use fits professional practice.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42612542",
+      "title": "Generative artificial intelligence use patterns among Chinese nursing graduate students: A qualitative descriptive study.",
+      "abstract": "Generative artificial intelligence is increasingly embedded in graduate nursing research environments. Within this context, patterns of reliance on these tools, extending in some cases to dependency, have emerged among nursing graduate students, raising concerns about the impact on the development of foundational research competencies. Yet, limited qualitative evidence exists regarding how such reliance manifests, evolves, and is experienced by students at different training stages. To explore how nursing graduate students in China experience and navigate generative artificial intelligence use in their research practice, including the conditions under which such use becomes dependency. Qualitative descriptive study. Data were collected from nursing graduate programs at 10 universities across China. Seventeen nursing graduate students (9 doctoral, 8 master's) were recruited using purposive sampling supplemented by snowball sampling. All participants had documented use of generative artificial intelligence tools for research-related tasks for a minimum of three months. Semi-structured in-depth interviews were conducted between March and April 2026. Data were analyzed using Braun and Clarke's six-phase reflexive thematic analysis, supported by NVivo 12.0 software, and interpreted through cognitive offloading theory. Data analysis identified four themes: (1) pervasive generative artificial intelligence integration across research workflows; (2) how generative artificial intelligence simultaneously augments output and erodes capability; (3) emotional and evaluative responses to generative artificial intelligence dependency; and (4) self-regulation strategies and structural gaps. Cross-case analysis yielded a typology of four user profiles: tool-rational, collaborative self-regulating, efficiency-oriented explorer, and deeply dependent user. Doctoral students predominantly occupied profiles characterized by higher metacognitive control, suggesting an \"experience-buffering effect\" from prior research training. Generative artificial intelligence integration among nursing graduate students simultaneously enhances research productivity while risking the covert erosion of foundational competencies. The central challenge shifts from prohibiting artificial intelligence use to ensuring that metacognitive control keeps pace with integration depth. These findings advocate for the implementation of differentiated, stage-sensitive artificial intelligence governance frameworks tailored to nursing graduate education.",
+      "authors": "Chen F, Cai J, Li S, Deng Y, Li S, Zhang Q et al.",
+      "journal": "International journal of nursing studies",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.ijnurstu.2026.105673",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42612542/",
+      "summary": "Researchers interviewed 17 nursing graduate students (9 doctoral, 8 master's) from 10 Chinese universities about how they use generative AI in their research. Students showed four distinct usage patterns, ranging from balanced tool use to deep dependency, with doctoral students showing more self-control due to prior research experience. The study suggests nursing programs need stage-specific AI guidance to boost productivity without weakening core research skills.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42600232",
+      "title": "Tailored behavioral personas of large language model use among Chinese nursing students: A qualitative study.",
+      "abstract": "With the integration of large language models into nursing education, nursing students' patterns of use have attracted growing attention and concern. While existing research focuses on determinants such as attitudes and intentions, it lacks insight into their actual patterns of use. To identify the tailored behavioral personas of nursing students regarding large language models and explore the characteristics of interaction patterns within different personas, thereby clarifying the potential risks associated with these patterns of use. From October to December 2025, a descriptive qualitative study was conducted involving 22 nursing students in China via semi-structured interviews. Purposive sampling with a maximum variation strategy was employed to select nursing students. Data were analyzed using content analysis. Through the extraction of interaction tags and behavioral dimensions, user personas were constructed to characterize students' patterns of use. Five key dimensions of students' interactions with large language models were extracted: cognitive relationships, interaction strategies, verification strategies, psychological experiences, and risk perceptions. Based on these dimensions, four user personas were identified: the efficiency-quality trade-off persona, the capability-compensating persona, the prudent-assistance persona, and the cognitive outsourcing persona. Multiple factors shape nursing students' diverse patterns of interaction with large language models. Future interventions should be tailored to these specific personas, combining critical thinking training with technical and ethical support to mitigate the risks of cognitive outsourcing and foster the responsible integration of large language models into nursing education.",
+      "authors": "Ma Y, Zhao X, Li G, Liu S, Liu T, Zhao Q et al.",
+      "journal": "International journal of nursing studies",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.ijnurstu.2026.105659",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42600232/",
+      "summary": "Researchers interviewed 22 Chinese nursing students between October and December 2025 to understand how they actually use large language models, not just their attitudes toward them. The study identified four distinct user personas based on cognitive relationships, interaction strategies, verification habits, psychological experiences, and risk perceptions: efficiency-quality trade-off, capability-compensating, prudent-assistance, and cognitive outsourcing. This suggests nursing education interventions should target each persona specifically, pairing critical thinking training with technical and ethical support to reduce cognitive outsourcing risks.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42497627",
+      "title": "Artificial intelligence in nursing education: Balancing innovation and human-centered care.",
+      "abstract": "Although artificial intelligence (AI) is rapidly transforming nursing continuing education, excessive reliance on AI-based learning may undermine essential skills such as critical thinking, clinical intuition, and the relational and ethical aspects that are fundamental to nursing practice. From virtual patient simulations to adaptive learning platforms, AI tools are increasingly integrated into continuing education for nurses. These technologies provide unparalleled opportunities for efficiency, accessibility, and personalized learning; however, their widespread use raises important questions about maintaining core nursing skills. This article explores the balancing act of leveraging AI's educational benefits while protecting nursing's human, relational, and ethical principles in continuing education settings. Risks include automation bias, diminished independent clinical reasoning, and the erosion of moral presence and therapeutic relationship skills. Intentional integration through blended learning models, ethical AI literacy, and mandatory oversight protocols for competencies is proposed as a path forward. The future of nursing continuing education depends on a deliberate balance between AI and humanity, a commitment that is both an ethical responsibility and a professional necessity.",
+      "authors": "Nguyen R",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107300",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42497627/",
+      "summary": "This discussion article examines the growing use of AI tools, such as virtual patient simulations and adaptive learning platforms, in nursing continuing education. It argues that while AI offers efficiency and personalized learning, it risks weakening critical thinking, clinical reasoning, and relational and ethical skills. The author proposes blended learning, AI literacy, and oversight protocols to keep education centered on human and ethical nursing care.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42475913",
+      "title": "Generative AI literacy as a mediator between lifelong learning and AI competence in nursing students: A regression-based cross-sectional study.",
+      "abstract": "Generative artificial intelligence (AI) is rapidly transforming nursing education and requires students to develop AI literacy alongside lifelong learning skills. Understanding how lifelong learning tendencies relate to generative AI usage and competence, and the potential mediating role of AI literacy, is essential for preparing digitally competent future nurses. To determine the lifelong learning tendency among nursing students, their levels of generative AI literacy, and their levels of generative AI usage and competence. Also, to examine the mediating role of generative AI literacy in the relationship between lifelong learning tendency and generative AI usage and competence. An analytical cross-sectional study was conducted at two state universities in the Mediterranean Region. The study was conducted with 533 nursing students between June and October 2025. Data were collected using a Personal Information Form, the Lifelong Learning Tendency Scale, the Generative Artificial Intelligence Literacy Scale, and the Generative Artificial Intelligence Usage and Competence Scale. Students demonstrated high levels of generative AI literacy (36.66 ± 7.30), lifelong learning tendency (120.61 ± 22.73), and AI usage and competence (68.43 ± 12.71). Lifelong learning tendency showed a moderate positive correlation with AI usage and competence (r = 0.300, p < 0.001) and a weak positive correlation with AI literacy (r = 0.118, p = 0.007). A strong positive correlation was found between AI literacy and AI usage and competence (r = 0.605, p < 0.001). The mediation analysis showed that generative AI literacy had a partial mediating effect on the relationship between lifelong learning tendency and generative AI usage and competence (indirect effect = 0.068; 95% CI: 0.045-0.092), based on bootstrapping with 20,000 samples. The findings suggest that lifelong learning tendency is positively associated with AI literacy and AI usage and competence, and that AI literacy plays a partial mediating role in this relationship. These findings suggest that supporting lifelong learning and developing generative AI literacy may be important for enhancing AI usage and competence; however, causal interpretations should be made with caution due to the cross-sectional design. Furthermore, these implications are limited to the educational context and should not be directly generalized to clinical practice. Further longitudinal and experimental studies are needed to evaluate the real-world applicability of these findings in clinical settings.",
+      "authors": "Barış Eren N, Terzi B",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107280",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42475913/",
+      "summary": "This cross-sectional study surveyed 533 nursing students at two Mediterranean universities to examine links between lifelong learning tendency, generative AI literacy, and AI usage and competence. Students showed high levels of all three traits, and AI literacy partially explained the link between lifelong learning tendency and AI usage and competence. The authors note findings apply only to education settings, not clinical practice, and call for longitudinal and experimental research to test real-world relevance.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42470729",
+      "title": "Comparing the effects of GenAI-assisted and facilitator-led debriefing on knowledge and non-technical skills in immersive virtual reality simulation in nursing education: A quasi-experimental study.",
+      "abstract": "Immersive virtual reality (IVR) simulation is increasingly used in nursing education to support experiential learning and the development of non-technical skills. Debriefing is integral to simulation-based education; however, shortages of qualified facilitators and variability in delivery can constrain scalability and quality. Generative artificial intelligence (GenAI) may offer a standardised and scalable approach to post-simulation debriefing, yet comparative evidence in nursing education remains limited. To compare the effectiveness of GenAI-assisted versus facilitator-led debriefing on nursing students' knowledge acquisition and self-reported non-technical skills following an IVR nursing simulation. Quasi-experimental, two-group pretest-posttest study. A higher education institution in Hong Kong. Undergraduate nursing students with less than four weeks of clinical internship experience. Participants were allocated by subject enrolment to either GenAI-assisted debriefing plus a 10-minute facilitator summary (experimental group) or facilitator-led debriefing (control group) after an IVR hospital simulation. Knowledge was measured using a multiple-choice questionnaire at baseline (T0) and post-intervention (T1), while self-reported non-technical skills were assessed at T1. A total of 178 students participated (experimental n = 102; control n = 76). Baseline knowledge scores were comparable (experimental: M = 10.98, SD = 2.27; control: M = 11.03, SD = 2.56; p = .899). Knowledge increased significantly from T0 to T1 in both groups (experimental: M = 12.71, SD = 2.71, d = 0.79; control: M = 12.68, SD = 2.44, d = 0.72; both p < .001). After adjustment for baseline knowledge, there was no significant between-group difference in post-intervention knowledge (F = 0.03, p = .871). Non-technical skill domain scores did not differ significantly between groups (all p = .272-0.876). GenAI-assisted debriefing produced outcomes comparable to facilitator-led debriefing for knowledge and self-reported non-technical skills. These findings warrant further investigation of GenAI-assisted debriefing as a complement to existing approaches.",
+      "authors": "Kor PPK, Chan K, Tsang APL, Liu JYW, Cheung K, Lai KH et al.",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107275",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42470729/",
+      "summary": "This study compared GenAI-assisted debriefing to facilitator-led debriefing after immersive virtual reality simulation among 178 undergraduate nursing students in Hong Kong with limited clinical experience. Both groups showed significant knowledge gains, with no significant differences between groups in knowledge or self-reported non-technical skills after the intervention. This suggests GenAI-assisted debriefing may offer a scalable option alongside traditional facilitator-led methods, though more research is needed.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42462464",
+      "title": "Vibe coding in nursing education: From user to creator.",
+      "abstract": "The rise of generative artificial intelligence has begun to transform how digital tools are created, shifting development from conventional programming toward natural language prompting, iterative refinement, and AI-assisted generation. Popularly described as \"vibe coding,\" this informal practice refers to building applications, interfaces, automations, or prototypes by describing desired outcomes conversationally and revising outputs until they function as intended. Although the term is playful, it signals a significant shift in who can participate in digital creation and what forms of expertise now matter. This paper argues that \"vibe coding\" provides a useful contemporary lens for examining an important issue in nursing education: the transition from nurses as users of educational technologies to potential co-designers of digital learning tools. Nursing education has increasingly incorporated simulation, learning management systems, virtual cases, electronic documentation, and AI-enabled supports, yet nurses have often remained positioned as adopters rather than designers of these systems. AI-assisted creation may begin to alter that relationship by lowering barriers to prototyping and enabling educators and students to translate pedagogical ideas into functional tools more quickly. This shift holds promise for more contextually grounded, practice-informed, and responsive educational innovation. At the same time, it raises critical concerns regarding accuracy, bias, accessibility, privacy, pedagogical quality, and the illusion of expertise. As a Contemporary Issues conceptual commentary, the paper explores the educational possibilities and ethical tensions associated with AI-assisted creation in nursing education and argues that the issue should not be approached with either uncritical enthusiasm or outright rejection. Instead, nursing education may need to cultivate critically informed digital co-design capacity. This includes moving beyond basic digital literacy toward critical AI literacy, supporting educators in responsible experimentation, and ensuring that relational, reflective, and equity-oriented commitments remain central. Ultimately, nursing education must prepare future nurses not only to use digital systems, but also to question, evaluate, and, when appropriate, help shape them.",
+      "authors": "Rahman R",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107278",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42462464/",
+      "summary": "This conceptual commentary examines 'vibe coding'—using AI to build digital tools through conversational prompting—as a lens for rethinking nurses' role in educational technology design. The author argues nurses could shift from being users of tools like simulations and learning platforms to becoming co-designers, though this raises concerns about accuracy, bias, privacy, and pedagogical quality. This matters for nursing informatics because it suggests education may need to build critical AI literacy and digital co-design skills, not just basic tool use.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42456216",
+      "title": "Nursing students' experiences of interviewing artificial intelligence-simulated patients: A phenomenological study.",
+      "abstract": "The development of clinical skills is essential in nursing education, yet limited access to real practice areas restricts students' experience. AI-simulated patients offer a promising solution by providing safe interview opportunities, enhancing communication skills, and supporting professional role development. To determine the experiences of nursing students who interviewed artificial intelligence-simulated patients. This descriptive phenomenological study involved one-to-one interviews with 15 first-year nursing students who have experience of interviewing artificial intelligence-simulated patients. Data were analyzed using Giorgi's Phenomenological Method Analysis and reported according to the COREQ checklist. Five main themes emerged: Experiencing a Sense of Clinical Reality with AI-Based Education, Developing Reflective Communication Skills, Gaining Confidence for Future Clinical Practice, Emerging Professional Identity, and Increase in Learning Motivation. Students reported that their interviews with AI-simulated patients contributed positively to preparing them for real clinical settings, strengthening their communication skills, and enhancing their perception of professional identity. This study shows that students experience enhanced clinical preparedness, strengthened professional identity, and improved communication skills through the use of AI-simulated patients in nursing education. The findings suggest that AI-based simulations can complement traditional teaching methods while boosting students' learning motivation.",
+      "authors": "Aydogan S, Dursun Ergezen F, Yacan Kok A, Bozkurt SA",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107276",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42456216/",
+      "summary": "This phenomenological study interviewed 15 first-year nursing students about their experience practicing interviews with AI-simulated patients. Students described feeling a sense of clinical reality, building reflective communication skills, gaining confidence, developing a professional identity, and feeling more motivated to learn. The findings suggest AI-simulated patients may offer a useful addition to traditional nursing education methods, especially when real clinical practice access is limited.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42456212",
+      "title": "Artificial intelligence literacy of nursing students: A cross-sectional study.",
+      "abstract": "With the rapid integration of artificial intelligence (AI) into the nursing field, AI literacy has emerged as a critical competency for nursing students. However, evidence regarding the current status and influencing factors of AI literacy among Chinese nursing students remains limited. This cross-sectional study aimed to examine AI literacy levels across four dimensions (Awareness, Application, Evaluation, Ethics) among Chinese nursing students, identify its independent influencing factors, and generate localized empirical evidence for AI curriculum construction in vocational nursing education. A cross-sectional study was conducted between November 1, 2025 and January 20, 2026. The research institution has not set up an institutional ethics committee; the whole protocol was ethically reviewed by the supervisor team in line with the Declaration of Helsinki before recruitment. A total of 178 sophomore nursing students from Henan Vocational University of Science and Technology were enrolled via convenience sampling. Data were collected using the Artificial Intelligence Literacy Scale (AILS, Wang et al., 2023). This scale is publicly accessible for non-commercial academic research; the original authors have granted open-use permission for educational cross-sectional surveys without additional formal written authorization. After data cleaning, 155 valid questionnaires were included (effective response rate = 86.9%). Nonparametric tests and ordinal logistic regression were performed via IBM SPSS 27.0 for statistical analysis. Participants demonstrated a moderate level of overall artificial intelligence literacy (Median = 60.00, IQR = 21.00, SD = 13.18). The Application dimension scored highest. Gender and interest in AI were independent influencing factors. Strong positive correlations were identified among all four dimensions. Study findings suggest that nursing education should integrate AI content and targeted training to strengthen students' AI awareness, critical evaluation, and ethical awareness, while providing tailored support for female students and boosting AI interest.",
+      "authors": "Dong X",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107272",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42456212/",
+      "summary": "This cross-sectional study surveyed 155 sophomore nursing students at a Chinese vocational university to measure AI literacy across awareness, application, evaluation, and ethics. Students showed moderate overall AI literacy, with the strongest scores in the Application dimension; gender and interest in AI independently influenced literacy levels. These findings suggest nursing curricula may need targeted AI training, including extra support for female students and ways to boost AI interest.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42447606",
+      "title": "From awareness to application: Unveiling the interplay between dependence on artificial intelligence and achievement motivation among nursing students: A multicenter study.",
+      "abstract": "Artificial intelligence (AI) has emerged as a transformative, fundamentally reshaping how we access and apply knowledge. Achievement motivation (AM) remains a critical component of students' academic and personal development. Examining the association between nursing students' dependence on AI and their AM is a pertinent area of research, particularly in light of the growing incorporation of AI within educational settings. To explore the association between undergraduate nursing students' dependence on artificial intelligence and achievement motivation. A multicenter descriptive correlational study was conducted across five nursing faculties affiliated with Port-Said, Damietta, Alexandria, Mansoura, and Sohag universities, involving 1412 nursing students. Data were collected using a Personal and Academic Characteristics Questionnaire, the Achievement Motivation Scale (AMS), and the Dependence on Artificial Intelligence Scale (DIA). Data were analyzed using descriptive statistics, Pearson correlation, and simple linear regression. Nursing students demonstrated a moderate level of dependence on AI (M = 19.46, SD = 11.33) and a moderate level of AM (M = 6.32, SD = 2.13). A statistically significant moderate negative association was found between AI dependence and AM (r = -0.389, p < .001). This indicates that increased dependence on AI is associated with lower achievement motivation. Regression analysis indicated that AI dependence accounted for 19.6% of the variance in AM (R2 = 0.196), while the remaining variance is likely influenced by other unmeasured factors. Nursing students exhibited moderate AI dependence and achievement motivation. The findings indicate a significant negative association between AI dependence and achievement motivation, emphasizing the need to consider students' technology usage patterns concerning academic motivation. Educational programs should promote informed and balanced use of AI by clarifying its benefits and limitations as a learning support tool. Learning strategies should also be formulated to foster independent thinking, self-regulation, and goal-directed behavior to support students' achievement motivation.",
+      "authors": "Nasr AM, Soliman AM, Hendawi NE, Othman AA, Abozed HW, Wahba NMI",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107277",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42447606/",
+      "summary": "This multicenter study surveyed 1,412 undergraduate nursing students across five Egyptian universities to examine how AI dependence relates to achievement motivation. Students showed moderate levels of both, with a significant negative correlation between them—higher AI dependence linked to lower motivation, explaining about 20% of the variance. This suggests nursing education programs may need strategies that balance AI use with fostering independent thinking and self-directed learning.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42424114",
+      "title": "Artificial Intelligence Enhanced Content Review for Curriculum Evaluation in Nursing Education: A Pilot Study.",
+      "abstract": "Curricular evaluation is core to nursing education and can benefit from artificial intelligence-based automation. Large language models offer new opportunities for scalable, structured document analysis. We developed a rubric to identify elements related to health equity, including whether the content addresses vulnerable groups, social factors in health, and clinical applications. A chatbot using retrieval-augmented generation (RAG) was configured with structured rubric-based instructions. The reliability of chatbot ratings of 9 lecture slide sets from one nurse-midwifery course was compared to ratings from 3 faculty reviewers. The chatbot achieved reliability in repeated ratings of 84% to 91% across assessed topics. Chatbot alignment with faculty raters across topics was more variable and ranged from 56% to 89% agreement. An RAG-based large language model system demonstrates promising reliability for automated curriculum screening. This tool can be used to assist, but not replace, human insights and summative judgments.",
+      "authors": "Russell RG, Khan MMR, Nagge L, McGrew H, Faucett K, Wei X et al.",
+      "journal": "Nurse educator",
+      "pub_date": "2026",
+      "doi": "10.1097/NNE.0000000000002243",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42424114/",
+      "summary": "Researchers tested a chatbot using retrieval-augmented generation to screen 9 nurse-midwifery lecture sets for health equity content, comparing it to 3 faculty reviewers. The chatbot showed high reliability in repeated ratings (84-91%) but more variable agreement with faculty (56-89%). This suggests AI tools may help scale curriculum review but should assist, not replace, human judgment.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42385458",
+      "title": "Integrating clinical decision support systems in pediatric oncology: A scoping review of applications, implementation gaps, and management Implications.",
+      "abstract": "Clinical Decision Support Systems (CDSSs) are acknowledged as tools that leverage health data analytics to support clinical decision-making; however, systematic evidence regarding their deployment in pediatric oncology remains limited. This gap in the literature gives rise to unique challenges, particularly in addressing the individualized nature of pediatric cancer diagnosis, treatment, and the \"doctor-nurse-patient\" tripartite decision-making. To synthesize evidence on the application of CDSSs in the management of pediatric cancer patients, elucidate prevailing patterns of clinical utilization, and critically examine barriers to effective implementation in real-world practice. This review adhered to PRISMA-ScR guidelines. Six databases were systematically searched: PubMed, Web of Science, Embase, China National Knowledge Infrastructure (CNKI), Wanfang Database, and China Science and Technology Journal Database (VIP). Two independent reviewers conducted study selection and content analysis to ensure rigor and minimize bias. Seventeen studies were included, revealing four critical pertinent issues: (1) CDSSs demonstrate potential for application in pediatric cancer management; (2) the majority of applications are concentrated in the treatment phase (41.2%), with comparatively less emphasis on risk assessment, diagnosis, nursing workflow, and survivorship care; (3) user interaction and follow-up functionalities remain suboptimal and warrant further optimization; and (4) there is a critical need for multicenter randomized controlled trials to validate the clinical efficacy of CDSSs. This review delineates the characteristics of included studies, the specific features of CDSSs, and their clinical applications, including decision-making content, system functionalities, evaluation indicators of application effectiveness, in pediatric cancer. It also identifies critical gaps and future research directions to advance the field.",
+      "authors": "Zhu M, Yao Z, Feng X, Li Y, Zhang H, Peng J et al.",
+      "journal": "International journal of medical informatics",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.ijmedinf.2026.106578",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42385458/",
+      "summary": "This scoping review looked at 17 studies on clinical decision support systems (CDSSs) used in pediatric oncology care. Most CDSS tools focused on treatment decisions, with less attention to risk assessment, diagnosis, nursing workflow, or survivorship care, and user interaction and follow-up features need improvement. For nursing informatics, this highlights gaps in CDSS design across the care continuum and a need for multicenter trials to test real-world effectiveness.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42294612",
+      "title": "Latent profiles of ethical sensitivity and correlates in nursing interns.",
+      "abstract": "BackgroundEthical sensitivity is a foundational competency that enables nursing interns to recognize and respond to ethical issues in clinical practice. Understanding its heterogeneity is essential for designing tailored educational interventions.AimThis study aimed to identify distinct latent profiles of ethical sensitivity among nursing interns and to examine their associations with critical thinking and readiness for artificial intelligence (AI) in healthcare.Research designA cross-sectional study design was employed.Participants and research contextA total of 458 nursing interns from 32 medical colleges across seven provinces in China completed a general information questionnaire, the Ethical Sensitivity Questionnaire for Nursing Students (ESQ-NS), the Simplified Critical Thinking Scale (S-CTS), and the Medical Artificial Intelligence Readiness Scale for Medical Students (MAIRS-MS).Ethical considerationsApproved by the Institutional Review Board (No. 2025-1380). Informed consent was obtained. Data were anonymous and confidential.ResultsLatent profile analysis identified four distinct profiles of ethical sensitivity: Rights-Privacy Focused (14.2%), Justice-Beneficence Focused (57.9%), Balanced-Intermediate (10.9%), and High Overall Sensitivity (17.0%). Significant differences were observed across profiles in critical thinking (S-CTS) and AI readiness (MAIRS-MS) scores. Multinomial logistic regression revealed that lower critical thinking scores were significantly associated with higher odds of belonging to the Balanced-Intermediate and Rights-Privacy Focused profiles, compared to the High Overall Sensitivity profile.ConclusionsEthical sensitivity among nursing interns is heterogeneous, manifesting in four distinct profiles. Critical thinking differed significantly across these profiles. The findings underscore the need for tailored educational strategies that address specific profile characteristics to better prepare future nurses for ethically complex and increasingly technology-driven healthcare environments.",
+      "authors": "Lin D, Zhang Y, Hua J",
+      "journal": "Nursing ethics",
+      "pub_date": "Nov 2026",
+      "doi": "10.1177/09697330261457870",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42294612/",
+      "summary": "Researchers surveyed 458 nursing interns from 32 Chinese medical colleges to identify patterns in ethical sensitivity and how they relate to critical thinking and AI readiness. The study found four distinct profiles, and interns with lower critical thinking scores were more likely to fall into the Balanced-Intermediate or Rights-Privacy Focused groups rather than the High Overall Sensitivity group. This suggests nursing education may need tailored approaches to build ethical sensitivity as healthcare becomes more technology-driven.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42242110",
+      "title": "Association between generative artificial intelligence-related factors and self-directed learning ability among nursing students: a cross-sectional study.",
+      "abstract": "Generative artificial intelligence (generative AI) has emerged as an innovative tool in the healthcare and educational sectors and as an important tool for learning. Yet, limited empirical research has examined the related factors and associations of generative AI with self-directed learning ability among nursing students. This study investigated the association between generative AI-related factors and nursing students' self-directed learning ability, using the technology acceptance model (TAM). A cross-sectional design. An online survey conducted in September 2024 in South Korea. A total of 219 nursing students completed the online survey. The key variables, based on the TAM, included perceived usefulness, perceived ease of use, readiness to use, and intention to continue using generative AI. Multiple regression analysis was conducted to examine which variables were associated with self-directed learning ability. Most participants (96.8%) had prior experience using AI. Among the variables, readiness to use generative AI (β = 0.345, p < 0.001) showed the strongest association with self-directed learning ability, followed by perceived ease of use of generative AI (β = 0.201, p = 0.003), and intention to continue to use generative AI (β = 0.184, p = 0.004). Among the covariates included in the model, major satisfaction (β = 0.216, p < 0.001) was also significantly associated with self-directed learning ability. These variables explained 62.6% of the total variance. There was a significant relationship between generative AI-related factors and self-directed learning ability. Future educational strategies should prioritize improving nursing students' readiness, perceived ease of use, and intention to use generative AI. Major satisfaction, identified as a significant covariate, should also be considered in designing these strategies. Through these strategies, nursing students' self-directed learning ability may be more effectively fostered.",
+      "authors": "Lee W, Lee H, Jang Y, Lee H, Shin H, Yang E",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107214",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42242110/",
+      "summary": "This cross-sectional survey of 219 nursing students in South Korea examined how generative AI-related factors relate to self-directed learning ability. Readiness to use generative AI, perceived ease of use, and intention to continue use were all linked to higher self-directed learning ability, along with major satisfaction, together explaining 62.6% of the variance. These findings suggest nursing education strategies could target AI readiness and ease of use to support student learning.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42224794",
+      "title": "Conceptual analysis of Chatbots in nursing education applications.",
+      "abstract": "Chatbots are receiving growing attention in nursing education, yet the term is often used imprecisely and is sometimes conflated with current large language model (LLM)-based systems. This lack of conceptual clarity weakens cumulative research, hinders comparison across studies, and complicates implementation in educational practice. To clarify the concept of chatbots in nursing education using Walker and Avant's concept analysis method. Walker and Avant's eight-step concept analysis method was applied. To examine both ordinary and disciplinary uses of the concept, dictionary sources and literature from PubMed, Scopus, Embase, CINAHL, Web of Science, ProQuest, ScienceDirect, China National Knowledge Infrastructure, Wanfang, and VIP were reviewed through June 2025. A structured extraction matrix captured how the term was used, the chatbot's interaction form, response architecture, educational purpose, and conceptual boundaries. Primary empirical studies were prioritized when deriving defining attributes, whereas reviews and discussion or conceptual papers were used to map broader terminology, technological heterogeneity, and contested boundary claims. Twenty-four papers were included: 11 primary empirical studies, 7 reviews, and 6 discussion or conceptual sources. Comparison across the extraction matrix showed that three kinds of description recurred when authors clearly referred to a nursing education chatbot: iterative dialogue, automated system response, and explicit educational alignment with nursing. These features were retained because they were recurrent, necessary to recognize the concept, and distinguishing from adjacent technologies. By contrast, LLM-based design, personalized learning support, and clinical simulation were excluded from the defining set because they appeared mainly as technical variants, reported benefits, or role-specific applications rather than universal properties. Antecedents were retained only when they described pre-existing conditions that enabled development or adoption. Consequences were treated as reported or anticipated downstream effects rather than as evidence of effectiveness. The model, borderline, and contrary cases were used to test the conceptual boundary by illustrating full presence, partial presence, and absence of the defining attributes. Empirical referents were specified as observable indicators for each attribute rather than as a single perception instrument. A nursing education chatbot is best understood as a conversational digital agent intentionally designed or deployed for nursing education and able to provide automated responses through rule-based, retrieval-based, or AI-based mechanisms. This refined definition separates the core concept from any single generation of technology and provides a clearer conceptual basis for future reporting, instrument development, and outcome evaluation without implying that chatbots inherently improve educational effectiveness.",
+      "authors": "Li L, Chen X, Ma S, Yang Z, Wang Y",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107188",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42224794/",
+      "summary": "This study used Walker and Avant's concept analysis method to clarify what 'chatbot' means in nursing education, reviewing 24 papers across multiple databases. The authors define a nursing education chatbot as a conversational digital agent built for nursing education that gives automated responses through rule-based, retrieval-based, or AI-based methods, separate from any one technology generation. This clearer definition can help researchers report findings consistently and design better studies, though it does not show that chatbots actually improve learning outcomes.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "42202602",
+      "title": "An informatics competency model for undergraduate nursing students: A quasi-experimental study.",
+      "abstract": "Developing nursing informatics competencies in undergraduate nursing students is critical. However, existing curricula often emphasize basic computer and internet skills rather than competency-based preparation aligned with authentic informatics roles and project-based practice, contributing to a persistent theory - practice gap. The Nursing Informatics Competency Organizational (NICO) model provides a structured framework for competency development in nursing informatics. To examine the effectiveness of a NICO model-based nursing informatics course in improving nursing informatics competency among first-year undergraduate nursing students. A quasi-experimental study. Instructional materials were developed based on the \"Nursing Information System Project Management\" component of the NICO model, emphasizing user-centered needs and experiential learning. Participants were allocated to an experimental group (n = 40), which received NICO-based project management training in addition to computer literacy, or a control group (n = 40), which received general computer courses only. The intervention comprised nine weekly 90-minute sessions. Outcomes were measured using a nursing informatics competency self-assessment scale, a project experience assessment questionnaire, student feedback, project outputs, and a self-developed scoring tool. Participants in the experimental group showed significantly greater improvements in nursing informatics competencies compared with those in the control group (t = 2.770, P = 0.007). Significant gains were observed in informatics roles, basic computer knowledge and skills, and wireless device competencies (t = 2.279, 2.461, and 3.118, respectively, all P < 0.05). No significant differences were found in applied computer skills or clinical informatics attitudes. Six group-based projects were completed, with reports graded at a B level. Learning satisfaction was high (mean score 96.03 ± 9.10 out of 105). Integrating a NICO-based approach into undergraduate nursing education may support the development of selected nursing informatics competencies and promote high learner satisfaction. These findings provide practical insights for refining project-based informatics training in nursing education.",
+      "authors": "Chen Y, Cai Z, Hsu CL, Li K, Wu L, Hübner U et al.",
+      "journal": "Nurse education today",
+      "pub_date": "Nov 2026",
+      "doi": "10.1016/j.nedt.2026.107187",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42202602/",
+      "summary": "This quasi-experimental study tested a Nursing Informatics Competency Organizational (NICO)-based course with 80 first-year nursing students, comparing project management training plus computer literacy to general computer courses alone. The experimental group showed greater gains in informatics competencies, especially informatics roles, basic computer skills, and wireless device skills, though not in applied computer skills or clinical informatics attitudes, with high reported learner satisfaction. This suggests project-based informatics training may help build some, but not all, competencies in undergraduate nursing education.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "40903102",
+      "title": "Multi-State Modeling of Pressure Injury Staging Transition Trajectories to Inform Next-Generation Clinical Decision Support.",
+      "abstract": "This study aimed to evaluate the location-specific and time-sensitive trajectories of pressure injuries (PrIs) stages using real-world electronic health record (EHR) datasets. Using a dataset of 29,475 patients with records of PrIs documented from 2015 to 2023, we developed four PrI patient sub-cohorts with common PrI locations, including coccyx, buttocks, sacrum and heel. We estimated transition intensities between three PrI states: stage 1, stage 2, and a severe stage in each group. Stages and transition paths were derived from domain knowledge provided by clinical experts and The National PrI Advisory Panel (NPIAP) guidelines. The trajectory analysis suggested that stage 2 serves as a \"gateway state\" in all four locations, meaning that once a PrI reaches stage 2, the likelihood of transiting to severe stages increases significantly. The commonly used Braden Scale and its sub-components are more likely to be associated with transitions from stage 2 to severe stages, suggesting that manual risk assessment tools are suboptimal for predicting early-stage PrI transitions. Further, we observed race-dependent variations across injury location groups. To our knowledge, this is the first study to introduce multi-state trajectory analysis in PrI research. Our model can investigate PrI status in a dynamic manner, which fills an important gap in the field. Our findings underscore the lack of time-sensitive information in existing PrI risk assessment tools, revealing a critical gap in their ability to capture the dynamic nature of PrI progression. Clinical decision support using time sensitive data is needed for delivering personalized, timely, and effective PrI prevention.",
+      "authors": "Song W, Kang MJ, Liu L, Sainlaire M, Lowenthal G, Baris VK et al.",
+      "journal": "Advances in wound care",
+      "pub_date": "Nov 2026",
+      "doi": "10.1177/21621918251372959",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40903102/",
+      "summary": "Researchers analyzed EHR data from 29,475 patients with pressure injuries (2015–2023) to track how injury stages changed over time at the coccyx, buttocks, sacrum, and heel. They found stage 2 acts as a 'gateway' to severe stages, and tools like the Braden Scale work better for later transitions than early ones, with some race-based differences also observed. This suggests current risk tools miss time-sensitive changes, highlighting a need for clinical decision support that accounts for how pressure injuries progress over time.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:0",
+      "title": "When machines explain medicine: Nursing ethics and clinical communication.",
+      "abstract": "Clinical communication is ethically consequential, shaping how diagnostic information is interpreted, trusted, and acted upon. Large language models (LLMs) are increasingly used to reformulate technical reports into patient-facing explanations. Although such 'plain-language' outputs can improve comprehension and reduce communication workload, their ethical implications for everyday clinical communication, particularly in nursing practice, remain underexamined. This article provides a normative ethical analysis of how LLM-mediated explanations reshape clinical communication. It addresses three interrelated questions: how automated explanation redistributes interpretive authority among clinicians, nurses, patients, and algorithmic systems; how this redistribution affects responsibility and accountability; and how LLM-mediated explanations influence the ethical communication of uncertainty and trust in routine care. The analysis is informed by peer-reviewed empirical studies published between 2022 and 2025 on LLM-assisted explanation in radiology and pathology communication, identified through a focused, non-systematic search of major biomedical databases. Drawing on this literature, the article examines how automated explanation reshapes clinical meaning-making in contexts characterised by informational complexity and diagnostic uncertainty. Across existing studies, a consistent pattern emerges: as explanation becomes partially automated and more widely accessible, interpretive framing increasingly occurs outside clinician–patient dialogue, including through workflow-integrated tools and patient-side consultation. Interpretive authority is thus distributed across clinicians, nurses, patients, and platform-based systems, while formal accountability remains concentrated within professional roles. We argue that LLM-assisted explanation should be understood as mediation rather than neutral translation, raising important ethical questions about interpretive authority, responsibility, and the representation of uncertainty in clinical communication.",
+      "authors": "Yang, Xiongwen\n                Liang, Yuanwei\n                Liu, Yijiang\n                Liu, Di\n                Yang, Lin\n                Zhang, Bo\n                Xu, Chuan\n                Wu, Yonghui\n                He, Jinyuan\n                Department of Thoracic Surgery, Guizhou Provincial People's Hospital, Guiyang, China",
+      "journal": "Nursing Ethics",
+      "pub_date": "Nov2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=When%20machines%20explain%20medicine%3A%20Nursing%20ethics%20and%20clinical%20communication.",
+      "source": "CINAHL",
+      "summary": "This article examines, through a non-systematic review of 2022–2025 studies on LLM-assisted radiology and pathology communication, how AI-generated plain-language explanations reshape clinical communication. It finds that interpretive authority becomes spread across clinicians, nurses, patients, and automated systems, while formal accountability stays with professional roles. For nursing informatics, this raises ethical questions about responsibility and how uncertainty gets communicated when explanation is partly automated.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "AI Ethics & Governance",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:2",
+      "title": "Application of large language models in early screening of Alzheimer's disease: a scoping review.",
+      "abstract": "Objective: To systematically map the current applications of large language models (LLMs) in the early screening of Alzheimer's disease (AD) and to provide evidence to inform future research and nursing practice. Methods: This scoping review was conducted in accordance with the Joanna Briggs Institute (JBI) methodological framework. A comprehensive search was performed in PubMed, Web of Science, Embase, Cochrane Library, ProQuest, and Scopus from database inception to April 20, 2026. Eligible studies were screened, selected, and synthesized according to predefined inclusion criteria. Results: A total of 25 studies were included. The LLMs applied in these studies mainly consisted of general-purpose generative models, multimodal models, and medical-specific models. Data sources primarily included public databases, along with real-world clinical data and simulated data. LLMs were mainly applied for cognitive impairment identification, data augmentation, automated cognitive assessment, and clinical decision support, with cognitive impairment identification being the predominant application direction. Several studies employed prompting strategies including zero-shot prompting, few-shot prompting, chain-of-thought prompting, and agent-based prompting. Multimodal integration and agent-based collaborative reasoning have emerged as important research directions in recent years. Conclusion: Large language models provide a novel technological approach for early AD screening and demonstrate potential for supporting cognitive assessment and risk identification. Future research should strengthen real-world studies, multicenter validation, and the development of model safety and ethical governance frameworks to facilitate the standardized application of LLMs in early AD screening.",
+      "authors": "Tian, Jianan\n                Huang, Weidong\n                Wen, Yongmei\n                Liang, Yifan\n                School of Nursing, Changchun University of Chinese Medicine, Changchun, China",
+      "journal": "Frontiers in Aging Neuroscience",
+      "pub_date": "2026",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Application%20of%20large%20language%20models%20in%20early%20screening%20of%20Alzheimer%27s%20disease%3A%20a%20scoping%20review.",
+      "source": "CINAHL",
+      "summary": "This scoping review looked at 25 studies on how large language models (LLMs) are used for early screening of Alzheimer's disease. The studies showed LLMs are mainly used to identify cognitive impairment, augment data, automate cognitive assessment, and support clinical decisions, with newer work exploring multimodal and agent-based approaches. For nursing informatics, this highlights a growing tool area, but the review calls for more real-world testing, multicenter validation, and safety and ethics frameworks before standardized use.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "NLP & Generative AI",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:8",
+      "title": "Clinical Narration Competency for Nursing Education and Practice in the Era of Artificial Intelligence.",
+      "abstract": "The article discusses the emerging competency of clinical narration in nursing education and practice, driven by the integration of ambient artificial intelligence (AI) technology. Clinical narration involves nurses verbally articulating their care actions, rationales, and outcomes to enable AI tools to generate accurate documentation. The article defines clinical narration competency as comprising three domains: cognitive knowledge, narration skills, and critic audit, which together ensure effective use of AI in healthcare. A multi-modal pedagogy framework is proposed to systematically integrate clinical narration and AI technology into nursing education, addressing gaps between education and practice. The article emphasizes the need for curriculum development and research to prepare nurses for an AI-assisted healthcare environment.",
+      "authors": "Fu, Mei R.\n                Birdashaw, Michelle\n                Zimmerman, Christine M.\n                Blackwell, Victoria\n                Spence, James K.\n                Roberts, Melissa Joy\n                University of Missouri-Kansas City, USA",
+      "journal": "Journal of Transcultural Nursing",
+      "pub_date": "Nov2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Clinical%20Narration%20Competency%20for%20Nursing%20Education%20and%20Practice%20in%20the%20Era%20of%20Artificial%20Intelligence.",
+      "source": "CINAHL",
+      "summary": "This article discusses clinical narration, a new skill where nurses speak their care actions and reasoning aloud so ambient AI tools can create documentation. The authors define this competency as three parts: knowledge, narration skills, and critical review, and propose a teaching framework to build these skills into nursing education. This matters because it highlights a new training need as AI tools become part of everyday nursing practice.",
+      "flags": [
+        "population_unclear",
+        "setting_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:13",
+      "title": "Distribution and Utilisation of Clinical Placements Across Care Settings: A Four‐Cohort Analysis.",
+      "abstract": "Background: The distribution of clinical placements is a critical aspect of nursing education, influencing competency development. In Spain, the imbalance in clinical placements across care settings remains a significant issue, especially the dominance of hospital‐based training. Objectives: This study aimed to analyse the distribution and occupancy of clinical placements across primary, transitional and specialised care settings in a nursing program at a public university in Barcelona, Spain, focusing on four academic cohorts. Materials and Methods: A retrospective cross‐sectional and descriptive study was conducted using institutional records from 331 nursing graduates (92.46% of the target population) who completed nine required practicum periods. Data were analysed descriptively using frequencies, percentages and means to assess placement distribution by care setting and occupancy rates to evaluate the utilisation of available training opportunities. Results: Specialised care accounted for 75%–76% of total clinical placement weeks, while primary and transitional care accounted for 15%–16% and 7%–9%, respectively. Primary care placements showed consistently high occupancy (over 89%), but transitional care was underutilised despite availability. The descriptive analysis indicated a structural mismatch among care levels in terms of available training exposure across the analysed cohorts. Conclusions: The findings highlight a structural imbalance in the distribution of clinical placements, with a heavy reliance on specialised care. To bridge this gap, the study highlights the importance of evaluating allocation frameworks and enhancing operational coordination between educational institutions and healthcare providers. This could potentially facilitate diverse clinical experiences that better align with population health needs and contemporary healthcare delivery.",
+      "authors": "Pedreira-Robles, Guillermo\n                Graells-Sans, Ariadna\n                Sanclemente-Dalmau, Montserrat\n                González-Álvarez, Melissa\n                Insa-Calderon, Esther\n                Kaushik, Shashank\n                Hospital del Mar Nursing School (ESIHMar), Universitat Pompeu Fabra-Affiliated, Barcelona, Spain, upf.es",
+      "journal": "Nursing Forum",
+      "pub_date": "10/2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Distribution%20and%20Utilisation%20of%20Clinical%20Placements%20Across%20Care%20Settings%3A%20A%20Four%E2%80%90Cohort%20Analysis.",
+      "source": "CINAHL",
+      "summary": "This retrospective study examined clinical placement records for 331 nursing graduates across four cohorts at a public university in Barcelona, Spain. It found that specialised care settings made up 75%-76% of placement weeks, while primary and transitional care made up much smaller shares, with transitional care underused despite open spots. This points to an imbalance in training exposure that may affect how programs coordinate placements with healthcare providers.",
+      "flags": [],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:18",
+      "title": "Simulation‐Based Education to Support Nurses' Critical Thinking in Delirium Recognition: A Scoping Review.",
+      "abstract": "Aim: To map how simulation‐based education supports the development of critical thinking skills required for nurses to recognize delirium in clinical practice. Design: A scoping review guided by the Joanna Briggs Institute methodology and the framework developed by Arksey and O'Malley, refined by Levac and colleagues. Methods: Two reviewers independently screened and extracted data to identify studies evaluating simulation‐based education designed to strengthen nurses' delirium recognition and associated critical thinking processes. A narrative approach was used to chart and synthesize findings across varied simulation modalities and clinical contexts. Data Sources: The search was conducted on 4 September 2025, using MEDLINE, CINAHL and PsycINFO. No timeframe was applied to the search. Results: Fourteen studies met inclusion criteria. Simulation‐based education consistently enhanced skills aligned with critical thinking, including observational accuracy, recognition of fluctuating cognitive cues, clinical reasoning, reflective awareness, empathy and communication within interprofessional teams. Structured debriefing played a central role in helping nurses analyse decision‐making processes and integrate experiential learning into clinical judgement. Several studies reported changes in practice, including more consistent use of delirium identification tools and improved clarity of clinical documentation. Conclusion: Simulation‐based education strengthens interconnected domains of critical thinking that underpin nurses' capacity to recognize delirium early and respond effectively to its fluctuating presentation. These findings highlight the educational value of immersive, theory‐informed simulation for developing the clinical judgement required in cognitively complex patient situations. Implications for the Profession and/or Patient Care: Integrating structured simulation into nursing education and professional development may enhance timely delirium recognition, foster more effective interprofessional communication and support safer, higher‐quality care for hospitalized adults. Impact: Simulation‐based education offers a practical and scalable strategy for improving delirium recognition across care settings. By supporting nurses in noticing subtle cognitive changes, interpreting clinical patterns and communicating concerns with clarity and confidence, simulation contributes to stronger workforce preparedness and patient safety. Reporting Method: This review adhered to PRISMA‐ScR reporting guidance. Patient or Public Contribution: This study did not include patient or public involvement in its design, conduct or reporting. What Does This Paper Contribute to the Wider Global Clinical Community?: Clarifies how simulation strengthens the cognitive, reflective and communicative skills nurses require to recognize delirium promptly and accurately.Demonstrates that structured simulation and debriefing offer an efficient, scalable method to enhance clinical judgement and interprofessional communication across care settings.Consolidates global evidence to guide education, workforce development and future research aimed at improving delirium recognition and patient safety.",
+      "authors": "EL Hussein, Mohamed Toufic\n                Sheehan, Dawson S.\n                Hirst, Sandra\n                Faculty of Health, Community and Education, School of Nursing and Midwifery, Mount Royal University, Calgary, Canada",
+      "journal": "Journal of Advanced Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Nov2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Simulation%E2%80%90Based%20Education%20to%20Support%20Nurses%27%20Critical%20Thinking%20in%20Delirium%20Recognition%3A%20A%20Scoping%20Review.",
+      "source": "CINAHL",
+      "summary": "This scoping review looked at 14 studies on simulation-based education and how it helps nurses think critically to recognize delirium in patients. The review found that simulation improved skills like spotting subtle cognitive changes, clinical reasoning, and teamwork, with structured debriefing helping nurses reflect on their decisions. This suggests simulation training could help nurses catch delirium earlier and communicate more clearly across care teams.",
+      "flags": [
+        "population_unclear"
+      ],
+      "topic": "Workforce & Education",
+      "topic_confidence": "high"
+    },
+    {
+      "pmid": "cinahl:20",
+      "title": "Improving Haemorrhage Prediction in General Ward Patients by Incorporating Patterns of Change Derived From Routine Ward Measurements.",
+      "abstract": "ABSTRACT Aim  Design  Methods  Results  Conclusion  Implications for the Profession and/or Patient Care  Impact  Reporting Method  To evaluate whether patterns of change derived from routine ward measurements provide additional predictive value beyond the most recent clinical measurements for haemorrhage prediction in general ward patients.A retrospective cohort study.Among 16,197 adult patients admitted to general wards in three university‐affiliated hospitals in South Korea, 1152 (7.1%) experienced haemorrhage, whereas 15,045 (92.9%) did not. Three machine‐learning algorithms evaluated three feature sets based on the most recent clinical measurements, patterns of change or both. Models were trained and internally validated using stratified five‐fold cross‐validation. Predictive performance was compared across feature sets using the area under the receiver operating characteristic curve, sensitivity, specificity and F1‐score. Shapley Additive Explanations were used to interpret the best‐performing model.Models using both recent measurements and patterns of change showed small but statistically supported improvements in the area under the receiver operating characteristic curve compared with models using recent measurements alone. Shapley Additive Explanations identified neutrophil count, platelet count, white blood cell count, urine output and vital signs as key predictors.Patterns of change derived from routine ward measurements provided complementary predictive information for haemorrhage prediction in general ward patients beyond the most recent clinical measurements. Routinely collected ward data may therefore contain additional predictive information not captured by the most recent values alone.Machine‐learning models combining recent clinical measurements with patterns of change may support risk stratification in general ward patients; prospective evaluation is needed to determine their clinical utility.The study examined whether patterns of change improve haemorrhage prediction. These findings suggest that routinely collected ward data may provide additional predictive information beyond the most recent clinical measurements. The potential value of this information for nursing surveillance and timely intervention warrants prospective evaluation.Transparent reporting of a multivariable prediction model for individual prognosis or diagnosis–artificial intelligence (TRIPOD + AI).",
+      "authors": "Kim, Yeonsu\n                Choo, Hee‐Jin\n                Lee, Sun‐Mi\n                College of Nursing, The Catholic University of Korea",
+      "journal": "Journal of Clinical Nursing (John Wiley & Sons, Inc.)",
+      "pub_date": "Oct2",
+      "doi": "",
+      "pubmed_url": "https://scholar.google.com/scholar?q=Improving%20Haemorrhage%20Prediction%20in%20General%20Ward%20Patients%20by%20Incorporating%20Patterns%20of%20Change%20Derived%20From%20Routine%20Ward%20Measurements.",
+      "source": "CINAHL",
+      "summary": "Researchers studied over 16,000 general ward patients at three South Korean hospitals to see if tracking changes in routine measurements over time could improve haemorrhage prediction, beyond using only the most recent values. Machine-learning models combining both approaches showed small but statistically supported improvements, with neutrophil count, platelet count, white blood cell count, urine output, and vital signs as key predictors. This suggests routine ward data may hold extra value for nursing surveillance, though prospective testing is needed before clinical use.",
+      "flags": [],
+      "topic": "Clinical Decision Support",
+      "topic_confidence": "high"
+    }
+  ]
+}

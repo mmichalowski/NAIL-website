@@ -1,35 +1,36 @@
 {
-  "issue": 9,
-  "filename": "ni-biweekly-2026-11-02.html",
+  "issue": 10,
+  "filename": "ni-biweekly-2026-11-16.html",
   "date_range": {
-    "start": "Oct 19, 2026",
-    "end": "Nov 02, 2026"
+    "start": "Nov 02, 2026",
+    "end": "Nov 16, 2026"
   },
-  "generated_at": "2026-11-02T14:55:14.920181Z",
-  "paper_count": 29,
-  "flag_count": 11,
+  "generated_at": "2026-11-16T14:57:39.795169Z",
+  "paper_count": 14,
+  "flag_count": 8,
   "topic_counts": {
-    "Workforce & Education": 20,
-    "NLP & Generative AI": 3,
-    "Clinical Decision Support": 5,
-    "AI Ethics & Governance": 1
+    "Clinical Decision Support": 3,
+    "AI Ethics & Governance": 4,
+    "NLP & Generative AI": 2,
+    "Workforce & Education": 4,
+    "Patient-Facing AI": 1
   },
-  "teaser": "This issue is dominated by nursing education, with student AI literacy and use patterns studied across China, Korea, Egypt, Saudi Arabia, and Mediterranean universities. Several papers examine how students actually use generative AI, from distinct usage personas to links between AI dependence and lower achievement motivation. Others test education tools directly, comparing GenAI-assisted debriefing to facilitator-led methods and AI-simulated patients to traditional practice. A smaller set of papers builds machine learning prediction models for frailty, delirium, and haemorrhage, and tests LLMs for detecting spiritual pain and screening curriculum content, generally finding good accuracy but a continued need for human review and external validation.",
+  "teaser": "This issue centers on governance and ethics frameworks for AI in nursing, with four papers proposing lenses or models to guide accountability, oversight, and leadership as AI enters care and management settings. A second thread covers workforce AI literacy, from intern chatbot use to school nurse training to interprofessional simulation. Clinical decision support papers test prediction tools for readmission, sepsis, and delirium, each flagging limited or early-stage evidence. NLP papers examine generative AI attitudes and retrieval-augmented generation, both noting gaps between simulated testing and real clinical use.",
   "themes": [
     {
-      "name": "Student AI literacy, use patterns, and dependence",
-      "count": 8
+      "name": "Governance and accountability frameworks",
+      "count": 4
     },
     {
-      "name": "AI tools in nursing education and simulation",
-      "count": 9
+      "name": "Workforce AI literacy and training",
+      "count": 4
     },
     {
-      "name": "Machine learning prediction models for clinical risk",
-      "count": 6
+      "name": "Early-stage prediction tools needing more validation",
+      "count": 3
     },
     {
-      "name": "LLMs analyzing clinical and patient-generated text",
+      "name": "Generative AI adoption gaps between testing and practice",
       "count": 2
     }
   ]
